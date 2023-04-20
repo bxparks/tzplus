@@ -69,9 +69,11 @@ antarctica|\
 asia|\
 australasia|\
 backward|\
+backzone|\
 etcetera|\
 europe|\
 northamerica|\
 southamerica|\
 backzone|\
 iso3166.tab)
+rm -rf .git .gitignore
