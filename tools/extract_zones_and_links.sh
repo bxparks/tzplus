@@ -28,7 +28,7 @@ europe \
 northamerica \
 southamerica |
     egrep '^(Zone|Link)' |
-    awk '/^Zone/ {print $2}
-        /^Link/ {print $3}' |
+    awk '/^Zone/ {print "Zone", $2}
+        /^Link/ {print "Link", $2, $3}' |
     sort |
     uniq
