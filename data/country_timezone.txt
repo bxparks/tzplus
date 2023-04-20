@@ -1,7 +1,8 @@
 # A mapping of ISO 3166 country codes and and TZDB timezones such that:
 #
-# 1) every ISO country code has at least one timezone, and
-# 2) every timezone is associated with at least one ISO country code.
+# 1) every ISO country code has at least one timezone, and 2) every timezone is
+# associated with at least one ISO country code (except for synthetic timezones
+# with no corresponding country, e.g. UTC, Zulu, GMT+0).
 #
 # Column definition:
 # iso_code timezone
@@ -175,59 +176,59 @@ UY America/Montevideo # Uruguay
 CA America/Montreal # Canada
 MS America/Montserrat # Montserrat
 BS America/Nassau # Bahamas
-America/New_York
-America/Nipigon
-America/Nome
-America/Noronha
-America/North_Dakota/Beulah
-America/North_Dakota/Center
-America/North_Dakota/New_Salem
-America/Nuuk
-America/Ojinaga
-America/Panama
-America/Pangnirtung
-America/Paramaribo
-America/Phoenix
-America/Port-au-Prince
-America/Port_of_Spain
-America/Porto_Acre
-America/Porto_Velho
-America/Puerto_Rico
-America/Punta_Arenas
-America/Rainy_River
-America/Rankin_Inlet
-America/Recife
-America/Regina
-America/Resolute
-America/Rio_Branco
-America/Rosario
-America/Santa_Isabel
-America/Santarem
-America/Santiago
-America/Santo_Domingo
-America/Sao_Paulo
-America/Scoresbysund
-America/Shiprock
-America/Sitka
-America/St_Barthelemy
-America/St_Johns
-America/St_Kitts
-America/St_Lucia
-America/St_Thomas
-America/St_Vincent
-America/Swift_Current
-America/Tegucigalpa
-America/Thule
-America/Thunder_Bay
-America/Tijuana
-America/Toronto
-America/Tortola
-America/Vancouver
-America/Virgin
-America/Whitehorse
-America/Winnipeg
-America/Yakutat
-America/Yellowknife
+US America/New_York # USA
+CA America/Nipigon # Canada
+US America/Nome # USA
+BR America/Noronha # Brazil
+US America/North_Dakota/Beulah # USA
+US America/North_Dakota/Center # USA
+US America/North_Dakota/New_Salem # USA
+GL America/Nuuk # Greenland
+MX America/Ojinaga # Mexico
+PA America/Panama # Panama
+CA America/Pangnirtung # Canada
+SR America/Paramaribo # Suriname
+US America/Phoenix # USA
+HT America/Port-au-Prince # Haiti
+TT America/Port_of_Spain # Trinidad & Tobago
+BR America/Porto_Acre # Brazil
+BR America/Porto_Velho # Brazil
+PR America/Puerto_Rico # Puerto Rico
+CL America/Punta_Arenas # Chile
+CA America/Rainy_River # Canada
+CA America/Rankin_Inlet # Canada
+BR America/Recife # Brazil
+CA America/Regina # Canada
+CA America/Resolute # Canada
+BR America/Rio_Branco # Brazil
+AR America/Rosario # Argentina
+MX America/Santa_Isabel # Mexico
+BR America/Santarem # Brazil
+CL America/Santiago # Chile
+DO America/Santo_Domingo # Dominican Republic
+BR America/Sao_Paulo # Brazil
+GL America/Scoresbysund # Greenland
+US America/Shiprock # USA
+US America/Sitka # USA
+BL America/St_Barthelemy # St Barthelemy
+CA America/St_Johns # Canada
+KN America/St_Kitts # St Kitts & Nevis
+LC America/St_Lucia # St Lucia
+VI America/St_Thomas # Virgin Islands (US)
+VC America/St_Vincent # St Vincent
+CA America/Swift_Current # Canada
+HN America/Tegucigalpa # Honduras
+GL America/Thule # Greenland
+CA America/Thunder_Bay # Canada
+MX America/Tijuana # Mexico
+CA America/Toronto # Canada
+VG America/Tortola # Virgin Islands (UK)
+CA America/Vancouver # Canada
+VI America/Virgin # Virgin Islands (US)
+CA America/Whitehorse # Canada
+CA America/Winnipeg # Canada
+US America/Yakutat # USA
+CA America/Yellowknife # Canada
 Antarctica/Casey
 Antarctica/Davis
 Antarctica/DumontDUrville
@@ -241,44 +242,44 @@ Antarctica/Syowa
 Antarctica/Troll
 Antarctica/Vostok
 Arctic/Longyearbyen
-Asia/Aden
-Asia/Almaty
-Asia/Amman
+YE Asia/Aden # Yemen
+KZ Asia/Almaty # Kazakhstan ??
+JO Asia/Amman # Jordan
 Asia/Anadyr
 Asia/Aqtau
 Asia/Aqtobe
 Asia/Ashgabat
 Asia/Ashkhabad
 Asia/Atyrau
-Asia/Baghdad
-Asia/Bahrain
+IQ Asia/Baghdad # Iraq
+BH Asia/Bahrain # Bahrain
 Asia/Baku
-Asia/Bangkok
+TH Asia/Bangkok # Thailand
 Asia/Barnaul
-Asia/Beirut
+LB Asia/Beirut # Lebanon
 Asia/Bishkek
 Asia/Brunei
-Asia/Calcutta
+IN Asia/Calcutta # India
 Asia/Chita
 Asia/Choibalsan
 Asia/Chongqing
 Asia/Chungking
-Asia/Colombo
+LK Asia/Colombo # Sri Lanka
 Asia/Dacca
-Asia/Damascus
+SY Asia/Damascus # Syria
 Asia/Dhaka
 Asia/Dili
 Asia/Dubai
 Asia/Dushanbe
 Asia/Famagusta
-Asia/Gaza
+PS Asia/Gaza # Palestine
 Asia/Harbin
-Asia/Hebron
-Asia/Ho_Chi_Minh
-Asia/Hong_Kong
+PS Asia/Hebron # Palestine
+VN Asia/Ho_Chi_Minh # Vietnam
+HK Asia/Hong_Kong # Hong Kong
 Asia/Hovd
 Asia/Irkutsk
-Asia/Istanbul
+TR Asia/Istanbul # Turkey
 Asia/Jakarta
 Asia/Jayapura
 Asia/Jerusalem
@@ -352,46 +353,46 @@ Atlantic/Reykjavik
 Atlantic/South_Georgia
 Atlantic/St_Helena
 Atlantic/Stanley
-Australia/ACT
-Australia/Adelaide
-Australia/Brisbane
-Australia/Broken_Hill
-Australia/Canberra
-Australia/Currie
-Australia/Darwin
-Australia/Eucla
-Australia/Hobart
-Australia/LHI
-Australia/Lindeman
-Australia/Lord_Howe
-Australia/Melbourne
-Australia/NSW
-Australia/North
-Australia/Perth
-Australia/Queensland
-Australia/South
-Australia/Sydney
-Australia/Tasmania
-Australia/Victoria
-Australia/West
-Australia/Yancowinna
-Brazil/Acre
-Brazil/DeNoronha
-Brazil/East
-Brazil/West
+AU Australia/ACT # Australia
+AU Australia/Adelaide # Australia
+AU Australia/Brisbane # Australia
+AU Australia/Broken_Hill # Australia
+AU Australia/Canberra # Australia
+AU Australia/Currie # Australia
+AU Australia/Darwin # Australia
+AU Australia/Eucla # Australia
+AU Australia/Hobart # Australia
+AU Australia/LHI # Australia
+AU Australia/Lindeman # Australia
+AU Australia/Lord_Howe # Australia
+AU Australia/Melbourne # Australia
+AU Australia/NSW # Australia
+AU Australia/North # Australia
+AU Australia/Perth # Australia
+AU Australia/Queensland # Australia
+AU Australia/South # Australia
+AU Australia/Sydney # Australia
+AU Australia/Tasmania # Australia
+AU Australia/Victoria # Australia
+AU Australia/West # Australia
+AU Australia/Yancowinna # Australia
+BR Brazil/Acre # Brazil
+BR Brazil/DeNoronha # Brazil
+BR Brazil/East # Brazil
+BR Brazil/West # Brazil
 CET
 CST6CDT
-Canada/Atlantic
-Canada/Central
-Canada/Eastern
-Canada/Mountain
-Canada/Newfoundland
-Canada/Pacific
-Canada/Saskatchewan
-Canada/Yukon
-Chile/Continental
-Chile/EasterIsland
-Cuba
+CA Canada/Atlantic # Canada
+CA Canada/Central # Canada
+CA Canada/Eastern # Canada
+CA Canada/Mountain # Canada
+CA Canada/Newfoundland # Canada
+CA Canada/Pacific # Canada
+CA Canada/Saskatchewan # Canada
+CA Canada/Yukon # Canada
+CL Chile/Continental # Chile
+CL Chile/EasterIsland # Chile
+CU Cuba # Cuba
 EET
 EST
 EST5EDT
@@ -504,8 +505,8 @@ GMT-0
 GMT0
 Greenwich
 HST
-Hongkong
-Iceland
+HK Hongkong # Hong Kong
+IS Iceland # Iceland
 Indian/Antananarivo
 Indian/Chagos
 Indian/Christmas
@@ -517,22 +518,22 @@ Indian/Maldives
 Indian/Mauritius
 Indian/Mayotte
 Indian/Reunion
-Iran
-Israel
-Jamaica
-Japan
+IR Iran # Iran
+IL Israel # Israel
+JM Jamaica # Jamaica
+JP Japan # Japan
 Kwajalein
-Libya
+LY Libya # Libya
 MET
 MST
 MST7MDT
-Mexico/BajaNorte
-Mexico/BajaSur
-Mexico/General
-NZ
+MX Mexico/BajaNorte # Mexico
+MX Mexico/BajaSur # Mexico
+MX Mexico/General # Mexico
+NZ NZ # New Zealand
 NZ-CHAT
-Navajo
-PRC
+US Navajo # USA
+CN PRC # China
 PST8PDT
 Pacific/Apia
 Pacific/Auckland
@@ -585,18 +586,18 @@ ROK
 Singapore
 Turkey
 UCT
-US/Alaska
-US/Aleutian
-US/Arizona
-US/Central
-US/East-Indiana
-US/Eastern
-US/Hawaii
-US/Indiana-Starke
-US/Michigan
-US/Mountain
-US/Pacific
-US/Samoa
+US US/Alaska # USA
+US US/Aleutian # USA
+US US/Arizona # USA
+US US/Central # USA
+US US/East-Indiana # USA
+US US/Eastern # USA
+US US/Hawaii # USA
+US US/Indiana-Starke # USA
+US US/Michigan # USA
+US US/Mountain # USA
+US US/Pacific # USA
+US US/Samoa # USA
 UTC
 Universal
 W-SU
