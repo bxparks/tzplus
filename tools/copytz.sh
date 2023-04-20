@@ -10,7 +10,7 @@
 #   $ copytz.sh --tag tag source target
 #
 # Example:
-#   $ copytz.sh --tag 2022b ~/src/tz ~/tmp/tzfiles
+#   $ copytz.sh --tag 2022b ~/src/tz ~/tmp/tzdb
 #
 # Author: Brian Park
 # License: Public Domain
