@@ -1,0 +1,246 @@
+Similar Africa/Accra -> Africa/Abidjan # Ghana -> Ivory Coast
+Similar Africa/Addis_Ababa -> Africa/Nairobi # Ethiopia -> Kenya
+Similar Africa/Asmara -> Africa/Nairobi # Ghana -> Kenya
+Similar Africa/Asmera -> Africa/Nairobi # Ghana -> Kenya
+Similar Africa/Bamako -> Africa/Abidjan # Mali -> Ivory Coast
+Similar Africa/Bangui -> Africa/Lagos # Central African Republic -> Nigeria
+Similar Africa/Banjul -> Africa/Abidjan # Gambia -> Ivory Coast
+Similar Africa/Blantyre -> Africa/Maputo # Malawi -> Mozambique
+Similar Africa/Brazzaville -> Africa/Lagos # Congo -> Nigeria
+Similar Africa/Bujumbura -> Africa/Maputo # Burundi -> Mozambique
+Similar Africa/Conakry -> Africa/Abidjan # Guinea -> Ivory Coast
+Similar Africa/Dakar -> Africa/Abidjan # Senegal -> Ivory Coast
+Similar Africa/Dar_es_Salaam -> Africa/Nairobi # Tanzania -> Kenya
+Similar Africa/Djibouti -> Africa/Nairobi # Djibouti -> Kenya
+Similar Africa/Douala -> Africa/Lagos # Cameroon -> Nigeria
+Similar Africa/Freetown -> Africa/Abidjan # Sierra Leone -> Ivory Coast
+Similar Africa/Gaborone -> Africa/Maputo # Botswana -> Mozambique
+Similar Africa/Harare -> Africa/Maputo # Zimbabwe -> Mozambique
+Similar Africa/Kampala -> Africa/Nairobi # Uganda -> Kenya
+Similar Africa/Kigali -> Africa/Maputo # Rwanda -> Mozambique
+Similar Africa/Kinshasa -> Africa/Lagos # Congo (Dem. Rep.) -> Nigeria
+Similar Africa/Libreville -> Africa/Lagos # Gabon -> Nigeria
+Similar Africa/Lome -> Africa/Abidjan # Togo -> Ivory Coast
+Similar Africa/Luanda -> Africa/Lagos # Angola -> Nigeria
+Similar Africa/Lubumbashi -> Africa/Maputo # Congo (Dem. Rep.) -> Mozambique
+Similar Africa/Lusaka -> Africa/Maputo # Zambia -> Mozambique
+Similar Africa/Malabo -> Africa/Lagos # Equitorial Guinea -> Nigeria
+Similar Africa/Maseru -> Africa/Johannesburg # Lesotho -> South Africa
+Similar Africa/Mbabane -> Africa/Johannesburg # Eswatini  -> South Africa
+Similar Africa/Mogadishu -> Africa/Nairobi # Somalia -> Kenya
+Similar Africa/Niamey -> Africa/Lagos # Niger -> Nigeria
+Similar Africa/Nouakchott -> Africa/Abidjan # Mauritania -> Ivory Coast
+Similar Africa/Ouagadougou -> Africa/Abidjan # Burkina Faso -> Ivory Coast
+Similar Africa/Porto-Novo -> Africa/Lagos # Benin -> Nigeria
+Similar Africa/Timbuktu -> Africa/Abidjan # Mali -> Ivory Coast
+Similar America/Anguilla -> America/Puerto_Rico # Anguilla (UK) -> Puerto Rico
+Similar America/Antigua -> America/Puerto_Rico # Antigua & Barbuda -> Puerto Rico
+Similar America/Argentina/ComodRivadavia -> America/Argentina/Catamarca
+Similar America/Aruba -> America/Puerto_Rico # Aruba -> Puerto Rico
+Similar America/Atikokan -> America/Panama # Canada -> Panama
+Similar America/Atka -> America/Adak # America -> America
+Similar America/Blanc-Sablon -> America/Puerto_Rico # Canada -> Puerto Rico
+Alias America/Buenos_Aires -> America/Argentina/Buenos_Aires
+Alias America/Catamarca -> America/Argentina/Catamarca
+Similar America/Cayman -> America/Panama # Cayman Island -> Panama
+Similar America/Coral_Harbour -> America/Panama # Canada -> Panama
+Alias America/Cordoba -> America/Argentina/Cordoba
+Similar America/Creston -> America/Phoenix # Canada -> USA
+Similar America/Curacao -> America/Puerto_Rico # Curacao -> Puerto Rico
+Similar America/Dominica -> America/Puerto_Rico # Dominica -> Puerto Rico
+Similar America/Ensenada -> America/Tijuana # Mexico -> Mexico
+Similar America/Fort_Wayne -> America/Indiana/Indianapolis # ??
+Alias America/Godthab -> America/Nuuk # Greenland -> Greenland
+Similar America/Grenada -> America/Puerto_Rico # Grenada -> Puerto Rico
+Similar America/Guadeloupe -> America/Puerto_Rico # Guadeloupe -> Puerto Rico
+Alias America/Indianapolis -> America/Indiana/Indianapolis
+Alias America/Jujuy -> America/Argentina/Jujuy
+Alias America/Knox_IN -> America/Indiana/Knox
+Similar America/Kralendijk -> America/Puerto_Rico # Bonaire -> Puerto Rico
+Alias America/Louisville -> America/Kentucky/Louisville
+Similar America/Lower_Princes -> America/Puerto_Rico # Curacao -> Puerto Rico
+Similar America/Marigot -> America/Puerto_Rico # Saint Martin - Puerto Rico
+Alias America/Mendoza -> America/Argentina/Mendoza
+Similar America/Montreal -> America/Toronto
+Similar America/Montserrat -> America/Puerto_Rico # Montserrat -> Puerto Rico
+Similar America/Nassau -> America/Toronto # Bahamas -> Canada
+Similar America/Nipigon -> America/Toronto # Canada -> Canada
+Similar America/Pangnirtung -> America/Iqaluit # Canada -> Canada
+Similar America/Port_of_Spain -> America/Puerto_Rico # Trinidad -> Puerto Rico
+Similar America/Porto_Acre -> America/Rio_Branco # Brazil -> Brazil
+Similar America/Rainy_River -> America/Winnipeg # Canada -> Canada
+Similar America/Rosario -> America/Argentina/Cordoba # Argentina -> Argentina
+Similar America/Santa_Isabel -> America/Tijuana # Mexico -> Mexico
+Similar America/Shiprock -> America/Denver # USA -> USA
+Similar America/St_Barthelemy -> America/Puerto_Rico # St Barthelemy -> Puerto Rico
+Similar America/St_Kitts -> America/Puerto_Rico # St Kitts -> Puerto Rico
+Similar America/St_Lucia -> America/Puerto_Rico # St Lucia -> Puerto Rico
+Similar America/St_Thomas -> America/Puerto_Rico # Virgin Islands (US) -> Puerto Rico
+Similar America/St_Vincent -> America/Puerto_Rico # St Vincent -> Puerto Rico
+Similar America/Thunder_Bay -> America/Toronto # Canada -> Canada
+Similar America/Tortola -> America/Puerto_Rico # Virgin Island (UK) -> Puerto Rico
+Similar America/Virgin -> America/Puerto_Rico # Virgin Island (US) -> Puerto Rico
+Similar America/Yellowknife -> America/Edmonton # Canada -> Canada
+Similar Antarctica/DumontDUrville -> Pacific/Port_Moresby # -> Papua New Guinea
+Similar Antarctica/McMurdo -> Pacific/Auckland # -> New Zealand
+Similar Antarctica/South_Pole -> Pacific/Auckland # -> New Zealand
+Similar Antarctica/Syowa -> Asia/Riyadh
+Similar Antarctica/Vostok -> Asia/Urumqi
+Similar Arctic/Longyearbyen -> Europe/Berlin
+Similar Asia/Aden -> Asia/Riyadh
+Link Asia/Ashkhabad -> Asia/Ashgabat
+Link Asia/Bahrain -> Asia/Qatar
+Link Asia/Brunei -> Asia/Kuching
+Link Asia/Calcutta -> Asia/Kolkata
+Similar Asia/Chongqing -> Asia/Shanghai
+Similar Asia/Chungking -> Asia/Shanghai # Same as Chongqing
+Link Asia/Dacca -> Asia/Dhaka
+Link Asia/Harbin -> Asia/Shanghai
+Link Asia/Istanbul -> Europe/Istanbul
+Link Asia/Kashgar -> Asia/Urumqi
+Link Asia/Katmandu -> Asia/Kathmandu
+Link Asia/Kuala_Lumpur -> Asia/Singapore
+Link Asia/Kuwait -> Asia/Riyadh
+Link Asia/Macao -> Asia/Macau
+Link Asia/Muscat -> Asia/Dubai
+Link Asia/Phnom_Penh -> Asia/Bangkok
+Link Asia/Rangoon -> Asia/Yangon
+Link Asia/Saigon -> Asia/Ho_Chi_Minh
+Link Asia/Tel_Aviv -> Asia/Jerusalem
+Link Asia/Thimbu -> Asia/Thimphu
+Link Asia/Ujung_Pandang -> Asia/Makassar
+Link Asia/Ulan_Bator -> Asia/Ulaanbaatar
+Link Asia/Vientiane -> Asia/Bangkok
+Link Atlantic/Faeroe -> Atlantic/Faroe
+Link Atlantic/Jan_Mayen -> Europe/Berlin
+Link Atlantic/Reykjavik -> Africa/Abidjan
+Link Atlantic/St_Helena -> Africa/Abidjan
+Link Australia/ACT -> Australia/Sydney
+Link Australia/Canberra -> Australia/Sydney
+Link Australia/Currie -> Australia/Hobart
+Link Australia/LHI -> Australia/Lord_Howe
+Link Australia/NSW -> Australia/Sydney
+Link Australia/North -> Australia/Darwin
+Link Australia/Queensland -> Australia/Brisbane
+Link Australia/South -> Australia/Adelaide
+Link Australia/Tasmania -> Australia/Hobart
+Link Australia/Victoria -> Australia/Melbourne
+Link Australia/West -> Australia/Perth
+Link Australia/Yancowinna -> Australia/Broken_Hill
+Link Brazil/Acre -> America/Rio_Branco
+Link Brazil/DeNoronha -> America/Noronha
+Link Brazil/East -> America/Sao_Paulo
+Link Brazil/West -> America/Manaus
+Link Canada/Atlantic -> America/Halifax
+Link Canada/Central -> America/Winnipeg
+Link Canada/Eastern -> America/Toronto
+Link Canada/Mountain -> America/Edmonton
+Link Canada/Newfoundland -> America/St_Johns
+Link Canada/Pacific -> America/Vancouver
+Link Canada/Saskatchewan -> America/Regina
+Link Canada/Yukon -> America/Whitehorse
+Link Chile/Continental -> America/Santiago
+Link Chile/EasterIsland -> Pacific/Easter
+Link Cuba -> America/Havana
+Link Egypt -> Africa/Cairo
+Link Eire -> Europe/Dublin
+Link Etc/GMT+0 -> Etc/GMT
+Link Etc/GMT-0 -> Etc/GMT
+Link Etc/GMT0 -> Etc/GMT
+Link Etc/Greenwich -> Etc/GMT
+Link Etc/UCT -> Etc/UTC
+Link Etc/Universal -> Etc/UTC
+Link Etc/Zulu -> Etc/UTC
+Link Europe/Amsterdam -> Europe/Brussels
+Link Europe/Belfast -> Europe/London
+Link Europe/Bratislava -> Europe/Prague
+Link Europe/Busingen -> Europe/Zurich
+Link Europe/Copenhagen -> Europe/Berlin
+Link Europe/Guernsey -> Europe/London
+Link Europe/Isle_of_Man -> Europe/London
+Link Europe/Jersey -> Europe/London
+Link Europe/Kiev -> Europe/Kyiv
+Link Europe/Ljubljana -> Europe/Belgrade
+Link Europe/Luxembourg -> Europe/Brussels
+Link Europe/Mariehamn -> Europe/Helsinki
+Link Europe/Monaco -> Europe/Paris
+Link Europe/Nicosia -> Asia/Nicosia
+Link Europe/Oslo -> Europe/Berlin
+Link Europe/Podgorica -> Europe/Belgrade
+Link Europe/San_Marino -> Europe/Rome
+Link Europe/Sarajevo -> Europe/Belgrade
+Link Europe/Skopje -> Europe/Belgrade
+Link Europe/Stockholm -> Europe/Berlin
+Link Europe/Tiraspol -> Europe/Chisinau
+Link Europe/Uzhgorod -> Europe/Kyiv
+Link Europe/Vaduz -> Europe/Zurich
+Link Europe/Vatican -> Europe/Rome
+Link Europe/Zagreb -> Europe/Belgrade
+Link Europe/Zaporozhye -> Europe/Kyiv
+Link GB -> Europe/London
+Link GB-Eire -> Europe/London
+Link GMT -> Etc/GMT
+Link GMT+0 -> Etc/GMT
+Link GMT-0 -> Etc/GMT
+Link GMT0 -> Etc/GMT
+Link Greenwich -> Etc/GMT
+Link Hongkong -> Asia/Hong_Kong
+Link Iceland -> Africa/Abidjan
+Link Indian/Antananarivo -> Africa/Nairobi
+Link Indian/Christmas -> Asia/Bangkok
+Link Indian/Cocos -> Asia/Yangon
+Link Indian/Comoro -> Africa/Nairobi
+Link Indian/Kerguelen -> Indian/Maldives
+Link Indian/Mahe -> Asia/Dubai
+Link Indian/Mayotte -> Africa/Nairobi
+Link Indian/Reunion -> Asia/Dubai
+Link Iran -> Asia/Tehran
+Link Israel -> Asia/Jerusalem
+Link Jamaica -> America/Jamaica
+Link Japan -> Asia/Tokyo
+Link Kwajalein -> Pacific/Kwajalein
+Link Libya -> Africa/Tripoli
+Link Mexico/BajaNorte -> America/Tijuana
+Link Mexico/BajaSur -> America/Mazatlan
+Link Mexico/General -> America/Mexico_City
+Link NZ -> Pacific/Auckland
+Link NZ-CHAT -> Pacific/Chatham
+Link Navajo -> America/Denver
+Link PRC -> Asia/Shanghai
+Link Pacific/Chuuk -> Pacific/Port_Moresby
+Link Pacific/Enderbury -> Pacific/Kanton
+Link Pacific/Funafuti -> Pacific/Tarawa
+Link Pacific/Johnston -> Pacific/Honolulu
+Link Pacific/Majuro -> Pacific/Tarawa
+Link Pacific/Midway -> Pacific/Pago_Pago
+Link Pacific/Pohnpei -> Pacific/Guadalcanal
+Link Pacific/Ponape -> Pacific/Guadalcanal
+Link Pacific/Saipan -> Pacific/Guam
+Link Pacific/Samoa -> Pacific/Pago_Pago
+Link Pacific/Truk -> Pacific/Port_Moresby
+Link Pacific/Wake -> Pacific/Tarawa
+Link Pacific/Wallis -> Pacific/Tarawa
+Link Pacific/Yap -> Pacific/Port_Moresby
+Link Poland -> Europe/Warsaw
+Link Portugal -> Europe/Lisbon
+Link ROC -> Asia/Taipei
+Link ROK -> Asia/Seoul
+Link Singapore -> Asia/Singapore
+Link Turkey -> Europe/Istanbul
+Link UCT -> Etc/UTC
+Link US/Alaska -> America/Anchorage
+Link US/Aleutian -> America/Adak
+Link US/Arizona -> America/Phoenix
+Link US/Central -> America/Chicago
+Link US/East-Indiana -> America/Indiana/Indianapolis
+Link US/Eastern -> America/New_York
+Link US/Hawaii -> Pacific/Honolulu
+Link US/Indiana-Starke -> America/Indiana/Knox
+Link US/Michigan -> America/Detroit
+Link US/Mountain -> America/Denver
+Link US/Pacific -> America/Los_Angeles
+Link US/Samoa -> Pacific/Pago_Pago
+Link UTC -> Etc/UTC
+Link Universal -> Etc/UTC
+Link W-SU -> Europe/Moscow
+Link Zulu -> Etc/UTC
