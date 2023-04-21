@@ -308,7 +308,7 @@ RU Asia/Omsk # Russia
 KZ Asia/Oral # Kazakhstan
 KH Asia/Phnom_Penh # Cambodia
 ID Asia/Pontianak # Indonesia
-KP Asia/Pyongyang # Korea (North)
+KP Asia/Pyongyang # North Korea
 QA Asia/Qatar # Qatar
 KZ Asia/Qostanay # Kazakhstan
 KZ Asia/Qyzylorda # Kazakhstan
@@ -317,7 +317,7 @@ SA Asia/Riyadh # Saudi Arabia
 VN Asia/Saigon # Vietnam
 RU Asia/Sakhalin # Russia
 UZ Asia/Samarkand # Uzbekistan
-KR Asia/Seoul # Korea (South)
+KR Asia/Seoul # South Korea
 CN Asia/Shanghai # China
 SG Asia/Singapore # Singapore
 RU Asia/Srednekolymsk # Russia
@@ -380,8 +380,8 @@ BR Brazil/Acre # Brazil
 BR Brazil/DeNoronha # Brazil
 BR Brazil/East # Brazil
 BR Brazil/West # Brazil
-00 CET # Misc
-00 CST6CDT # Misc
+00 CET # Misc (Central European Time)
+US CST6CDT # USA
 CA Canada/Atlantic # Canada
 CA Canada/Central # Canada
 CA Canada/Eastern # Canada
@@ -393,9 +393,9 @@ CA Canada/Yukon # Canada
 CL Chile/Continental # Chile
 CL Chile/EasterIsland # Chile
 CU Cuba # Cuba
-00 EET # Misc
-00 EST # Misc
-00 EST5EDT # Misc
+00 EET # Misc (Eastern European Time)
+US EST # USA
+US EST5EDT # USA
 EG Egypt # Egypt
 IE Eire # Ireland
 00 Etc/GMT # Misc
@@ -433,156 +433,156 @@ IE Eire # Ireland
 00 Etc/UTC # Misc
 00 Etc/Universal # Misc
 00 Etc/Zulu # Misc
-Europe/Amsterdam
-Europe/Andorra
-Europe/Astrakhan
-Europe/Athens
+NL Europe/Amsterdam # Netherlands
+AD Europe/Andorra # Andorra
+RU Europe/Astrakhan # Russia
+GR Europe/Athens # Greece
 GB Europe/Belfast # Britain
-Europe/Belgrade
-Europe/Berlin
-Europe/Bratislava
-Europe/Brussels
-Europe/Bucharest
-Europe/Budapest
-Europe/Busingen
-Europe/Chisinau
-Europe/Copenhagen
+RS Europe/Belgrade # Serbia
+DE Europe/Berlin # Germany
+SK Europe/Bratislava # Slovakia
+BE Europe/Brussels # Belgium
+RO Europe/Bucharest # Romania
+HU Europe/Budapest # Hungary
+DE Europe/Busingen # Germany
+MD Europe/Chisinau # Moldova
+DK Europe/Copenhagen # Denmark
 IE Europe/Dublin # Ireland
-Europe/Gibraltar
-Europe/Guernsey
-Europe/Helsinki
-Europe/Isle_of_Man
-Europe/Istanbul
-Europe/Jersey
-Europe/Kaliningrad
-Europe/Kiev
-Europe/Kirov
-Europe/Kyiv
-Europe/Lisbon
-Europe/Ljubljana
-Europe/London
-Europe/Luxembourg
-Europe/Madrid
-Europe/Malta
-Europe/Mariehamn
-Europe/Minsk
-Europe/Monaco
-Europe/Moscow
-Europe/Nicosia
-Europe/Oslo
-Europe/Paris
-Europe/Podgorica
-Europe/Prague
-Europe/Riga
-Europe/Rome
-Europe/Samara
-Europe/San_Marino
-Europe/Sarajevo
-Europe/Saratov
-Europe/Simferopol
-Europe/Skopje
-Europe/Sofia
-Europe/Stockholm
-Europe/Tallinn
-Europe/Tirane
-Europe/Tiraspol
-Europe/Ulyanovsk
-Europe/Uzhgorod
-Europe/Vaduz
-Europe/Vatican
-Europe/Vienna
-Europe/Vilnius
-Europe/Volgograd
-Europe/Warsaw
-Europe/Zagreb
-Europe/Zaporozhye
-Europe/Zurich
+GI Europe/Gibraltar # Gibraltar
+GG Europe/Guernsey # Guernsey
+FI Europe/Helsinki # Finland
+IM Europe/Isle_of_Man # Isle of Man
+TR Europe/Istanbul # Turkey
+JE Europe/Jersey # Jersey
+RU Europe/Kaliningrad # Russia
+UA Europe/Kiev # Ukraine
+RU Europe/Kirov # Russia
+UA Europe/Kyiv # Ukraine
+PT Europe/Lisbon # Portugal
+SI Europe/Ljubljana # Slovenia
+GB Europe/London # Britain
+LU Europe/Luxembourg # Luxembourg
+ES Europe/Madrid # Spain
+MT Europe/Malta # Malta
+AX Europe/Mariehamn # Aland Islands
+BY Europe/Minsk # Belarus
+MC Europe/Monaco # Monaco
+RU Europe/Moscow # Russia
+CY Europe/Nicosia # Cyprus
+NO Europe/Oslo # Norway
+FR Europe/Paris # France
+ME Europe/Podgorica # Montenegro
+CZ Europe/Prague # Czech Republic
+LV Europe/Riga # Latvia
+IT Europe/Rome # Italy
+RU Europe/Samara # Russia
+SM Europe/San_Marino # San Marino
+BA Europe/Sarajevo # Bosnia & Herzegovina
+RU Europe/Saratov # Russia
+RU Europe/Simferopol # Russia (occupied)
+MK Europe/Skopje # North Macedonia
+BG Europe/Sofia # Bulgaria
+SE Europe/Stockholm # Sweden
+EE Europe/Tallinn # Estonia
+AL Europe/Tirane # Albania
+MD Europe/Tiraspol # Moldova
+RU Europe/Ulyanovsk # Russia
+UA Europe/Uzhgorod # Ukraine
+LI Europe/Vaduz # Liechtenstein
+VA Europe/Vatican # Vatican City
+AT Europe/Vienna # Austria
+LT Europe/Vilnius # Lithuania
+RU Europe/Volgograd # Russia
+PL Europe/Warsaw # Poland
+HR Europe/Zagreb # Croatia
+UA Europe/Zaporozhye # Ukraine
+CH Europe/Zurich # Switzerland
 GB GB # Britain (UK)
 GB GB-Eire # Britain (UK), Northern Ireland
 00 GMT # Misc
 00 GMT+0 # Misc
 00 GMT-0 # Misc
 00 GMT0 # Misc
-Greenwich
-HST
+00 Greenwich # Misc
+US HST # USA
 HK Hongkong # Hong Kong
 IS Iceland # Iceland
-Indian/Antananarivo
-Indian/Chagos
-Indian/Christmas
-Indian/Cocos
-Indian/Comoro
-Indian/Kerguelen
-Indian/Mahe
-Indian/Maldives
-Indian/Mauritius
-Indian/Mayotte
-Indian/Reunion
+MG Indian/Antananarivo # Madagascar
+MU Indian/Chagos # Mauritius
+CX Indian/Christmas # Christmas Island
+CC Indian/Cocos # Cocos Islands
+CM Indian/Comoro # Comoros
+TF Indian/Kerguelen # French Southern and Antartic Lands
+SC Indian/Mahe Seychelles (TZDB origin lost)
+MV Indian/Maldives # Maldives
+MU Indian/Mauritius # Mauritius
+YT Indian/Mayotte # Mayotte
+RE Indian/Reunion # Reunion
 IR Iran # Iran
 IL Israel # Israel
 JM Jamaica # Jamaica
 JP Japan # Japan
-Kwajalein
+MH Kwajalein # Marshall Island
 LY Libya # Libya
-MET
-MST
-MST7MDT
+00 MET # Misc (Middle European Time)
+US MST # USA
+US MST7MDT # USA
 MX Mexico/BajaNorte # Mexico
 MX Mexico/BajaSur # Mexico
 MX Mexico/General # Mexico
 NZ NZ # New Zealand
-NZ-CHAT
+NZ NZ-CHAT # New Zealand (aka Chatham Island)
 US Navajo # USA
 CN PRC # China
-PST8PDT
+US PST8PDT # USA
 WS Pacific/Apia # Samoa (Western)
 NZ Pacific/Auckland # New Zealand
-Pacific/Bougainville
-Pacific/Chatham
-Pacific/Chuuk
-Pacific/Easter
-Pacific/Efate
-Pacific/Enderbury
-Pacific/Fakaofo
-Pacific/Fiji
-Pacific/Funafuti
-Pacific/Galapagos
-Pacific/Gambier
-Pacific/Guadalcanal
+PG Pacific/Bougainville # Papua New Guinea
+NZ Pacific/Chatham # New Zealand
+FM Pacific/Chuuk # Micronesia (Aka Truk)
+CL Pacific/Easter # Chile
+VU Pacific/Efate # Vanuatu
+KI Pacific/Enderbury # Kiribati
+NZ Pacific/Fakaofo # New Zealand
+FJ Pacific/Fiji # Fiji
+TV Pacific/Funafuti # Tuvalu
+EC Pacific/Galapagos # Ecuador
+PF Pacific/Gambier # French Polynesia
+SB Pacific/Guadalcanal # Solomon Islands
 GU Pacific/Guam # Guam
 US Pacific/Honolulu # USA
-Pacific/Johnston
-Pacific/Kanton
-Pacific/Kiritimati
-Pacific/Kosrae
-Pacific/Kwajalein
-Pacific/Majuro
-Pacific/Marquesas
+UM Pacific/Johnston # US Minor Outlying Islands
+KI Pacific/Kanton # Kiribati
+CX Pacific/Kiritimati # Christmas Island
+FM Pacific/Kosrae # Micronesia
+MH Pacific/Kwajalein # Marshall Islands
+MH Pacific/Majuro # Marshall Islands
+PF Pacific/Marquesas # French Polynesia
 AS Pacific/Midway # American Samoa
-Pacific/Nauru
-Pacific/Niue
-Pacific/Norfolk
-Pacific/Noumea
+NR Pacific/Nauru # Nauru
+NU Pacific/Niue # Niue
+NF Pacific/Norfolk # Norfolk Island
+NC Pacific/Noumea # New Caledonia
 AS Pacific/Pago_Pago # American Samoa
-Pacific/Palau
-Pacific/Pitcairn
-Pacific/Pohnpei
-Pacific/Ponape
+PW Pacific/Palau # Palau
+PN Pacific/Pitcairn # Pitcairn
+FM Pacific/Pohnpei # Micronesia
+FM Pacific/Ponape # Micronesia (aka Phonpei)
 PG Pacific/Port_Moresby # Papua New Guinea
-Pacific/Rarotonga
-Pacific/Saipan
+CK Pacific/Rarotonga # Cook Islands
+MP Pacific/Saipan # Northern Mariana Islands
 WS Pacific/Samoa # Samoa (Western)
-Pacific/Tahiti
-Pacific/Tarawa
-Pacific/Tongatapu
-Pacific/Truk
-Pacific/Wake
-Pacific/Wallis
-Pacific/Yap
+PF Pacific/Tahiti # French Polynesia
+KI Pacific/Tarawa # Kiribati
+TO Pacific/Tongatapu # Tonga
+FM Pacific/Truk # Micronesia (aka Chuuk)
+UM Pacific/Wake # US Minor Outlying Islands
+WF Pacific/Wallis # Wallis & Futuna
+FM Pacific/Yap # Micronesia
 PL Poland # Poland
 PT Portugal # Portual
-ROC
-ROK
+TW ROC # Taiwan
+KR ROK # South Korea
 SG Singapore # Singapore
 TR Turkey # Turkey
 00 UCT # Misc
@@ -598,8 +598,8 @@ US US/Michigan # USA
 US US/Mountain # USA
 US US/Pacific # USA
 AS US/Samoa # American Samoa
-UTC
-Universal
-W-SU
-WET
-Zulu
+00 UTC # Misc
+00 Universal # Misc (aka UTC)
+RU W-SU Russia (TZDB origin lost)
+00 WET # Misc (Western European Time)
+00 Zulu # Misc
