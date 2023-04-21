@@ -241,7 +241,7 @@ AQ Antarctica/South_Pole # Antartica
 AQ Antarctica/Syowa # Antartica
 AQ Antarctica/Troll # Antartica
 AQ Antarctica/Vostok # Antartica
-NO Arctic/Longyearbyen # Norway
+SJ Arctic/Longyearbyen # Svalbard & Jan Mayen
 YE Asia/Aden # Yemen
 KZ Asia/Almaty # Kazakhstan
 JO Asia/Amman # Jordan
