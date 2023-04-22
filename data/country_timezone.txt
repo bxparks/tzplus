@@ -229,18 +229,18 @@ CA America/Whitehorse # Canada
 CA America/Winnipeg # Canada
 US America/Yakutat # USA
 CA America/Yellowknife # Canada
-AQ Antarctica/Casey # Antartica
-AQ Antarctica/Davis # Antartica
-AQ Antarctica/DumontDUrville # Antartica
-AQ Antarctica/Macquarie # Antartica
-AQ Antarctica/Mawson # Antartica
-AQ Antarctica/McMurdo # Antartica
-AQ Antarctica/Palmer # Antartica
-AQ Antarctica/Rothera # Antartica
-AQ Antarctica/South_Pole # Antartica
-AQ Antarctica/Syowa # Antartica
-AQ Antarctica/Troll # Antartica
-AQ Antarctica/Vostok # Antartica
+AQ Antarctica/Casey # Antartica Australia
+AQ Antarctica/Davis # Antartica France
+AQ Antarctica/DumontDUrville # Antartica France
+AQ Antarctica/Macquarie # Antartica Australia
+AQ Antarctica/Mawson # Antartica Australia
+AQ Antarctica/McMurdo # Antartica USA
+AQ Antarctica/Palmer # Antartica USA
+AQ Antarctica/Rothera # Antartica Britain
+AQ Antarctica/South_Pole # Antartica New Zealand (Similar to Pacific/Auckland)
+AQ Antarctica/Syowa # Antartica Japan
+AQ Antarctica/Troll # Antartica Norway
+AQ Antarctica/Vostok # Antartica Russia
 SJ Arctic/Longyearbyen # Svalbard & Jan Mayen
 YE Asia/Aden # Yemen
 KZ Asia/Almaty # Kazakhstan
@@ -377,7 +377,7 @@ AU Australia/Victoria # Australia
 AU Australia/West # Australia
 AU Australia/Yancowinna # Australia
 BR Brazil/Acre # Brazil
-BR Brazil/DeNoronha # Brazil
+BR Brazil/DeNoronha # Brazil (tzdb origin lost)
 BR Brazil/East # Brazil
 BR Brazil/West # Brazil
 00 CET # Misc (Central European Time)
