@@ -1,11 +1,9 @@
 # A mapping of ISO 3166 country codes and and TZDB timezones such that:
 #
-# 1) every ISO country code has at least one timezone, and 2) every timezone is
-# associated with at least one ISO country code (except for synthetic timezones
-# with no corresponding country, e.g. UTC, Zulu, GMT+0).
-#
-# Column definition:
-# iso_code timezone
+# 1) every ISO country code has at least one timezone, and
+# 2) every timezone is associated with at least one ISO country code (except
+# for synthetic timezones with no corresponding country, e.g. UTC, Zulu,
+# GMT+0).
 
 CI Africa/Abidjan # Ivory Coast
 GH Africa/Accra # Ghana
@@ -120,7 +118,7 @@ BR America/Eirunepe # Brazil
 SV America/El_Salvador # El Salvador
 MX America/Ensenada # Mexico
 CA America/Fort_Nelson # Canada
-US America/Fort_Wayne # USA
+US America/Fort_Wayne # USA (tzdb origin lost)
 BR America/Fortaleza # Brazil
 CA America/Glace_Bay # Canada
 GL America/Godthab # Greenland
