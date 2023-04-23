@@ -1,3 +1,10 @@
+# The entries in this file replaces all the LINK entries in the raw TZDB raw
+# files. Each Link entry is replaced with one of: Similar, Alias, or Obsolete.
+#
+# This file is maintained manually. When a new version of TZDB is released, a
+# script should validate that every Link entry exists in this file, and every
+# entry in this file is a Link entry in the raw TZDB.
+
 Similar Africa/Accra -> Africa/Abidjan # Ghana -> Ivory Coast
 Similar Africa/Addis_Ababa -> Africa/Nairobi # Ethiopia -> Kenya
 Similar Africa/Asmara -> Africa/Nairobi # Ghana -> Kenya
@@ -49,7 +56,7 @@ Similar America/Creston -> America/Phoenix # Canada -> USA
 Similar America/Curacao -> America/Puerto_Rico # Curacao -> Puerto Rico
 Similar America/Dominica -> America/Puerto_Rico # Dominica -> Puerto Rico
 Similar America/Ensenada -> America/Tijuana # Mexico -> Mexico
-Similar America/Fort_Wayne -> America/Indiana/Indianapolis # ??
+Similar America/Fort_Wayne -> America/Indiana/Indianapolis # (tzdb origin lost)
 Alias America/Godthab -> America/Nuuk # Greenland -> Greenland
 Similar America/Grenada -> America/Puerto_Rico # Grenada -> Puerto Rico
 Similar America/Guadeloupe -> America/Puerto_Rico # Guadeloupe -> Puerto Rico
@@ -93,7 +100,8 @@ Similar Asia/Bahrain -> Asia/Qatar
 Similar Asia/Brunei -> Asia/Kuching
 Alias Asia/Calcutta -> Asia/Kolkata
 Similar Asia/Chongqing -> Asia/Shanghai
-Similar Asia/Chungking -> Asia/Shanghai # Same as Chongqing
+# Link Asia/Chungking -> Asia/Shanghai # Same as Chongqing
+Alias Asia/Chungking -> Asia/Chongqing
 Alias Asia/Dacca -> Asia/Dhaka
 Similar Asia/Harbin -> Asia/Shanghai
 Alias Asia/Istanbul -> Europe/Istanbul
@@ -115,7 +123,8 @@ Alias Atlantic/Faeroe -> Atlantic/Faroe
 Similar Atlantic/Jan_Mayen -> Europe/Berlin
 Similar Atlantic/Reykjavik -> Africa/Abidjan
 Similar Atlantic/St_Helena -> Africa/Abidjan
-Similar Australia/ACT -> Australia/Sydney # Australian Capital Territory (Same as Canberra)
+# Link Australia/ACT -> Australia/Sydney # Australian Capital Territory Same as Canberra
+Alias Australia/ACT -> Australia/Canberra
 Similar Australia/Canberra -> Australia/Sydney
 Similar Australia/Currie -> Australia/Hobart
 Alias Australia/LHI -> Australia/Lord_Howe
@@ -185,7 +194,8 @@ Obsolete GMT-0 -> Etc/GMT
 Obsolete GMT0 -> Etc/GMT
 Obsolete Greenwich -> Etc/GMT
 Obsolete Hongkong -> Asia/Hong_Kong
-Obsolete Iceland -> Africa/Abidjan # Same as Atlantic/Reykjavik
+# Link Iceland -> Africa/Abidjan # Same as Atlantic/Reykjavik
+Alias Iceland -> Africa/Reykjavik
 Similar Indian/Antananarivo -> Africa/Nairobi
 Similar Indian/Christmas -> Asia/Bangkok
 Similar Indian/Cocos -> Asia/Yangon
@@ -217,7 +227,8 @@ Similar Pacific/Pohnpei -> Pacific/Guadalcanal # Alias of Pacific/Ponape
 Similar Pacific/Ponape -> Pacific/Guadalcanal # Alias of Pacific/Pohnpei
 Similar Pacific/Saipan -> Pacific/Guam
 Alias Pacific/Samoa -> Pacific/Pago_Pago
-Similar Pacific/Truk -> Pacific/Port_Moresby # Same as Pacific/Chuuk
+# Link Pacific/Truk -> Pacific/Port_Moresby # Same as Pacific/Chuuk
+Alias Pacific/Truk -> Pacific/Chuuk
 Similar Pacific/Wake -> Pacific/Tarawa
 Similar Pacific/Wallis -> Pacific/Tarawa
 Similar Pacific/Yap -> Pacific/Port_Moresby
