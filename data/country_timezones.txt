@@ -52,7 +52,7 @@ KE Africa/Nairobi # Kenya
 TD Africa/Ndjamena # Chad
 NE Africa/Niamey # Niger
 MR Africa/Nouakchott # Mauritania
-ML Africa/Ouagadougou # Mali
+BF Africa/Ouagadougou # Burkina Faso
 BJ Africa/Porto-Novo # Benin
 ST Africa/Sao_Tome # Sao Tome & Principe
 ML Africa/Timbuktu # Mali
@@ -159,6 +159,7 @@ BR America/Maceio # Brazil
 NI America/Managua # Nicaragua
 BR America/Manaus # Brazil
 MF America/Marigot # Saint Martin
+SX America/Marigot # St Maarten (added for SX)
 MQ America/Martinique # Martinique
 MX America/Matamoros # Mexico
 MX America/Mazatlan # Mexico
@@ -506,10 +507,11 @@ US HST # USA
 HK Hongkong # Hong Kong
 IS Iceland # Iceland
 MG Indian/Antananarivo # Madagascar
-MU Indian/Chagos # Mauritius
+MU Indian/Chagos # Mauritius (according to United Nations)
+IO Indian/Chagos # British Indian Ocean Territory
 CX Indian/Christmas # Christmas Island
 CC Indian/Cocos # Cocos Islands
-CM Indian/Comoro # Comoros
+KM Indian/Comoro # Comoros
 TF Indian/Kerguelen # French Southern and Antartic Lands
 SC Indian/Mahe Seychelles (TZDB origin lost)
 MV Indian/Maldives # Maldives
@@ -541,7 +543,7 @@ FM Pacific/Chuuk # Micronesia (Aka Truk)
 CL Pacific/Easter # Chile
 VU Pacific/Efate # Vanuatu
 KI Pacific/Enderbury # Kiribati
-NZ Pacific/Fakaofo # New Zealand
+TK Pacific/Fakaofo # Tokelau
 FJ Pacific/Fiji # Fiji
 TV Pacific/Funafuti # Tuvalu
 EC Pacific/Galapagos # Ecuador
