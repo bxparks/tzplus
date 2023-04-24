@@ -66,7 +66,7 @@ def main() -> None:
     # Read and check ISO countries.
     iso_long = read_countries(args.iso_long)
     iso_short = read_countries(args.iso_short)
-    check_iso_names(iso_long, iso_long)
+    check_iso_names(iso_long, iso_short)
 
     # Read country to timezones list, and verify.
     country_timezones = read_country_timezones(args.country_timezones)
@@ -220,8 +220,15 @@ def check_iso_names(
     iso_long: Dict[str, str],
     iso_short: Dict[str, str],
 ) -> None:
+    # Check that the ISO codes are the same.
     if iso_long.keys() != iso_short.keys():
         raise Exception("ISO long and short files not equal")
+
+    # Check the maximum length of the ISO country short names.
+    MAX_LEN = 16
+    max_len = max([len(x) for x in iso_short.values()])
+    if max_len > MAX_LEN:
+        raise Exception(f"ISO short names len ({max_len}) > {MAX_LEN}")
 
 
 def check_countries(
