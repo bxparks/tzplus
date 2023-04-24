@@ -6,7 +6,8 @@
 #   --zones {file}
 #   --links {file}
 #   --resolved_links {file}
-#   --countries {file}
+#   --iso_long {file}
+#   --iso_short {file}
 #   --country_timezones country_timezones.txt
 
 from typing import Dict
@@ -24,6 +25,53 @@ import logging
 class ZoneEntry(NamedTuple):
     name: str
     type: str  # 'Zone', 'Alias', 'Similar', 'Obsolete'
+
+
+CountryTimezones = Dict[str, List[str]]
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description='Generate Country Code to Time Zone.')
+    parser.add_argument('--zones', help='File of zones', required=True)
+    parser.add_argument('--links', help='File of links', required=True)
+    parser.add_argument(
+        '--resolved_links',
+        help='File of resolved links',
+        required=True)
+    parser.add_argument(
+        '--iso_long',
+        help='Long country names',
+        required=True)
+    parser.add_argument(
+        '--iso_short',
+        help='Short country names',
+        required=True)
+    parser.add_argument(
+        '--country_timezones',
+        help='Country code to timezones',
+        required=True)
+    args = parser.parse_args()
+
+    # Configure logging
+    logging.basicConfig(level=logging.INFO)
+
+    # zones = read_zones(args.zones)
+
+    # Read and check links.
+    links = read_links(args.links)
+    resolved_links = read_resolved_links(args.resolved_links)
+    check_links(links, resolved_links)
+
+    # Read and check ISO countries.
+    iso_long = read_countries(args.iso_long)
+    iso_short = read_countries(args.iso_short)
+    check_iso_names(iso_long, iso_long)
+
+    # Read country to timezones list, and verify.
+    country_timezones = read_country_timezones(args.country_timezones)
+    check_countries(country_timezones, iso_short)
+    # pp(country_timezones)
 
 
 def read_zones(filename: str) -> Dict[str, bool]:
@@ -105,9 +153,6 @@ def read_countries(filename: str) -> Dict[str, str]:
     return countries
 
 
-CountryTimezones = Dict[str, List[str]]
-
-
 def read_country_timezones(filename: str) -> Dict[str, str]:
     """{country_code -> timezone}"""
     country_timezones: CountryTimezones = {}
@@ -158,37 +203,6 @@ def read_line(input: TextIO) -> Optional[str]:
         return line
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(
-        description='Generate Country Code to Time Zone.')
-    parser.add_argument('--zones', help='File of zones', required=True)
-    parser.add_argument('--links', help='File of links', required=True)
-    parser.add_argument(
-        '--resolved_links',
-        help='File of resolved links',
-        required=True)
-    parser.add_argument('--countries', help='File of countries', required=True)
-    parser.add_argument(
-        '--country_timezones',
-        help='Country code to timezones',
-        required=True)
-    args = parser.parse_args()
-
-    # Configure logging
-    logging.basicConfig(level=logging.INFO)
-
-    # Read in files
-    # zones = read_zones(args.zones)
-    links = read_links(args.links)
-    resolved_links = read_resolved_links(args.resolved_links)
-    countries = read_countries(args.countries)
-    country_timezones = read_country_timezones(args.country_timezones)
-    # pp(country_timezones)
-
-    check_links(links, resolved_links)
-    check_countries(countries, country_timezones)
-
-
 def check_links(
     links: Dict[str, ZoneEntry],
     resolved_links: Dict[str, ZoneEntry],
@@ -202,18 +216,36 @@ def check_links(
             raise Exception(f"Excess links: {excess_resolved_links}")
 
 
+def check_iso_names(
+    iso_long: Dict[str, str],
+    iso_short: Dict[str, str],
+) -> None:
+    if iso_long.keys() != iso_short.keys():
+        raise Exception("ISO long and short files not equal")
+
+
 def check_countries(
-    countries: Dict[str, str],
     country_timezones: Dict[str, str],
+    countries: Dict[str, str],
 ) -> None:
     if countries.keys() != country_timezones.keys():
-        excess_countries = countries.keys() - country_timezones.keys()
-        if excess_countries:
-            raise Exception(f"Unmatched ISO countries: {excess_countries}")
-        excess_countries = country_timezones.keys() - countries.keys()
-        if excess_countries:
+        # There seem to be no timezones defined for BV and HM
+        EXPECTED_MISSING = set(("BV", "HM"))
+        # Check that (almost) all ISO countries has at least one timezone.
+        missing = countries.keys() - country_timezones.keys()
+        missing = missing - EXPECTED_MISSING
+        if missing:
+            raise Exception(f"Unmatched ISO countries: {missing}")
+
+        # Check that every timezone country exists in the ISO country file.
+        # The pseudo ISO code "00" identifies timezones which don't correspond
+        # to ISO countries. Example "UTC" or "Etc/UTC".
+        EXPECTED_EXTRAS = set(("00",))
+        extras = country_timezones.keys() - countries.keys()
+        extras = extras - EXPECTED_EXTRAS
+        if extras:
             raise Exception(
-                f"Unknown countries with timezones: {excess_countries}")
+                f"Unexpected countries with timezones: {extras}")
 
 
 if __name__ == '__main__':
