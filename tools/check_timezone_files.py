@@ -12,6 +12,7 @@
 #   --country_timezones country_timezones.txt
 
 from typing import Dict
+from typing import Iterable
 from typing import List
 from typing import Optional
 from typing import Set
@@ -21,7 +22,7 @@ from typing import NamedTuple
 # from pprint import pp
 import argparse
 import logging
-# import sys
+import sys
 
 
 class Entry(NamedTuple):
@@ -243,11 +244,11 @@ def check_zones(
     if zones.keys() != classified_zones.keys():
         extra = classified_zones.keys() - zones.keys()
         if extra:
-            raise Exception(f"Extra zones in classified_zones: {extra}")
+            error("Extra zones in classified_zones", extra)
 
         missing = zones.keys() - classified_zones.keys()
         if missing:
-            raise Exception(f"Missing zones in classified zones: {missing}")
+            error("Missing zones in classified zones", missing)
 
 
 def check_links(
@@ -257,11 +258,11 @@ def check_links(
     if links.keys() != classified_links.keys():
         extra = classified_links.keys() - links.keys()
         if extra:
-            raise Exception(f"Extra links in classified_links: {extra}")
+            error("Extra links in classified_links", extra)
 
         missing = links.keys() - classified_links.keys()
         if missing:
-            raise Exception(f"Missing links in classified links: {missing}")
+            error("Missing links in classified links", missing)
 
 
 def check_iso_names(
@@ -270,13 +271,15 @@ def check_iso_names(
 ) -> None:
     # Check that the ISO codes are the same.
     if iso_long.keys() != iso_short.keys():
-        raise Exception("ISO long and short files not equal")
+        logging.error("ISO long and short files not equal")
+        sys.exit(1)
 
     # Check the maximum length of the ISO country short names.
     MAX_LEN = 16
     max_len = max([len(x) for x in iso_short.values()])
     if max_len > MAX_LEN:
-        raise Exception(f"ISO short names len ({max_len}) > {MAX_LEN}")
+        logging.error(f"ISO short names len ({max_len}) > {MAX_LEN}")
+        sys.exit(1)
 
 
 def check_countries(
@@ -290,8 +293,7 @@ def check_countries(
         missing = countries.keys() - country_timezones.keys()
         missing = missing - EXPECTED_MISSING
         if missing:
-            raise Exception(
-                f"Missing countries in country_timezones: {missing}")
+            error("Missing countries in country_timezones", missing)
 
         # Check that every timezone country exists in the ISO country file.
         # The pseudo ISO code "00" identifies timezones which don't correspond
@@ -300,8 +302,7 @@ def check_countries(
         extra = country_timezones.keys() - countries.keys()
         extra = extra - EXPECTED_EXTRA
         if extra:
-            raise Exception(
-                f"Extra countries in country_timezones: {extra}")
+            error("Extra countries in country_timezones", extra)
 
 
 def check_timezones(
@@ -326,12 +327,18 @@ def check_timezones(
     if selected != expected:
         extra = selected - expected
         if extra:
-            raise Exception(f"Extra timezones in country_timezones: {extra}")
+            error("Extra timezones in country_timezones", extra)
 
         missing = expected - selected
         if missing:
-            raise Exception(
-                f"Missing timezones from country_timezones: {missing}")
+            error("Missing timezones from country_timezones", missing)
+
+
+def error(msg: str, items: Iterable[str]) -> None:
+    logging.error(msg)
+    for item in sorted(items):
+        logging.error(f'  {item}')
+    sys.exit(1)
 
 
 if __name__ == '__main__':
