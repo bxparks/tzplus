@@ -9,3 +9,6 @@ flake8:
 		--show-source \
 		--statistics \
 		--count
+
+mypy:
+	mypy --strict .

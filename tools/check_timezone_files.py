@@ -13,6 +13,7 @@
 from typing import Dict
 from typing import List
 from typing import Optional
+from typing import Set
 from typing import TextIO
 from typing import NamedTuple
 
@@ -22,8 +23,8 @@ import logging
 # import sys
 
 
-class ZoneEntry(NamedTuple):
-    name: str
+class Entry(NamedTuple):
+    target: str
     type: str  # 'Zone', 'Alias', 'Similar', 'Obsolete'
 
 
@@ -56,8 +57,6 @@ def main() -> None:
     # Configure logging
     logging.basicConfig(level=logging.INFO)
 
-    # zones = read_zones(args.zones)
-
     # Read and check links.
     links = read_links(args.links)
     resolved_links = read_resolved_links(args.resolved_links)
@@ -71,16 +70,19 @@ def main() -> None:
     # Read country to timezones list, and verify.
     country_timezones = read_country_timezones(args.country_timezones)
     check_countries(country_timezones, iso_short)
-    # pp(country_timezones)
+
+    # Read zones, and check resolved timezones.
+    zones = read_zones(args.zones)
+    check_timezones(country_timezones, zones, resolved_links)
 
 
-def read_zones(filename: str) -> Dict[str, bool]:
+def read_zones(filename: str) -> Dict[str, Entry]:
     """Read Zone records of the form:
         Zone zone_name
     and return:
         {zone_name -> True}
     """
-    zones: Dict[str, ZoneEntry] = {}
+    zones: Dict[str, Entry] = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
         while True:
             line = read_line(f)
@@ -90,17 +92,17 @@ def read_zones(filename: str) -> Dict[str, bool]:
             type = tokens[0]
             assert type == 'Zone'
             zone_name = tokens[1]
-            zones[zone_name] = (zone_name, 'Zone')
+            zones[zone_name] = Entry(zone_name, 'Zone')
     return zones
 
 
-def read_links(filename: str) -> Dict[str, str]:
+def read_links(filename: str) -> Dict[str, Entry]:
     """Read Link records of the form:
         Link link_name -> target_name
     and return:
         {link_name -> target_name}
     """
-    links: Dict[str, ZoneEntry] = {}
+    links: Dict[str, Entry] = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
         while True:
             line = read_line(f)
@@ -111,11 +113,11 @@ def read_links(filename: str) -> Dict[str, str]:
             assert type == 'Link'
             link_name = tokens[1]
             target_name = tokens[3]
-            links[link_name] = (target_name, type)
+            links[link_name] = Entry(target_name, type)
     return links
 
 
-def read_resolved_links(filename: str) -> Dict[str, str]:
+def read_resolved_links(filename: str) -> Dict[str, Entry]:
     """Read Resolved records of the form:
         Alias link_name -> target_name
         Similar link_name -> target_name
@@ -123,7 +125,7 @@ def read_resolved_links(filename: str) -> Dict[str, str]:
     and return:
         {link_name -> target_name}
     """
-    links: Dict[str, ZoneEntry] = {}
+    links: Dict[str, Entry] = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
         while True:
             line = read_line(f)
@@ -134,7 +136,7 @@ def read_resolved_links(filename: str) -> Dict[str, str]:
             assert type in ['Alias', 'Similar', 'Obsolete']
             link_name = tokens[1]
             target_name = tokens[3]
-            links[link_name] = (target_name, type)
+            links[link_name] = Entry(target_name, type)
     return links
 
 
@@ -153,7 +155,7 @@ def read_countries(filename: str) -> Dict[str, str]:
     return countries
 
 
-def read_country_timezones(filename: str) -> Dict[str, str]:
+def read_country_timezones(filename: str) -> CountryTimezones:
     """{country_code -> timezone}"""
     country_timezones: CountryTimezones = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
@@ -204,16 +206,17 @@ def read_line(input: TextIO) -> Optional[str]:
 
 
 def check_links(
-    links: Dict[str, ZoneEntry],
-    resolved_links: Dict[str, ZoneEntry],
+    links: Dict[str, Entry],
+    resolved_links: Dict[str, Entry],
 ) -> None:
     if links.keys() != resolved_links.keys():
-        excess_links = links.keys() - resolved_links.keys()
-        if excess_links:
-            raise Exception(f"Excess links: {excess_links}")
-        excess_resolved_links = resolved_links.keys() - links.keys()
-        if excess_resolved_links:
-            raise Exception(f"Excess links: {excess_resolved_links}")
+        extra = resolved_links.keys() - links.keys()
+        if extra:
+            raise Exception(f"Extra links in resolved_links: {extra}")
+
+        missing = links.keys() - resolved_links.keys()
+        if missing:
+            raise Exception(f"Missing links in resolved links: {missing}")
 
 
 def check_iso_names(
@@ -232,7 +235,7 @@ def check_iso_names(
 
 
 def check_countries(
-    country_timezones: Dict[str, str],
+    country_timezones: CountryTimezones,
     countries: Dict[str, str],
 ) -> None:
     if countries.keys() != country_timezones.keys():
@@ -242,17 +245,45 @@ def check_countries(
         missing = countries.keys() - country_timezones.keys()
         missing = missing - EXPECTED_MISSING
         if missing:
-            raise Exception(f"Unmatched ISO countries: {missing}")
+            raise Exception(
+                f"Missing countries in country_timezones: {missing}")
 
         # Check that every timezone country exists in the ISO country file.
         # The pseudo ISO code "00" identifies timezones which don't correspond
         # to ISO countries. Example "UTC" or "Etc/UTC".
-        EXPECTED_EXTRAS = set(("00",))
-        extras = country_timezones.keys() - countries.keys()
-        extras = extras - EXPECTED_EXTRAS
-        if extras:
+        EXPECTED_EXTRA = set(("00",))
+        extra = country_timezones.keys() - countries.keys()
+        extra = extra - EXPECTED_EXTRA
+        if extra:
             raise Exception(
-                f"Unexpected countries with timezones: {extras}")
+                f"Extra countries in country_timezones: {extra}")
+
+
+def check_timezones(
+    country_timezones: CountryTimezones,
+    zones: Dict[str, Entry],
+    resolved_links: Dict[str, Entry],
+) -> None:
+    expected: Set[str] = set()
+    expected.update(zones.keys())
+    expected.update([
+        name for name, entry in resolved_links.items()
+        if entry.type == 'Similar'
+    ])
+
+    selected: Set[str] = set()
+    for z in country_timezones.values():
+        selected.update(z)
+
+    if selected != expected:
+        extra = selected - expected
+        if extra:
+            raise Exception(f"Extra timezones in country_timezones: {extra}")
+
+        missing = expected - selected
+        if missing:
+            raise Exception(
+                f"Missing timezones from country_timezones: {missing}")
 
 
 if __name__ == '__main__':
