@@ -14,10 +14,10 @@
 # * Replace "Republic" with "Rep"
 # * Replace "Equitorial" with "Eq"
 # * Replace "British" with "Br"
+# * Replace "African" with "Af"
 # * Very long names replaced with acronym:
 #   * "United States of America" -> USA
 #   * "United Arab Emirates"  -> UAE
-#   * "Central African Republic" -> CAR
 #   * "British Indian Ocean Territories" -> BIOT
 #   * "Democratic Republic of the Congo" -> Congo DRC
 
@@ -63,7 +63,7 @@ BZ	Belize
 CA	Canada
 CC	Cocos Is
 CD	Congo DRC
-CF	CAR # Central African Republic
+CF	Central Af Rep # Central African Republic
 CG	Congo
 CH	Switzerland
 CI	Ivory Coast
