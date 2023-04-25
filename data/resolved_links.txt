@@ -222,7 +222,7 @@ Similar Pacific/Enderbury -> Pacific/Kanton
 Similar Pacific/Funafuti -> Pacific/Tarawa
 Similar Pacific/Johnston -> Pacific/Honolulu
 Similar Pacific/Majuro -> Pacific/Tarawa
-Alias Pacific/Midway -> Pacific/Pago_Pago
+Similar Pacific/Midway -> Pacific/Pago_Pago
 Similar Pacific/Pohnpei -> Pacific/Guadalcanal # Alias of Pacific/Ponape
 Similar Pacific/Ponape -> Pacific/Guadalcanal # Alias of Pacific/Pohnpei
 Similar Pacific/Saipan -> Pacific/Guam
