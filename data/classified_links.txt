@@ -8,7 +8,7 @@
 Similar Africa/Abidjan Africa/Accra # Ghana -> Ivory Coast
 Similar Africa/Nairobi Africa/Addis_Ababa # Ethiopia -> Kenya
 Similar Africa/Nairobi Africa/Asmara # Ghana -> Kenya
-Similar Africa/Nairobi Africa/Asmera # Ghana -> Kenya
+Alias Africa/Asmara Africa/Asmera # Was: Link Africa/Nairobi Africa/Asmera
 Similar Africa/Abidjan Africa/Bamako # Mali -> Ivory Coast
 Similar Africa/Lagos Africa/Bangui # Central African Republic -> Nigeria
 Similar Africa/Abidjan Africa/Banjul # Gambia -> Ivory Coast
@@ -100,8 +100,7 @@ Similar Asia/Qatar Asia/Bahrain
 Similar Asia/Kuching Asia/Brunei
 Alias Asia/Kolkata Asia/Calcutta
 Similar Asia/Shanghai Asia/Chongqing
-Link Asia/Shanghai Asia/Chungking ## Same as Chongqing
-Alias Asia/Chongqing Asia/Chungking
+Alias Asia/Chongqing Asia/Chungking # Was: Link Asia/Shanghai Asia/Chungking
 Alias Asia/Dhaka Asia/Dacca
 Similar Asia/Shanghai Asia/Harbin
 Alias Europe/Istanbul Asia/Istanbul
@@ -123,8 +122,7 @@ Alias Atlantic/Faroe Atlantic/Faeroe
 Similar Europe/Berlin Atlantic/Jan_Mayen
 Similar Africa/Abidjan Atlantic/Reykjavik
 Similar Africa/Abidjan Atlantic/St_Helena
-Link Australia/Sydney Australia/ACT ## Australian Capital Territory Same as Canberra
-Alias Australia/Canberra Australia/ACT
+Alias Australia/Canberra Australia/ACT # Was: Link Australia/Sydney Australia/ACT
 Similar Australia/Sydney Australia/Canberra
 Similar Australia/Hobart Australia/Currie
 Alias Australia/Lord_Howe Australia/LHI
@@ -136,7 +134,7 @@ Similar Australia/Hobart Australia/Tasmania
 Similar Australia/Melbourne Australia/Victoria
 Similar Australia/Perth Australia/West
 Similar Australia/Broken_Hill Australia/Yancowinna
-Similar America/Rio_Branco Brazil/Acre # Brazil/Acre == Brazil/Porto_Acre
+Alias America/Porto_Acre Brazil/Acre # Was: Link America/Rio_Branco Brazil/Acre
 Alias America/Noronha Brazil/DeNoronha
 Obsolete America/Sao_Paulo Brazil/East
 Obsolete America/Manaus Brazil/West
@@ -194,8 +192,7 @@ Obsolete Etc/GMT GMT-0
 Obsolete Etc/GMT GMT0
 Obsolete Etc/GMT Greenwich
 Obsolete Asia/Hong_Kong Hongkong
-Link Africa/Abidjan Iceland ## Same as Atlantic/Reykjavik
-Alias Africa/Reykjavik Iceland
+Alias Africa/Reykjavik Iceland # Was: Link Africa/Abidjan Iceland
 Similar Africa/Nairobi Indian/Antananarivo
 Similar Asia/Bangkok Indian/Christmas
 Similar Asia/Yangon Indian/Cocos
@@ -227,7 +224,7 @@ Similar Pacific/Guadalcanal Pacific/Pohnpei # Alias of Pacific/Ponape
 Similar Pacific/Guadalcanal Pacific/Ponape # Alias of Pacific/Pohnpei
 Similar Pacific/Guam Pacific/Saipan
 Alias Pacific/Pago_Pago Pacific/Samoa
-Link Pacific/Port_Moresby Pacific/Truk ## Same as Pacific/Chuuk
+Link Pacific/Port_Moresby Pacific/Truk ### Same as Pacific/Chuuk
 Alias Pacific/Chuuk Pacific/Truk
 Similar Pacific/Tarawa Pacific/Wake
 Similar Pacific/Tarawa Pacific/Wallis
