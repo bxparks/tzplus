@@ -24,11 +24,22 @@ import argparse
 import sys
 
 
+# Both Zones and Links are stored in a Dict[str, Entry], where the Entry
+# tracks the meta property of the zone or link.
+#
+# * Zones (target == None)
+#   * Zone name
+#   * Obsolete name
+# * Links
+#   * Alias target link
+#   * Similar target link
+#   * Obsolete target link
 class Entry(NamedTuple):
-    target: str
+    target: Optional[str]  # Set to None for zones
     type: str  # 'Zone', 'Alias', 'Similar', 'Obsolete'
 
 
+# ISO country to [timezones].
 CountryTimezones = Dict[str, List[str]]
 
 
@@ -69,7 +80,9 @@ def main() -> None:
 
     # Read and check links.
     links = read_links(args.links)
+    check_cycle(args.links, links)
     classified_links = read_links(args.classified_links)
+    check_cycle(args.classified_links, classified_links)
     check_links(links, classified_links)
 
     # Read and check ISO countries.
@@ -99,7 +112,7 @@ def read_zones(filename: str) -> Dict[str, Entry]:
             type = tokens[0]
             assert type in ['Zone', 'Obsolete']
             zone_name = tokens[1]
-            zones[zone_name] = Entry(zone_name, type)
+            zones[zone_name] = Entry(None, type)
     return zones
 
 
@@ -314,6 +327,54 @@ def check_timezones(
         missing = expected - selected
         if missing:
             error("Missing timezones from country_timezones", missing)
+
+
+def check_cycle(filename: str, links: Dict[str, Entry]) -> None:
+    for name, entry in links.items():
+        if has_cycle(name, links):
+            link = name
+            target = links[name].target
+            error(f"{filename}: Link cycle for '{name}' -> '{target}'")
+
+
+def has_cycle(name: str, links: Dict[str, Entry]) -> bool:
+    """Determine if 'name' is a cycle in the links map. This uses the "two
+    pointer" algorithm:
+    * Advance p1 one step
+    * Advance p2 two steps
+    * If p1 == p2, we have a cycle
+    """
+    p1: Optional[str] = name
+    p2: Optional[str] = name
+    while True:
+        # Take a single step for p1.
+        assert p1 is not None
+        e1 = links.get(p1)
+        if not e1:
+            return False
+        p1 = e1.target
+        if not p1:
+            return False
+
+        # Take 2 steps for p2.
+        assert p2 is not None
+        e2 = links.get(p2)
+        if not e2:
+            return False
+        p2 = e2.target
+        if not p2:
+            return False
+
+        assert p2 is not None
+        e2 = links.get(p2)
+        if not e2:
+            return False
+        p2 = e2.target
+        if not p2:
+            return False
+
+        if p1 == p2:
+            return True
 
 
 def error(msg: str, items: Iterable[str] = []) -> None:

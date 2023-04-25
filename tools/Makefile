@@ -12,3 +12,7 @@ flake8:
 
 mypy:
 	mypy --strict .
+
+
+test:
+	python3 -m unittest
