@@ -245,15 +245,13 @@ def check_iso_names(
 ) -> None:
     # Check that the ISO codes are the same.
     if iso_long.keys() != iso_short.keys():
-        print("ISO long and short files not equal")
-        sys.exit(1)
+        error("ISO long and short files not equal")
 
     # Check the maximum length of the ISO country short names.
     MAX_LEN = 16
     max_len = max([len(x) for x in iso_short.values()])
     if max_len > MAX_LEN:
-        print(f"ISO short names len ({max_len}) > {MAX_LEN}")
-        sys.exit(1)
+        error(f"ISO short names len ({max_len}) > {MAX_LEN}")
 
 
 def check_countries(
@@ -261,17 +259,19 @@ def check_countries(
     countries: Dict[str, str],
 ) -> None:
     if countries.keys() != country_timezones.keys():
-        # Check that all ISO countries has at least one timezone.
+        # Check that each ISO countries has at least one timezone.
+        # There are currently (TZDB 2023c) 2 ISO countries without a timezone:
+        # BV and HM. But those are marked with a sentinel "undefined" timezone.
         missing = countries.keys() - country_timezones.keys()
         if missing:
             error("Missing countries in country_timezones", missing)
 
-        # Check that every timezone country exists in the ISO country file.
-        # The pseudo ISO code "00" identifies timezones which don't correspond
-        # to ISO countries. Example "UTC" or "Etc/UTC".
-        EXPECTED_EXTRA = set(("00",))
+        # Check that every country in the country_timezones.txt exists in the
+        # ISO country file. The exception is the pseudo ISO code "00" which is
+        # assigned to timezones that don't correspond to ISO countries. Example
+        # "UTC" or "Etc/UTC".
         extra = country_timezones.keys() - countries.keys()
-        extra = extra - EXPECTED_EXTRA
+        extra.remove('00')
         if extra:
             error("Extra countries in country_timezones", extra)
 
@@ -281,6 +281,9 @@ def check_timezones(
     classified_zones: Dict[str, Entry],
     classified_links: Dict[str, Entry],
 ) -> None:
+    # Collect only 'Zone' and 'Similar' timezones. They are the only timezones
+    # which should appear. 'Alias' and 'Obsolete' should not appear to avoid
+    # duplicates or old timezones.
     expected: Set[str] = set()
     expected.update([
         name for name, entry in classified_zones.items()
@@ -292,10 +295,12 @@ def check_timezones(
     ])
     expected.add('undefined')
 
+    # Collect the timezones which appear in country_timezones.txt.
     selected: Set[str] = set()
     for z in country_timezones.values():
         selected.update(z)
 
+    # Check that they are equal.
     if selected != expected:
         extra = selected - expected
         if extra:
@@ -306,7 +311,7 @@ def check_timezones(
             error("Missing timezones from country_timezones", missing)
 
 
-def error(msg: str, items: Iterable[str]) -> None:
+def error(msg: str, items: Iterable[str] = []) -> None:
     print(msg)
     for item in sorted(items):
         print(f'  {item}')
