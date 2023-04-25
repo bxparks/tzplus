@@ -21,7 +21,6 @@ from typing import NamedTuple
 
 # from pprint import pp
 import argparse
-import logging
 import sys
 
 
@@ -61,7 +60,7 @@ def main() -> None:
     args = parser.parse_args()
 
     # Configure logging
-    logging.basicConfig(level=logging.INFO)
+    # logging.basicConfig(level=logging.INFO)
 
     # Read and check zones.
     zones = read_zones(args.zones)
@@ -271,14 +270,14 @@ def check_iso_names(
 ) -> None:
     # Check that the ISO codes are the same.
     if iso_long.keys() != iso_short.keys():
-        logging.error("ISO long and short files not equal")
+        print("ISO long and short files not equal")
         sys.exit(1)
 
     # Check the maximum length of the ISO country short names.
     MAX_LEN = 16
     max_len = max([len(x) for x in iso_short.values()])
     if max_len > MAX_LEN:
-        logging.error(f"ISO short names len ({max_len}) > {MAX_LEN}")
+        print(f"ISO short names len ({max_len}) > {MAX_LEN}")
         sys.exit(1)
 
 
@@ -335,9 +334,9 @@ def check_timezones(
 
 
 def error(msg: str, items: Iterable[str]) -> None:
-    logging.error(msg)
+    print(msg)
     for item in sorted(items):
-        logging.error(f'  {item}')
+        print(f'  {item}')
     sys.exit(1)
 
 
