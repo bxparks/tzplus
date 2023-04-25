@@ -90,19 +90,19 @@ CA America/Blanc-Sablon # Canada
 BR America/Boa_Vista # Brazil
 CO America/Bogota # Colombia
 US America/Boise # USA
-AR America/Buenos_Aires # Argentina
+# AR America/Buenos_Aires # Argentina
 CA America/Cambridge_Bay # Canada
 BR America/Campo_Grande # Brazil
 MX America/Cancun # Mexico
 VE America/Caracas # Venezuela
-AR America/Catamarca # Argentina
+# AR America/Catamarca # Argentina
 GF America/Cayenne # French Guiana
 KY America/Cayman # Cayman Islands
 US America/Chicago # USA
 MX America/Chihuahua # Mexico
 MX America/Ciudad_Juarez # Mexico
 CA America/Coral_Harbour # Canada
-AR America/Cordoba # Argentina
+# AR America/Cordoba # Argentina
 CR America/Costa_Rica # Costa Rica
 CA America/Creston # Canada
 BR America/Cuiaba # Brazil
@@ -121,7 +121,7 @@ CA America/Fort_Nelson # Canada
 US America/Fort_Wayne # USA (tzdb origin lost)
 BR America/Fortaleza # Brazil
 CA America/Glace_Bay # Canada
-GL America/Godthab # Greenland
+# GL America/Godthab # Greenland
 CA America/Goose_Bay # Canada
 TC America/Grand_Turk # Turks & Caicos Islands
 GD America/Grenada # Grenada
@@ -140,20 +140,20 @@ US America/Indiana/Tell_City # USA
 US America/Indiana/Vevay # USA
 US America/Indiana/Vincennes # USA
 US America/Indiana/Winamac # USA
-US America/Indianapolis # USA
+# US America/Indianapolis # USA
 CA America/Inuvik # Canada
 CA America/Iqaluit # Canada
 JM America/Jamaica # Jamaica
-AR America/Jujuy # Argentina
+# AR America/Jujuy # Argentina
 US America/Juneau # USA
 US America/Kentucky/Louisville # USA
 US America/Kentucky/Monticello # USA
-US America/Knox_IN # USA
+# US America/Knox_IN # USA
 BQ America/Kralendijk # Bonaire (Caribbean Netherlands)
 BO America/La_Paz # Bolivia
 PE America/Lima # Peru
 US America/Los_Angeles # USA
-US America/Louisville # USA
+# US America/Louisville # USA
 CW America/Lower_Princes # Curacao
 BR America/Maceio # Brazil
 NI America/Managua # Nicaragua
@@ -163,7 +163,7 @@ SX America/Marigot # St Maarten (added for SX)
 MQ America/Martinique # Martinique
 MX America/Matamoros # Mexico
 MX America/Mazatlan # Mexico
-AR America/Mendoza # Argentina
+# AR America/Mendoza # Argentina
 US America/Menominee # USA
 MX America/Merida # Mexico
 US America/Metlakatla # USA
@@ -200,7 +200,7 @@ BR America/Recife # Brazil
 CA America/Regina # Canada
 CA America/Resolute # Canada
 BR America/Rio_Branco # Brazil
-AR America/Rosario # Argentina
+# AR America/Rosario # Argentina
 MX America/Santa_Isabel # Mexico
 BR America/Santarem # Brazil
 CL America/Santiago # Chile
@@ -248,7 +248,7 @@ RU Asia/Anadyr # Russia
 KZ Asia/Aqtau # Kazakhstan
 KZ Asia/Aqtobe # Kazakhstan
 TM Asia/Ashgabat # Turkmenistan
-TM Asia/Ashkhabad # Turkmenistan
+# TM Asia/Ashkhabad # Turkmenistan
 TM Asia/Atyrau # Turkmenistan
 IQ Asia/Baghdad # Iraq
 BH Asia/Bahrain # Bahrain
@@ -258,15 +258,15 @@ RU Asia/Barnaul # Russia
 LB Asia/Beirut # Lebanon
 KG Asia/Bishkek # Kyrgyzstan
 BN Asia/Brunei # Brunei
-IN Asia/Calcutta # India
+# IN Asia/Calcutta # India
 RU Asia/Chita # Russia
 MN Asia/Choibalsan # Mongolia
 CN Asia/Chongqing # China
-CN Asia/Chungking # China, same as Chongqing
+# CN Asia/Chungking # China, same as Chongqing
 LK Asia/Colombo # Sri Lanka
-BD Asia/Dacca # Bangladesh
+# BD Asia/Dacca # Bangladesh, same as Dahka
 SY Asia/Damascus # Syria
-BD Asia/Dhaka # Bangladesh, same as Dhaka
+BD Asia/Dhaka # Bangladesh, same as Dacca
 TL Asia/Dili # East Timor
 AE Asia/Dubai # United Arab Emirates
 TJ Asia/Dushanbe # Tajikistan
@@ -278,7 +278,7 @@ VN Asia/Ho_Chi_Minh # Vietnam
 HK Asia/Hong_Kong # Hong Kong
 MN Asia/Hovd # Mongolia
 RU Asia/Irkutsk # Russia
-TR Asia/Istanbul # Turkey
+# TR Asia/Istanbul # Turkey
 ID Asia/Jakarta # Indonesia
 ID Asia/Jayapura # Indonesia
 IL Asia/Jerusalem # Israel
@@ -287,14 +287,14 @@ RU Asia/Kamchatka # Russia
 PK Asia/Karachi # Pakistan
 CN Asia/Kashgar # China
 NP Asia/Kathmandu # Nepal
-NP Asia/Katmandu # Nepal
+# NP Asia/Katmandu # Nepal
 RU Asia/Khandyga # Russia
 IN Asia/Kolkata # India
 RU Asia/Krasnoyarsk # Russia
 MY Asia/Kuala_Lumpur # Malaysia
 MY Asia/Kuching # Malaysia
 KW Asia/Kuwait # Kuwait
-MO Asia/Macao # Macau
+# MO Asia/Macao # Macau
 MO Asia/Macau # Macau
 RU Asia/Magadan # Russia
 ID Asia/Makassar # Indonesia
@@ -311,7 +311,7 @@ KP Asia/Pyongyang # North Korea
 QA Asia/Qatar # Qatar
 KZ Asia/Qostanay # Kazakhstan
 KZ Asia/Qyzylorda # Kazakhstan
-MM Asia/Rangoon # Myanmar
+# MM Asia/Rangoon # Myanmar, same as Yangon
 SA Asia/Riyadh # Saudi Arabia
 VN Asia/Saigon # Vietnam
 RU Asia/Sakhalin # Russia
@@ -325,13 +325,13 @@ UZ Asia/Tashkent # Uzbekistan
 GE Asia/Tbilisi # Georgia
 IR Asia/Tehran # Iran
 IL Asia/Tel_Aviv # Israel
-BT Asia/Thimbu # Bhutan
+# BT Asia/Thimbu # Bhutan
 BT Asia/Thimphu # Bhutan
 JP Asia/Tokyo # Japan
 RU Asia/Tomsk # Russia
-ID Asia/Ujung_Pandang # Indonesia, (aka Kakassar)
+# ID Asia/Ujung_Pandang # Indonesia, same as Makassar
 MN Asia/Ulaanbaatar # Mongolia
-MN Asia/Ulan_Bator # Mongolia, (aka Ulaanbaatar)
+# MN Asia/Ulan_Bator # Mongolia, same as Ulaanbaatar
 CN Asia/Urumqi # China
 RU Asia/Ust-Nera # Russia
 LA Asia/Vientiane # Laos
@@ -344,7 +344,7 @@ PT Atlantic/Azores # Portual (??)
 BM Atlantic/Bermuda # Bermuda
 ES Atlantic/Canary # Spain
 CV Atlantic/Cape_Verde # Cape Verde
-FO Atlantic/Faeroe # Faroe Islands
+# FO Atlantic/Faeroe # Faroe Islands
 FO Atlantic/Faroe # Faroe Islands
 SJ Atlantic/Jan_Mayen # Svalbard & Jan Mayen
 PT Atlantic/Madeira # Portugal
@@ -352,7 +352,7 @@ IS Atlantic/Reykjavik # Iceland
 GS Atlantic/South_Georgia # South Georgia
 SH Atlantic/St_Helena # St Helena
 FK Atlantic/Stanley # Falkand Islands
-AU Australia/ACT # Australia
+# AU Australia/ACT # Australia
 AU Australia/Adelaide # Australia
 AU Australia/Brisbane # Australia
 AU Australia/Broken_Hill # Australia
@@ -361,7 +361,7 @@ AU Australia/Currie # Australia
 AU Australia/Darwin # Australia
 AU Australia/Eucla # Australia
 AU Australia/Hobart # Australia
-AU Australia/LHI # Australia
+# AU Australia/LHI # Australia
 AU Australia/Lindeman # Australia
 AU Australia/Lord_Howe # Australia
 AU Australia/Melbourne # Australia
@@ -376,11 +376,11 @@ AU Australia/Victoria # Australia
 AU Australia/West # Australia
 AU Australia/Yancowinna # Australia
 BR Brazil/Acre # Brazil
-BR Brazil/DeNoronha # Brazil (tzdb origin lost)
-BR Brazil/East # Brazil
-BR Brazil/West # Brazil
-00 CET # Misc (Central European Time)
-US CST6CDT # USA
+# BR Brazil/DeNoronha # Brazil (tzdb origin lost)
+# BR Brazil/East # Brazil
+# BR Brazil/West # Brazil
+# 00 CET # Misc (Central European Time)
+# US CST6CDT # USA
 CA Canada/Atlantic # Canada
 CA Canada/Central # Canada
 CA Canada/Eastern # Canada
@@ -390,48 +390,48 @@ CA Canada/Pacific # Canada
 CA Canada/Saskatchewan # Canada
 CA Canada/Yukon # Canada
 CL Chile/Continental # Chile
-CL Chile/EasterIsland # Chile
-CU Cuba # Cuba
-00 EET # Misc (Eastern European Time)
-US EST # USA
-US EST5EDT # USA
-EG Egypt # Egypt
-IE Eire # Ireland
-00 Etc/GMT # Misc
-00 Etc/GMT+0 # Misc
-00 Etc/GMT+1 # Misc
-00 Etc/GMT+10 # Misc
-00 Etc/GMT+11 # Misc
-00 Etc/GMT+12 # Misc
-00 Etc/GMT+2 # Misc
-00 Etc/GMT+3 # Misc
-00 Etc/GMT+4 # Misc
-00 Etc/GMT+5 # Misc
-00 Etc/GMT+6 # Misc
-00 Etc/GMT+7 # Misc
-00 Etc/GMT+8 # Misc
-00 Etc/GMT+9 # Misc
-00 Etc/GMT-0 # Misc
-00 Etc/GMT-1 # Misc
-00 Etc/GMT-10 # Misc
-00 Etc/GMT-11 # Misc
-00 Etc/GMT-12 # Misc
-00 Etc/GMT-13 # Misc
-00 Etc/GMT-14 # Misc
-00 Etc/GMT-2 # Misc
-00 Etc/GMT-3 # Misc
-00 Etc/GMT-4 # Misc
-00 Etc/GMT-5 # Misc
-00 Etc/GMT-6 # Misc
-00 Etc/GMT-7 # Misc
-00 Etc/GMT-8 # Misc
-00 Etc/GMT-9 # Misc
-00 Etc/GMT0 # Misc
-00 Etc/Greenwich # Misc
-00 Etc/UCT # Misc
+# CL Chile/EasterIsland # Chile
+# CU Cuba # Cuba
+# 00 EET # Misc (Eastern European Time)
+# US EST # USA
+# US EST5EDT # USA
+# EG Egypt # Egypt
+# IE Eire # Ireland
+# 00 Etc/GMT # Misc
+# 00 Etc/GMT+0 # Misc
+# 00 Etc/GMT+1 # Misc
+# 00 Etc/GMT+10 # Misc
+# 00 Etc/GMT+11 # Misc
+# 00 Etc/GMT+12 # Misc
+# 00 Etc/GMT+2 # Misc
+# 00 Etc/GMT+3 # Misc
+# 00 Etc/GMT+4 # Misc
+# 00 Etc/GMT+5 # Misc
+# 00 Etc/GMT+6 # Misc
+# 00 Etc/GMT+7 # Misc
+# 00 Etc/GMT+8 # Misc
+# 00 Etc/GMT+9 # Misc
+# 00 Etc/GMT-0 # Misc
+# 00 Etc/GMT-1 # Misc
+# 00 Etc/GMT-10 # Misc
+# 00 Etc/GMT-11 # Misc
+# 00 Etc/GMT-12 # Misc
+# 00 Etc/GMT-13 # Misc
+# 00 Etc/GMT-14 # Misc
+# 00 Etc/GMT-2 # Misc
+# 00 Etc/GMT-3 # Misc
+# 00 Etc/GMT-4 # Misc
+# 00 Etc/GMT-5 # Misc
+# 00 Etc/GMT-6 # Misc
+# 00 Etc/GMT-7 # Misc
+# 00 Etc/GMT-8 # Misc
+# 00 Etc/GMT-9 # Misc
+# 00 Etc/GMT0 # Misc
+# 00 Etc/Greenwich # Misc
+# 00 Etc/UCT # Misc
 00 Etc/UTC # Misc
-00 Etc/Universal # Misc
-00 Etc/Zulu # Misc
+# 00 Etc/Universal # Misc
+# 00 Etc/Zulu # Misc
 NL Europe/Amsterdam # Netherlands
 AD Europe/Andorra # Andorra
 RU Europe/Astrakhan # Russia
@@ -454,7 +454,7 @@ IM Europe/Isle_of_Man # Isle of Man
 TR Europe/Istanbul # Turkey
 JE Europe/Jersey # Jersey
 RU Europe/Kaliningrad # Russia
-UA Europe/Kiev # Ukraine
+# UA Europe/Kiev # Ukraine
 RU Europe/Kirov # Russia
 UA Europe/Kyiv # Ukraine
 PT Europe/Lisbon # Portugal
@@ -467,7 +467,7 @@ AX Europe/Mariehamn # Aland Islands
 BY Europe/Minsk # Belarus
 MC Europe/Monaco # Monaco
 RU Europe/Moscow # Russia
-CY Europe/Nicosia # Cyprus
+# CY Europe/Nicosia # Cyprus
 NO Europe/Oslo # Norway
 FR Europe/Paris # France
 ME Europe/Podgorica # Montenegro
@@ -496,16 +496,16 @@ PL Europe/Warsaw # Poland
 HR Europe/Zagreb # Croatia
 UA Europe/Zaporozhye # Ukraine
 CH Europe/Zurich # Switzerland
-GB GB # Britain (UK)
-GB GB-Eire # Britain (UK), Northern Ireland
-00 GMT # Misc
-00 GMT+0 # Misc
-00 GMT-0 # Misc
-00 GMT0 # Misc
-00 Greenwich # Misc
-US HST # USA
-HK Hongkong # Hong Kong
-IS Iceland # Iceland
+# GB GB # Britain (UK)
+# GB GB-Eire # Britain (UK), Northern Ireland
+# 00 GMT # Misc
+# 00 GMT+0 # Misc
+# 00 GMT-0 # Misc
+# 00 GMT0 # Misc
+# 00 Greenwich # Misc
+# US HST # USA
+# HK Hongkong # Hong Kong
+# IS Iceland # Iceland
 MG Indian/Antananarivo # Madagascar
 MU Indian/Chagos # Mauritius (according to United Nations)
 IO Indian/Chagos # British Indian Ocean Territory
@@ -518,28 +518,28 @@ MV Indian/Maldives # Maldives
 MU Indian/Mauritius # Mauritius
 YT Indian/Mayotte # Mayotte
 RE Indian/Reunion # Reunion
-IR Iran # Iran
-IL Israel # Israel
-JM Jamaica # Jamaica
-JP Japan # Japan
-MH Kwajalein # Marshall Island
-LY Libya # Libya
-00 MET # Misc (Middle European Time)
-US MST # USA
-US MST7MDT # USA
+# IR Iran # Iran
+# IL Israel # Israel
+# JM Jamaica # Jamaica
+# JP Japan # Japan
+# MH Kwajalein # Marshall Island
+# LY Libya # Libya
+# 00 MET # Misc (Middle European Time)
+# US MST # USA
+# US MST7MDT # USA
 MX Mexico/BajaNorte # Mexico
 MX Mexico/BajaSur # Mexico
 MX Mexico/General # Mexico
-NZ NZ # New Zealand
-NZ NZ-CHAT # New Zealand (aka Chatham Island)
-US Navajo # USA
-CN PRC # China
-US PST8PDT # USA
+# NZ NZ # New Zealand
+# NZ NZ-CHAT # New Zealand (aka Chatham Island)
+# US Navajo # USA
+# CN PRC # China
+# US PST8PDT # USA
 WS Pacific/Apia # Samoa (Western)
 NZ Pacific/Auckland # New Zealand
 PG Pacific/Bougainville # Papua New Guinea
 NZ Pacific/Chatham # New Zealand
-FM Pacific/Chuuk # Micronesia (Aka Truk)
+FM Pacific/Chuuk # Micronesia, same as Truk
 CL Pacific/Easter # Chile
 VU Pacific/Efate # Vanuatu
 KI Pacific/Enderbury # Kiribati
@@ -571,21 +571,21 @@ FM Pacific/Ponape # Micronesia (aka Phonpei)
 PG Pacific/Port_Moresby # Papua New Guinea
 CK Pacific/Rarotonga # Cook Islands
 MP Pacific/Saipan # Northern Mariana Islands
-WS Pacific/Samoa # Samoa (Western)
+# WS Pacific/Samoa # Samoa (Western)
 PF Pacific/Tahiti # French Polynesia
 KI Pacific/Tarawa # Kiribati
 TO Pacific/Tongatapu # Tonga
-FM Pacific/Truk # Micronesia (aka Chuuk)
+# FM Pacific/Truk # Micronesia, same as Chuuk
 UM Pacific/Wake # US Minor Outlying Islands
 WF Pacific/Wallis # Wallis & Futuna
 FM Pacific/Yap # Micronesia
-PL Poland # Poland
-PT Portugal # Portual
-TW ROC # Taiwan
-KR ROK # South Korea
-SG Singapore # Singapore
-TR Turkey # Turkey
-00 UCT # Misc
+# PL Poland # Poland
+# PT Portugal # Portual
+# TW ROC # Taiwan
+# KR ROK # South Korea
+# SG Singapore # Singapore
+# TR Turkey # Turkey
+# 00 UCT # Misc
 US US/Alaska # USA
 US US/Aleutian # USA
 US US/Arizona # USA
@@ -599,7 +599,7 @@ US US/Mountain # USA
 US US/Pacific # USA
 AS US/Samoa # American Samoa
 00 UTC # Misc
-00 Universal # Misc (aka UTC)
-RU W-SU Russia (TZDB origin lost)
-00 WET # Misc (Western European Time)
-00 Zulu # Misc
+# 00 Universal # Misc (aka UTC)
+# RU W-SU Russia (TZDB origin lost)
+# 00 WET # Misc (Western European Time)
+# 00 Zulu # Misc

@@ -76,7 +76,7 @@ Similar America/Pangnirtung -> America/Iqaluit # Canada -> Canada
 Similar America/Port_of_Spain -> America/Puerto_Rico # Trinidad -> Puerto Rico
 Similar America/Porto_Acre -> America/Rio_Branco # Brazil -> Brazil
 Similar America/Rainy_River -> America/Winnipeg # Canada -> Canada
-Similar America/Rosario -> America/Argentina/Cordoba # Argentina -> Argentina
+Obsolete America/Rosario -> America/Argentina/Cordoba # Argentina -> Argentina
 Similar America/Santa_Isabel -> America/Tijuana # Mexico -> Mexico
 Similar America/Shiprock -> America/Denver # USA -> USA
 Similar America/St_Barthelemy -> America/Puerto_Rico # St Barthelemy -> Puerto Rico
@@ -251,7 +251,7 @@ Similar US/Michigan -> America/Detroit
 Similar US/Mountain -> America/Denver
 Similar US/Pacific -> America/Los_Angeles
 Similar US/Samoa -> Pacific/Pago_Pago
-Alias UTC -> Etc/UTC
+Similar UTC -> Etc/UTC
 Obsolete Universal -> Etc/UTC
 Obsolete W-SU -> Europe/Moscow
 Alias Zulu -> Etc/UTC
