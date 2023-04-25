@@ -69,7 +69,7 @@ def main() -> None:
 
     # Read and check links.
     links = read_links(args.links)
-    classified_links = read_classified_links(args.classified_links)
+    classified_links = read_links(args.classified_links)
     check_links(links, classified_links)
 
     # Read and check ISO countries.
@@ -129,9 +129,9 @@ def read_classified_zones(filename: str) -> Dict[str, Entry]:
 
 def read_links(filename: str) -> Dict[str, Entry]:
     """Read Link records of the form:
-        Link link_name -> target_name
+        (Link|Alias|Similar|Obsolete) source target
     and return:
-        {link_name -> {target, type}}
+        {target -> {source, type}}
     """
     links: Dict[str, Entry] = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
@@ -141,33 +141,10 @@ def read_links(filename: str) -> Dict[str, Entry]:
                 break
             tokens: List[str] = line.split()
             type = tokens[0]
-            assert type == 'Link'
-            link_name = tokens[1]
-            target_name = tokens[3]
-            links[link_name] = Entry(target_name, type)
-    return links
-
-
-def read_classified_links(filename: str) -> Dict[str, Entry]:
-    """Read classified links of the form:
-        Alias link_name -> target_name
-        Similar link_name -> target_name
-        Obsolete link_name -> target_name
-    and return:
-        {link_name -> {target, type}}
-    """
-    links: Dict[str, Entry] = {}
-    with open(filename, 'r', newline='', encoding='utf-8') as f:
-        while True:
-            line = read_line(f)
-            if line is None:
-                break
-            tokens: List[str] = line.split()
-            type = tokens[0]
-            assert type in ['Alias', 'Similar', 'Obsolete']
-            link_name = tokens[1]
-            target_name = tokens[3]
-            links[link_name] = Entry(target_name, type)
+            assert type in ['Link', 'Alias', 'Similar', 'Obsolete']
+            source = tokens[1]
+            target = tokens[2]
+            links[target] = Entry(source, type)
     return links
 
 
