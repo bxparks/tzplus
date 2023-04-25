@@ -6,7 +6,7 @@ TZDB_DIR := ../tzdb
 
 .PHONY: country_timezones
 country_timezones:
-	$(TOOLS_DIR)/check_timezone_files.py \
+	$(TOOLS_DIR)/check_data.py \
 		--zones zones.txt \
 		--links links.txt \
 		--classified_zones classified_zones.txt \
@@ -17,7 +17,7 @@ country_timezones:
 
 .PHONY: geonames
 geonames:
-	$(TOOLS_DIR)/check_timezone_files.py \
+	$(TOOLS_DIR)/check_data.py \
 		--zones zones.txt \
 		--links links.txt \
 		--classified_zones classified_zones.txt \

@@ -2,7 +2,7 @@
 
 # Usage:
 #
-# $ check_timezone_files.py
+# $ check_data.py
 #   --zones {file}
 #   --links {file}
 #   --classified_links {file}
