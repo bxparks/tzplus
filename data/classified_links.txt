@@ -214,18 +214,17 @@ Obsolete Pacific/Auckland NZ
 Obsolete Pacific/Chatham NZ-CHAT
 Obsolete America/Denver Navajo
 Obsolete Asia/Shanghai PRC
-Similar Pacific/Port_Moresby Pacific/Chuuk # Same as Pacific/Truk
+Similar Pacific/Port_Moresby Pacific/Chuuk
 Similar Pacific/Kanton Pacific/Enderbury
 Similar Pacific/Tarawa Pacific/Funafuti
 Similar Pacific/Honolulu Pacific/Johnston
 Similar Pacific/Tarawa Pacific/Majuro
 Similar Pacific/Pago_Pago Pacific/Midway
-Similar Pacific/Guadalcanal Pacific/Pohnpei # Alias of Pacific/Ponape
-Similar Pacific/Guadalcanal Pacific/Ponape # Alias of Pacific/Pohnpei
+Similar Pacific/Guadalcanal Pacific/Pohnpei
+Alias Pacific/Pohnpei Pacific/Ponape
 Similar Pacific/Guam Pacific/Saipan
 Alias Pacific/Pago_Pago Pacific/Samoa
-Link Pacific/Port_Moresby Pacific/Truk ### Same as Pacific/Chuuk
-Alias Pacific/Chuuk Pacific/Truk
+Alias Pacific/Chuuk Pacific/Truk # Was: Pacific/Port_Moresby Pacific/Truk
 Similar Pacific/Tarawa Pacific/Wake
 Similar Pacific/Tarawa Pacific/Wallis
 Similar Pacific/Port_Moresby Pacific/Yap

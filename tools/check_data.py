@@ -77,11 +77,9 @@ def main() -> None:
     iso_short = read_countries(args.iso_short)
     check_iso_names(iso_long, iso_short)
 
-    # Read country to timezones list, and verify.
+    # Read check country-to-timezones.
     country_timezones = read_country_timezones(args.country_timezones)
     check_countries(country_timezones, iso_short)
-
-    # Read zones, and check classified timezones.
     check_timezones(country_timezones, classified_zones, classified_links)
 
 
@@ -263,11 +261,8 @@ def check_countries(
     countries: Dict[str, str],
 ) -> None:
     if countries.keys() != country_timezones.keys():
-        # There seem to be no timezones defined for BV and HM
-        EXPECTED_MISSING = set(("BV", "HM"))
-        # Check that (almost) all ISO countries has at least one timezone.
+        # Check that all ISO countries has at least one timezone.
         missing = countries.keys() - country_timezones.keys()
-        missing = missing - EXPECTED_MISSING
         if missing:
             error("Missing countries in country_timezones", missing)
 
@@ -295,6 +290,7 @@ def check_timezones(
         name for name, entry in classified_links.items()
         if entry.type == 'Similar'
     ])
+    expected.add('undefined')
 
     selected: Set[str] = set()
     for z in country_timezones.values():

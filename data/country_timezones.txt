@@ -567,7 +567,7 @@ AS Pacific/Pago_Pago # American Samoa
 PW Pacific/Palau # Palau
 PN Pacific/Pitcairn # Pitcairn
 FM Pacific/Pohnpei # Micronesia
-FM Pacific/Ponape # Micronesia (aka Phonpei)
+# FM Pacific/Ponape # Micronesia (aka Pohnpei)
 PG Pacific/Port_Moresby # Papua New Guinea
 CK Pacific/Rarotonga # Cook Islands
 MP Pacific/Saipan # Northern Mariana Islands
@@ -603,3 +603,5 @@ AS US/Samoa # American Samoa
 # RU W-SU Russia (TZDB origin lost)
 # 00 WET # Misc (Western European Time)
 # 00 Zulu # Misc
+BV undefined # Bouvet Island is uninhabited, no timezone
+HM undefined # Heard Island and McDonald Island are uninhabited, no timezone
