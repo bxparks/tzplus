@@ -10,7 +10,7 @@ GH Africa/Accra # Ghana
 ET Africa/Addis_Ababa # Ethiopia
 DZ Africa/Algiers # Algeria
 ER Africa/Asmara # Eritrea
-# ER Africa/Asmera # same as Asmara
+# ER Africa/Asmera # same as Africa/Asmara
 ML Africa/Bamako # Mali
 CF Africa/Bangui # Central African Republic
 GM Africa/Banjul # Gambia
@@ -264,9 +264,9 @@ MN Asia/Choibalsan # Mongolia
 CN Asia/Chongqing # China
 # CN Asia/Chungking # China, same as Chongqing
 LK Asia/Colombo # Sri Lanka
-# BD Asia/Dacca # Bangladesh, same as Dahka
+# BD Asia/Dacca # Bangladesh, same as Asia/Dahka
 SY Asia/Damascus # Syria
-BD Asia/Dhaka # Bangladesh, same as Dacca
+BD Asia/Dhaka # Bangladesh
 TL Asia/Dili # East Timor
 AE Asia/Dubai # United Arab Emirates
 TJ Asia/Dushanbe # Tajikistan
@@ -531,7 +531,7 @@ MX Mexico/BajaNorte # Mexico
 MX Mexico/BajaSur # Mexico
 MX Mexico/General # Mexico
 # NZ NZ # New Zealand
-# NZ NZ-CHAT # New Zealand (aka Chatham Island)
+# NZ NZ-CHAT # New Zealand, same as Pacific/Chatham
 # US Navajo # USA
 # CN PRC # China
 # US PST8PDT # USA
@@ -539,7 +539,7 @@ WS Pacific/Apia # Samoa (Western)
 NZ Pacific/Auckland # New Zealand
 PG Pacific/Bougainville # Papua New Guinea
 NZ Pacific/Chatham # New Zealand
-FM Pacific/Chuuk # Micronesia, same as Truk
+FM Pacific/Chuuk # Micronesia
 CL Pacific/Easter # Chile
 VU Pacific/Efate # Vanuatu
 KI Pacific/Enderbury # Kiribati
@@ -567,7 +567,7 @@ AS Pacific/Pago_Pago # American Samoa
 PW Pacific/Palau # Palau
 PN Pacific/Pitcairn # Pitcairn
 FM Pacific/Pohnpei # Micronesia
-# FM Pacific/Ponape # Micronesia (aka Pohnpei)
+# FM Pacific/Ponape # Micronesia, same as Pacific/Pohnpei
 PG Pacific/Port_Moresby # Papua New Guinea
 CK Pacific/Rarotonga # Cook Islands
 MP Pacific/Saipan # Northern Mariana Islands
@@ -575,7 +575,7 @@ MP Pacific/Saipan # Northern Mariana Islands
 PF Pacific/Tahiti # French Polynesia
 KI Pacific/Tarawa # Kiribati
 TO Pacific/Tongatapu # Tonga
-# FM Pacific/Truk # Micronesia, same as Chuuk
+# FM Pacific/Truk # Micronesia, same as Pacific/Chuuk
 UM Pacific/Wake # US Minor Outlying Islands
 WF Pacific/Wallis # Wallis & Futuna
 FM Pacific/Yap # Micronesia
