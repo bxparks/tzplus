@@ -590,10 +590,10 @@ US US/Alaska # USA
 US US/Aleutian # USA
 US US/Arizona # USA
 US US/Central # USA
-US US/East-Indiana # USA
+# US US/East-Indiana # same as America/Indiana/Indianapolis
 US US/Eastern # USA
 US US/Hawaii # USA
-US US/Indiana-Starke # USA
+# US US/Indiana-Starke # same as America/Indiana/Knox
 US US/Michigan # USA
 US US/Mountain # USA
 US US/Pacific # USA
@@ -603,5 +603,3 @@ AS US/Samoa # American Samoa
 # RU W-SU Russia (TZDB origin lost)
 # 00 WET # Misc (Western European Time)
 # 00 Zulu # Misc
-BV undefined # Bouvet Island is uninhabited, no timezone
-HM undefined # Heard Island and McDonald Island are uninhabited, no timezone

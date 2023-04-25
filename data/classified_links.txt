@@ -239,10 +239,10 @@ Similar America/Anchorage US/Alaska
 Similar America/Adak US/Aleutian
 Similar America/Phoenix US/Arizona
 Similar America/Chicago US/Central
-Similar America/Indiana/Indianapolis US/East-Indiana
+Alias America/Indiana/Indianapolis US/East-Indiana
 Similar America/New_York US/Eastern
 Similar Pacific/Honolulu US/Hawaii
-Similar America/Indiana/Knox US/Indiana-Starke
+Alias America/Indiana/Knox US/Indiana-Starke
 Similar America/Detroit US/Michigan
 Similar America/Denver US/Mountain
 Similar America/Los_Angeles US/Pacific
