@@ -10,7 +10,7 @@ GH Africa/Accra # Ghana
 ET Africa/Addis_Ababa # Ethiopia
 DZ Africa/Algiers # Algeria
 ER Africa/Asmara # Eritrea
-ER Africa/Asmera # Eritrea
+# ER Africa/Asmera # same as Asmara
 ML Africa/Bamako # Mali
 CF Africa/Bangui # Central African Republic
 GM Africa/Banjul # Gambia
@@ -375,7 +375,7 @@ AU Australia/Tasmania # Australia
 AU Australia/Victoria # Australia
 AU Australia/West # Australia
 AU Australia/Yancowinna # Australia
-BR Brazil/Acre # Brazil
+# BR Brazil/Acre # same as Porto_Acre
 # BR Brazil/DeNoronha # Brazil (tzdb origin lost)
 # BR Brazil/East # Brazil
 # BR Brazil/West # Brazil
