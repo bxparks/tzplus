@@ -2,8 +2,8 @@
 # applications with small displays. The guidelines were:
 #
 # * ASCII only, no Unicode
-# * No periods (e.g. "N", not "N." for North)
-# * Shorten North, South, sometimes West and East
+# * Shorten North, South, West, East to N, S, W, E
+# * No periods (e.g. "N" and "St", not "N." and "St.")
 # * Replace "Island" with "Is"
 # * Replace "French" with "Fr"
 # * Remove parts after "&"
@@ -15,6 +15,8 @@
 # * Replace "Equitorial" with "Eq"
 # * Replace "British" with "Br"
 # * Replace "African" with "Af"
+# * Replace French, Portugese, Dutch names with more familiar English names
+#   * "Ivory Coast" instead of "Cote d'Ivoire"
 # * Very long names replaced with acronym:
 #   * "United States of America" -> USA
 #   * "United Arab Emirates"  -> UAE
@@ -112,7 +114,7 @@ GN	Guinea
 GP	Guadeloupe
 GQ	Eq Guinea # Equatorial Guinea
 GR	Greece
-GS	South Georgia
+GS	S Georgia
 GT	Guatemala
 GU	Guam
 GW	Guinea-Bissau
