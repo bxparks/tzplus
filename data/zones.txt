@@ -1,3 +1,6 @@
+# These are the 'Zone' entries extracted from TZDB raw files
+# (https://github.com/eggert/tz), sorted by the Zone name.
+
 Zone Africa/Abidjan
 Zone Africa/Algiers
 Zone Africa/Bissau

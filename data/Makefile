@@ -5,7 +5,7 @@ TZDB_DIR := ../tzdb
 #-----------------------------------------------------------------------------
 
 .PHONY: country_timezones
-country_timezones:
+country_timezones: zones.txt links.txt
 	$(TOOLS_DIR)/check_data.py \
 		--zones zones.txt \
 		--links links.txt \
@@ -16,7 +16,7 @@ country_timezones:
 		--country_timezones country_timezones.txt
 
 .PHONY: geonames
-geonames:
+geonames: zones.txt links.txt
 	$(TOOLS_DIR)/check_data.py \
 		--zones zones.txt \
 		--links links.txt \

@@ -17,6 +17,16 @@ fi
 
 cd $1
 
+cat << END
+# These are the 'Link' entries extracted from TZDB raw files
+# (https://github.com/eggert/tz), sorted by target link (i.e. the second
+# argument of the 'Link' tag).
+
+END
+
+# Sort using native ASCII bytes, instead of Unicode
+export LC_ALL=C
+
 cat \
 africa \
 antarctica \
@@ -27,4 +37,4 @@ etcetera \
 europe \
 northamerica \
 southamerica |
-    grep '^Link' | awk '{print "Link", $3, "->", $2}' | sort
+    grep '^Link' | awk '{print "Link", $2, $3}' | sort -t ' ' -k 3

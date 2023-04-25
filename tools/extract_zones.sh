@@ -17,6 +17,12 @@ fi
 
 cd $1
 
+cat << END
+# These are the 'Zone' entries extracted from TZDB raw files
+# (https://github.com/eggert/tz), sorted by the Zone name.
+
+END
+
 cat \
 africa \
 antarctica \
