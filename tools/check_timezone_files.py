@@ -6,6 +6,7 @@
 #   --zones {file}
 #   --links {file}
 #   --classified_links {file}
+#   --classified_zones {file}
 #   --iso_long {file}
 #   --iso_short {file}
 #   --country_timezones country_timezones.txt
@@ -41,6 +42,10 @@ def main() -> None:
         help='File of classified links',
         required=True)
     parser.add_argument(
+        '--classified_zones',
+        help='File of classified zones',
+        required=True)
+    parser.add_argument(
         '--iso_long',
         help='Long country names',
         required=True)
@@ -57,6 +62,11 @@ def main() -> None:
     # Configure logging
     logging.basicConfig(level=logging.INFO)
 
+    # Read and check zones.
+    zones = read_zones(args.zones)
+    classified_zones = read_zones(args.classified_zones)
+    check_zones(zones, classified_zones)
+
     # Read and check links.
     links = read_links(args.links)
     classified_links = read_classified_links(args.classified_links)
@@ -72,13 +82,12 @@ def main() -> None:
     check_countries(country_timezones, iso_short)
 
     # Read zones, and check classified timezones.
-    zones = read_zones(args.zones)
-    check_timezones(country_timezones, zones, classified_links)
+    check_timezones(country_timezones, classified_zones, classified_links)
 
 
 def read_zones(filename: str) -> Dict[str, Entry]:
     """Read Zone records of the form:
-        Zone zone_name
+        Zone|Obsolete zone_name
     and return:
         {zone_name -> {target, 'Zone'}}
     """
@@ -90,10 +99,32 @@ def read_zones(filename: str) -> Dict[str, Entry]:
                 break
             tokens: List[str] = line.split()
             type = tokens[0]
-            assert type == 'Zone'
+            assert type in ['Zone', 'Obsolete']
             zone_name = tokens[1]
-            zones[zone_name] = Entry(zone_name, 'Zone')
+            zones[zone_name] = Entry(zone_name, type)
     return zones
+
+
+def read_classified_zones(filename: str) -> Dict[str, Entry]:
+    """Read classified links of the form:
+        Zone zone_name -> target_name
+        Obsolete zone_name -> target_name
+    and return:
+        {zone_name -> {target, type}}
+    """
+    links: Dict[str, Entry] = {}
+    with open(filename, 'r', newline='', encoding='utf-8') as f:
+        while True:
+            line = read_line(f)
+            if line is None:
+                break
+            tokens: List[str] = line.split()
+            type = tokens[0]
+            assert type in ['Zone', 'Obsolete']
+            link_name = tokens[1]
+            target_name = tokens[3]
+            links[link_name] = Entry(target_name, type)
+    return links
 
 
 def read_links(filename: str) -> Dict[str, Entry]:
@@ -205,6 +236,20 @@ def read_line(input: TextIO) -> Optional[str]:
         return line
 
 
+def check_zones(
+    zones: Dict[str, Entry],
+    classified_zones: Dict[str, Entry],
+) -> None:
+    if zones.keys() != classified_zones.keys():
+        extra = classified_zones.keys() - zones.keys()
+        if extra:
+            raise Exception(f"Extra zones in classified_zones: {extra}")
+
+        missing = zones.keys() - classified_zones.keys()
+        if missing:
+            raise Exception(f"Missing zones in classified zones: {missing}")
+
+
 def check_links(
     links: Dict[str, Entry],
     classified_links: Dict[str, Entry],
@@ -261,11 +306,14 @@ def check_countries(
 
 def check_timezones(
     country_timezones: CountryTimezones,
-    zones: Dict[str, Entry],
+    classified_zones: Dict[str, Entry],
     classified_links: Dict[str, Entry],
 ) -> None:
     expected: Set[str] = set()
-    expected.update(zones.keys())
+    expected.update([
+        name for name, entry in classified_zones.items()
+        if entry.type == 'Zone'
+    ])
     expected.update([
         name for name, entry in classified_links.items()
         if entry.type == 'Similar'

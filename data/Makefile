@@ -9,6 +9,7 @@ country_timezones:
 	$(TOOLS_DIR)/check_timezone_files.py \
 		--zones zones.txt \
 		--links links.txt \
+		--classified_zones classified_zones.txt \
 		--classified_links classified_links.txt \
 		--iso_long iso3166_long.txt \
 		--iso_short iso3166_short.txt \
@@ -19,6 +20,7 @@ geonames:
 	$(TOOLS_DIR)/check_timezone_files.py \
 		--zones zones.txt \
 		--links links.txt \
+		--classified_zones classified_zones.txt \
 		--classified_links classified_links.txt \
 		--iso_long iso3166_long.txt \
 		--iso_short iso3166_short.txt \
