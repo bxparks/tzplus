@@ -75,5 +75,7 @@ europe|\
 northamerica|\
 southamerica|\
 backzone|\
-iso3166.tab)
+iso3166.tab|\
+zone.tab|\
+zone1970.tab)
 rm -rf .git .gitignore
