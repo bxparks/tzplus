@@ -5,7 +5,7 @@
 # $ check_timezone_files.py
 #   --zones {file}
 #   --links {file}
-#   --resolved_links {file}
+#   --classified_links {file}
 #   --iso_long {file}
 #   --iso_short {file}
 #   --country_timezones country_timezones.txt
@@ -37,8 +37,8 @@ def main() -> None:
     parser.add_argument('--zones', help='File of zones', required=True)
     parser.add_argument('--links', help='File of links', required=True)
     parser.add_argument(
-        '--resolved_links',
-        help='File of resolved links',
+        '--classified_links',
+        help='File of classified links',
         required=True)
     parser.add_argument(
         '--iso_long',
@@ -59,8 +59,8 @@ def main() -> None:
 
     # Read and check links.
     links = read_links(args.links)
-    resolved_links = read_resolved_links(args.resolved_links)
-    check_links(links, resolved_links)
+    classified_links = read_classified_links(args.classified_links)
+    check_links(links, classified_links)
 
     # Read and check ISO countries.
     iso_long = read_countries(args.iso_long)
@@ -71,16 +71,16 @@ def main() -> None:
     country_timezones = read_country_timezones(args.country_timezones)
     check_countries(country_timezones, iso_short)
 
-    # Read zones, and check resolved timezones.
+    # Read zones, and check classified timezones.
     zones = read_zones(args.zones)
-    check_timezones(country_timezones, zones, resolved_links)
+    check_timezones(country_timezones, zones, classified_links)
 
 
 def read_zones(filename: str) -> Dict[str, Entry]:
     """Read Zone records of the form:
         Zone zone_name
     and return:
-        {zone_name -> True}
+        {zone_name -> {target, 'Zone'}}
     """
     zones: Dict[str, Entry] = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
@@ -100,7 +100,7 @@ def read_links(filename: str) -> Dict[str, Entry]:
     """Read Link records of the form:
         Link link_name -> target_name
     and return:
-        {link_name -> target_name}
+        {link_name -> {target, type}}
     """
     links: Dict[str, Entry] = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
@@ -117,13 +117,13 @@ def read_links(filename: str) -> Dict[str, Entry]:
     return links
 
 
-def read_resolved_links(filename: str) -> Dict[str, Entry]:
-    """Read Resolved records of the form:
+def read_classified_links(filename: str) -> Dict[str, Entry]:
+    """Read classified links of the form:
         Alias link_name -> target_name
         Similar link_name -> target_name
         Obsolete link_name -> target_name
     and return:
-        {link_name -> target_name}
+        {link_name -> {target, type}}
     """
     links: Dict[str, Entry] = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
@@ -207,16 +207,16 @@ def read_line(input: TextIO) -> Optional[str]:
 
 def check_links(
     links: Dict[str, Entry],
-    resolved_links: Dict[str, Entry],
+    classified_links: Dict[str, Entry],
 ) -> None:
-    if links.keys() != resolved_links.keys():
-        extra = resolved_links.keys() - links.keys()
+    if links.keys() != classified_links.keys():
+        extra = classified_links.keys() - links.keys()
         if extra:
-            raise Exception(f"Extra links in resolved_links: {extra}")
+            raise Exception(f"Extra links in classified_links: {extra}")
 
-        missing = links.keys() - resolved_links.keys()
+        missing = links.keys() - classified_links.keys()
         if missing:
-            raise Exception(f"Missing links in resolved links: {missing}")
+            raise Exception(f"Missing links in classified links: {missing}")
 
 
 def check_iso_names(
@@ -262,12 +262,12 @@ def check_countries(
 def check_timezones(
     country_timezones: CountryTimezones,
     zones: Dict[str, Entry],
-    resolved_links: Dict[str, Entry],
+    classified_links: Dict[str, Entry],
 ) -> None:
     expected: Set[str] = set()
     expected.update(zones.keys())
     expected.update([
-        name for name, entry in resolved_links.items()
+        name for name, entry in classified_links.items()
         if entry.type == 'Similar'
     ])
 
