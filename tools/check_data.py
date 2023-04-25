@@ -258,20 +258,26 @@ def check_countries(
     country_timezones: CountryTimezones,
     countries: Dict[str, str],
 ) -> None:
-    if countries.keys() != country_timezones.keys():
+    # Set of expected ISO countries, with the exception of (BV and HM) which
+    # don't have timezone because there are uninhabited.
+    expected = set(countries.keys())
+    expected.remove('BV')
+    expected.remove('HM')
+
+    # Set of classified ISO countries. The exception is the pseudo "00" country
+    # which is assigned to timezones such as "UTC" or "Etc/UTC".
+    selected = set(country_timezones.keys())
+    selected.discard('00')
+
+    if expected != selected:
         # Check that each ISO countries has at least one timezone.
-        # There are currently (TZDB 2023c) 2 ISO countries without a timezone:
-        # BV and HM. But those are marked with a sentinel "undefined" timezone.
-        missing = countries.keys() - country_timezones.keys()
+        missing = expected - selected
         if missing:
             error("Missing countries in country_timezones", missing)
 
         # Check that every country in the country_timezones.txt exists in the
-        # ISO country file. The exception is the pseudo ISO code "00" which is
-        # assigned to timezones that don't correspond to ISO countries. Example
-        # "UTC" or "Etc/UTC".
+        # ISO country file.
         extra = country_timezones.keys() - countries.keys()
-        extra.remove('00')
         if extra:
             error("Extra countries in country_timezones", extra)
 
@@ -293,7 +299,6 @@ def check_timezones(
         name for name, entry in classified_links.items()
         if entry.type == 'Similar'
     ])
-    expected.add('undefined')
 
     # Collect the timezones which appear in country_timezones.txt.
     selected: Set[str] = set()
