@@ -84,6 +84,7 @@ def main() -> None:
     classified_links = read_links(args.classified_links)
     check_cycle(args.classified_links, classified_links)
     check_links(links, classified_links)
+    check_link_targets(classified_links, links, zones)
 
     # Read and check ISO countries.
     iso_long = read_countries(args.iso_long)
@@ -212,6 +213,7 @@ def check_zones(
     zones: Dict[str, Entry],
     classified_zones: Dict[str, Entry],
 ) -> None:
+    """Check that classified_zones and zones have identical entries."""
     if zones.keys() != classified_zones.keys():
         extra = classified_zones.keys() - zones.keys()
         if extra:
@@ -226,6 +228,7 @@ def check_links(
     links: Dict[str, Entry],
     classified_links: Dict[str, Entry],
 ) -> None:
+    """Check that classified_links and links have identical entries."""
     if links.keys() != classified_links.keys():
         extra = classified_links.keys() - links.keys()
         if extra:
@@ -234,6 +237,19 @@ def check_links(
         missing = links.keys() - classified_links.keys()
         if missing:
             error("Missing links in classified links", missing)
+
+
+def check_link_targets(
+    classified_links: Dict[str, Entry],
+    links: Dict[str, Entry],
+    zones: Dict[str, Entry]
+) -> None:
+    """Check that every Link target in classified_links is an existing Link or
+    Zone. This checks for typos.
+    """
+    for link, entry in classified_links.items():
+        if entry.target not in links and entry.target not in zones:
+            error(f"Invalid Link target '{entry.target}'")
 
 
 def check_iso_names(
