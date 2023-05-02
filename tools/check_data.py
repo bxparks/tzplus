@@ -5,12 +5,13 @@
 # $ check_data.py
 #   --zones {file}
 #   --links {file}
-#   --classified_links {file}
 #   --classified_zones {file}
+#   --classified_links {file}
 #   --iso_long {file}
 #   --iso_short {file}
 #   --country_timezones country_timezones.txt
 
+from typing import Any
 from typing import Dict
 from typing import Iterable
 from typing import List
@@ -49,12 +50,12 @@ def main() -> None:
     parser.add_argument('--zones', help='File of zones', required=True)
     parser.add_argument('--links', help='File of links', required=True)
     parser.add_argument(
-        '--classified_links',
-        help='File of classified links',
-        required=True)
-    parser.add_argument(
         '--classified_zones',
         help='File of classified zones',
+        required=True)
+    parser.add_argument(
+        '--classified_links',
+        help='File of classified links',
         required=True)
     parser.add_argument(
         '--iso_long',
@@ -91,10 +92,25 @@ def main() -> None:
     iso_short = read_countries(args.iso_short)
     check_iso_names(iso_long, iso_short)
 
-    # Read check country-to-timezones.
+    # Read and check country-to-timezones.
     country_timezones = read_country_timezones(args.country_timezones)
     check_countries(country_timezones, iso_short)
     check_timezones(country_timezones, classified_zones, classified_links)
+
+    # Print summary
+    print(f"{args.zones}: {len(zones)}")
+    print(f"{args.links}: {len(links)}")
+    print(f"{args.classified_zones}: {len(classified_zones)}")
+    print(f"{args.classified_links}: {len(classified_links)}")
+    print(f"{args.iso_long}: {len(iso_long)}")
+    print(f"{args.iso_short}: {len(iso_short)}")
+    countries = len(country_timezones) - 1  # remove "00" pseudo country code
+    timezones = sum([len(entry) for _, entry in country_timezones.items()])
+    print(
+        f"{args.country_timezones}: "
+        f"country_codes={countries}, "
+        f"timezones={timezones}"
+    )
 
 
 def read_zones(filename: str) -> Dict[str, Entry]:
