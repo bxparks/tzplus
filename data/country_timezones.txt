@@ -1,9 +1,19 @@
-# A mapping of ISO 3166 country codes and and TZDB timezones such that:
+# A manually maintained mapping of ISO 3166 country codes and TZDB timezones
+# such that:
 #
 # 1) every ISO country code has at least one timezone, and
 # 2) every timezone is associated with at least one ISO country code (except
-# for synthetic timezones with no corresponding country, e.g. UTC, Zulu,
-# GMT+0).
+# for the synthetic timezones "UTC" and "Etc/UTC" with no corresponding
+# country.
+#
+# Run
+#
+#   $ make
+#
+# to run validation over this file. For example, it verifies that there is a
+# one-to-olne correspondence to a 'Zone', 'Similar' or 'Alternate' entry in
+# classified_zones.txt and classified_links.txt. Any extras or missing
+# timezones are identified and printed.
 
 CI Africa/Abidjan # Ivory Coast
 GH Africa/Accra # Ghana
@@ -374,7 +384,7 @@ AU Australia/Sydney # Australia
 AU Australia/Tasmania # Australia
 AU Australia/Victoria # Australia
 AU Australia/West # Australia
-AU Australia/Yancowinna # Australia
+# AU Australia/Yancowinna # Australia
 # BR Brazil/Acre # same as Porto_Acre
 # BR Brazil/DeNoronha # Brazil (tzdb origin lost)
 # BR Brazil/East # Brazil
@@ -512,7 +522,7 @@ IO Indian/Chagos # British Indian Ocean Territory
 CX Indian/Christmas # Christmas Island
 CC Indian/Cocos # Cocos Islands
 KM Indian/Comoro # Comoros
-TF Indian/Kerguelen # French Southern and Antartic Lands
+TF Indian/Kerguelen # French Southern and Antarctic Lands
 SC Indian/Mahe Seychelles (TZDB origin lost)
 MV Indian/Maldives # Maldives
 MU Indian/Mauritius # Mauritius

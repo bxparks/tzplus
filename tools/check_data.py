@@ -29,14 +29,14 @@ import sys
 #
 # * Zones (target == None)
 #   * Zone name
-#   * Obsolete name
+#   * ZoneObsolete name
 # * Links
 #   * Alias target link
 #   * Similar target link
 #   * Obsolete target link
 class Entry(NamedTuple):
     target: Optional[str]  # Set to None for zones
-    type: str  # 'Zone', 'Alias', 'Similar', 'Obsolete'
+    tag: str  # 'Zone', 'ZoneObsolete', 'Alias', 'Similar', 'Obsolete'
 
 
 # ISO country to [timezones].
@@ -84,6 +84,7 @@ def main() -> None:
     classified_links = read_links(args.classified_links)
     check_cycle(args.classified_links, classified_links)
     check_links(links, classified_links)
+    check_link_targets(classified_links, links, zones)
 
     # Read and check ISO countries.
     iso_long = read_countries(args.iso_long)
@@ -98,9 +99,11 @@ def main() -> None:
 
 def read_zones(filename: str) -> Dict[str, Entry]:
     """Read Zone records of the form:
-        Zone|Obsolete zone_name
+        Zone|ZoneObsolete zone_name
     and return:
-        {zone_name -> {target, 'Zone'}}
+        {zone_name -> {target, tag}}
+    where
+        tag: Zone|ZoneObsolete
     """
     zones: Dict[str, Entry] = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
@@ -109,40 +112,21 @@ def read_zones(filename: str) -> Dict[str, Entry]:
             if line is None:
                 break
             tokens: List[str] = line.split()
-            type = tokens[0]
-            assert type in ['Zone', 'Obsolete']
+            tag = tokens[0]
+            if tag not in ['Zone', 'ZoneObsolete']:
+                error(f"Invalid Zone tag '{tag}'")
             zone_name = tokens[1]
-            zones[zone_name] = Entry(None, type)
+            zones[zone_name] = Entry(None, tag)
     return zones
-
-
-def read_classified_zones(filename: str) -> Dict[str, Entry]:
-    """Read classified links of the form:
-        Zone zone_name -> target_name
-        Obsolete zone_name -> target_name
-    and return:
-        {zone_name -> {target, type}}
-    """
-    links: Dict[str, Entry] = {}
-    with open(filename, 'r', newline='', encoding='utf-8') as f:
-        while True:
-            line = read_line(f)
-            if line is None:
-                break
-            tokens: List[str] = line.split()
-            type = tokens[0]
-            assert type in ['Zone', 'Obsolete']
-            link_name = tokens[1]
-            target_name = tokens[3]
-            links[link_name] = Entry(target_name, type)
-    return links
 
 
 def read_links(filename: str) -> Dict[str, Entry]:
     """Read Link records of the form:
         (Link|Alias|Similar|Obsolete) source target
     and return:
-        {target -> {source, type}}
+        {target -> {source, tag}}
+    where
+        tag: Link|Alias|Similar|Obsolete
     """
     links: Dict[str, Entry] = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
@@ -151,11 +135,12 @@ def read_links(filename: str) -> Dict[str, Entry]:
             if line is None:
                 break
             tokens: List[str] = line.split()
-            type = tokens[0]
-            assert type in ['Link', 'Alias', 'Similar', 'Obsolete']
+            tag = tokens[0]
+            if tag not in ['Link', 'Alias', 'Alternate', 'Similar', 'Obsolete']:
+                error(f"Invalid Link tag '{tag}'")
             source = tokens[1]
             target = tokens[2]
-            links[target] = Entry(source, type)
+            links[target] = Entry(source, tag)
     return links
 
 
@@ -228,6 +213,7 @@ def check_zones(
     zones: Dict[str, Entry],
     classified_zones: Dict[str, Entry],
 ) -> None:
+    """Check that classified_zones and zones have identical entries."""
     if zones.keys() != classified_zones.keys():
         extra = classified_zones.keys() - zones.keys()
         if extra:
@@ -242,6 +228,7 @@ def check_links(
     links: Dict[str, Entry],
     classified_links: Dict[str, Entry],
 ) -> None:
+    """Check that classified_links and links have identical entries."""
     if links.keys() != classified_links.keys():
         extra = classified_links.keys() - links.keys()
         if extra:
@@ -250,6 +237,19 @@ def check_links(
         missing = links.keys() - classified_links.keys()
         if missing:
             error("Missing links in classified links", missing)
+
+
+def check_link_targets(
+    classified_links: Dict[str, Entry],
+    links: Dict[str, Entry],
+    zones: Dict[str, Entry]
+) -> None:
+    """Check that every Link target in classified_links is an existing Link or
+    Zone. This checks for typos.
+    """
+    for link, entry in classified_links.items():
+        if entry.target not in links and entry.target not in zones:
+            error(f"Invalid Link target '{entry.target}'")
 
 
 def check_iso_names(
@@ -300,17 +300,17 @@ def check_timezones(
     classified_zones: Dict[str, Entry],
     classified_links: Dict[str, Entry],
 ) -> None:
-    # Collect only 'Zone' and 'Similar' timezones. They are the only timezones
-    # which should appear. 'Alias' and 'Obsolete' should not appear to avoid
-    # duplicates or old timezones.
+    # Collect only 'Zone', 'Similar', and 'Alternate' timezones. They are the
+    # only timezones which should appear. 'Alias' and 'Obsolete' should not
+    # appear to avoid duplicates or old timezones.
     expected: Set[str] = set()
     expected.update([
         name for name, entry in classified_zones.items()
-        if entry.type == 'Zone'
+        if entry.tag == 'Zone'
     ])
     expected.update([
         name for name, entry in classified_links.items()
-        if entry.type == 'Similar'
+        if entry.tag in ['Similar', 'Alternate']
     ])
 
     # Collect the timezones which appear in country_timezones.txt.

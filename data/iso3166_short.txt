@@ -63,7 +63,7 @@ BW	Botswana
 BY	Belarus
 BZ	Belize
 CA	Canada
-CC	Cocos Is
+CC	Cocos Is # Cocos (Keeling) Islands
 CD	Congo DRC
 CF	Central Af Rep # Central African Republic
 CG	Congo
