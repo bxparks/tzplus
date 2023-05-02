@@ -5,272 +5,277 @@
 # * Shorten North, South, West, East to N, S, W, E
 # * No periods (e.g. "N" and "St", not "N." and "St.")
 # * Replace "Island" with "Is"
-# * Replace "French" with "Fr"
 # * Remove parts after "&"
 #   * "Turks & Cacos Islands" to "Turks Is"
 #   * "Trinidad & Tobago" to "Trinidad"
+# * Replace "French" with "Fr"
 # * Replace "American" with "Am"
+# * Replace "British" with "Br"
+# * Replace "African" with "Af"
 # * Replace "Saint" with "St"
 # * Replace "Republic" with "Rep"
 # * Replace "Equitorial" with "Eq"
-# * Replace "British" with "Br"
-# * Replace "African" with "Af"
 # * Replace French, Portugese, Dutch names with more familiar English names
-#   * "Ivory Coast" instead of "Cote d'Ivoire"
-# * Very long names replaced with acronym:
+#   * e.g. "Ivory Coast" instead of "Cote d'Ivoire"
+# * Very long names replaced with acronyms:
 #   * "United States of America" -> USA
 #   * "United Arab Emirates"  -> UAE
 #   * "British Indian Ocean Territories" -> BIOT
 #   * "Democratic Republic of the Congo" -> Congo DRC
+#
+# The result is that the longest country name ("Papua New Guinea") is 16
+# characters long. I think the next longest country names are 13 characters
+# long, so it would be great if we could shorten "Papua New Guinea" to 13
+# characters ("Papua N G"?).
 
-#country-
-#code	name of country, territory, area, or subdivision
-AD	Andorra
-AE	UAE
-AF	Afghanistan
-AG	Antigua
-AI	Anguilla
-AL	Albania
-AM	Armenia
-AO	Angola
-AQ	Antarctica
-AR	Argentina
-AS	Am Samoa
-AT	Austria
-AU	Australia
-AW	Aruba
-AX	Aland Is
-AZ	Azerbaijan
-BA	Bosnia
-BB	Barbados
-BD	Bangladesh
-BE	Belgium
-BF	Burkina Faso
-BG	Bulgaria
-BH	Bahrain
-BI	Burundi
-BJ	Benin
-BL	St Barthelemy
-BM	Bermuda
-BN	Brunei
-BO	Bolivia
-BQ	Caribbean NL
-BR	Brazil
-BS	Bahamas
-BT	Bhutan
-BV	Bouvet Is
-BW	Botswana
-BY	Belarus
-BZ	Belize
-CA	Canada
-CC	Cocos Is # Cocos (Keeling) Islands
-CD	Congo DRC
-CF	Central Af Rep # Central African Republic
-CG	Congo
-CH	Switzerland
-CI	Ivory Coast
-CK	Cook Is
-CL	Chile
-CM	Cameroon
-CN	China
-CO	Colombia
-CR	Costa Rica
-CU	Cuba
-CV	Cape Verde
-CW	Curacao
-CX	Christmas Is
-CY	Cyprus
-CZ	Czech Rep
-DE	Germany
-DJ	Djibouti
-DK	Denmark
-DM	Dominica
-DO	Dominican Rep
-DZ	Algeria
-EC	Ecuador
-EE	Estonia
-EG	Egypt
-EH	W Sahara
-ER	Eritrea
-ES	Spain
-ET	Ethiopia
-FI	Finland
-FJ	Fiji
-FK	Falkland Is
-FM	Micronesia
-FO	Faroe Is
-FR	France
-GA	Gabon
-GB	Britain
-GD	Grenada
-GE	Georgia
-GF	Fr Guiana
-GG	Guernsey
-GH	Ghana
-GI	Gibraltar
-GL	Greenland
-GM	Gambia
-GN	Guinea
-GP	Guadeloupe
-GQ	Eq Guinea # Equatorial Guinea
-GR	Greece
-GS	S Georgia
-GT	Guatemala
-GU	Guam
-GW	Guinea-Bissau
-GY	Guyana
-HK	Hong Kong
-HM	Heard Is
-HN	Honduras
-HR	Croatia
-HT	Haiti
-HU	Hungary
-ID	Indonesia
-IE	Ireland
-IL	Israel
-IM	Isle of Man
-IN	India
-IO	BIOT # British Indian Ocean Territory
-IQ	Iraq
-IR	Iran
-IS	Iceland
-IT	Italy
-JE	Jersey
-JM	Jamaica
-JO	Jordan
-JP	Japan
-KE	Kenya
-KG	Kyrgyzstan
-KH	Cambodia
-KI	Kiribati
-KM	Comoros
-KN	St Kitts # & Nevis
-KP	N Korea
-KR	S Korea
-KW	Kuwait
-KY	Cayman Is
-KZ	Kazakhstan
-LA	Laos
-LB	Lebanon
-LC	St Lucia
-LI	Liechtenstein
-LK	Sri Lanka
-LR	Liberia
-LS	Lesotho
-LT	Lithuania
-LU	Luxembourg
-LV	Latvia
-LY	Libya
-MA	Morocco
-MC	Monaco
-MD	Moldova
-ME	Montenegro
-MF	St Martin
-MG	Madagascar
-MH	Marshall Is
-MK	N Macedonia
-ML	Mali
-MM	Myanmar
-MN	Mongolia
-MO	Macau
-MP	Mariana Is
-MQ	Martinique
-MR	Mauritania
-MS	Montserrat
-MT	Malta
-MU	Mauritius
-MV	Maldives
-MW	Malawi
-MX	Mexico
-MY	Malaysia
-MZ	Mozambique
-NA	Namibia
-NC	New Caledonia
-NE	Niger
-NF	Norfolk Is
-NG	Nigeria
-NI	Nicaragua
-NL	Netherlands
-NO	Norway
-NP	Nepal
-NR	Nauru
-NU	Niue
-NZ	New Zealand
-OM	Oman
-PA	Panama
-PE	Peru
-PF	Fr Polynesia
-PG	Papua New Guinea
-PH	Philippines
-PK	Pakistan
-PL	Poland
-PM	St Pierre # & Miquelon
-PN	Pitcairn
-PR	Puerto Rico
-PS	Palestine
-PT	Portugal
-PW	Palau
-PY	Paraguay
-QA	Qatar
-RE	Reunion
-RO	Romania
-RS	Serbia
-RU	Russia
-RW	Rwanda
-SA	Saudi Arabia
-SB	Solomon Is
-SC	Seychelles
-SD	Sudan
-SE	Sweden
-SG	Singapore
-SH	St Helena
-SI	Slovenia
-SJ	Svalbard # & Jan Mayen
-SK	Slovakia
-SL	Sierra Leone
-SM	San Marino
-SN	Senegal
-SO	Somalia
-SR	Suriname
-SS	S Sudan
-ST	Sao Tome # & Principe
-SV	El Salvador
-SX	St Maarten
-SY	Syria
-SZ	Eswatini
-TC	Turks Is # & Caicos
-TD	Chad
-TF	Fr S Lands
-TG	Togo
-TH	Thailand
-TJ	Tajikistan
-TK	Tokelau
-TL	East Timor
-TM	Turkmenistan
-TN	Tunisia
-TO	Tonga
-TR	Turkey
-TT	Trinidad # & Tobago
-TV	Tuvalu
-TW	Taiwan
-TZ	Tanzania
-UA	Ukraine
-UG	Uganda
-UM	US Minor Is
-US	USA
-UY	Uruguay
-UZ	Uzbekistan
-VA	Vatican City
-VC	St Vincent
-VE	Venezuela
-VG	Br Virgin Is
-VI	US Virgin Is
-VN	Vietnam
-VU	Vanuatu
-WF	Wallis # & Futuna
-WS	Samoa # Western
-YE	Yemen
-YT	Mayotte
-ZA	S Africa
-ZM	Zambia
-ZW	Zimbabwe
+# Header
+# code description
+AD Andorra
+AE UAE
+AF Afghanistan
+AG Antigua
+AI Anguilla
+AL Albania
+AM Armenia
+AO Angola
+AQ Antarctica
+AR Argentina
+AS Am Samoa
+AT Austria
+AU Australia
+AW Aruba
+AX Aland Is
+AZ Azerbaijan
+BA Bosnia
+BB Barbados
+BD Bangladesh
+BE Belgium
+BF Burkina Faso
+BG Bulgaria
+BH Bahrain
+BI Burundi
+BJ Benin
+BL St Barthelemy
+BM Bermuda
+BN Brunei
+BO Bolivia
+BQ Caribbean NL
+BR Brazil
+BS Bahamas
+BT Bhutan
+BV Bouvet Is
+BW Botswana
+BY Belarus
+BZ Belize
+CA Canada
+CC Cocos Is # Cocos (Keeling) Islands
+CD Congo DRC
+CF Central Af Rep # Central African Republic
+CG Congo
+CH Switzerland
+CI Ivory Coast
+CK Cook Is
+CL Chile
+CM Cameroon
+CN China
+CO Colombia
+CR Costa Rica
+CU Cuba
+CV Cape Verde
+CW Curacao
+CX Christmas Is
+CY Cyprus
+CZ Czech Rep
+DE Germany
+DJ Djibouti
+DK Denmark
+DM Dominica
+DO Dominican Rep
+DZ Algeria
+EC Ecuador
+EE Estonia
+EG Egypt
+EH W Sahara
+ER Eritrea
+ES Spain
+ET Ethiopia
+FI Finland
+FJ Fiji
+FK Falkland Is
+FM Micronesia
+FO Faroe Is
+FR France
+GA Gabon
+GB Britain
+GD Grenada
+GE Georgia
+GF Fr Guiana
+GG Guernsey
+GH Ghana
+GI Gibraltar
+GL Greenland
+GM Gambia
+GN Guinea
+GP Guadeloupe
+GQ Eq Guinea # Equatorial Guinea
+GR Greece
+GS S Georgia
+GT Guatemala
+GU Guam
+GW Guinea-Bissau
+GY Guyana
+HK Hong Kong
+HM Heard Is
+HN Honduras
+HR Croatia
+HT Haiti
+HU Hungary
+ID Indonesia
+IE Ireland
+IL Israel
+IM Isle of Man
+IN India
+IO BIOT # British Indian Ocean Territory
+IQ Iraq
+IR Iran
+IS Iceland
+IT Italy
+JE Jersey
+JM Jamaica
+JO Jordan
+JP Japan
+KE Kenya
+KG Kyrgyzstan
+KH Cambodia
+KI Kiribati
+KM Comoros
+KN St Kitts # & Nevis
+KP N Korea
+KR S Korea
+KW Kuwait
+KY Cayman Is
+KZ Kazakhstan
+LA Laos
+LB Lebanon
+LC St Lucia
+LI Liechtenstein
+LK Sri Lanka
+LR Liberia
+LS Lesotho
+LT Lithuania
+LU Luxembourg
+LV Latvia
+LY Libya
+MA Morocco
+MC Monaco
+MD Moldova
+ME Montenegro
+MF St Martin
+MG Madagascar
+MH Marshall Is
+MK N Macedonia
+ML Mali
+MM Myanmar
+MN Mongolia
+MO Macau
+MP Mariana Is
+MQ Martinique
+MR Mauritania
+MS Montserrat
+MT Malta
+MU Mauritius
+MV Maldives
+MW Malawi
+MX Mexico
+MY Malaysia
+MZ Mozambique
+NA Namibia
+NC New Caledonia
+NE Niger
+NF Norfolk Is
+NG Nigeria
+NI Nicaragua
+NL Netherlands
+NO Norway
+NP Nepal
+NR Nauru
+NU Niue
+NZ New Zealand
+OM Oman
+PA Panama
+PE Peru
+PF Fr Polynesia
+PG Papua New Guinea
+PH Philippines
+PK Pakistan
+PL Poland
+PM St Pierre # & Miquelon
+PN Pitcairn
+PR Puerto Rico
+PS Palestine
+PT Portugal
+PW Palau
+PY Paraguay
+QA Qatar
+RE Reunion
+RO Romania
+RS Serbia
+RU Russia
+RW Rwanda
+SA Saudi Arabia
+SB Solomon Is
+SC Seychelles
+SD Sudan
+SE Sweden
+SG Singapore
+SH St Helena
+SI Slovenia
+SJ Svalbard # & Jan Mayen
+SK Slovakia
+SL Sierra Leone
+SM San Marino
+SN Senegal
+SO Somalia
+SR Suriname
+SS S Sudan
+ST Sao Tome # & Principe
+SV El Salvador
+SX St Maarten
+SY Syria
+SZ Eswatini
+TC Turks Is # & Caicos
+TD Chad
+TF Fr S Lands
+TG Togo
+TH Thailand
+TJ Tajikistan
+TK Tokelau
+TL East Timor
+TM Turkmenistan
+TN Tunisia
+TO Tonga
+TR Turkey
+TT Trinidad # & Tobago
+TV Tuvalu
+TW Taiwan
+TZ Tanzania
+UA Ukraine
+UG Uganda
+UM US Minor Is
+US USA
+UY Uruguay
+UZ Uzbekistan
+VA Vatican City
+VC St Vincent
+VE Venezuela
+VG Br Virgin Is
+VI US Virgin Is
+VN Vietnam
+VU Vanuatu
+WF Wallis # & Futuna
+WS Samoa # Western
+YE Yemen
+YT Mayotte
+ZA S Africa
+ZM Zambia
+ZW Zimbabwe
