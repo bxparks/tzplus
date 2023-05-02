@@ -29,14 +29,14 @@ import sys
 #
 # * Zones (target == None)
 #   * Zone name
-#   * Obsolete name
+#   * ZoneObsolete name
 # * Links
 #   * Alias target link
 #   * Similar target link
 #   * Obsolete target link
 class Entry(NamedTuple):
     target: Optional[str]  # Set to None for zones
-    type: str  # 'Zone', 'Alias', 'Similar', 'Obsolete'
+    type: str  # 'Zone', 'ZoneObsolete', 'Alias', 'Similar', 'Obsolete'
 
 
 # ISO country to [timezones].
@@ -98,7 +98,7 @@ def main() -> None:
 
 def read_zones(filename: str) -> Dict[str, Entry]:
     """Read Zone records of the form:
-        Zone|Obsolete zone_name
+        Zone|ZoneObsolete zone_name
     and return:
         {zone_name -> {target, 'Zone'}}
     """
@@ -110,32 +110,10 @@ def read_zones(filename: str) -> Dict[str, Entry]:
                 break
             tokens: List[str] = line.split()
             type = tokens[0]
-            assert type in ['Zone', 'Obsolete']
+            assert type in ['Zone', 'ZoneObsolete']
             zone_name = tokens[1]
             zones[zone_name] = Entry(None, type)
     return zones
-
-
-def read_classified_zones(filename: str) -> Dict[str, Entry]:
-    """Read classified links of the form:
-        Zone zone_name -> target_name
-        Obsolete zone_name -> target_name
-    and return:
-        {zone_name -> {target, type}}
-    """
-    links: Dict[str, Entry] = {}
-    with open(filename, 'r', newline='', encoding='utf-8') as f:
-        while True:
-            line = read_line(f)
-            if line is None:
-                break
-            tokens: List[str] = line.split()
-            type = tokens[0]
-            assert type in ['Zone', 'Obsolete']
-            link_name = tokens[1]
-            target_name = tokens[3]
-            links[link_name] = Entry(target_name, type)
-    return links
 
 
 def read_links(filename: str) -> Dict[str, Entry]:
