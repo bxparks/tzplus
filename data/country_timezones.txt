@@ -1,10 +1,16 @@
 # A manually maintained mapping of ISO 3166 country codes and TZDB timezones
 # such that:
 #
-# 1) every ISO country code has at least one timezone, and
-# 2) every timezone is associated with at least one ISO country code (except
-# for the synthetic timezones "UTC" and "Etc/UTC" with no corresponding
-# country.
+# 1) Every ISO country code (as defined by iso3166_long.txt and
+# iso3166_short.txt) has at least one timezone. With the exception for the 2
+# uninhabited islands of Bouvet Island (BV) and Heard Island & McDonald Islands
+# (HM) which do not have an assigned timezone.
+#
+# 2) Every significant timezone (as defined by classified_zones.txt and
+# classified_links.txt) is associated with at least one ISO country code. With
+# the exception of the synthetic timezones "UTC" and "Etc/UTC" which are given
+# the synthetic ISO country code of "00" (it does not exist in
+# iso3166_xxx.txt).
 #
 # Run
 #
@@ -159,7 +165,7 @@ US America/Juneau # USA
 US America/Kentucky/Louisville # USA
 US America/Kentucky/Monticello # USA
 # US America/Knox_IN # USA
-BQ America/Kralendijk # Bonaire (Caribbean Netherlands)
+BQ America/Kralendijk # Caribbean Netherlands (Bonaire)
 BO America/La_Paz # Bolivia
 PE America/Lima # Peru
 US America/Los_Angeles # USA
