@@ -321,9 +321,10 @@ Obsolete Asia/Tokyo Japan # Japan -> Japan
 Obsolete Pacific/Kwajalein Kwajalein # Kwajalein -> Kwajalein
 Obsolete Africa/Tripoli Libya # Libya -> Libya
 
-Similar America/Tijuana Mexico/BajaNorte # Mexico -> Mexico
-Similar America/Mazatlan Mexico/BajaSur # Mexico -> Mexico
-Similar America/Mexico_City Mexico/General # Mexico -> Mexico
+# Guessing that Mexico/XXX aren't commonly used anymore, so mark as obsolete.
+Obsolete America/Tijuana Mexico/BajaNorte # Mexico -> Mexico
+Obsolete America/Mazatlan Mexico/BajaSur # Mexico -> Mexico
+Obsolete America/Mexico_City Mexico/General # Mexico -> Mexico
 
 Obsolete Pacific/Auckland NZ # New Zealand -> New Zealand
 Obsolete Pacific/Chatham NZ-CHAT # New Zealand -> New Zealand
