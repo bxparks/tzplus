@@ -70,7 +70,7 @@ BW	Botswana
 BY	Belarus
 BZ	Belize
 CA	Canada
-CC	Cocos Islands
+CC	Cocos (Keeling) Islands
 CD	Democratic Republic of the Congo
 CF	Central African Republic
 CG	Republic of the Congo
@@ -247,7 +247,7 @@ SY	Syria
 SZ	Eswatini # Swaziland
 TC	Turks & Caicos Is
 TD	Chad
-TF	French Southern Lands
+TF	French Southern and Antarctic Lands
 TG	Togo
 TH	Thailand
 TJ	Tajikistan
