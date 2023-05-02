@@ -36,7 +36,7 @@ import sys
 #   * Obsolete target link
 class Entry(NamedTuple):
     target: Optional[str]  # Set to None for zones
-    type: str  # 'Zone', 'ZoneObsolete', 'Alias', 'Similar', 'Obsolete'
+    tag: str  # 'Zone', 'ZoneObsolete', 'Alias', 'Similar', 'Obsolete'
 
 
 # ISO country to [timezones].
@@ -100,7 +100,9 @@ def read_zones(filename: str) -> Dict[str, Entry]:
     """Read Zone records of the form:
         Zone|ZoneObsolete zone_name
     and return:
-        {zone_name -> {target, 'Zone'}}
+        {zone_name -> {target, tag}}
+    where
+        tag: Zone|ZoneObsolete
     """
     zones: Dict[str, Entry] = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
@@ -109,10 +111,10 @@ def read_zones(filename: str) -> Dict[str, Entry]:
             if line is None:
                 break
             tokens: List[str] = line.split()
-            type = tokens[0]
-            assert type in ['Zone', 'ZoneObsolete']
+            tag = tokens[0]
+            assert tag in ['Zone', 'ZoneObsolete']
             zone_name = tokens[1]
-            zones[zone_name] = Entry(None, type)
+            zones[zone_name] = Entry(None, tag)
     return zones
 
 
@@ -120,7 +122,9 @@ def read_links(filename: str) -> Dict[str, Entry]:
     """Read Link records of the form:
         (Link|Alias|Similar|Obsolete) source target
     and return:
-        {target -> {source, type}}
+        {target -> {source, tag}}
+    where
+        tag: Link|Alias|Similar|Obsolete
     """
     links: Dict[str, Entry] = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
@@ -129,11 +133,11 @@ def read_links(filename: str) -> Dict[str, Entry]:
             if line is None:
                 break
             tokens: List[str] = line.split()
-            type = tokens[0]
-            assert type in ['Link', 'Alias', 'Similar', 'Obsolete']
+            tag = tokens[0]
+            assert tag in ['Link', 'Alias', 'Similar', 'Obsolete']
             source = tokens[1]
             target = tokens[2]
-            links[target] = Entry(source, type)
+            links[target] = Entry(source, tag)
     return links
 
 
@@ -284,11 +288,11 @@ def check_timezones(
     expected: Set[str] = set()
     expected.update([
         name for name, entry in classified_zones.items()
-        if entry.type == 'Zone'
+        if entry.tag == 'Zone'
     ])
     expected.update([
         name for name, entry in classified_links.items()
-        if entry.type == 'Similar'
+        if entry.tag == 'Similar'
     ])
 
     # Collect the timezones which appear in country_timezones.txt.
