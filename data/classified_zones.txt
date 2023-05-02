@@ -1,5 +1,12 @@
-# Copied from zones.txt, with "obsolete" zones marked with "ZoneObsolete"
-# instead of "Zone".
+# Manually copied from zones.txt, with some Zone tags replaced with
+# ZoneObsolete for those considered to be obsolete. In the context of this
+# file, obsolete means that the time zone is not commonly used, so should not
+# appear in a UI that allows the end-user to select the time zone.
+#
+# This file is maintained manually. When a new version of TZDB is released, the
+# tools/check_data.py script will validate that there is a one-to-one
+# correspondence between the entries of this file and zones.txt. This files must
+# be updated manually if any entry needs to be added or removed.
 
 Zone Africa/Abidjan
 Zone Africa/Algiers

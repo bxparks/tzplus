@@ -112,7 +112,8 @@ def read_zones(filename: str) -> Dict[str, Entry]:
                 break
             tokens: List[str] = line.split()
             tag = tokens[0]
-            assert tag in ['Zone', 'ZoneObsolete']
+            if tag not in ['Zone', 'ZoneObsolete']:
+                error(f"Invalid Zone tag '{tag}'")
             zone_name = tokens[1]
             zones[zone_name] = Entry(None, tag)
     return zones
@@ -134,7 +135,8 @@ def read_links(filename: str) -> Dict[str, Entry]:
                 break
             tokens: List[str] = line.split()
             tag = tokens[0]
-            assert tag in ['Link', 'Alias', 'Similar', 'Obsolete']
+            if tag not in ['Link', 'Alias', 'Alternate', 'Similar', 'Obsolete']:
+                error(f"Invalid Link tag '{tag}'")
             source = tokens[1]
             target = tokens[2]
             links[target] = Entry(source, tag)
@@ -282,9 +284,9 @@ def check_timezones(
     classified_zones: Dict[str, Entry],
     classified_links: Dict[str, Entry],
 ) -> None:
-    # Collect only 'Zone' and 'Similar' timezones. They are the only timezones
-    # which should appear. 'Alias' and 'Obsolete' should not appear to avoid
-    # duplicates or old timezones.
+    # Collect only 'Zone', 'Similar', and 'Alternate' timezones. They are the
+    # only timezones which should appear. 'Alias' and 'Obsolete' should not
+    # appear to avoid duplicates or old timezones.
     expected: Set[str] = set()
     expected.update([
         name for name, entry in classified_zones.items()
@@ -292,7 +294,7 @@ def check_timezones(
     ])
     expected.update([
         name for name, entry in classified_links.items()
-        if entry.tag == 'Similar'
+        if entry.tag in ['Similar', 'Alternate']
     ])
 
     # Collect the timezones which appear in country_timezones.txt.

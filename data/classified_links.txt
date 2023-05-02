@@ -1,14 +1,75 @@
-# The entries in this file replaces all the LINK entries in the raw TZDB raw
-# files. Each Link entry is replaced with one of: Similar, Alias, or Obsolete.
+# Manually copied from links.txt with the 'Link' tags replaced with a tag which
+# is one of ('Similar', 'Alternate', 'Alias', or 'Obsolete'). These new tags
+# provide semantic disambiguation of the different meanings of the 'Link' tag.
 #
-# This file is maintained manually. When a new version of TZDB is released, a
-# script should validate that every Link entry exists in this file, and every
-# entry in this file is a Link entry in the raw TZDB.
+# Each entry is of the form:
+#
+#   tag target link
+#
+# which defines a timezone named 'link' as having the same transition rules as
+# the timezone 'target'. (It is the opposite order to the expections of many
+# people. But it is consistent with the order of arguments of the 'cp' and 'ln'
+# commands in Unix.)
+#
+# The Similar, Alternate, Alias, and Obsolete tags distinguish the following
+# types of Links:
+#
+# Similar
+#   Indicates that the 'link' timezone is semantically independent from the
+#   'target' timezone, but they were linked together only because they happen
+#   to have the same DST transition rules since 1970. Recent versions of the
+#   raw tzdb files have aggressively combined independent timezones together.
+#   The purpose of the 'Similar' entries is to split them apart. The
+#   user-interface for selecting timezones should present these Similar entries
+#   as a separate timezones.
+#
+# Alternate
+#   Indicates that the 'link' timezone is semantically the same as the 'target'
+#   timezone, but the 'link' identifier is so commonly used, that it is
+#   convenient to include it in a timezone selection UI.
+#
+# Alias
+#   Indicates that 'link' timezone is semantically identical to the 'target'
+#   timezone. This is often the result of a name or spelling change. For the
+#   purposes presenting a time zone selection UI to the end-user, only the
+#   'target' should be included and these alias 'link' entries can be ignored.
+#
+# Obsolete
+#   Indicates that the 'link' timezone is an old identifier which has been
+#   replaced by the 'target' timezone. This often happens because the old
+#   'link' timezone represented a different (usually larger) geographical
+#   region which then got replaced with more fine-grained regions. These
+#   Obsolete entries should not be presented to the end-users in a timezone
+#   selctor.
+#
+# I made some subjective judgement calls when deciding which of the tags to
+# apply to a given 'Link' entry:
+#
+#   * Changes in spelling are always given an 'Alias' tag.
+#   * Changes in the naming hierarchy (e.g. "Iran" to "Asia/Tehran") are
+#     given an 'Obsolete' tag because most modern timezones should have the
+#     form "region/name". The exception is "UTC" which is an alias for
+#     "Etc/UTC", but "UTC" to so common that it is given a "Similar"
+#   * A few 'Alias' links are categorized as 'Alternate' because they are
+#     useful to have in a timezone selector UI.
+#   * There are a few links where there is no documentation in the TZDB raw
+#     files that explains the physical location that the 'link' timezone refers
+#     to. These are labeled as 'Obsolete'.
+#
+# This file is maintained manually. When a new version of TZDB is released, the
+# tools/check_data.py script will validate that there is a one-to-one
+# correspondence between the entries of this file and links.txt. This file must
+# be updated manually if any entry needs to be added or removed.
 
 Similar Africa/Abidjan Africa/Accra # Ghana -> Ivory Coast
 Similar Africa/Nairobi Africa/Addis_Ababa # Ethiopia -> Kenya
 Similar Africa/Nairobi Africa/Asmara # Ghana -> Kenya
-Alias Africa/Asmara Africa/Asmera # Was: Link Africa/Nairobi Africa/Asmera
+
+# TZDB does not allow Links-to-Links so this entry is listed as 'Link
+# Africa/Nairobi Africa/Asmera'. But it really should have been the following
+# to indicate a rename.
+Alias Africa/Asmara Africa/Asmera
+
 Similar Africa/Abidjan Africa/Bamako # Mali -> Ivory Coast
 Similar Africa/Lagos Africa/Bangui # Central African Republic -> Nigeria
 Similar Africa/Abidjan Africa/Banjul # Gambia -> Ivory Coast
@@ -68,7 +129,12 @@ Alias America/Kentucky/Louisville America/Louisville
 Similar America/Puerto_Rico America/Lower_Princes # Curacao -> Puerto Rico
 Similar America/Puerto_Rico America/Marigot # Saint Martin - Puerto Rico
 Alias America/Argentina/Mendoza America/Mendoza
+
+# Toronto and Montreal are 2 different cities in 2 different provinces. They
+# just happen to have the same DST rules. Consider them as independent
+# timezones.
 Similar America/Toronto America/Montreal
+
 Similar America/Puerto_Rico America/Montserrat # Montserrat -> Puerto Rico
 Similar America/Toronto America/Nassau # Bahamas -> Canada
 Similar America/Toronto America/Nipigon # Canada -> Canada
@@ -100,7 +166,12 @@ Similar Asia/Qatar Asia/Bahrain
 Similar Asia/Kuching Asia/Brunei
 Alias Asia/Kolkata Asia/Calcutta
 Similar Asia/Shanghai Asia/Chongqing
-Alias Asia/Chongqing Asia/Chungking # Was: Link Asia/Shanghai Asia/Chungking
+
+# TZDB does not allow Links-to-Links so this entry is listed as 'Link
+# Asia/Shanghai Asia/Chungking'. But it really should have been the following
+# to indicate a rename.
+Alias Asia/Chongqing Asia/Chungking
+
 Alias Asia/Dhaka Asia/Dacca
 Similar Asia/Shanghai Asia/Harbin
 Alias Europe/Istanbul Asia/Istanbul
@@ -122,7 +193,12 @@ Alias Atlantic/Faroe Atlantic/Faeroe
 Similar Europe/Berlin Atlantic/Jan_Mayen
 Similar Africa/Abidjan Atlantic/Reykjavik
 Similar Africa/Abidjan Atlantic/St_Helena
-Alias Australia/Canberra Australia/ACT # Was: Link Australia/Sydney Australia/ACT
+
+# TZDB does not allow Links-to-Links so this entry is listed as 'Link
+# Australia/Sydney Australia/ACT'. But it really should have been the following
+# to indicate a rename.
+Alias Australia/Canberra Australia/ACT
+
 Similar Australia/Sydney Australia/Canberra
 Similar Australia/Hobart Australia/Currie
 Alias Australia/Lord_Howe Australia/LHI
@@ -134,18 +210,29 @@ Similar Australia/Hobart Australia/Tasmania
 Similar Australia/Melbourne Australia/Victoria
 Similar Australia/Perth Australia/West
 Similar Australia/Broken_Hill Australia/Yancowinna
-Alias America/Porto_Acre Brazil/Acre # Was: Link America/Rio_Branco Brazil/Acre
+
+# TZDB does not allow Links-to-Links so this entry is listed as 'Link
+# America/Rio_Branco Brazil/Acre'. But it really should have been the following
+# to indicate a rename.
+Alias America/Porto_Acre Brazil/Acre
+
+# No idea if Brazil/East and Brazil/West are commonly used. Consider changing
+# them to Alternate if they are.
 Alias America/Noronha Brazil/DeNoronha
 Obsolete America/Sao_Paulo Brazil/East
 Obsolete America/Manaus Brazil/West
-Similar America/Halifax Canada/Atlantic
-Similar America/Winnipeg Canada/Central
-Similar America/Toronto Canada/Eastern
-Similar America/Edmonton Canada/Mountain
-Similar America/St_Johns Canada/Newfoundland
-Similar America/Vancouver Canada/Pacific
-Similar America/Regina Canada/Saskatchewan
-Similar America/Whitehorse Canada/Yukon
+
+# Alternates for the broad Canadian timezones. Useful to include in timezone
+# selectors.
+Alternate America/Halifax Canada/Atlantic
+Alternate America/Winnipeg Canada/Central
+Alternate America/Toronto Canada/Eastern
+Alternate America/Edmonton Canada/Mountain
+Alternate America/St_Johns Canada/Newfoundland
+Alternate America/Vancouver Canada/Pacific
+Alternate America/Regina Canada/Saskatchewan
+Alternate America/Whitehorse Canada/Yukon
+
 Similar America/Santiago Chile/Continental
 Alias Pacific/Easter Chile/EasterIsland
 Alias America/Havana Cuba
@@ -186,13 +273,18 @@ Similar Europe/Belgrade Europe/Zagreb
 Similar Europe/Kyiv Europe/Zaporozhye
 Obsolete Europe/London GB
 Obsolete Europe/London GB-Eire
-Obsolete Etc/GMT GMT
-Obsolete Etc/GMT GMT+0
-Obsolete Etc/GMT GMT-0
-Obsolete Etc/GMT GMT0
-Obsolete Etc/GMT Greenwich
+Alias Etc/GMT GMT
+Alias Etc/GMT GMT+0
+Alias Etc/GMT GMT-0
+Alias Etc/GMT GMT0
+Alias Etc/GMT Greenwich
 Obsolete Asia/Hong_Kong Hongkong
-Alias Africa/Reykjavik Iceland # Was: Link Africa/Abidjan Iceland
+
+# TZDB does not allow Links-to-Links so this entry is listed as 'Link
+# Africa/Abidjan Iceland'. But it really should have been the following to
+# indicate a rename.
+Alias Africa/Reykjavik Iceland
+
 Similar Africa/Nairobi Indian/Antananarivo
 Similar Asia/Bangkok Indian/Christmas
 Similar Asia/Yangon Indian/Cocos
@@ -224,7 +316,12 @@ Similar Pacific/Guadalcanal Pacific/Pohnpei
 Alias Pacific/Pohnpei Pacific/Ponape
 Similar Pacific/Guam Pacific/Saipan
 Alias Pacific/Pago_Pago Pacific/Samoa
-Alias Pacific/Chuuk Pacific/Truk # Was: Pacific/Port_Moresby Pacific/Truk
+
+# TZDB does not allow Links-to-Links so this entry is listed as
+# 'Pacific/Port_Moresby Pacific/Truk'. But it really should have been the
+# following to indicate a rename.
+Alias Pacific/Chuuk Pacific/Truk
+
 Similar Pacific/Tarawa Pacific/Wake
 Similar Pacific/Tarawa Pacific/Wallis
 Similar Pacific/Port_Moresby Pacific/Yap
@@ -234,20 +331,24 @@ Obsolete Asia/Taipei ROC
 Obsolete Asia/Seoul ROK
 Obsolete Asia/Singapore Singapore
 Obsolete Europe/Istanbul Turkey
-Obsolete Etc/UTC UCT
-Similar America/Anchorage US/Alaska
-Similar America/Adak US/Aleutian
-Similar America/Phoenix US/Arizona
-Similar America/Chicago US/Central
+Alias Etc/UTC UCT
+
+# Alternates for the broad US timezones. Useful to include in timezone
+# selectors.
+Alternate America/Anchorage US/Alaska
+Alternate America/Adak US/Aleutian
+Alternate America/Phoenix US/Arizona
+Alternate America/Chicago US/Central
 Alias America/Indiana/Indianapolis US/East-Indiana
-Similar America/New_York US/Eastern
-Similar Pacific/Honolulu US/Hawaii
+Alternate America/New_York US/Eastern
+Alternate Pacific/Honolulu US/Hawaii
 Alias America/Indiana/Knox US/Indiana-Starke
-Similar America/Detroit US/Michigan
-Similar America/Denver US/Mountain
-Similar America/Los_Angeles US/Pacific
-Similar Pacific/Pago_Pago US/Samoa
-Similar Etc/UTC UTC
+Alternate America/Detroit US/Michigan
+Alternate America/Denver US/Mountain
+Alternate America/Los_Angeles US/Pacific
+Alternate Pacific/Pago_Pago US/Samoa
+
+Alternate Etc/UTC UTC
 Obsolete Etc/UTC Universal
 Obsolete Europe/Moscow W-SU
 Alias Etc/UTC Zulu
