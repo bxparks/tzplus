@@ -101,6 +101,7 @@ Similar Africa/Abidjan Africa/Nouakchott # Mauritania -> Ivory Coast
 Similar Africa/Abidjan Africa/Ouagadougou # Burkina Faso -> Ivory Coast
 Similar Africa/Lagos Africa/Porto-Novo # Benin -> Nigeria
 Similar Africa/Abidjan Africa/Timbuktu # Mali -> Ivory Coast
+
 Similar America/Puerto_Rico America/Anguilla # Anguilla (UK) -> Puerto Rico
 Similar America/Puerto_Rico America/Antigua # Antigua & Barbuda -> Puerto Rico
 Similar America/Argentina/Catamarca America/Argentina/ComodRivadavia
@@ -136,6 +137,7 @@ Alias America/Argentina/Mendoza America/Mendoza
 Similar America/Toronto America/Montreal
 
 Similar America/Puerto_Rico America/Montserrat # Montserrat -> Puerto Rico
+
 Similar America/Toronto America/Nassau # Bahamas -> Canada
 Similar America/Toronto America/Nipigon # Canada -> Canada
 Similar America/Iqaluit America/Pangnirtung # Canada -> Canada
@@ -145,27 +147,34 @@ Similar America/Winnipeg America/Rainy_River # Canada -> Canada
 Obsolete America/Argentina/Cordoba America/Rosario # Argentina -> Argentina
 Similar America/Tijuana America/Santa_Isabel # Mexico -> Mexico
 Similar America/Denver America/Shiprock # USA -> USA
+
 Similar America/Puerto_Rico America/St_Barthelemy # St Barthelemy -> Puerto Rico
 Similar America/Puerto_Rico America/St_Kitts # St Kitts -> Puerto Rico
 Similar America/Puerto_Rico America/St_Lucia # St Lucia -> Puerto Rico
-Similar America/Puerto_Rico America/St_Thomas # Virgin Islands (US) -> Puerto Rico
+Similar America/Puerto_Rico America/St_Thomas # US Virgin Islands -> Puerto Rico
 Similar America/Puerto_Rico America/St_Vincent # St Vincent -> Puerto Rico
+
 Similar America/Toronto America/Thunder_Bay # Canada -> Canada
-Similar America/Puerto_Rico America/Tortola # Virgin Island (UK) -> Puerto Rico
-Similar America/Puerto_Rico America/Virgin # Virgin Island (US) -> Puerto Rico
+
+Similar America/Puerto_Rico America/Tortola # Br Virgin Island -> Puerto Rico
+Similar America/Puerto_Rico America/Virgin # US Virgin Island -> Puerto Rico
+
 Similar America/Edmonton America/Yellowknife # Canada -> Canada
+
 Similar Pacific/Port_Moresby Antarctica/DumontDUrville # -> Papua New Guinea
-Similar Pacific/Auckland Antarctica/McMurdo # -> New Zealand
-Similar Pacific/Auckland Antarctica/South_Pole # -> New Zealand
-Similar Asia/Riyadh Antarctica/Syowa
-Similar Asia/Urumqi Antarctica/Vostok
-Similar Europe/Berlin Arctic/Longyearbyen
-Similar Asia/Riyadh Asia/Aden
+Similar Pacific/Auckland Antarctica/McMurdo # Antarctica -> New Zealand
+Similar Pacific/Auckland Antarctica/South_Pole # Antarctica -> New Zealand
+Similar Asia/Riyadh Antarctica/Syowa # Antarctica -> Saudi Arabia
+Similar Asia/Urumqi Antarctica/Vostok # Antarctica -> China
+
+Similar Europe/Berlin Arctic/Longyearbyen # Norway -> Germany
+
+Similar Asia/Riyadh Asia/Aden # Yemen -> Saudi Arabia
 Alias Asia/Ashgabat Asia/Ashkhabad
-Similar Asia/Qatar Asia/Bahrain
-Similar Asia/Kuching Asia/Brunei
+Similar Asia/Qatar Asia/Bahrain # Bahrain -> Qatar
+Similar Asia/Kuching Asia/Brunei # Brunei -> Malaysia
 Alias Asia/Kolkata Asia/Calcutta
-Similar Asia/Shanghai Asia/Chongqing
+Similar Asia/Shanghai Asia/Chongqing # China -> China
 
 # TZDB does not allow Links-to-Links so this entry is listed as 'Link
 # Asia/Shanghai Asia/Chungking'. But it really should have been the following
@@ -173,71 +182,78 @@ Similar Asia/Shanghai Asia/Chongqing
 Alias Asia/Chongqing Asia/Chungking
 
 Alias Asia/Dhaka Asia/Dacca
-Similar Asia/Shanghai Asia/Harbin
+Similar Asia/Shanghai Asia/Harbin # China -> China
 Alias Europe/Istanbul Asia/Istanbul
-Similar Asia/Urumqi Asia/Kashgar
+Similar Asia/Urumqi Asia/Kashgar # China -> China
 Alias Asia/Kathmandu Asia/Katmandu
-Similar Asia/Singapore Asia/Kuala_Lumpur
-Similar Asia/Riyadh Asia/Kuwait
+Similar Asia/Singapore Asia/Kuala_Lumpur # Malaysia -> Singapore
+Similar Asia/Riyadh Asia/Kuwait # Kuwait -> Saudi Arabia
 Alias Asia/Macau Asia/Macao
-Similar Asia/Dubai Asia/Muscat
-Similar Asia/Bangkok Asia/Phnom_Penh
+Similar Asia/Dubai Asia/Muscat # Oman -> UAE
+Similar Asia/Bangkok Asia/Phnom_Penh # Cambodia -> Thailand
 Alias Asia/Yangon Asia/Rangoon
-Similar Asia/Ho_Chi_Minh Asia/Saigon
-Similar Asia/Jerusalem Asia/Tel_Aviv
+Similar Asia/Ho_Chi_Minh Asia/Saigon # Vietnam -> Vietnam
+Similar Asia/Jerusalem Asia/Tel_Aviv # Israel -> Israel
 Alias Asia/Thimphu Asia/Thimbu
 Alias Asia/Makassar Asia/Ujung_Pandang
 Alias Asia/Ulaanbaatar Asia/Ulan_Bator
-Similar Asia/Bangkok Asia/Vientiane
+Similar Asia/Bangkok Asia/Vientiane # Laos -> Thailand
+
 Alias Atlantic/Faroe Atlantic/Faeroe
-Similar Europe/Berlin Atlantic/Jan_Mayen
-Similar Africa/Abidjan Atlantic/Reykjavik
-Similar Africa/Abidjan Atlantic/St_Helena
+Similar Europe/Berlin Atlantic/Jan_Mayen # Norway -> Germany
+Similar Africa/Abidjan Atlantic/Reykjavik # Iceland -> Ivory Coast
+Similar Africa/Abidjan Atlantic/St_Helena # St Helena -> Ivory Coast
 
 # TZDB does not allow Links-to-Links so this entry is listed as 'Link
 # Australia/Sydney Australia/ACT'. But it really should have been the following
 # to indicate a rename.
 Alias Australia/Canberra Australia/ACT
 
+# I don't know which timezones are commonly used in Australia, but some of
+# these are marked as 'Alternate' because they refer to large Australian
+# states, which I presume are used in a way similar to the Eastern, Central,
+# Mountain, Pacific timezones in the US.
 Similar Australia/Sydney Australia/Canberra
-Similar Australia/Hobart Australia/Currie
+Similar Australia/Hobart Australia/Currie # Currie, Hobart, separate islands
 Alias Australia/Lord_Howe Australia/LHI
-Similar Australia/Sydney Australia/NSW
-Similar Australia/Darwin Australia/North
-Similar Australia/Brisbane Australia/Queensland
-Similar Australia/Adelaide Australia/South
-Similar Australia/Hobart Australia/Tasmania
-Similar Australia/Melbourne Australia/Victoria
-Similar Australia/Perth Australia/West
-Similar Australia/Broken_Hill Australia/Yancowinna
+Alternate Australia/Sydney Australia/NSW
+Alternate Australia/Darwin Australia/North
+Alternate Australia/Brisbane Australia/Queensland
+Alternate Australia/Adelaide Australia/South
+Alternate Australia/Hobart Australia/Tasmania
+Alternate Australia/Melbourne Australia/Victoria
+Alternate Australia/Perth Australia/West
+Alias Australia/Broken_Hill Australia/Yancowinna
 
 # TZDB does not allow Links-to-Links so this entry is listed as 'Link
 # America/Rio_Branco Brazil/Acre'. But it really should have been the following
 # to indicate a rename.
-Alias America/Porto_Acre Brazil/Acre
+Alias America/Porto_Acre Brazil/Acre # Brazil -> Brazil
 
 # No idea if Brazil/East and Brazil/West are commonly used. Consider changing
 # them to Alternate if they are.
-Alias America/Noronha Brazil/DeNoronha
-Obsolete America/Sao_Paulo Brazil/East
-Obsolete America/Manaus Brazil/West
+Alias America/Noronha Brazil/DeNoronha # Brazil -> Brazil
+Obsolete America/Sao_Paulo Brazil/East # Brazil -> Brazil
+Obsolete America/Manaus Brazil/West # Brazil -> Brazil
 
 # Alternates for the broad Canadian timezones. Useful to include in timezone
 # selectors.
-Alternate America/Halifax Canada/Atlantic
-Alternate America/Winnipeg Canada/Central
-Alternate America/Toronto Canada/Eastern
-Alternate America/Edmonton Canada/Mountain
-Alternate America/St_Johns Canada/Newfoundland
-Alternate America/Vancouver Canada/Pacific
-Alternate America/Regina Canada/Saskatchewan
-Alternate America/Whitehorse Canada/Yukon
+Alternate America/Halifax Canada/Atlantic # Canada -> Canada
+Alternate America/Winnipeg Canada/Central # Canada -> Canada
+Alternate America/Toronto Canada/Eastern # Canada -> Canada
+Alternate America/Edmonton Canada/Mountain # Canada -> Canada
+Alternate America/St_Johns Canada/Newfoundland # Canada -> Canada
+Alternate America/Vancouver Canada/Pacific # Canada -> Canada
+Alternate America/Regina Canada/Saskatchewan # Canada -> Canada
+Alternate America/Whitehorse Canada/Yukon # Canada -> Canada
 
-Similar America/Santiago Chile/Continental
-Alias Pacific/Easter Chile/EasterIsland
-Alias America/Havana Cuba
-Alias Africa/Cairo Egypt
-Alias Europe/Dublin Eire
+Similar America/Santiago Chile/Continental # Chile -> Chile
+Alias Pacific/Easter Chile/EasterIsland # Chile -> Chile
+
+Alias America/Havana Cuba # Cuba -> Cuba
+Alias Africa/Cairo Egypt # Egypt -> Egypt
+Alias Europe/Dublin Eire # Ireland -> Ireland
+
 Alias Etc/GMT Etc/GMT+0
 Alias Etc/GMT Etc/GMT-0
 Alias Etc/GMT Etc/GMT0
@@ -245,110 +261,122 @@ Alias Etc/GMT Etc/Greenwich
 Alias Etc/UTC Etc/UCT
 Alias Etc/UTC Etc/Universal
 Alias Etc/UTC Etc/Zulu
-Similar Europe/Brussels Europe/Amsterdam
-Similar Europe/London Europe/Belfast
-Similar Europe/Prague Europe/Bratislava
-Similar Europe/Zurich Europe/Busingen
-Similar Europe/Berlin Europe/Copenhagen
-Similar Europe/London Europe/Guernsey
-Similar Europe/London Europe/Isle_of_Man
-Similar Europe/London Europe/Jersey
+
+Similar Europe/Brussels Europe/Amsterdam # Netherland -> Belgium
+Similar Europe/London Europe/Belfast # UK -> UK
+Similar Europe/Prague Europe/Bratislava # Slovakia -> Czech
+Similar Europe/Zurich Europe/Busingen # Germany -> Switzerland
+Similar Europe/Berlin Europe/Copenhagen # Denmark -> Germany
+Similar Europe/London Europe/Guernsey # UK -> UK
+Similar Europe/London Europe/Isle_of_Man # UK -> UK
+Similar Europe/London Europe/Jersey # UK -> UK
 Alias Europe/Kyiv Europe/Kiev
-Similar Europe/Belgrade Europe/Ljubljana
-Similar Europe/Brussels Europe/Luxembourg
-Similar Europe/Helsinki Europe/Mariehamn
-Similar Europe/Paris Europe/Monaco
+Similar Europe/Belgrade Europe/Ljubljana # Slovenia -> Serbia
+Similar Europe/Brussels Europe/Luxembourg # Luxembourg -> Belgium
+Similar Europe/Helsinki Europe/Mariehamn # Aland Islands -> Finland
+Similar Europe/Paris Europe/Monaco # Monaco -> France
 Alias Asia/Nicosia Europe/Nicosia
-Similar Europe/Berlin Europe/Oslo
-Similar Europe/Belgrade Europe/Podgorica
-Similar Europe/Rome Europe/San_Marino
-Similar Europe/Belgrade Europe/Sarajevo
-Similar Europe/Belgrade Europe/Skopje
-Similar Europe/Berlin Europe/Stockholm
-Similar Europe/Chisinau Europe/Tiraspol
-Similar Europe/Kyiv Europe/Uzhgorod
-Similar Europe/Zurich Europe/Vaduz
-Similar Europe/Rome Europe/Vatican
-Similar Europe/Belgrade Europe/Zagreb
-Similar Europe/Kyiv Europe/Zaporozhye
-Obsolete Europe/London GB
-Obsolete Europe/London GB-Eire
+Similar Europe/Berlin Europe/Oslo # Norway -> Germany
+Similar Europe/Belgrade Europe/Podgorica # Montenegro -> Serbia
+Similar Europe/Rome Europe/San_Marino # San Marino -> Italy
+Similar Europe/Belgrade Europe/Sarajevo # Bosnia -> Serbia
+Similar Europe/Belgrade Europe/Skopje # North Macedonia -> Serbia
+Similar Europe/Berlin Europe/Stockholm # Sweden -> Germany
+Similar Europe/Chisinau Europe/Tiraspol # Transnistria (Moldova) -> Moldova
+Similar Europe/Kyiv Europe/Uzhgorod # Ukraine -> Ukraine
+Similar Europe/Zurich Europe/Vaduz # Liechtenstein -> Switzertland
+Similar Europe/Rome Europe/Vatican # Vatican City -> Italy
+Similar Europe/Belgrade Europe/Zagreb # Croatia -> Serbia
+Similar Europe/Kyiv Europe/Zaporozhye # Ukraine -> Ukraine
+
+Obsolete Europe/London GB # UK -> UK
+Obsolete Europe/London GB-Eire # Northern Ireland (UK) -> UK
+
 Alias Etc/GMT GMT
 Alias Etc/GMT GMT+0
 Alias Etc/GMT GMT-0
 Alias Etc/GMT GMT0
 Alias Etc/GMT Greenwich
+
 Obsolete Asia/Hong_Kong Hongkong
 
 # TZDB does not allow Links-to-Links so this entry is listed as 'Link
 # Africa/Abidjan Iceland'. But it really should have been the following to
 # indicate a rename.
-Alias Africa/Reykjavik Iceland
+Alias Atlantic/Reykjavik Iceland # Iceland -> Iceland
 
-Similar Africa/Nairobi Indian/Antananarivo
-Similar Asia/Bangkok Indian/Christmas
-Similar Asia/Yangon Indian/Cocos
-Similar Africa/Nairobi Indian/Comoro
-Similar Indian/Maldives Indian/Kerguelen
-Similar Asia/Dubai Indian/Mahe
-Similar Africa/Nairobi Indian/Mayotte
-Similar Asia/Dubai Indian/Reunion
-Obsolete Asia/Tehran Iran
-Obsolete Asia/Jerusalem Israel
-Obsolete America/Jamaica Jamaica
-Obsolete Asia/Tokyo Japan
-Obsolete Pacific/Kwajalein Kwajalein
-Obsolete Africa/Tripoli Libya
-Similar America/Tijuana Mexico/BajaNorte
-Similar America/Mazatlan Mexico/BajaSur
-Similar America/Mexico_City Mexico/General
-Obsolete Pacific/Auckland NZ
-Obsolete Pacific/Chatham NZ-CHAT
-Obsolete America/Denver Navajo
-Obsolete Asia/Shanghai PRC
-Similar Pacific/Port_Moresby Pacific/Chuuk
-Similar Pacific/Kanton Pacific/Enderbury
-Similar Pacific/Tarawa Pacific/Funafuti
-Similar Pacific/Honolulu Pacific/Johnston
-Similar Pacific/Tarawa Pacific/Majuro
-Similar Pacific/Pago_Pago Pacific/Midway
-Similar Pacific/Guadalcanal Pacific/Pohnpei
+Similar Africa/Nairobi Indian/Antananarivo # Madagascar -> Kenya
+Similar Asia/Bangkok Indian/Christmas # Australia -> Thailand
+Similar Asia/Yangon Indian/Cocos # Cocos (Keeling) -> Myanmar
+Similar Africa/Nairobi Indian/Comoro # Comoros -> Kenya
+Similar Indian/Maldives Indian/Kerguelen # French Southern Lands -> Maldives
+Similar Asia/Dubai Indian/Mahe # Seychelles -> Dubai
+Similar Africa/Nairobi Indian/Mayotte # Mayotte (France) -> Kenya
+Similar Asia/Dubai Indian/Reunion # Reunion -> Dubai
+
+Obsolete Asia/Tehran Iran # Iran -> Iran
+Obsolete Asia/Jerusalem Israel # Israel -> Israel
+Obsolete America/Jamaica Jamaica # Jamaica -> Jamaica
+Obsolete Asia/Tokyo Japan # Japan -> Japan
+Obsolete Pacific/Kwajalein Kwajalein # Kwajalein -> Kwajalein
+Obsolete Africa/Tripoli Libya # Libya -> Libya
+
+Similar America/Tijuana Mexico/BajaNorte # Mexico -> Mexico
+Similar America/Mazatlan Mexico/BajaSur # Mexico -> Mexico
+Similar America/Mexico_City Mexico/General # Mexico -> Mexico
+
+Obsolete Pacific/Auckland NZ # New Zealand -> New Zealand
+Obsolete Pacific/Chatham NZ-CHAT # New Zealand -> New Zealand
+
+Obsolete America/Denver Navajo # US -> US
+Obsolete Asia/Shanghai PRC # China -> China
+
+Similar Pacific/Port_Moresby Pacific/Chuuk # Micronesia -> Papua New Guinea
+Similar Pacific/Kanton Pacific/Enderbury # Kiribati -> Kiribati
+Similar Pacific/Tarawa Pacific/Funafuti # Tuvalu -> Kiribati
+Similar Pacific/Honolulu Pacific/Johnston # US M Islands -> US
+Similar Pacific/Tarawa Pacific/Majuro # Marshall Islands -> Kiribati
+Similar Pacific/Pago_Pago Pacific/Midway # American Samoa -> American Samoa
+Similar Pacific/Guadalcanal Pacific/Pohnpei # Micronesia -> Solomon Islands
 Alias Pacific/Pohnpei Pacific/Ponape
-Similar Pacific/Guam Pacific/Saipan
-Alias Pacific/Pago_Pago Pacific/Samoa
+Similar Pacific/Guam Pacific/Saipan # Northern Mariana Islands -> Guam
+Alias Pacific/Pago_Pago Pacific/Samoa # American Samoa -> American Samoa
 
 # TZDB does not allow Links-to-Links so this entry is listed as
 # 'Pacific/Port_Moresby Pacific/Truk'. But it really should have been the
 # following to indicate a rename.
 Alias Pacific/Chuuk Pacific/Truk
 
-Similar Pacific/Tarawa Pacific/Wake
-Similar Pacific/Tarawa Pacific/Wallis
-Similar Pacific/Port_Moresby Pacific/Yap
-Obsolete Europe/Warsaw Poland
-Obsolete Europe/Lisbon Portugal
-Obsolete Asia/Taipei ROC
-Obsolete Asia/Seoul ROK
-Obsolete Asia/Singapore Singapore
-Obsolete Europe/Istanbul Turkey
+Similar Pacific/Tarawa Pacific/Wake # US M Islands -> Kiribati
+Similar Pacific/Tarawa Pacific/Wallis # Wallis -> Kiribati
+Similar Pacific/Port_Moresby Pacific/Yap # Micronesia -> Papua New Guinea
+
+Obsolete Europe/Warsaw Poland # Poland -> Poland
+Obsolete Europe/Lisbon Portugal # Portugal -> Portugal
+Obsolete Asia/Taipei ROC # Taiwan -> Taiwan
+Obsolete Asia/Seoul ROK # South Korean -> South Korea
+Obsolete Asia/Singapore Singapore # Singapore -> Singapore
+Obsolete Europe/Istanbul Turkey # Turkey -> Turkey
+
 Alias Etc/UTC UCT
 
 # Alternates for the broad US timezones. Useful to include in timezone
 # selectors.
-Alternate America/Anchorage US/Alaska
-Alternate America/Adak US/Aleutian
-Alternate America/Phoenix US/Arizona
-Alternate America/Chicago US/Central
+Alternate America/Anchorage US/Alaska # US -> US
+Alternate America/Adak US/Aleutian # US -> US
+Alternate America/Phoenix US/Arizona # US -> US
+Alternate America/Chicago US/Central # US -> US
 Alias America/Indiana/Indianapolis US/East-Indiana
-Alternate America/New_York US/Eastern
-Alternate Pacific/Honolulu US/Hawaii
+Alternate America/New_York US/Eastern # US -> US
+Alternate Pacific/Honolulu US/Hawaii # US -> US
 Alias America/Indiana/Knox US/Indiana-Starke
-Alternate America/Detroit US/Michigan
-Alternate America/Denver US/Mountain
-Alternate America/Los_Angeles US/Pacific
-Alternate Pacific/Pago_Pago US/Samoa
+Alternate America/Detroit US/Michigan # US -> US
+Alternate America/Denver US/Mountain # US -> US
+Alternate America/Los_Angeles US/Pacific # US -> US
+Alternate Pacific/Pago_Pago US/Samoa # American Samoa -> Papua New Guinea
 
 Alternate Etc/UTC UTC
 Obsolete Etc/UTC Universal
+
 Obsolete Europe/Moscow W-SU
 Alias Etc/UTC Zulu
