@@ -42,16 +42,15 @@
 #   Obsolete entries should not be presented to the end-users in a timezone
 #   selctor.
 #
-# I made some subjective judgement calls when deciding which of the tags to
-# apply to a given 'Link' entry:
+# I made some subjective decisions when selecting these new tags for some
+# entries:
 #
 #   * Changes in spelling are always given an 'Alias' tag.
 #   * Changes in the naming hierarchy (e.g. "Iran" to "Asia/Tehran") are
 #     given an 'Obsolete' tag because most modern timezones should have the
-#     form "region/name". The exception is "UTC" which is an alias for
-#     "Etc/UTC", but "UTC" to so common that it is given a "Similar"
+#     form "region/name".
 #   * A few 'Alias' links are categorized as 'Alternate' because they are
-#     useful to have in a timezone selector UI.
+#     useful to have in a timezone selector UI. For example "UTC".
 #   * There are a few links where there is no documentation in the TZDB raw
 #     files that explains the physical location that the 'link' timezone refers
 #     to. These are labeled as 'Obsolete'.

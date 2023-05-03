@@ -2,7 +2,7 @@
 # such that:
 #
 # 1) Every ISO country code (as defined by iso3166_long.txt and
-# iso3166_short.txt) has at least one timezone. With the exception for the 2
+# iso3166_short.txt) has at least one timezone. The 2 exceptions are the
 # uninhabited islands of Bouvet Island (BV) and Heard Island & McDonald Islands
 # (HM) which do not have an assigned timezone.
 #
