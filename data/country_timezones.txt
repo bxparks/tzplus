@@ -174,8 +174,22 @@ CW America/Lower_Princes # Curacao
 BR America/Maceio # Brazil
 NI America/Managua # Nicaragua
 BR America/Manaus # Brazil
+
+# Saint Martin (MF) is the French territory in the northern half of Saint
+# Martin island. Sint Maarten (SX) is the Dutch territory in the southern half
+# of the Saint Martin island.
+#
+# The largest city of Marigot is in Saint Martin and is assigned a timezone of
+# America/Marigot which covers the French part. The TZDB does not assign a
+# separate timezone identifier to the Dutch half, so we have to assume that the
+# Dutch part uses the same timezone as the French part.
+
+# Since we want every ISO country to have at least one timezone in this file,
+# we must create a duplicate entry for America/Marigot. This duplicate timezone
+# is *not* caused by war or border dispute.
 MF America/Marigot # Saint Martin
-SX America/Marigot # St Maarten (added for SX)
+SX America/Marigot # Sint Maarten
+
 MQ America/Martinique # Martinique
 MX America/Matamoros # Mexico
 MX America/Mazatlan # Mexico
@@ -470,7 +484,7 @@ IM Europe/Isle_of_Man # Isle of Man
 TR Europe/Istanbul # Turkey
 JE Europe/Jersey # Jersey
 RU Europe/Kaliningrad # Russia
-# UA Europe/Kiev # Ukraine
+# UA Europe/Kiev # Ukraine, old spelling of Kyiv
 RU Europe/Kirov # Russia
 UA Europe/Kyiv # Ukraine
 PT Europe/Lisbon # Portugal
@@ -494,7 +508,14 @@ RU Europe/Samara # Russia
 SM Europe/San_Marino # San Marino
 BA Europe/Sarajevo # Bosnia & Herzegovina
 RU Europe/Saratov # Russia
-RU Europe/Simferopol # Russia (occupied)
+
+# Crimea was invaded by Russia and annexed in 2014. This is not internationally
+# recognized. However the practical situation on the ground is that Russia has
+# full control over Crimea. Therefore Europe/Simferopol is placed in both
+# Russia and Ukraine.
+RU Europe/Simferopol # Crimea, Russia occupied
+UA Europe/Simferopol # Crimea, Ukraine
+
 MK Europe/Skopje # North Macedonia
 BG Europe/Sofia # Bulgaria
 SE Europe/Stockholm # Sweden
@@ -523,8 +544,14 @@ CH Europe/Zurich # Switzerland
 # HK Hongkong # Hong Kong
 # IS Iceland # Iceland
 MG Indian/Antananarivo # Madagascar
-MU Indian/Chagos # Mauritius (according to United Nations)
+
+# Britain has control over Chagos Islands. However, the United Nations and the
+# International Tribunal for the Law of the Sea have declared that Chagos
+# belongs to Mauritius. Therefore, Indian/Chagos is listed under both British
+# Indian Ocean Territory (IO) and Mauritius (MU).
+MU Indian/Chagos # Mauritius
 IO Indian/Chagos # British Indian Ocean Territory
+
 CX Indian/Christmas # Christmas Island
 CC Indian/Cocos # Cocos Islands
 KM Indian/Comoro # Comoros
