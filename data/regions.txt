@@ -9,17 +9,22 @@
 # difficult to classify a few Caribbean islands (eg. Aruba, Bonaire, Carucao,
 # Trindad & Tobago) because they are geographically on the continental shelf of
 # South America, but are culturally more North America due to their history.
+#
+# There does not seem to be an ISO standard for continent codes, but I used
+# codes which seem to match most of the web pages that I found on the internet
+# (e.g. https://datahub.io/core/continent-codes). I invented the codes for
+# regions which don't correspond to continents.
 
-# Code Name
-Africa Africa
-Antarctica Antarctica
-Asia Asia
-Atlantic Atlantic Ocean
-Australia Australia
-CAmerica Central America # including Caribbean islands
-Etc Etcetera
-Europe Europe
-Indian Indian Ocean
-NAmerica North America
-Pacific Pacific Ocean
-SAmerica South America
+# Region Name
+AF Africa
+AN Antarctica
+AO Atlantic Ocean
+AS Asia
+AU Australia
+CA Central America # including Caribbean islands
+ET Etcetera
+EU Europe
+IO Indian Ocean
+NA North America
+PO Pacific Ocean
+SA South America

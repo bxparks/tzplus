@@ -157,10 +157,10 @@ Currently, the regions are:
 The [ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)
 list of countries was copied from the `iso3166.tab` file from the IANA TZDB,
 then manually edited into [iso3166_long.txt](data/iso3166_long.txt) and
-[iso3166_short.txt](data/iso3166_short.txt). To allow easier implementation on
-microcontroller environments without support for Unicode, all country names were
-converted to ASCII, and all non-English names were converted to their common
-English names.
+[iso3166_short.txt](data/iso3166_short.txt). All non-English names were
+converted to their common English names. All non-ASCII characters were converted
+to their approximate ASCII characters. This allows easier implementations on
+microcontroller environments without support for Unicode.
 
 The determination of which timezones are *significant* enough to be presented in
 a user-interface is defined by the
@@ -260,29 +260,42 @@ Timezones with multiple countries:
 <a name="Methodology"></a>
 ## Methodology
 
-The following steps are used to create the final product:
+The following steps were used to create the final `country_timezones.txt` file:
 
-1. Zone entries are programmatically extracted into
+1. Zone entries were programmatically extracted into
    [zones.txt](data/zones.txt).
-1. Link entries are programmatically extracted into
+1. Link entries were programmatically extracted into
    [links.txt](data/links.txt).
-1. Zone entries are categorized as either `Zone` or `ZoneObsolete` and saved
-   into [classified_zones.txt](data/classified_zones.txt).
-1. Link entries are reorganized to undo the effects of the post-1970 merging.
-    * Each Link is reclassified as `Similar`, `Alternate`, `Alias`, `Obsolete`
-      and saved into [classified_links.txt](data/classified_links.txt).
-1. ISO 3166 country codes and names are reformatted from `iso3166.tab`:
+1. Zone entries were categorized as either `Zone` or `ZoneObsolete`.
+    * Saved into [classified_zones.txt](data/classified_zones.txt).
+1. Link entries were reorganized to undo the effects of the post-1970 merging.
+    * Each `Link` entry was reclassified as `Similar`, `Alternate`, `Alias`,
+      `Obsolete`
+    * Saved into [classified_links.txt](data/classified_links.txt).
+1. ISO 3166 country codes and names were reformatted from `iso3166.tab`:
     * [iso3166_long.txt](data/iso3166_long.txt) contain long, usually the full,
       names of countries.
     * [iso3166_short.txt](data/iso3166_short.txt) contain short abbreviated
       names of countries.
-    * Non-ASCII characters are mapped to their approximate ASCII characters.
-    * Non-English names (e.g. French, Dutch, Portuguese) names are converted
+    * Non-English names (e.g. French, Dutch, Portuguese) names were converted
       into their common English names.
+    * Non-ASCII characters were mapped to their approximate ASCII characters.
 1. Timezone to Country mapping
     * Timezones of significance (defined as `Zone`, `Similar`, and `Alternate`)
-      are copied into [country_timezones.txt](data/country_timezones.txt).
-    * Each timezone is assigned an ISO 3166 country code.
+      were copied into [country_timezones.txt](data/country_timezones.txt)
+      into a (country, timezone) pair.
+    * Each timezone was assigned an ISO 3166 country code.
+1. Regions (continents and oceans) were defined in
+   [regions.txt](data/regions.txt).
+    * The single identifier `America` was split into 3: North America, Central
+      America, and South America.
+1. Region mapping
+    * Each (country, timezone) pair was assigned a `region` into a (region,
+      country, timezone) triplet.
+    * Some countries (e.g. France, Britain, US) spanned multiple regions
+      because of their historical territorial holdings. Therefore, the region
+      assignment had to be done against the (country, timezone) pair, instead of
+      just to the country.
 
 <a name="TimezonesInMultipleCountries"></a>
 ## Timezones in Multiple Countries
