@@ -89,10 +89,7 @@ SA AR America/Argentina/San_Juan # Argentina
 SA AR America/Argentina/San_Luis # Argentina
 SA AR America/Argentina/Tucuman # Argentina
 SA AR America/Argentina/Ushuaia # Argentina
-
-# Aruba is on the continental shelf of South America.
-CA AW America/Aruba # Aruba
-
+CA AW America/Aruba # Aruba, on continental shelf of South America
 SA PY America/Asuncion # Paraguay
 NA CA America/Atikokan # Canada
 NA US America/Atka # USA
@@ -164,10 +161,7 @@ NA US America/Juneau # USA
 NA US America/Kentucky/Louisville # USA
 NA US America/Kentucky/Monticello # USA
 # US America/Knox_IN # USA
-
-# Bonaire is on the continental shelf of South America.
-CA BQ America/Kralendijk # Caribbean Netherlands (Bonaire)
-
+CA BQ America/Kralendijk # Caribbean Netherlands (Bonaire), shelf of S America
 SA BO America/La_Paz # Bolivia
 SA PE America/Lima # Peru
 NA US America/Los_Angeles # USA
@@ -273,9 +267,9 @@ AN AQ Antarctica/Syowa # Antartica Japan
 AN AQ Antarctica/Troll # Antartica Norway
 AN AQ Antarctica/Vostok # Antartica Russia
 
-# Svalbard is in the Arctic region but there is only one timezone assigned to
-# the Arctic prefix. So don't create an "Arctic" region in regions.txt, and
-# instead add this in the "Europe" region.
+# Svalbard is assigned to the Arctic region in TZDB but there is only one
+# timezone assigned to the Arctic prefix. So don't create an "Arctic" region in
+# regions.txt, and instead add this to the "Europe" region.
 EU SJ Arctic/Longyearbyen # Svalbard & Jan Mayen
 
 AS YE Asia/Aden # Yemen
@@ -295,7 +289,7 @@ AS RU Asia/Barnaul # Russia
 AS LB Asia/Beirut # Lebanon
 AS KG Asia/Bishkek # Kyrgyzstan
 AS BN Asia/Brunei # Brunei
-# IN Asia/Calcutta # India
+# IN Asia/Calcutta # India, renamed to Kolkata
 AS RU Asia/Chita # Russia
 AS MN Asia/Choibalsan # Mongolia
 AS CN Asia/Chongqing # China
@@ -434,6 +428,7 @@ NA CA Canada/Yukon # Canada
 # US EST5EDT # USA
 # EG Egypt # Egypt
 # IE Eire # Ireland
+
 # 00 Etc/GMT # Misc
 # 00 Etc/GMT+0 # Misc
 # 00 Etc/GMT+1 # Misc
@@ -464,6 +459,7 @@ NA CA Canada/Yukon # Canada
 # 00 Etc/GMT-8 # Misc
 # 00 Etc/GMT-9 # Misc
 # 00 Etc/GMT0 # Misc
+
 # 00 Etc/Greenwich # Misc
 # 00 Etc/UCT # Misc
 ET 00 Etc/UTC # Misc
