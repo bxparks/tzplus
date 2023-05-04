@@ -75,7 +75,7 @@ In these environments:
 * a keyboard or mouse may not exist
 * the input device may be only 1 or 2 buttons
 
-Assuming that only short (about 16 characters or less) can be displayed at a
+Assuming that only short (about 10-15 characters or less) can be displayed at a
 time, we want to present the timezones to the user, in a hierarchical structure,
 starting from the largest geopolitical areas (continents, oceans), then the ISO
 countries, then display the cities. Ideally, the cities would be sorted in a
@@ -207,7 +207,7 @@ Here is the quick description of some of the other files in this repository:
           shell script.
     * [classified_zones.txt](data/classified_zones.txt)
         * Manually derived from `zones.txt`, each `Zone` entry is subclassified
-          into a `Zone` and `ZoneObsolete` entry.
+          into a `Zone` or `ZoneObsolete` entry.
         * The `tools/check_data.py` script validates that every `zones.txt`
           entry exists in the `classified_zones.txt` file.
     * [classified_links.txt](data/classified_links.txt)
@@ -225,7 +225,7 @@ Here is the quick description of some of the other files in this repository:
           with their 2-letter codes and a long version of the country name.
     * [iso3166_short.txt](data/iso3166_short.txt)
         * Same as `iso3166_long.txt` but with country names shortened to be
-          16 characters or less.
+          13 characters or less.
         * Suitable for small LCD or OLED displays.
     * [regions.txt](data/regions.txt)
         * List of the top-level continents and oceans.
@@ -245,9 +245,9 @@ zones.txt: 350
 links.txt: 246
 classified_zones.txt: 350
 classified_links.txt: 246
-iso3166_long.txt: 249
-iso3166_short.txt: 249
-regions.txt: 12
+iso3166_long.txt: 249, maxlen: 42
+iso3166_short.txt: 249, maxlen: 13
+regions.txt: 12, maxlen: 15
 country_timezones.txt: regions=12, countries=247, timezones=480
 Timezones with multiple countries:
   America/Marigot: ['MF', 'SX']
