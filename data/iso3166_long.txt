@@ -173,7 +173,7 @@ MA Morocco
 MC Monaco
 MD Moldova
 ME Montenegro
-MF St Martin
+MF St Martin # Saint Martin (north of Sint Maarten)
 MG Madagascar
 MH Marshall Islands
 MK North Macedonia
@@ -243,7 +243,7 @@ SR Suriname
 SS South Sudan
 ST Sao Tome & Principe
 SV El Salvador
-SX St Maarten
+SX St Maarten # Sint Maarten, south of Saint Martin
 SY Syria
 SZ Eswatini # Swaziland
 TC Turks & Caicos Is
