@@ -62,7 +62,7 @@ BL St Barthelemy
 BM Bermuda
 BN Brunei
 BO Bolivia
-BQ Caribbean Netherlands (Bonaire, Sint Eustatius, Saba)
+BQ Caribbean Netherlands # Bonaire, Sint Eustatius, Saba
 BR Brazil
 BS Bahamas
 BT Bhutan
@@ -246,7 +246,7 @@ SV El Salvador
 SX St Maarten # Sint Maarten, south of Saint Martin
 SY Syria
 SZ Eswatini # Swaziland
-TC Turks & Caicos Is
+TC Turks & Caicos Islands
 TD Chad
 TF French Southern and Antarctic Lands
 TG Togo

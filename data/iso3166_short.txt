@@ -120,7 +120,7 @@ GN Guinea
 GP Guadeloupe
 GQ Eq Guinea # Equatorial Guinea
 GR Greece
-GS S Georgia
+GS S Georgia # & the South Sandwich Islands
 GT Guatemala
 GU Guam
 GW Guinea-Bissau
