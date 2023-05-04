@@ -44,6 +44,7 @@ its data are published into the public domain.
 * [TZDB Deficiencies](#TzdbDeficencies)
 * [The Data Files](#DataFiles)
 * [Validation](#Validation)
+* [List Time Zones](#ListTimeZones)
 * [Methodology](#Methodology)
 * [Upgrading to New TZDB](#UpgradingTZDB)
 * [Alternatives Considered](#AlternativesConsidered)
@@ -255,6 +256,73 @@ Timezones with multiple countries:
   America/Marigot: ['MF', 'SX']
   Europe/Simferopol: ['RU', 'UA']
   Indian/Chagos: ['MU', 'IO']
+```
+
+<a name="ListTimeZones"></a>
+## List Time Zones
+
+See visualize the hierarchical list of timezones encoded in the
+`country_timezones.txt` file, you can run the
+[list_zones.py](tools/list_zones.py) script. The easy way to run this is to use
+the Makefile rule:
+
+```
+$ cd data
+$ make list
+Africa (AF)
+    Angola (AO)
+        Africa/Luanda
+...
+Antarctica (AN)
+    Antarctica (AQ)
+        Antarctica/Casey
+        Antarctica/Davis
+...
+Atlantic Ocean (AO)
+    Bermuda (BM)
+        Atlantic/Bermuda
+...
+Asia (AS)
+    UAE (AE)
+        Asia/Dubai
+...
+Australia (AU)
+    Australia (AU)
+        Australia/Adelaide
+        Australia/Brisbane
+...
+Central America (CA)
+    Antigua (AG)
+        America/Antigua
+...
+Etcetera (ET)
+    None (00)
+        Etc/UTC
+        UTC
+...
+Europe (EU)
+    Andorra (AD)
+        Europe/Andorra
+...
+Indian Ocean (IO)
+    Cocos Is (CC)
+        Indian/Cocos
+...
+North America (NA)
+    Canada (CA)
+        America/Atikokan
+        America/Blanc-Sablon
+...
+Pacific Ocean (PO)
+    Am Samoa (AS)
+        Pacific/Midway
+        Pacific/Pago_Pago
+...
+South America (SA)
+    Argentina (AR)
+        America/Argentina/Buenos_Aires
+        America/Argentina/Catamarca
+...
 ```
 
 <a name="Methodology"></a>

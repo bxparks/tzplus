@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-
-# Usage:
 #
+# Validate various data files under data/
+#
+# Usage:
 # $ check_data.py
 #   --zones {file}
 #   --links {file}

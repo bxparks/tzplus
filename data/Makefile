@@ -28,6 +28,15 @@ geonames: zones.txt links.txt
 		--region regions.txt \
 		--geonames ../geonames/timeZones.txt
 
+# List the timezones in a hierarchical menu that might match something used in
+# a microcontroller environment.
+.PHONY: list
+list: regions.txt iso3166_short.txt country_timezones.txt
+	$(TOOLS_DIR)/list_zones.py \
+		--region regions.txt \
+		--countries iso3166_short.txt \
+		country_timezones.txt
+
 # Extract Zones.
 zones.txt: $(TOOLS_DIR)/extract_zones.sh $(TZDB_DIR)
 	$(TOOLS_DIR)/extract_zones.sh $(TZDB_DIR) > $@
