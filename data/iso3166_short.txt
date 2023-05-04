@@ -15,6 +15,7 @@
 # * Replace "Saint" with "St"
 # * Replace "Republic" with "Rep"
 # * Replace "Equitorial" with "Eq"
+# * Replace "Central" with "Cent"
 # * Replace French, Portugese, Dutch names with more familiar English names
 #   * e.g. "Ivory Coast" instead of "Cote d'Ivoire"
 # * Very long names replaced with acronyms:
@@ -70,7 +71,7 @@ BZ Belize
 CA Canada
 CC Cocos Is # Cocos (Keeling) Islands
 CD Congo DRC
-CF Central Af Rep # Central African Republic
+CF Cent Af Rep # Central African Republic
 CG Congo
 CH Switzerland
 CI Ivory Coast
@@ -205,12 +206,12 @@ OM Oman
 PA Panama
 PE Peru
 PF Fr Polynesia
-PG Papua New Guinea
+PG PNG
 PH Philippines
 PK Pakistan
 PL Poland
 PM St Pierre # & Miquelon
-PN Pitcairn
+PN Pitcairn Is
 PR Puerto Rico
 PS Palestine
 PT Portugal
