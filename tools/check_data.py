@@ -109,6 +109,18 @@ def main() -> None:
     # Read regions
     regions = read_regions(args.regions)
 
+    # Print summary
+    max_long_country = max([len(v) for v in iso_long.values()])
+    max_short_country = max([len(v) for v in iso_short.values()])
+    max_region = max([len(v) for v in regions.values()])
+    print(f"{args.zones}: {len(zones)}")
+    print(f"{args.links}: {len(links)}")
+    print(f"{args.classified_zones}: {len(classified_zones)}")
+    print(f"{args.classified_links}: {len(classified_links)}")
+    print(f"{args.iso_long}: {len(iso_long)}, maxlen: {max_long_country}")
+    print(f"{args.iso_short}: {len(iso_short)}, maxlen: {max_short_country}")
+    print(f"{args.regions}: {len(regions)}, maxlen: {max_region}")
+
     if args.country_timezones:
         # Read and check country-to-timezones.
         country_timezones, region_timezones = \
@@ -119,25 +131,17 @@ def main() -> None:
             args.country_timezones, country_timezones, classified_zones,
             classified_links)
 
-        # Collect list of timezones with multiple countries. This can happen
-        # for cities in war or in border disputes.
-        poly_timezones = get_poly_timezones(country_timezones)
-
-        # Print summary
-        print(f"{args.zones}: {len(zones)}")
-        print(f"{args.links}: {len(links)}")
-        print(f"{args.classified_zones}: {len(classified_zones)}")
-        print(f"{args.classified_links}: {len(classified_links)}")
-        print(f"{args.iso_long}: {len(iso_long)}")
-        print(f"{args.iso_short}: {len(iso_short)}")
-        print(f"{args.regions}: {len(regions)}")
-
         num_countries = len(country_timezones) - 1  # remove "00" country code
-        num_regions = len(region_timezones)
         num_timezones = sum([
             len(entry)
             for _, entry in country_timezones.items()
         ])
+
+        # Collect list of timezones with multiple countries.
+        poly_timezones = get_poly_timezones(country_timezones)
+
+        # Print summary
+        num_regions = len(region_timezones)
         print(
             f"{args.country_timezones}: "
             f"regions={num_regions}, "
@@ -157,20 +161,13 @@ def main() -> None:
             args.geonames, country_timezones, classified_zones,
             classified_links)
 
-        # Print summary
-        print(f"{args.zones}: {len(zones)}")
-        print(f"{args.links}: {len(links)}")
-        print(f"{args.classified_zones}: {len(classified_zones)}")
-        print(f"{args.classified_links}: {len(classified_links)}")
-        print(f"{args.iso_long}: {len(iso_long)}")
-        print(f"{args.iso_short}: {len(iso_short)}")
-        print(f"{args.regions}: {len(regions)}")
-
         num_countries = len(country_timezones) - 1  # remove "00" country code
         num_timezones = sum([
             len(entry)
             for _, entry in country_timezones.items()
         ])
+
+        # Print summary
         print(
             f"{args.country_timezones}: "
             f"countries={num_countries}, "
