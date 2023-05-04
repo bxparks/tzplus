@@ -191,7 +191,7 @@ Alias Asia/Macau Asia/Macao
 Similar Asia/Dubai Asia/Muscat # Oman -> UAE
 Similar Asia/Bangkok Asia/Phnom_Penh # Cambodia -> Thailand
 Alias Asia/Yangon Asia/Rangoon
-Similar Asia/Ho_Chi_Minh Asia/Saigon # Vietnam -> Vietnam
+Alias Asia/Ho_Chi_Minh Asia/Saigon # Vietnam -> Vietnam
 Similar Asia/Jerusalem Asia/Tel_Aviv # Israel -> Israel
 Alias Asia/Thimphu Asia/Thimbu
 Alias Asia/Makassar Asia/Ujung_Pandang

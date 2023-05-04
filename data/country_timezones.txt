@@ -350,7 +350,7 @@ AS KZ Asia/Qostanay # Kazakhstan
 AS KZ Asia/Qyzylorda # Kazakhstan
 # MM Asia/Rangoon # Myanmar, same as Yangon
 AS SA Asia/Riyadh # Saudi Arabia
-AS VN Asia/Saigon # Vietnam
+# AS VN Asia/Saigon # Vietnam, same as Ho_Chi_Minh
 AS RU Asia/Sakhalin # Russia
 AS UZ Asia/Samarkand # Uzbekistan
 AS KR Asia/Seoul # South Korea
