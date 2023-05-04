@@ -11,7 +11,6 @@
 #   --iso_short {file}
 #   --country_timezones country_timezones.txt
 
-from typing import Any
 from typing import Dict
 from typing import Iterable
 from typing import List
@@ -97,6 +96,10 @@ def main() -> None:
     check_countries(country_timezones, iso_short)
     check_timezones(country_timezones, classified_zones, classified_links)
 
+    # Collect list of timezones with multiple countries. This can happen
+    # for cities in war or in border disputes.
+    poly_timezones = get_poly_timezones(country_timezones)
+
     # Print summary
     print(f"{args.zones}: {len(zones)}")
     print(f"{args.links}: {len(links)}")
@@ -111,6 +114,10 @@ def main() -> None:
         f"country_codes={countries}, "
         f"timezones={timezones}"
     )
+    if poly_timezones:
+        print("Timezones with multiple countries:")
+        for timezone, countries in poly_timezones.items():
+            print(f"  {timezone}: {countries}")
 
 
 def read_zones(filename: str) -> Dict[str, Entry]:
@@ -345,10 +352,29 @@ def check_timezones(
             error("Missing timezones from country_timezones", missing)
 
 
+def get_poly_timezones(
+    country_timezones: CountryTimezones,
+) -> Dict[str, List[str]]:
+    """Return the timezones that belong to multiple countries."""
+    timezone_countries: Dict[str, List[str]] = {}  # timezone -> [countries]
+    for country, timezones in country_timezones.items():
+        for z in timezones:
+            countries = timezone_countries.get(z)
+            if not countries:
+                countries = []
+                timezone_countries[z] = countries
+            countries.append(country)
+    poly_timezones = {
+        k: v
+        for k, v in timezone_countries.items()
+        if len(v) > 1
+    }
+    return poly_timezones
+
+
 def check_cycle(filename: str, links: Dict[str, Entry]) -> None:
     for name, entry in links.items():
         if has_cycle(name, links):
-            link = name
             target = links[name].target
             error(f"{filename}: Link cycle for '{name}' -> '{target}'")
 
