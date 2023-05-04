@@ -3,19 +3,28 @@
 This repository contains data files which extend the functionality of the data
 files of the [IANA TZDB](https://github.com/eggert/tz) timezone database.
 
-The main product of this project is the generation and maintenance of the
+The main purpose of this project is the generation and maintenance of the
 [country_timezone.txt](data/country_timezones.txt) file which contains ~480
-*significant* IANA timezones (out of a total of ~600 timezones in the raw TZDB)
-organized into their respective ISO 3166 countries. The goal of the project is
-to ensure that every ISO country has at least one timezone. This allows the
-user-interface to present timezones in a nested hierarchy of continent/region,
-country, and city.
+*significant* IANA timezones (out of a total of ~600 timezones in the raw TZDB
+files) organized into their respective ISO 3166 countries. The goal is to ensure
+that every ISO country has at least one timezone. This allows the user-interface
+to present timezones in a nested hierarchy of continent/region, country, and
+city.
 
-This project is intended for user-interfaces in microcontrollers with limited
-memory, small displays, and restricted input devices. These microcontrollers do
-not support a POSIX-compatible libc library. They will use much smaller
-alternative timezones libraries such as
+The `country_timezones.txt` data is intended to be useful for user-interfaces
+running on microcontrollers with limited memory, small displays, and restricted
+input devices. These microcontrollers do not support a POSIX-compatible libc
+library. They will use much smaller alternative timezones libraries such as
 [AceTime](https://github.com/bxparks/AceTime) for Arduino.
+
+**Legal Disclaimer**: This project is not related to the TZDB project, the IANA
+organization, or any other government or quasi-government agency. A timezone may
+be assigned to the wrong ISO country due to a typo or a clerical error. Please
+submit a bug report. In a few rare cases, a subjective judgement call was made.
+If you disagree with the result, you may try to convince the maintainer of this
+project to make changes. If you are unsuccessful, you have the option to fork
+this database and make the changes yourself. This project and its data are
+published into the public domain.
 
 **Version**: 0.0 (2023-05-03, TZDB 2023c)
 
@@ -203,13 +212,20 @@ The following steps are used to create the final product:
       names of countries.
     * [iso3166_short.txt](data/iso3166_short.txt) contain short abbreviated
       names of countries.
-    * Non-ASCII characters are mapped to an ASCII character.
+    * Non-ASCII characters are mapped to their approximate ASCII characters.
     * Non-English names (e.g. French, Dutch, Portuguese) names are converted
       into their common English names.
 1. Timezone to Country mapping
     * Timezones of significance (defined as `Zone`, `Similar`, and `Alternate`)
       are copied into [country_timezones.txt](data/country_timezones.txt).
     * Each timezone is assigned an ISO 3166 country code.
+
+<a name="TimezonesInMultipleCountries"></a>
+## Timezones in Multiple Countries
+
+There are a handful of timezones which are assigned to multiple countries. The
+reasons for the multiple assignments are explained in the
+[country_timezones.txt](data/country_timezones.txt) file.
 
 <a name="UpgradingTZDB"></a>
 ## Upgrading to New TZDB
