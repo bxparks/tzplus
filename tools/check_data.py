@@ -9,6 +9,7 @@
 #   --classified_links {file}
 #   --iso_long {file}
 #   --iso_short {file}
+#   --regions {file}
 #   --country_timezones country_timezones.txt
 
 from typing import Dict
@@ -42,6 +43,9 @@ class Entry(NamedTuple):
 # ISO country to [timezones].
 CountryTimezones = Dict[str, List[str]]
 
+# Region to [timezones].
+RegionTimezones = Dict[str, List[str]]
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(
@@ -63,6 +67,10 @@ def main() -> None:
     parser.add_argument(
         '--iso_short',
         help='Short country names',
+        required=True)
+    parser.add_argument(
+        '--regions',
+        help='Region names',
         required=True)
     parser.add_argument(
         '--country_timezones',
@@ -91,9 +99,14 @@ def main() -> None:
     iso_short = read_countries(args.iso_short)
     check_iso_names(iso_long, iso_short)
 
+    # Read regions
+    regions = read_regions(args.regions)
+
     # Read and check country-to-timezones.
-    country_timezones = read_country_timezones(args.country_timezones)
+    country_timezones, region_timezones = \
+        read_country_timezones(args.country_timezones)
     check_countries(country_timezones, iso_short)
+    check_regions(region_timezones, regions)
     check_timezones(country_timezones, classified_zones, classified_links)
 
     # Collect list of timezones with multiple countries. This can happen
@@ -107,18 +120,25 @@ def main() -> None:
     print(f"{args.classified_links}: {len(classified_links)}")
     print(f"{args.iso_long}: {len(iso_long)}")
     print(f"{args.iso_short}: {len(iso_short)}")
-    countries = len(country_timezones) - 1  # remove "00" pseudo country code
-    timezones = sum([len(entry) for _, entry in country_timezones.items()])
+    print(f"{args.regions}: {len(regions)}")
+
+    num_countries = len(country_timezones) - 1  # remove "00" country code
+    num_regions = len(region_timezones)
+    num_timezones = sum([len(entry) for _, entry in country_timezones.items()])
     print(
         f"{args.country_timezones}: "
-        f"country_codes={countries}, "
-        f"timezones={timezones}"
+        f"regions={num_regions}, "
+        f"countries={num_countries}, "
+        f"timezones={num_timezones}"
     )
+
     if poly_timezones:
         print("Timezones with multiple countries:")
         for timezone, countries in poly_timezones.items():
             print(f"  {timezone}: {countries}")
 
+
+# -----------------------------------------------------------------------------
 
 def read_zones(filename: str) -> Dict[str, Entry]:
     """Read Zone records of the form:
@@ -182,9 +202,9 @@ def read_countries(filename: str) -> Dict[str, str]:
     return countries
 
 
-def read_country_timezones(filename: str) -> CountryTimezones:
-    """{country_code -> timezone}"""
-    country_timezones: CountryTimezones = {}
+def read_regions(filename: str) -> Dict[str, str]:
+    """{regionCode -> regionName}"""
+    regions: Dict[str, str] = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
         while True:
             line = read_line(f)
@@ -192,14 +212,42 @@ def read_country_timezones(filename: str) -> CountryTimezones:
                 break
             tokens: List[str] = line.split()
             code = tokens[0]
-            timezone = tokens[1]
+            name = line[len(code):].strip()
+            regions[code] = name
+    return regions
 
-            timezones = country_timezones.get(code)
+
+def read_country_timezones(
+    filename: str
+) -> (CountryTimezones, RegionTimezones):
+    """{country_code -> timezone}"""
+    country_timezones: CountryTimezones = {}
+    region_timezones: RegionTimezones = {}
+    with open(filename, 'r', newline='', encoding='utf-8') as f:
+        while True:
+            line = read_line(f)
+            if line is None:
+                break
+            tokens: List[str] = line.split()
+            region = tokens[0]
+            country = tokens[1]
+            timezone = tokens[2]
+
+            # Add to country->timezones
+            timezones = country_timezones.get(country)
             if not timezones:
                 timezones = []
-                country_timezones[code] = timezones
+                country_timezones[country] = timezones
             timezones.append(timezone)
-    return country_timezones
+
+            # Add to region->timezones
+            timezones = region_timezones.get(region)
+            if not timezones:
+                timezones = []
+                region_timezones[region] = timezones
+            timezones.append(timezone)
+
+    return country_timezones, region_timezones
 
 
 def read_line(input: TextIO) -> Optional[str]:
@@ -230,6 +278,8 @@ def read_line(input: TextIO) -> Optional[str]:
             continue
 
         return line
+
+# -----------------------------------------------------------------------------
 
 
 def check_zones(
@@ -318,6 +368,25 @@ def check_countries(
             error("Extra countries in country_timezones", extra)
 
 
+def check_regions(
+    region_timezones: RegionTimezones,
+    regions: Dict[str, str],
+) -> None:
+    """Check that every region in country_timezones.txt is defined in
+    regions.txt.
+    """
+    expected = set(regions.keys())
+    selected = set(region_timezones.keys())
+    if expected != selected:
+        extra = selected - expected
+        if extra:
+            error("Extra regions in country_timezones", extra)
+
+        missing = expected - selected
+        if missing:
+            error("Missing regions in country_timezones", missing)
+
+
 def check_timezones(
     country_timezones: CountryTimezones,
     classified_zones: Dict[str, Entry],
@@ -371,6 +440,8 @@ def get_poly_timezones(
     }
     return poly_timezones
 
+# -----------------------------------------------------------------------------
+
 
 def check_cycle(filename: str, links: Dict[str, Entry]) -> None:
     for name, entry in links.items():
@@ -418,12 +489,16 @@ def has_cycle(name: str, links: Dict[str, Entry]) -> bool:
         if p1 == p2:
             return True
 
+# -----------------------------------------------------------------------------
+
 
 def error(msg: str, items: Iterable[str] = []) -> None:
     print(msg)
     for item in sorted(items):
         print(f'  {item}')
     sys.exit(1)
+
+# -----------------------------------------------------------------------------
 
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
-# A manually maintained mapping of ISO 3166 country codes and TZDB timezones
-# such that:
+# Manually maintained mapping of ISO 3166 country codes and TZDB timezones such
+# that:
 #
 # 1) Every ISO country code (as defined by iso3166_long.txt and
 # iso3166_short.txt) has at least one timezone. The 2 exceptions are the
@@ -12,159 +12,168 @@
 # the synthetic ISO country code of "00" (it does not exist in
 # iso3166_xxx.txt).
 
-CI Africa/Abidjan # Ivory Coast
-GH Africa/Accra # Ghana
-ET Africa/Addis_Ababa # Ethiopia
-DZ Africa/Algiers # Algeria
-ER Africa/Asmara # Eritrea
+# Region CountryCode TimeZone
+
+Africa CI Africa/Abidjan # Ivory Coast
+Africa GH Africa/Accra # Ghana
+Africa ET Africa/Addis_Ababa # Ethiopia
+Africa DZ Africa/Algiers # Algeria
+Africa ER Africa/Asmara # Eritrea
 # ER Africa/Asmera # same as Africa/Asmara
-ML Africa/Bamako # Mali
-CF Africa/Bangui # Central African Republic
-GM Africa/Banjul # Gambia
-GW Africa/Bissau # Guinea-Bissau
-MW Africa/Blantyre # Malawi
-CG Africa/Brazzaville # Republic of the Congo
-BI Africa/Bujumbura # Burundi
-EG Africa/Cairo # Egypt
-MA Africa/Casablanca # Morocco
-ES Africa/Ceuta # Spain
-GN Africa/Conakry # Guinea
-SN Africa/Dakar # Senegal
-TZ Africa/Dar_es_Salaam # Tanzania
-DJ Africa/Djibouti # Djibouti
-CM Africa/Douala # Cameroon
-EH Africa/El_Aaiun # Western Sahara
-SL Africa/Freetown # Sierra Leone
-BW Africa/Gaborone # Botswana
-ZW Africa/Harare # Zimbabwe
-ZA Africa/Johannesburg # South Africa
-SS Africa/Juba # South Sudan
-UG Africa/Kampala # Uganda
-SD Africa/Khartoum # Sudan
-RW Africa/Kigali # Rwanda
-CD Africa/Kinshasa # Democratic Republic of the Congo
-NG Africa/Lagos # Nigeria
-GA Africa/Libreville # Gabon
-TG Africa/Lome # Togo
-AO Africa/Luanda # Angola
-CD Africa/Lubumbashi # Democratic Republic of the Congo
-ZM Africa/Lusaka # Zambia
-GQ Africa/Malabo # Equatorial Guinea
-MZ Africa/Maputo # Mozambique
-LS Africa/Maseru # Lesotho
-SZ Africa/Mbabane # Eswatini (Swaziland)
-SO Africa/Mogadishu # Somalia
-LR Africa/Monrovia # Liberia
-KE Africa/Nairobi # Kenya
-TD Africa/Ndjamena # Chad
-NE Africa/Niamey # Niger
-MR Africa/Nouakchott # Mauritania
-BF Africa/Ouagadougou # Burkina Faso
-BJ Africa/Porto-Novo # Benin
-ST Africa/Sao_Tome # Sao Tome & Principe
-ML Africa/Timbuktu # Mali
-LY Africa/Tripoli # Libya
-TN Africa/Tunis # Tunisia
-NA Africa/Windhoek # Namibia
-US America/Adak # USA
-US America/Anchorage # USA
-AI America/Anguilla # Anguilla (UK)
-AG America/Antigua # Antigua & Barbuda
-BR America/Araguaina # Brazil
-AR America/Argentina/Buenos_Aires # Argentina
-AR America/Argentina/Catamarca # Argentina
-AR America/Argentina/ComodRivadavia # Argentina
-AR America/Argentina/Cordoba # Argentina
-AR America/Argentina/Jujuy # Argentina
-AR America/Argentina/La_Rioja # Argentina
-AR America/Argentina/Mendoza # Argentina
-AR America/Argentina/Rio_Gallegos # Argentina
-AR America/Argentina/Salta # Argentina
-AR America/Argentina/San_Juan # Argentina
-AR America/Argentina/San_Luis # Argentina
-AR America/Argentina/Tucuman # Argentina
-AR America/Argentina/Ushuaia # Argentina
-AW America/Aruba # Aruba
-PY America/Asuncion # Paraguay
-CA America/Atikokan # Canada
-US America/Atka # USA
-BR America/Bahia # Brazil
-MX America/Bahia_Banderas # Mexico
-BB America/Barbados # Barbados
-BR America/Belem # Brazil
-BZ America/Belize # Belize
-CA America/Blanc-Sablon # Canada
-BR America/Boa_Vista # Brazil
-CO America/Bogota # Colombia
-US America/Boise # USA
+Africa ML Africa/Bamako # Mali
+Africa CF Africa/Bangui # Central African Republic
+Africa GM Africa/Banjul # Gambia
+Africa GW Africa/Bissau # Guinea-Bissau
+Africa MW Africa/Blantyre # Malawi
+Africa CG Africa/Brazzaville # Republic of the Congo
+Africa BI Africa/Bujumbura # Burundi
+Africa EG Africa/Cairo # Egypt
+Africa MA Africa/Casablanca # Morocco
+Africa ES Africa/Ceuta # Spain
+Africa GN Africa/Conakry # Guinea
+Africa SN Africa/Dakar # Senegal
+Africa TZ Africa/Dar_es_Salaam # Tanzania
+Africa DJ Africa/Djibouti # Djibouti
+Africa CM Africa/Douala # Cameroon
+Africa EH Africa/El_Aaiun # Western Sahara
+Africa SL Africa/Freetown # Sierra Leone
+Africa BW Africa/Gaborone # Botswana
+Africa ZW Africa/Harare # Zimbabwe
+Africa ZA Africa/Johannesburg # South Africa
+Africa SS Africa/Juba # South Sudan
+Africa UG Africa/Kampala # Uganda
+Africa SD Africa/Khartoum # Sudan
+Africa RW Africa/Kigali # Rwanda
+Africa CD Africa/Kinshasa # Democratic Republic of the Congo
+Africa NG Africa/Lagos # Nigeria
+Africa GA Africa/Libreville # Gabon
+Africa TG Africa/Lome # Togo
+Africa AO Africa/Luanda # Angola
+Africa CD Africa/Lubumbashi # Democratic Republic of the Congo
+Africa ZM Africa/Lusaka # Zambia
+Africa GQ Africa/Malabo # Equatorial Guinea
+Africa MZ Africa/Maputo # Mozambique
+Africa LS Africa/Maseru # Lesotho
+Africa SZ Africa/Mbabane # Eswatini (Swaziland)
+Africa SO Africa/Mogadishu # Somalia
+Africa LR Africa/Monrovia # Liberia
+Africa KE Africa/Nairobi # Kenya
+Africa TD Africa/Ndjamena # Chad
+Africa NE Africa/Niamey # Niger
+Africa MR Africa/Nouakchott # Mauritania
+Africa BF Africa/Ouagadougou # Burkina Faso
+Africa BJ Africa/Porto-Novo # Benin
+Africa ST Africa/Sao_Tome # Sao Tome & Principe
+Africa ML Africa/Timbuktu # Mali
+Africa LY Africa/Tripoli # Libya
+Africa TN Africa/Tunis # Tunisia
+Africa NA Africa/Windhoek # Namibia
+
+NAmerica US America/Adak # USA
+NAmerica US America/Anchorage # USA
+CAmerica AI America/Anguilla # Anguilla (UK)
+CAmerica AG America/Antigua # Antigua & Barbuda
+SAmerica BR America/Araguaina # Brazil
+SAmerica AR America/Argentina/Buenos_Aires # Argentina
+SAmerica AR America/Argentina/Catamarca # Argentina
+SAmerica AR America/Argentina/ComodRivadavia # Argentina
+SAmerica AR America/Argentina/Cordoba # Argentina
+SAmerica AR America/Argentina/Jujuy # Argentina
+SAmerica AR America/Argentina/La_Rioja # Argentina
+SAmerica AR America/Argentina/Mendoza # Argentina
+SAmerica AR America/Argentina/Rio_Gallegos # Argentina
+SAmerica AR America/Argentina/Salta # Argentina
+SAmerica AR America/Argentina/San_Juan # Argentina
+SAmerica AR America/Argentina/San_Luis # Argentina
+SAmerica AR America/Argentina/Tucuman # Argentina
+SAmerica AR America/Argentina/Ushuaia # Argentina
+
+# Aruba is on the continental shelf of South America.
+CAmerica AW America/Aruba # Aruba
+
+SAmerica PY America/Asuncion # Paraguay
+NAmerica CA America/Atikokan # Canada
+NAmerica US America/Atka # USA
+SAmerica BR America/Bahia # Brazil
+NAmerica MX America/Bahia_Banderas # Mexico
+CAmerica BB America/Barbados # Barbados
+SAmerica BR America/Belem # Brazil
+CAmerica BZ America/Belize # Belize
+NAmerica CA America/Blanc-Sablon # Canada
+SAmerica BR America/Boa_Vista # Brazil
+SAmerica CO America/Bogota # Colombia
+NAmerica US America/Boise # USA
 # AR America/Buenos_Aires # Argentina
-CA America/Cambridge_Bay # Canada
-BR America/Campo_Grande # Brazil
-MX America/Cancun # Mexico
-VE America/Caracas # Venezuela
+NAmerica CA America/Cambridge_Bay # Canada
+SAmerica BR America/Campo_Grande # Brazil
+NAmerica MX America/Cancun # Mexico
+SAmerica VE America/Caracas # Venezuela
 # AR America/Catamarca # Argentina
-GF America/Cayenne # French Guiana
-KY America/Cayman # Cayman Islands
-US America/Chicago # USA
-MX America/Chihuahua # Mexico
-MX America/Ciudad_Juarez # Mexico
-CA America/Coral_Harbour # Canada
+SAmerica GF America/Cayenne # French Guiana
+CAmerica KY America/Cayman # Cayman Islands
+NAmerica US America/Chicago # USA
+NAmerica MX America/Chihuahua # Mexico
+NAmerica MX America/Ciudad_Juarez # Mexico
+NAmerica CA America/Coral_Harbour # Canada
 # AR America/Cordoba # Argentina
-CR America/Costa_Rica # Costa Rica
-CA America/Creston # Canada
-BR America/Cuiaba # Brazil
-CW America/Curacao # Curacao
-GL America/Danmarkshavn # Greenland
-CA America/Dawson # Canada
-CA America/Dawson_Creek # Canada
-US America/Denver # USA
-US America/Detroit # USA
-DM America/Dominica # Dominica
-CA America/Edmonton # Canada
-BR America/Eirunepe # Brazil
-SV America/El_Salvador # El Salvador
-MX America/Ensenada # Mexico
-CA America/Fort_Nelson # Canada
-US America/Fort_Wayne # USA (tzdb origin lost)
-BR America/Fortaleza # Brazil
-CA America/Glace_Bay # Canada
+CAmerica CR America/Costa_Rica # Costa Rica
+NAmerica CA America/Creston # Canada
+SAmerica BR America/Cuiaba # Brazil
+CAmerica CW America/Curacao # Curacao
+NAmerica GL America/Danmarkshavn # Greenland
+NAmerica CA America/Dawson # Canada
+NAmerica CA America/Dawson_Creek # Canada
+NAmerica US America/Denver # USA
+NAmerica US America/Detroit # USA
+CAmerica DM America/Dominica # Dominica
+NAmerica CA America/Edmonton # Canada
+SAmerica BR America/Eirunepe # Brazil
+CAmerica SV America/El_Salvador # El Salvador
+NAmerica MX America/Ensenada # Mexico
+NAmerica CA America/Fort_Nelson # Canada
+NAmerica US America/Fort_Wayne # USA (tzdb origin lost)
+SAmerica BR America/Fortaleza # Brazil
+NAmerica CA America/Glace_Bay # Canada
 # GL America/Godthab # Greenland
-CA America/Goose_Bay # Canada
-TC America/Grand_Turk # Turks & Caicos Islands
-GD America/Grenada # Grenada
-GP America/Guadeloupe # Guadeloupe
-GT America/Guatemala # Guatemala
-EC America/Guayaquil # Ecuador
-GY America/Guyana # Guyana
-CA America/Halifax # Canada
-CU America/Havana # Cuba
-MX America/Hermosillo # Mexico
-US America/Indiana/Indianapolis # USA
-US America/Indiana/Knox # USA
-US America/Indiana/Marengo # USA
-US America/Indiana/Petersburg # USA
-US America/Indiana/Tell_City # USA
-US America/Indiana/Vevay # USA
-US America/Indiana/Vincennes # USA
-US America/Indiana/Winamac # USA
+NAmerica CA America/Goose_Bay # Canada
+CAmerica TC America/Grand_Turk # Turks & Caicos Islands
+CAmerica GD America/Grenada # Grenada
+CAmerica GP America/Guadeloupe # Guadeloupe
+CAmerica GT America/Guatemala # Guatemala
+SAmerica EC America/Guayaquil # Ecuador
+SAmerica GY America/Guyana # Guyana
+NAmerica CA America/Halifax # Canada
+CAmerica CU America/Havana # Cuba
+NAmerica MX America/Hermosillo # Mexico
+NAmerica US America/Indiana/Indianapolis # USA
+NAmerica US America/Indiana/Knox # USA
+NAmerica US America/Indiana/Marengo # USA
+NAmerica US America/Indiana/Petersburg # USA
+NAmerica US America/Indiana/Tell_City # USA
+NAmerica US America/Indiana/Vevay # USA
+NAmerica US America/Indiana/Vincennes # USA
+NAmerica US America/Indiana/Winamac # USA
 # US America/Indianapolis # USA
-CA America/Inuvik # Canada
-CA America/Iqaluit # Canada
-JM America/Jamaica # Jamaica
+NAmerica CA America/Inuvik # Canada
+NAmerica CA America/Iqaluit # Canada
+CAmerica JM America/Jamaica # Jamaica
 # AR America/Jujuy # Argentina
-US America/Juneau # USA
-US America/Kentucky/Louisville # USA
-US America/Kentucky/Monticello # USA
+NAmerica US America/Juneau # USA
+NAmerica US America/Kentucky/Louisville # USA
+NAmerica US America/Kentucky/Monticello # USA
 # US America/Knox_IN # USA
-BQ America/Kralendijk # Caribbean Netherlands (Bonaire)
-BO America/La_Paz # Bolivia
-PE America/Lima # Peru
-US America/Los_Angeles # USA
+
+# Bonaire is on the continental shelf of South America.
+CAmerica BQ America/Kralendijk # Caribbean Netherlands (Bonaire)
+
+SAmerica BO America/La_Paz # Bolivia
+SAmerica PE America/Lima # Peru
+NAmerica US America/Los_Angeles # USA
 # US America/Louisville # USA
-CW America/Lower_Princes # Curacao
-BR America/Maceio # Brazil
-NI America/Managua # Nicaragua
-BR America/Manaus # Brazil
+CAmerica CW America/Lower_Princes # Curacao
+SAmerica BR America/Maceio # Brazil
+CAmerica NI America/Managua # Nicaragua
+SAmerica BR America/Manaus # Brazil
 
 # Saint Martin (MF) is the French territory in the northern half of Saint
 # Martin island. Sint Maarten (SX) is the Dutch territory in the southern half
@@ -174,227 +183,231 @@ BR America/Manaus # Brazil
 # America/Marigot which covers the French part. The TZDB does not assign a
 # separate timezone identifier to the Dutch half, so we have to assume that the
 # Dutch part uses the same timezone as the French part.
-
+#
 # Since we want every ISO country to have at least one timezone in this file,
 # we must create a duplicate entry for America/Marigot. This duplicate timezone
 # is *not* caused by war or border dispute.
-MF America/Marigot # Saint Martin
-SX America/Marigot # Sint Maarten
+CAmerica MF America/Marigot # Saint Martin
+CAmerica SX America/Marigot # Sint Maarten
 
-MQ America/Martinique # Martinique
-MX America/Matamoros # Mexico
-MX America/Mazatlan # Mexico
+CAmerica MQ America/Martinique # Martinique
+NAmerica MX America/Matamoros # Mexico
+NAmerica MX America/Mazatlan # Mexico
 # AR America/Mendoza # Argentina
-US America/Menominee # USA
-MX America/Merida # Mexico
-US America/Metlakatla # USA
-MX America/Mexico_City # Mexico
-PM America/Miquelon # St Pierre & Miquelon
-CA America/Moncton # Canada
-MX America/Monterrey # Mexico
-UY America/Montevideo # Uruguay
-CA America/Montreal # Canada
-MS America/Montserrat # Montserrat
-BS America/Nassau # Bahamas
-US America/New_York # USA
-CA America/Nipigon # Canada
-US America/Nome # USA
-BR America/Noronha # Brazil
-US America/North_Dakota/Beulah # USA
-US America/North_Dakota/Center # USA
-US America/North_Dakota/New_Salem # USA
-GL America/Nuuk # Greenland
-MX America/Ojinaga # Mexico
-PA America/Panama # Panama
-CA America/Pangnirtung # Canada
-SR America/Paramaribo # Suriname
-US America/Phoenix # USA
-HT America/Port-au-Prince # Haiti
-TT America/Port_of_Spain # Trinidad & Tobago
-BR America/Porto_Acre # Brazil
-BR America/Porto_Velho # Brazil
-PR America/Puerto_Rico # Puerto Rico
-CL America/Punta_Arenas # Chile
-CA America/Rainy_River # Canada
-CA America/Rankin_Inlet # Canada
-BR America/Recife # Brazil
-CA America/Regina # Canada
-CA America/Resolute # Canada
-BR America/Rio_Branco # Brazil
+NAmerica US America/Menominee # USA
+NAmerica MX America/Merida # Mexico
+NAmerica US America/Metlakatla # USA
+NAmerica MX America/Mexico_City # Mexico
+NAmerica PM America/Miquelon # St Pierre & Miquelon
+NAmerica CA America/Moncton # Canada
+NAmerica MX America/Monterrey # Mexico
+SAmerica UY America/Montevideo # Uruguay
+NAmerica CA America/Montreal # Canada
+CAmerica MS America/Montserrat # Montserrat
+CAmerica BS America/Nassau # Bahamas
+NAmerica US America/New_York # USA
+NAmerica CA America/Nipigon # Canada
+NAmerica US America/Nome # USA
+SAmerica BR America/Noronha # Brazil
+NAmerica US America/North_Dakota/Beulah # USA
+NAmerica US America/North_Dakota/Center # USA
+NAmerica US America/North_Dakota/New_Salem # USA
+NAmerica GL America/Nuuk # Greenland
+NAmerica MX America/Ojinaga # Mexico
+CAmerica PA America/Panama # Panama
+NAmerica CA America/Pangnirtung # Canada
+SAmerica SR America/Paramaribo # Suriname
+NAmerica US America/Phoenix # USA
+CAmerica HT America/Port-au-Prince # Haiti
+CAmerica TT America/Port_of_Spain # Trinidad & Tobago
+SAmerica BR America/Porto_Acre # Brazil
+SAmerica BR America/Porto_Velho # Brazil
+CAmerica PR America/Puerto_Rico # Puerto Rico
+SAmerica CL America/Punta_Arenas # Chile
+NAmerica CA America/Rainy_River # Canada
+NAmerica CA America/Rankin_Inlet # Canada
+SAmerica BR America/Recife # Brazil
+NAmerica CA America/Regina # Canada
+NAmerica CA America/Resolute # Canada
+SAmerica BR America/Rio_Branco # Brazil
 # AR America/Rosario # Argentina
-MX America/Santa_Isabel # Mexico
-BR America/Santarem # Brazil
-CL America/Santiago # Chile
-DO America/Santo_Domingo # Dominican Republic
-BR America/Sao_Paulo # Brazil
-GL America/Scoresbysund # Greenland
-US America/Shiprock # USA
-US America/Sitka # USA
-BL America/St_Barthelemy # St Barthelemy
-CA America/St_Johns # Canada
-KN America/St_Kitts # St Kitts & Nevis
-LC America/St_Lucia # St Lucia
-VI America/St_Thomas # Virgin Islands (US)
-VC America/St_Vincent # St Vincent
-CA America/Swift_Current # Canada
-HN America/Tegucigalpa # Honduras
-GL America/Thule # Greenland
-CA America/Thunder_Bay # Canada
-MX America/Tijuana # Mexico
-CA America/Toronto # Canada
-VG America/Tortola # Virgin Islands (UK)
-CA America/Vancouver # Canada
-VI America/Virgin # Virgin Islands (US)
-CA America/Whitehorse # Canada
-CA America/Winnipeg # Canada
-US America/Yakutat # USA
-CA America/Yellowknife # Canada
-AQ Antarctica/Casey # Antartica Australia
-AQ Antarctica/Davis # Antartica France
-AQ Antarctica/DumontDUrville # Antartica France
-AQ Antarctica/Macquarie # Antartica Australia
-AQ Antarctica/Mawson # Antartica Australia
-AQ Antarctica/McMurdo # Antartica USA
-AQ Antarctica/Palmer # Antartica USA
-AQ Antarctica/Rothera # Antartica Britain
-AQ Antarctica/South_Pole # Antartica New Zealand (Similar to Pacific/Auckland)
-AQ Antarctica/Syowa # Antartica Japan
-AQ Antarctica/Troll # Antartica Norway
-AQ Antarctica/Vostok # Antartica Russia
-SJ Arctic/Longyearbyen # Svalbard & Jan Mayen
-YE Asia/Aden # Yemen
-KZ Asia/Almaty # Kazakhstan
-JO Asia/Amman # Jordan
-RU Asia/Anadyr # Russia
-KZ Asia/Aqtau # Kazakhstan
-KZ Asia/Aqtobe # Kazakhstan
-TM Asia/Ashgabat # Turkmenistan
+NAmerica MX America/Santa_Isabel # Mexico
+SAmerica BR America/Santarem # Brazil
+SAmerica CL America/Santiago # Chile
+CAmerica DO America/Santo_Domingo # Dominican Republic
+SAmerica BR America/Sao_Paulo # Brazil
+NAmerica GL America/Scoresbysund # Greenland
+NAmerica US America/Shiprock # USA
+NAmerica US America/Sitka # USA
+CAmerica BL America/St_Barthelemy # St Barthelemy
+NAmerica CA America/St_Johns # Canada
+CAmerica KN America/St_Kitts # St Kitts & Nevis
+CAmerica LC America/St_Lucia # St Lucia
+CAmerica VI America/St_Thomas # Virgin Islands (US)
+CAmerica VC America/St_Vincent # St Vincent
+NAmerica CA America/Swift_Current # Canada
+CAmerica HN America/Tegucigalpa # Honduras
+NAmerica GL America/Thule # Greenland
+NAmerica CA America/Thunder_Bay # Canada
+NAmerica MX America/Tijuana # Mexico
+NAmerica CA America/Toronto # Canada
+CAmerica VG America/Tortola # Virgin Islands (UK)
+NAmerica CA America/Vancouver # Canada
+CAmerica VI America/Virgin # Virgin Islands (US)
+NAmerica CA America/Whitehorse # Canada
+NAmerica CA America/Winnipeg # Canada
+NAmerica US America/Yakutat # USA
+NAmerica CA America/Yellowknife # Canada
+Antarctica AQ Antarctica/Casey # Antartica Australia
+Antarctica AQ Antarctica/Davis # Antartica France
+Antarctica AQ Antarctica/DumontDUrville # Antartica France
+Antarctica AQ Antarctica/Macquarie # Antartica Australia
+Antarctica AQ Antarctica/Mawson # Antartica Australia
+Antarctica AQ Antarctica/McMurdo # Antartica USA
+Antarctica AQ Antarctica/Palmer # Antartica USA
+Antarctica AQ Antarctica/Rothera # Antartica Britain
+Antarctica AQ Antarctica/South_Pole # Antartica New Zealand
+Antarctica AQ Antarctica/Syowa # Antartica Japan
+Antarctica AQ Antarctica/Troll # Antartica Norway
+Antarctica AQ Antarctica/Vostok # Antartica Russia
+
+# Svalbard is in the Arctic but there is only one timezone assigned to the
+# Arctic prefix, so put this in Europe.
+Europe SJ Arctic/Longyearbyen # Svalbard & Jan Mayen
+
+Asia YE Asia/Aden # Yemen
+Asia KZ Asia/Almaty # Kazakhstan
+Asia JO Asia/Amman # Jordan
+Asia RU Asia/Anadyr # Russia
+Asia KZ Asia/Aqtau # Kazakhstan
+Asia KZ Asia/Aqtobe # Kazakhstan
+Asia TM Asia/Ashgabat # Turkmenistan
 # TM Asia/Ashkhabad # Turkmenistan
-TM Asia/Atyrau # Turkmenistan
-IQ Asia/Baghdad # Iraq
-BH Asia/Bahrain # Bahrain
-AZ Asia/Baku # Azerbaijan
-TH Asia/Bangkok # Thailand
-RU Asia/Barnaul # Russia
-LB Asia/Beirut # Lebanon
-KG Asia/Bishkek # Kyrgyzstan
-BN Asia/Brunei # Brunei
+Asia TM Asia/Atyrau # Turkmenistan
+Asia IQ Asia/Baghdad # Iraq
+Asia BH Asia/Bahrain # Bahrain
+Asia AZ Asia/Baku # Azerbaijan
+Asia TH Asia/Bangkok # Thailand
+Asia RU Asia/Barnaul # Russia
+Asia LB Asia/Beirut # Lebanon
+Asia KG Asia/Bishkek # Kyrgyzstan
+Asia BN Asia/Brunei # Brunei
 # IN Asia/Calcutta # India
-RU Asia/Chita # Russia
-MN Asia/Choibalsan # Mongolia
-CN Asia/Chongqing # China
+Asia RU Asia/Chita # Russia
+Asia MN Asia/Choibalsan # Mongolia
+Asia CN Asia/Chongqing # China
 # CN Asia/Chungking # China, same as Chongqing
-LK Asia/Colombo # Sri Lanka
+Asia LK Asia/Colombo # Sri Lanka
 # BD Asia/Dacca # Bangladesh, same as Asia/Dahka
-SY Asia/Damascus # Syria
-BD Asia/Dhaka # Bangladesh
-TL Asia/Dili # East Timor
-AE Asia/Dubai # United Arab Emirates
-TJ Asia/Dushanbe # Tajikistan
-CY Asia/Famagusta # Cyprus
-PS Asia/Gaza # Palestine
-CN Asia/Harbin # China
-PS Asia/Hebron # Palestine
-VN Asia/Ho_Chi_Minh # Vietnam
-HK Asia/Hong_Kong # Hong Kong
-MN Asia/Hovd # Mongolia
-RU Asia/Irkutsk # Russia
+Asia SY Asia/Damascus # Syria
+Asia BD Asia/Dhaka # Bangladesh
+Asia TL Asia/Dili # East Timor
+Asia AE Asia/Dubai # United Arab Emirates
+Asia TJ Asia/Dushanbe # Tajikistan
+Asia CY Asia/Famagusta # Cyprus
+Asia PS Asia/Gaza # Palestine
+Asia CN Asia/Harbin # China
+Asia PS Asia/Hebron # Palestine
+Asia VN Asia/Ho_Chi_Minh # Vietnam
+Asia HK Asia/Hong_Kong # Hong Kong
+Asia MN Asia/Hovd # Mongolia
+Asia RU Asia/Irkutsk # Russia
 # TR Asia/Istanbul # Turkey
-ID Asia/Jakarta # Indonesia
-ID Asia/Jayapura # Indonesia
-IL Asia/Jerusalem # Israel
-AF Asia/Kabul # Afghanistan
-RU Asia/Kamchatka # Russia
-PK Asia/Karachi # Pakistan
-CN Asia/Kashgar # China
-NP Asia/Kathmandu # Nepal
+Asia ID Asia/Jakarta # Indonesia
+Asia ID Asia/Jayapura # Indonesia
+Asia IL Asia/Jerusalem # Israel
+Asia AF Asia/Kabul # Afghanistan
+Asia RU Asia/Kamchatka # Russia
+Asia PK Asia/Karachi # Pakistan
+Asia CN Asia/Kashgar # China
+Asia NP Asia/Kathmandu # Nepal
 # NP Asia/Katmandu # Nepal
-RU Asia/Khandyga # Russia
-IN Asia/Kolkata # India
-RU Asia/Krasnoyarsk # Russia
-MY Asia/Kuala_Lumpur # Malaysia
-MY Asia/Kuching # Malaysia
-KW Asia/Kuwait # Kuwait
+Asia RU Asia/Khandyga # Russia
+Asia IN Asia/Kolkata # India
+Asia RU Asia/Krasnoyarsk # Russia
+Asia MY Asia/Kuala_Lumpur # Malaysia
+Asia MY Asia/Kuching # Malaysia
+Asia KW Asia/Kuwait # Kuwait
 # MO Asia/Macao # Macau
-MO Asia/Macau # Macau
-RU Asia/Magadan # Russia
-ID Asia/Makassar # Indonesia
-PH Asia/Manila # Philippines
-OM Asia/Muscat # Oman
-CY Asia/Nicosia # Cyprus
-RU Asia/Novokuznetsk # Russia
-RU Asia/Novosibirsk # Russia
-RU Asia/Omsk # Russia
-KZ Asia/Oral # Kazakhstan
-KH Asia/Phnom_Penh # Cambodia
-ID Asia/Pontianak # Indonesia
-KP Asia/Pyongyang # North Korea
-QA Asia/Qatar # Qatar
-KZ Asia/Qostanay # Kazakhstan
-KZ Asia/Qyzylorda # Kazakhstan
+Asia MO Asia/Macau # Macau
+Asia RU Asia/Magadan # Russia
+Asia ID Asia/Makassar # Indonesia
+Asia PH Asia/Manila # Philippines
+Asia OM Asia/Muscat # Oman
+Asia CY Asia/Nicosia # Cyprus
+Asia RU Asia/Novokuznetsk # Russia
+Asia RU Asia/Novosibirsk # Russia
+Asia RU Asia/Omsk # Russia
+Asia KZ Asia/Oral # Kazakhstan
+Asia KH Asia/Phnom_Penh # Cambodia
+Asia ID Asia/Pontianak # Indonesia
+Asia KP Asia/Pyongyang # North Korea
+Asia QA Asia/Qatar # Qatar
+Asia KZ Asia/Qostanay # Kazakhstan
+Asia KZ Asia/Qyzylorda # Kazakhstan
 # MM Asia/Rangoon # Myanmar, same as Yangon
-SA Asia/Riyadh # Saudi Arabia
-VN Asia/Saigon # Vietnam
-RU Asia/Sakhalin # Russia
-UZ Asia/Samarkand # Uzbekistan
-KR Asia/Seoul # South Korea
-CN Asia/Shanghai # China
-SG Asia/Singapore # Singapore
-RU Asia/Srednekolymsk # Russia
-TW Asia/Taipei # Taiwan
-UZ Asia/Tashkent # Uzbekistan
-GE Asia/Tbilisi # Georgia
-IR Asia/Tehran # Iran
-IL Asia/Tel_Aviv # Israel
+Asia SA Asia/Riyadh # Saudi Arabia
+Asia VN Asia/Saigon # Vietnam
+Asia RU Asia/Sakhalin # Russia
+Asia UZ Asia/Samarkand # Uzbekistan
+Asia KR Asia/Seoul # South Korea
+Asia CN Asia/Shanghai # China
+Asia SG Asia/Singapore # Singapore
+Asia RU Asia/Srednekolymsk # Russia
+Asia TW Asia/Taipei # Taiwan
+Asia UZ Asia/Tashkent # Uzbekistan
+Asia GE Asia/Tbilisi # Georgia
+Asia IR Asia/Tehran # Iran
+Asia IL Asia/Tel_Aviv # Israel
 # BT Asia/Thimbu # Bhutan
-BT Asia/Thimphu # Bhutan
-JP Asia/Tokyo # Japan
-RU Asia/Tomsk # Russia
+Asia BT Asia/Thimphu # Bhutan
+Asia JP Asia/Tokyo # Japan
+Asia RU Asia/Tomsk # Russia
 # ID Asia/Ujung_Pandang # Indonesia, same as Makassar
-MN Asia/Ulaanbaatar # Mongolia
+Asia MN Asia/Ulaanbaatar # Mongolia
 # MN Asia/Ulan_Bator # Mongolia, same as Ulaanbaatar
-CN Asia/Urumqi # China
-RU Asia/Ust-Nera # Russia
-LA Asia/Vientiane # Laos
-RU Asia/Vladivostok # Russia
-RU Asia/Yakutsk # Russia
-MM Asia/Yangon # Myanmar
-RU Asia/Yekaterinburg # Russia
-AM Asia/Yerevan # Armenia
-PT Atlantic/Azores # Portual (??)
-BM Atlantic/Bermuda # Bermuda
-ES Atlantic/Canary # Spain
-CV Atlantic/Cape_Verde # Cape Verde
+Asia CN Asia/Urumqi # China
+Asia RU Asia/Ust-Nera # Russia
+Asia LA Asia/Vientiane # Laos
+Asia RU Asia/Vladivostok # Russia
+Asia RU Asia/Yakutsk # Russia
+Asia MM Asia/Yangon # Myanmar
+Asia RU Asia/Yekaterinburg # Russia
+Asia AM Asia/Yerevan # Armenia
+Atlantic PT Atlantic/Azores # Portual (??)
+Atlantic BM Atlantic/Bermuda # Bermuda
+Atlantic ES Atlantic/Canary # Spain
+Atlantic CV Atlantic/Cape_Verde # Cape Verde
 # FO Atlantic/Faeroe # Faroe Islands
-FO Atlantic/Faroe # Faroe Islands
-SJ Atlantic/Jan_Mayen # Svalbard & Jan Mayen
-PT Atlantic/Madeira # Portugal
-IS Atlantic/Reykjavik # Iceland
-GS Atlantic/South_Georgia # South Georgia
-SH Atlantic/St_Helena # St Helena
-FK Atlantic/Stanley # Falkand Islands
+Atlantic FO Atlantic/Faroe # Faroe Islands
+Atlantic SJ Atlantic/Jan_Mayen # Svalbard & Jan Mayen
+Atlantic PT Atlantic/Madeira # Portugal
+Atlantic IS Atlantic/Reykjavik # Iceland
+Atlantic GS Atlantic/South_Georgia # South Georgia
+Atlantic SH Atlantic/St_Helena # St Helena
+Atlantic FK Atlantic/Stanley # Falkand Islands
 # AU Australia/ACT # Australia
-AU Australia/Adelaide # Australia
-AU Australia/Brisbane # Australia
-AU Australia/Broken_Hill # Australia
-AU Australia/Canberra # Australia
-AU Australia/Currie # Australia
-AU Australia/Darwin # Australia
-AU Australia/Eucla # Australia
-AU Australia/Hobart # Australia
+Australia AU Australia/Adelaide # Australia
+Australia AU Australia/Brisbane # Australia
+Australia AU Australia/Broken_Hill # Australia
+Australia AU Australia/Canberra # Australia
+Australia AU Australia/Currie # Australia
+Australia AU Australia/Darwin # Australia
+Australia AU Australia/Eucla # Australia
+Australia AU Australia/Hobart # Australia
 # AU Australia/LHI # Australia
-AU Australia/Lindeman # Australia
-AU Australia/Lord_Howe # Australia
-AU Australia/Melbourne # Australia
-AU Australia/NSW # Australia
-AU Australia/North # Australia
-AU Australia/Perth # Australia
-AU Australia/Queensland # Australia
-AU Australia/South # Australia
-AU Australia/Sydney # Australia
-AU Australia/Tasmania # Australia
-AU Australia/Victoria # Australia
-AU Australia/West # Australia
+Australia AU Australia/Lindeman # Australia
+Australia AU Australia/Lord_Howe # Australia
+Australia AU Australia/Melbourne # Australia
+Australia AU Australia/NSW # Australia
+Australia AU Australia/North # Australia
+Australia AU Australia/Perth # Australia
+Australia AU Australia/Queensland # Australia
+Australia AU Australia/South # Australia
+Australia AU Australia/Sydney # Australia
+Australia AU Australia/Tasmania # Australia
+Australia AU Australia/Victoria # Australia
+Australia AU Australia/West # Australia
 # AU Australia/Yancowinna # Australia
 # BR Brazil/Acre # same as Porto_Acre
 # BR Brazil/DeNoronha # Brazil (tzdb origin lost)
@@ -402,15 +415,15 @@ AU Australia/West # Australia
 # BR Brazil/West # Brazil
 # 00 CET # Misc (Central European Time)
 # US CST6CDT # USA
-CA Canada/Atlantic # Canada
-CA Canada/Central # Canada
-CA Canada/Eastern # Canada
-CA Canada/Mountain # Canada
-CA Canada/Newfoundland # Canada
-CA Canada/Pacific # Canada
-CA Canada/Saskatchewan # Canada
-CA Canada/Yukon # Canada
-CL Chile/Continental # Chile
+NAmerica CA Canada/Atlantic # Canada
+NAmerica CA Canada/Central # Canada
+NAmerica CA Canada/Eastern # Canada
+NAmerica CA Canada/Mountain # Canada
+NAmerica CA Canada/Newfoundland # Canada
+NAmerica CA Canada/Pacific # Canada
+NAmerica CA Canada/Saskatchewan # Canada
+NAmerica CA Canada/Yukon # Canada
+# Chile CL Chile/Continental # Chile
 # CL Chile/EasterIsland # Chile
 # CU Cuba # Cuba
 # 00 EET # Misc (Eastern European Time)
@@ -450,80 +463,80 @@ CL Chile/Continental # Chile
 # 00 Etc/GMT0 # Misc
 # 00 Etc/Greenwich # Misc
 # 00 Etc/UCT # Misc
-00 Etc/UTC # Misc
+Etc 00 Etc/UTC # Misc
 # 00 Etc/Universal # Misc
 # 00 Etc/Zulu # Misc
-NL Europe/Amsterdam # Netherlands
-AD Europe/Andorra # Andorra
-RU Europe/Astrakhan # Russia
-GR Europe/Athens # Greece
-GB Europe/Belfast # Britain
-RS Europe/Belgrade # Serbia
-DE Europe/Berlin # Germany
-SK Europe/Bratislava # Slovakia
-BE Europe/Brussels # Belgium
-RO Europe/Bucharest # Romania
-HU Europe/Budapest # Hungary
-DE Europe/Busingen # Germany
-MD Europe/Chisinau # Moldova
-DK Europe/Copenhagen # Denmark
-IE Europe/Dublin # Ireland
-GI Europe/Gibraltar # Gibraltar
-GG Europe/Guernsey # Guernsey
-FI Europe/Helsinki # Finland
-IM Europe/Isle_of_Man # Isle of Man
-TR Europe/Istanbul # Turkey
-JE Europe/Jersey # Jersey
-RU Europe/Kaliningrad # Russia
+Europe NL Europe/Amsterdam # Netherlands
+Europe AD Europe/Andorra # Andorra
+Europe RU Europe/Astrakhan # Russia
+Europe GR Europe/Athens # Greece
+Europe GB Europe/Belfast # Britain
+Europe RS Europe/Belgrade # Serbia
+Europe DE Europe/Berlin # Germany
+Europe SK Europe/Bratislava # Slovakia
+Europe BE Europe/Brussels # Belgium
+Europe RO Europe/Bucharest # Romania
+Europe HU Europe/Budapest # Hungary
+Europe DE Europe/Busingen # Germany
+Europe MD Europe/Chisinau # Moldova
+Europe DK Europe/Copenhagen # Denmark
+Europe IE Europe/Dublin # Ireland
+Europe GI Europe/Gibraltar # Gibraltar
+Europe GG Europe/Guernsey # Guernsey
+Europe FI Europe/Helsinki # Finland
+Europe IM Europe/Isle_of_Man # Isle of Man
+Europe TR Europe/Istanbul # Turkey
+Europe JE Europe/Jersey # Jersey
+Europe RU Europe/Kaliningrad # Russia
 # UA Europe/Kiev # Ukraine, old spelling of Kyiv
-RU Europe/Kirov # Russia
-UA Europe/Kyiv # Ukraine
-PT Europe/Lisbon # Portugal
-SI Europe/Ljubljana # Slovenia
-GB Europe/London # Britain
-LU Europe/Luxembourg # Luxembourg
-ES Europe/Madrid # Spain
-MT Europe/Malta # Malta
-AX Europe/Mariehamn # Aland Islands
-BY Europe/Minsk # Belarus
-MC Europe/Monaco # Monaco
-RU Europe/Moscow # Russia
+Europe RU Europe/Kirov # Russia
+Europe UA Europe/Kyiv # Ukraine
+Europe PT Europe/Lisbon # Portugal
+Europe SI Europe/Ljubljana # Slovenia
+Europe GB Europe/London # Britain
+Europe LU Europe/Luxembourg # Luxembourg
+Europe ES Europe/Madrid # Spain
+Europe MT Europe/Malta # Malta
+Europe AX Europe/Mariehamn # Aland Islands
+Europe BY Europe/Minsk # Belarus
+Europe MC Europe/Monaco # Monaco
+Europe RU Europe/Moscow # Russia
 # CY Europe/Nicosia # Cyprus
-NO Europe/Oslo # Norway
-FR Europe/Paris # France
-ME Europe/Podgorica # Montenegro
-CZ Europe/Prague # Czech Republic
-LV Europe/Riga # Latvia
-IT Europe/Rome # Italy
-RU Europe/Samara # Russia
-SM Europe/San_Marino # San Marino
-BA Europe/Sarajevo # Bosnia & Herzegovina
-RU Europe/Saratov # Russia
+Europe NO Europe/Oslo # Norway
+Europe FR Europe/Paris # France
+Europe ME Europe/Podgorica # Montenegro
+Europe CZ Europe/Prague # Czech Republic
+Europe LV Europe/Riga # Latvia
+Europe IT Europe/Rome # Italy
+Europe RU Europe/Samara # Russia
+Europe SM Europe/San_Marino # San Marino
+Europe BA Europe/Sarajevo # Bosnia & Herzegovina
+Europe RU Europe/Saratov # Russia
 
 # Crimea was invaded by Russia and annexed in 2014. This is not internationally
 # recognized. However the practical situation on the ground is that Russia has
 # full control over Crimea. Therefore Europe/Simferopol is placed in both
 # Russia and Ukraine.
-RU Europe/Simferopol # Crimea, Russia occupied
-UA Europe/Simferopol # Crimea, Ukraine
+Europe RU Europe/Simferopol # Crimea, Russia occupied
+Europe UA Europe/Simferopol # Crimea, Ukraine
 
-MK Europe/Skopje # North Macedonia
-BG Europe/Sofia # Bulgaria
-SE Europe/Stockholm # Sweden
-EE Europe/Tallinn # Estonia
-AL Europe/Tirane # Albania
-MD Europe/Tiraspol # Moldova
-RU Europe/Ulyanovsk # Russia
-UA Europe/Uzhgorod # Ukraine
-LI Europe/Vaduz # Liechtenstein
-VA Europe/Vatican # Vatican City
-AT Europe/Vienna # Austria
-LT Europe/Vilnius # Lithuania
-RU Europe/Volgograd # Russia
-PL Europe/Warsaw # Poland
-HR Europe/Zagreb # Croatia
-UA Europe/Zaporozhye # Ukraine
-CH Europe/Zurich # Switzerland
+Europe MK Europe/Skopje # North Macedonia
+Europe BG Europe/Sofia # Bulgaria
+Europe SE Europe/Stockholm # Sweden
+Europe EE Europe/Tallinn # Estonia
+Europe AL Europe/Tirane # Albania
+Europe MD Europe/Tiraspol # Moldova
+Europe RU Europe/Ulyanovsk # Russia
+Europe UA Europe/Uzhgorod # Ukraine
+Europe LI Europe/Vaduz # Liechtenstein
+Europe VA Europe/Vatican # Vatican City
+Europe AT Europe/Vienna # Austria
+Europe LT Europe/Vilnius # Lithuania
+Europe RU Europe/Volgograd # Russia
+Europe PL Europe/Warsaw # Poland
+Europe HR Europe/Zagreb # Croatia
+Europe UA Europe/Zaporozhye # Ukraine
+Europe CH Europe/Zurich # Switzerland
 # GB GB # Britain (UK)
 # GB GB-Eire # Britain (UK), Northern Ireland
 # 00 GMT # Misc
@@ -534,24 +547,25 @@ CH Europe/Zurich # Switzerland
 # US HST # USA
 # HK Hongkong # Hong Kong
 # IS Iceland # Iceland
-MG Indian/Antananarivo # Madagascar
+Indian MG Indian/Antananarivo # Madagascar
 
 # Britain has control over Chagos Islands. However, the United Nations and the
 # International Tribunal for the Law of the Sea have declared that Chagos
 # belongs to Mauritius. Therefore, Indian/Chagos is listed under both British
 # Indian Ocean Territory (IO) and Mauritius (MU).
-MU Indian/Chagos # Mauritius
-IO Indian/Chagos # British Indian Ocean Territory
+Indian MU Indian/Chagos # Mauritius
+Indian IO Indian/Chagos # British Indian Ocean Territory
 
-CX Indian/Christmas # Christmas Island
-CC Indian/Cocos # Cocos Islands
-KM Indian/Comoro # Comoros
-TF Indian/Kerguelen # French Southern and Antarctic Lands
-SC Indian/Mahe Seychelles (TZDB origin lost)
-MV Indian/Maldives # Maldives
-MU Indian/Mauritius # Mauritius
-YT Indian/Mayotte # Mayotte
-RE Indian/Reunion # Reunion
+Indian CX Indian/Christmas # Christmas Island
+Indian CC Indian/Cocos # Cocos Islands
+Indian KM Indian/Comoro # Comoros
+Indian TF Indian/Kerguelen # French Southern and Antarctic Lands
+Indian SC Indian/Mahe Seychelles (TZDB origin lost)
+Indian MV Indian/Maldives # Maldives
+Indian MU Indian/Mauritius # Mauritius
+Indian YT Indian/Mayotte # Mayotte
+Indian RE Indian/Reunion # Reunion
+
 # IR Iran # Iran
 # IL Israel # Israel
 # JM Jamaica # Jamaica
@@ -569,70 +583,75 @@ RE Indian/Reunion # Reunion
 # US Navajo # USA
 # CN PRC # China
 # US PST8PDT # USA
-WS Pacific/Apia # Samoa (Western)
-NZ Pacific/Auckland # New Zealand
-PG Pacific/Bougainville # Papua New Guinea
-NZ Pacific/Chatham # New Zealand
-FM Pacific/Chuuk # Micronesia
-CL Pacific/Easter # Chile
-VU Pacific/Efate # Vanuatu
-KI Pacific/Enderbury # Kiribati
-TK Pacific/Fakaofo # Tokelau
-FJ Pacific/Fiji # Fiji
-TV Pacific/Funafuti # Tuvalu
-EC Pacific/Galapagos # Ecuador
-PF Pacific/Gambier # French Polynesia
-SB Pacific/Guadalcanal # Solomon Islands
-GU Pacific/Guam # Guam
-US Pacific/Honolulu # USA
-UM Pacific/Johnston # US Minor Outlying Islands
-KI Pacific/Kanton # Kiribati
-CX Pacific/Kiritimati # Christmas Island
-FM Pacific/Kosrae # Micronesia
-MH Pacific/Kwajalein # Marshall Islands
-MH Pacific/Majuro # Marshall Islands
-PF Pacific/Marquesas # French Polynesia
-AS Pacific/Midway # American Samoa
-NR Pacific/Nauru # Nauru
-NU Pacific/Niue # Niue
-NF Pacific/Norfolk # Norfolk Island
-NC Pacific/Noumea # New Caledonia
-AS Pacific/Pago_Pago # American Samoa
-PW Pacific/Palau # Palau
-PN Pacific/Pitcairn # Pitcairn
-FM Pacific/Pohnpei # Micronesia
+
+Pacific WS Pacific/Apia # Samoa (Western)
+Pacific NZ Pacific/Auckland # New Zealand
+Pacific PG Pacific/Bougainville # Papua New Guinea
+Pacific NZ Pacific/Chatham # New Zealand
+Pacific FM Pacific/Chuuk # Micronesia
+Pacific CL Pacific/Easter # Chile
+Pacific VU Pacific/Efate # Vanuatu
+Pacific KI Pacific/Enderbury # Kiribati
+Pacific TK Pacific/Fakaofo # Tokelau
+Pacific FJ Pacific/Fiji # Fiji
+Pacific TV Pacific/Funafuti # Tuvalu
+Pacific EC Pacific/Galapagos # Ecuador
+Pacific PF Pacific/Gambier # French Polynesia
+Pacific SB Pacific/Guadalcanal # Solomon Islands
+Pacific GU Pacific/Guam # Guam
+Pacific US Pacific/Honolulu # USA
+Pacific UM Pacific/Johnston # US Minor Outlying Islands
+Pacific KI Pacific/Kanton # Kiribati
+Pacific CX Pacific/Kiritimati # Christmas Island
+Pacific FM Pacific/Kosrae # Micronesia
+Pacific MH Pacific/Kwajalein # Marshall Islands
+Pacific MH Pacific/Majuro # Marshall Islands
+Pacific PF Pacific/Marquesas # French Polynesia
+Pacific AS Pacific/Midway # American Samoa
+Pacific NR Pacific/Nauru # Nauru
+Pacific NU Pacific/Niue # Niue
+Pacific NF Pacific/Norfolk # Norfolk Island
+Pacific NC Pacific/Noumea # New Caledonia
+Pacific AS Pacific/Pago_Pago # American Samoa
+Pacific PW Pacific/Palau # Palau
+Pacific PN Pacific/Pitcairn # Pitcairn
+Pacific FM Pacific/Pohnpei # Micronesia
 # FM Pacific/Ponape # Micronesia, same as Pacific/Pohnpei
-PG Pacific/Port_Moresby # Papua New Guinea
-CK Pacific/Rarotonga # Cook Islands
-MP Pacific/Saipan # Northern Mariana Islands
+Pacific PG Pacific/Port_Moresby # Papua New Guinea
+Pacific CK Pacific/Rarotonga # Cook Islands
+Pacific MP Pacific/Saipan # Northern Mariana Islands
 # WS Pacific/Samoa # Samoa (Western)
-PF Pacific/Tahiti # French Polynesia
-KI Pacific/Tarawa # Kiribati
-TO Pacific/Tongatapu # Tonga
+Pacific PF Pacific/Tahiti # French Polynesia
+Pacific KI Pacific/Tarawa # Kiribati
+Pacific TO Pacific/Tongatapu # Tonga
 # FM Pacific/Truk # Micronesia, same as Pacific/Chuuk
-UM Pacific/Wake # US Minor Outlying Islands
-WF Pacific/Wallis # Wallis & Futuna
-FM Pacific/Yap # Micronesia
+Pacific UM Pacific/Wake # US Minor Outlying Islands
+Pacific WF Pacific/Wallis # Wallis & Futuna
+Pacific FM Pacific/Yap # Micronesia
+
 # PL Poland # Poland
 # PT Portugal # Portual
 # TW ROC # Taiwan
 # KR ROK # South Korea
 # SG Singapore # Singapore
 # TR Turkey # Turkey
+
 # 00 UCT # Misc
-US US/Alaska # USA
-US US/Aleutian # USA
-US US/Arizona # USA
-US US/Central # USA
+
+NAmerica US US/Alaska # USA
+NAmerica US US/Aleutian # USA
+NAmerica US US/Arizona # USA
+NAmerica US US/Central # USA
 # US US/East-Indiana # same as America/Indiana/Indianapolis
-US US/Eastern # USA
-US US/Hawaii # USA
+NAmerica US US/Eastern # USA
+Pacific US US/Hawaii # USA
 # US US/Indiana-Starke # same as America/Indiana/Knox
-US US/Michigan # USA
-US US/Mountain # USA
-US US/Pacific # USA
-AS US/Samoa # American Samoa
-00 UTC # Misc
+NAmerica US US/Michigan # USA
+NAmerica US US/Mountain # USA
+NAmerica US US/Pacific # USA
+Pacific AS US/Samoa # American Samoa
+
+Etc 00 UTC # Misc
 # 00 Universal # Misc (aka UTC)
 # RU W-SU Russia (TZDB origin lost)
 # 00 WET # Misc (Western European Time)

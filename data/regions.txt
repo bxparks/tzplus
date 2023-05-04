@@ -1,0 +1,25 @@
+# Manually maintained list of continents and oceans which are the highest level
+# of organization of timezones. The hierarchical structure is:
+# {region}/{country}/{timezone}.
+#
+# The primary reason that this file was created was to split the single
+# "America" region used by the TZDB timezone into three regions: North America,
+# Central Amerca, and South America. Central America is actually a part of
+# North America, but adding this region solves the problem where it was
+# difficult to classify a few Caribbean islands (eg. Aruba, Bonaire, Carucao,
+# Trindad & Tobago) because they are geographically on the continental shelf of
+# South America, but are culturally more North America due to their history.
+
+# Code Name
+Africa Africa
+Antarctica Antarctica
+Asia Asia
+Atlantic Atlantic Ocean
+Australia Australia
+CAmerica Central America # including Caribbean islands
+Etc Etcetera
+Europe Europe
+Indian Indian Ocean
+NAmerica North America
+Pacific Pacific Ocean
+SAmerica South America

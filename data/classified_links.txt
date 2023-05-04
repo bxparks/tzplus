@@ -246,7 +246,7 @@ Alternate America/Vancouver Canada/Pacific # Canada -> Canada
 Alternate America/Regina Canada/Saskatchewan # Canada -> Canada
 Alternate America/Whitehorse Canada/Yukon # Canada -> Canada
 
-Similar America/Santiago Chile/Continental # Chile -> Chile
+Obsolete America/Santiago Chile/Continental # Chile -> Chile
 Alias Pacific/Easter Chile/EasterIsland # Chile -> Chile
 
 Alias America/Havana Cuba # Cuba -> Cuba
