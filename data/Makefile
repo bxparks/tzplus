@@ -25,7 +25,8 @@ geonames: zones.txt links.txt
 		--classified_links classified_links.txt \
 		--iso_long iso3166_long.txt \
 		--iso_short iso3166_short.txt \
-		--country_timezones ../geonames/timeZones.txt
+		--region regions.txt \
+		--geonames ../geonames/timeZones.txt
 
 # Extract Zones.
 zones.txt: $(TOOLS_DIR)/extract_zones.sh $(TZDB_DIR)

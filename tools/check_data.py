@@ -10,7 +10,9 @@
 #   --iso_long {file}
 #   --iso_short {file}
 #   --regions {file}
-#   --country_timezones country_timezones.txt
+#   [--country_timezones country_timezones.txt]
+#   [--geonames geonames.txt]
+
 
 from typing import Dict
 from typing import Iterable
@@ -74,9 +76,13 @@ def main() -> None:
         required=True)
     parser.add_argument(
         '--country_timezones',
-        help='Country code to timezones',
-        required=True)
+        help='Country code to timezones')
+    parser.add_argument(
+        '--geonames',
+        help='GeoNames timeZones')
     args = parser.parse_args()
+    if not args.country_timezones and not args.geonames:
+        error("Must provide one of --country_timezones or --geonames")
 
     # Configure logging
     # logging.basicConfig(level=logging.INFO)
@@ -84,14 +90,14 @@ def main() -> None:
     # Read and check zones.
     zones = read_zones(args.zones)
     classified_zones = read_zones(args.classified_zones)
-    check_zones(zones, classified_zones)
+    check_zones(args.zones, zones, classified_zones)
 
     # Read and check links.
     links = read_links(args.links)
     check_cycle(args.links, links)
     classified_links = read_links(args.classified_links)
     check_cycle(args.classified_links, classified_links)
-    check_links(links, classified_links)
+    check_links(args.links, links, classified_links)
     check_link_targets(classified_links, links, zones)
 
     # Read and check ISO countries.
@@ -102,43 +108,76 @@ def main() -> None:
     # Read regions
     regions = read_regions(args.regions)
 
-    # Read and check country-to-timezones.
-    country_timezones, region_timezones = \
-        read_country_timezones(args.country_timezones)
-    check_countries(country_timezones, iso_short)
-    check_regions(region_timezones, regions)
-    check_timezones(country_timezones, classified_zones, classified_links)
+    if args.country_timezones:
+        # Read and check country-to-timezones.
+        country_timezones, region_timezones = \
+            read_country_timezones(args.country_timezones)
+        check_countries(country_timezones, iso_short)
+        check_regions(args.country_timezones, region_timezones, regions)
+        check_timezones(
+            args.country_timezones, country_timezones, classified_zones,
+            classified_links)
 
-    # Collect list of timezones with multiple countries. This can happen
-    # for cities in war or in border disputes.
-    poly_timezones = get_poly_timezones(country_timezones)
+        # Collect list of timezones with multiple countries. This can happen
+        # for cities in war or in border disputes.
+        poly_timezones = get_poly_timezones(country_timezones)
 
-    # Print summary
-    print(f"{args.zones}: {len(zones)}")
-    print(f"{args.links}: {len(links)}")
-    print(f"{args.classified_zones}: {len(classified_zones)}")
-    print(f"{args.classified_links}: {len(classified_links)}")
-    print(f"{args.iso_long}: {len(iso_long)}")
-    print(f"{args.iso_short}: {len(iso_short)}")
-    print(f"{args.regions}: {len(regions)}")
+        # Print summary
+        print(f"{args.zones}: {len(zones)}")
+        print(f"{args.links}: {len(links)}")
+        print(f"{args.classified_zones}: {len(classified_zones)}")
+        print(f"{args.classified_links}: {len(classified_links)}")
+        print(f"{args.iso_long}: {len(iso_long)}")
+        print(f"{args.iso_short}: {len(iso_short)}")
+        print(f"{args.regions}: {len(regions)}")
 
-    num_countries = len(country_timezones) - 1  # remove "00" country code
-    num_regions = len(region_timezones)
-    num_timezones = sum([len(entry) for _, entry in country_timezones.items()])
-    print(
-        f"{args.country_timezones}: "
-        f"regions={num_regions}, "
-        f"countries={num_countries}, "
-        f"timezones={num_timezones}"
-    )
+        num_countries = len(country_timezones) - 1  # remove "00" country code
+        num_regions = len(region_timezones)
+        num_timezones = sum([
+            len(entry)
+            for _, entry in country_timezones.items()
+        ])
+        print(
+            f"{args.country_timezones}: "
+            f"regions={num_regions}, "
+            f"countries={num_countries}, "
+            f"timezones={num_timezones}"
+        )
 
-    if poly_timezones:
-        print("Timezones with multiple countries:")
-        for timezone, countries in poly_timezones.items():
-            print(f"  {timezone}: {countries}")
+        if poly_timezones:
+            print("Timezones with multiple countries:")
+            for timezone, countries in poly_timezones.items():
+                print(f"  {timezone}: {countries}")
+    else:
+        # Read and check geonames.org file
+        country_timezones = read_geonames(args.geonames)
+        check_countries(country_timezones, iso_short)
+        check_timezones(
+            args.geonames, country_timezones, classified_zones,
+            classified_links)
 
+        # Print summary
+        print(f"{args.zones}: {len(zones)}")
+        print(f"{args.links}: {len(links)}")
+        print(f"{args.classified_zones}: {len(classified_zones)}")
+        print(f"{args.classified_links}: {len(classified_links)}")
+        print(f"{args.iso_long}: {len(iso_long)}")
+        print(f"{args.iso_short}: {len(iso_short)}")
+        print(f"{args.regions}: {len(regions)}")
+
+        num_countries = len(country_timezones) - 1  # remove "00" country code
+        num_timezones = sum([
+            len(entry)
+            for _, entry in country_timezones.items()
+        ])
+        print(
+            f"{args.country_timezones}: "
+            f"countries={num_countries}, "
+            f"timezones={num_timezones}"
+        )
 
 # -----------------------------------------------------------------------------
+
 
 def read_zones(filename: str) -> Dict[str, Entry]:
     """Read Zone records of the form:
@@ -220,7 +259,7 @@ def read_regions(filename: str) -> Dict[str, str]:
 def read_country_timezones(
     filename: str
 ) -> (CountryTimezones, RegionTimezones):
-    """{country_code -> timezone}"""
+    """Read {region country_code timezone}"""
     country_timezones: CountryTimezones = {}
     region_timezones: RegionTimezones = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
@@ -248,6 +287,28 @@ def read_country_timezones(
             timezones.append(timezone)
 
     return country_timezones, region_timezones
+
+
+def read_geonames(filename: str) -> CountryTimezones:
+    """Read {country_code timezone}"""
+    country_timezones: CountryTimezones = {}
+    with open(filename, 'r', newline='', encoding='utf-8') as f:
+        while True:
+            line = read_line(f)
+            if line is None:
+                break
+            tokens: List[str] = line.split()
+            country = tokens[0]
+            timezone = tokens[1]
+
+            # Add to country->timezones
+            timezones = country_timezones.get(country)
+            if not timezones:
+                timezones = []
+                country_timezones[country] = timezones
+            timezones.append(timezone)
+
+    return country_timezones
 
 
 def read_line(input: TextIO) -> Optional[str]:
@@ -283,6 +344,7 @@ def read_line(input: TextIO) -> Optional[str]:
 
 
 def check_zones(
+    filename: str,
     zones: Dict[str, Entry],
     classified_zones: Dict[str, Entry],
 ) -> None:
@@ -290,14 +352,15 @@ def check_zones(
     if zones.keys() != classified_zones.keys():
         extra = classified_zones.keys() - zones.keys()
         if extra:
-            error("Extra zones in classified_zones", extra)
+            error(f"Extra zones in {filename}", extra)
 
         missing = zones.keys() - classified_zones.keys()
         if missing:
-            error("Missing zones in classified zones", missing)
+            error(f"Missing zones in {filename}", missing)
 
 
 def check_links(
+    filename: str,
     links: Dict[str, Entry],
     classified_links: Dict[str, Entry],
 ) -> None:
@@ -305,11 +368,11 @@ def check_links(
     if links.keys() != classified_links.keys():
         extra = classified_links.keys() - links.keys()
         if extra:
-            error("Extra links in classified_links", extra)
+            error(f"Extra links in {filename}", extra)
 
         missing = links.keys() - classified_links.keys()
         if missing:
-            error("Missing links in classified links", missing)
+            error(f"Missing links in {filename}", missing)
 
 
 def check_link_targets(
@@ -369,6 +432,7 @@ def check_countries(
 
 
 def check_regions(
+    filename: str,
     region_timezones: RegionTimezones,
     regions: Dict[str, str],
 ) -> None:
@@ -380,14 +444,15 @@ def check_regions(
     if expected != selected:
         extra = selected - expected
         if extra:
-            error("Extra regions in country_timezones", extra)
+            error(f"Extra regions in {filename}", extra)
 
         missing = expected - selected
         if missing:
-            error("Missing regions in country_timezones", missing)
+            error(f"Missing regions in {filename}", missing)
 
 
 def check_timezones(
+    filename: str,
     country_timezones: CountryTimezones,
     classified_zones: Dict[str, Entry],
     classified_links: Dict[str, Entry],
@@ -414,11 +479,11 @@ def check_timezones(
     if selected != expected:
         extra = selected - expected
         if extra:
-            error("Extra timezones in country_timezones", extra)
+            error(f"Extra timezones in {filename}", extra)
 
         missing = expected - selected
         if missing:
-            error("Missing timezones from country_timezones", missing)
+            error(f"Missing timezones from {filename}", missing)
 
 
 def get_poly_timezones(
