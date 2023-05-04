@@ -43,6 +43,7 @@ published into the public domain.
 * [Motivation](#Motivation)
 * [TZDB Deficiencies](#TzdbDeficencies)
 * [Generated Files](#GeneratedFiles)
+* [Validation](#Validation)
 * [Methodology](#Methodology)
 * [Upgrading to New TZDB](#UpgradingTZDB)
 * [Alternatives Considered](#AlternativesConsidered)
@@ -193,6 +194,28 @@ exceptions to those rules:
     * `UTC`
     * `Etc/UTC`
 
+<a name="Validation"></a>
+## Validation
+
+The `make` command runs the [check_data.py](tools/check_data.py) script which
+runs a series of validations on the various files. The output looks like this:
+
+```
+$ cd data
+$ make
+zones.txt: 350
+links.txt: 246
+classified_zones.txt: 350
+classified_links.txt: 246
+iso3166_long.txt: 249
+iso3166_short.txt: 249
+country_timezones.txt: country_codes=247, timezones=481
+Timezones with multiple countries:
+  America/Marigot: ['MF', 'SX']
+  Europe/Simferopol: ['RU', 'UA']
+  Indian/Chagos: ['MU', 'IO']
+```
+
 <a name="Methodology"></a>
 ## Methodology
 
@@ -237,9 +260,7 @@ When a new TZDB version is released, here are the steps to generate the
 TZDB version
 1. `$ make tzdb` to regenerate the `tzdb` directory
 1. `$ cd data`
-1. `$ make` to run `tools/check_data.py` to validate `country_timezones.txt`
-    * The script will print any missing or extra timezones.
-      which do not map correctly to the new TZDB version.
+1. `$ make` to run `tools/check_data.py` to validate various files.
     * Edit `iso3166_long.txt` and `iso3166_short.txt` to add/remove countries.
     * Edit `classified_zones.txt` to add/remove Zone entries.
     * Edit `classified_links.txt` to add/remove Link entries.

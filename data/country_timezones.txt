@@ -11,30 +11,6 @@
 # the exception of the synthetic timezones "UTC" and "Etc/UTC" which are given
 # the synthetic ISO country code of "00" (it does not exist in
 # iso3166_xxx.txt).
-#
-# Run
-#
-#   $ make
-#
-# to run the `check_data.py` validation script over this file. For example, it
-# verifies that there is a one-to-olne correspondence to a 'Zone', 'Similar' or
-# 'Alternate' entry in classified_zones.txt and classified_links.txt. Any
-# extras or missing timezones are identified and printed.
-#
-# Upon successful validation, the script will print a summary that looks like
-# this:
-#
-# zones.txt: 350
-# links.txt: 246
-# classified_zones.txt: 350
-# classified_links.txt: 246
-# iso3166_long.txt: 249
-# iso3166_short.txt: 249
-# country_timezones.txt: country_codes=247, timezones=481
-# Timezones with multiple countries:
-#   America/Marigot: ['MF', 'SX']
-#   Europe/Simferopol: ['RU', 'UA']
-#   Indian/Chagos: ['MU', 'IO']
 
 CI Africa/Abidjan # Ivory Coast
 GH Africa/Accra # Ghana
