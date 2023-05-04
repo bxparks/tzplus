@@ -46,6 +46,7 @@ its data are published into the public domain.
 * [Upgrading to New TZDB](#UpgradingTZDB)
 * [Alternatives Considered](#AlternativesConsidered)
 * [Appendix: Merged TZDB Timezones After 1970](#MergedTzdbTimezonesAfter1970)
+* [Bugs and Limitations](#Bugs)
 * [License](#License)
 * [Feedback and Support](#FeedbackAndSupport)
 * [Authors](#Authors)
@@ -401,7 +402,7 @@ TZDB version
     * organizes geographical names and provides downloadable files
     * [timeZones.txt](https://download.geonames.org/export/dump/timeZones.txt)
       contains timezones assigned to an ISO 3166 country.
-    * but it is unclear how this file was created, how it is maintained, 
+    * but it is unclear how this file was created, how it is maintained,
       and how quickly it is updated when a new TZDB version is released.
 * [CLDR](https://cldr.unicode.org/) - Unicode Common Locale Data Repository
     * This project is complex, and I cannot figure out what it provides and
@@ -443,6 +444,24 @@ archives and the LWN.net article:
 * https://mm.icann.org/pipermail/tz/2022-July/thread.html#31631: Moving more zones to 'backzone'
 * https://mm.icann.org/pipermail/tz/2022-August/thread.html#31752: Moving more zones to 'backzone'
 * https://lwn.net/Articles/870478/: A fork for the time-zone database?
+
+<a name="Bugs"></a>
+## Bugs and Limitations
+
+* The `Etc/UTC` and `UTC` timezones are assigned a fake ISO country code of
+  `00`.
+    * This code does *not* exist in either `iso3166_long.txt` or
+      `iso3166_short.txt` files.
+    * This fake ISO country code may be added to those files in the future to
+      make downstream client code easier to write by eliminating special
+      handling.
+* In some microcontroller environments, even the short names provided by
+  `iso3166_short.txt` may not be short enough.
+    * It might be necessary to simply use the 2-letter ISO codes instead.
+* There is no "short" version of the `regions.txt` file.
+    * There are currently only 12 regions defined, so it should be relatively
+      easy for client applications to create their own short versions of these
+      regions.
 
 <a name="License"></a>
 ## License
