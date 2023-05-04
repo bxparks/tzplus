@@ -34,9 +34,6 @@ its data are published into the public domain.
 
 * [IANA TZDB](https://github.com/eggert/tz)
 * [AceTime](https://github.com/bxparks/AceTime) (Arduino C++)
-* [AceTimeC](https://github.com/bxparks/AceTimeC)
-* [AceTimePython](https://github.com/bxparks/AceTimePython)
-* [AceTimeGo](https://github.com/bxparks/AceTimeGo)
 
 ## Table of Contents
 
