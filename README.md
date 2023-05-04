@@ -468,8 +468,8 @@ archives and the LWN.net article:
     * There are currently only 12 regions defined, so it should be relatively
       easy for client applications to create their own short versions of these
       regions.
-* The region codes in `regions.txt` 2-letter codes, similar to ISO 3166 2-letter
-  codes.
+* The region codes in `regions.txt` are 2-letter codes that look similar to ISO
+  3166 2-letter codes.
     * It is possible that this might cause confusion if they are shown to the
       end users without clear context.
 
