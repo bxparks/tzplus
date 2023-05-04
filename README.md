@@ -3,19 +3,20 @@
 This repository contains data files which extend the functionality of the data
 files of the [IANA TZDB](https://github.com/eggert/tz) timezone database.
 
-The main purpose of this project is the generation and maintenance of the
+The main purpose of this project is to generate the
 [country_timezone.txt](data/country_timezones.txt) file which contains ~480
 *significant* IANA timezones (out of a total of ~600 timezones in the raw TZDB
 files) organized into regions (continents or oceans) and their respective ISO
 3166 countries. The goal is to ensure that every ISO country has at least one
-timezone. This allows the user-interface to present timezones in a nested
-hierarchy of continent/region, country, and city.
+timezone, and every timezone is assigned to at least one ISO country. This
+allows a user-interface to present timezones as a nested hierarchy of regions,
+countries, and timezones.
 
-The `country_timezones.txt` data is intended to be useful for user-interfaces
+The `country_timezones.txt` data was originally intended for user-interfaces
 running on microcontrollers with limited memory, small displays, and restricted
-input devices. These microcontrollers do not support a POSIX-compatible libc
-library. They will use much smaller alternative timezones libraries such as
-[AceTime](https://github.com/bxparks/AceTime) for Arduino.
+input devices. (Although nothing prevents the file from being used in other
+computer environments with far more resources.) These microcontrollers do not
+support a POSIX-compatible libc library.
 
 **Disclaimer**: This project is not related to the TZDB project, the IANA
 organization, or any other government or quasi-government agency. A timezone may
@@ -45,7 +46,7 @@ its data are published into the public domain.
 * [Methodology](#Methodology)
 * [Upgrading to New TZDB](#UpgradingTZDB)
 * [Alternatives Considered](#AlternativesConsidered)
-* [Appendix: Merged TZDB Timezones After 1970](#MergedTzdbTimezonesAfter1970)
+* [Appendix: Merged TZDB Timezones After 1970](#MergedTimezonesAfter1970)
 * [Bugs and Limitations](#Bugs)
 * [License](#License)
 * [Feedback and Support](#FeedbackAndSupport)
@@ -79,9 +80,9 @@ In these environments:
 Assuming that only short (about 10-15 characters or less) can be displayed at a
 time, we want to present the timezones to the user, in a hierarchical structure,
 starting from the largest geopolitical areas (continents, oceans), then the ISO
-countries, then display the cities. Ideally, the cities would be sorted in a
-reasonable manner (alphabetically, geographically (West to East), or by UTC time
-offset).
+countries, then display the timezones which often map to cities. Ideally, the
+cities would be sorted in a reasonable manner (alphabetically, geographically
+(West to East), or by UTC time offset).
 
 <a name="TzdbDeficencies"></a>
 ## TZDB Deficiencies
@@ -100,21 +101,21 @@ There are 3 problems with these IANA identifiers in the context of this project:
 * the country of a city can be in dispute due to disputed borders.
 
 The exclusion of the country makes the maintenance of the TZDB easier, but it
-causes usability issues for the end users. Most end-users still prefer to
+causes usability issues for the end users. Most end users still prefer to
 categorize cities into countries, and countries into continents or regions.
 
 2)) The `region` component of the timezone identifier uses a single `America`
-identifier to include timezones in both South America and North America. That
-means about 170 timezones are under the `America/` prefix, without an obvious
-way to organize them in way that makes sense to the end users.
+identifier to identify timezones in both South America and North America. That
+means about 170 timezones are under the `America/` prefix which is too large to
+navigate over easily in a microcontroller environment. The TZDB provides no
+obvious way to organize them in a sensible manner for the end users.
 
 3)) Starting with TZDB 2021b in Sept 2021, unrelated timezones have been
 progressively merged (converted into Link entries), if those timezones happen to
-have the same DST transition rules since the year 1970. (See [Merging of
-Timezones After 1970](#TzdbMergingTimezonesAfter1970) below.) Many timezone
-libraries (including all the AceXxx libraries mentioned above) do not
-distinguish between Zone and Link entries, so are not severely impacted by these
-merges.
+have the same DST transition rules since the year 1970. (See [Merged Timezones
+After 1970](#MergedTimezonesAfter1970) below.) Many timezone libraries do not
+distinguish between Zone and Link entries, so are not directly impacted by
+these merges at the lowest level.
 
 However, the [zone1970.tab](https://github.com/eggert/tz/blob/main/zone1970.tab)
 file provided by the TZDB project is negatively impacted by these merges. It
@@ -131,22 +132,24 @@ to how most people think about timezones.
 
 This project contains a set of both auto-generated and manually-curated data
 files which build on top of the raw timezone files provided by the IANA TZDB.
-The primary end product is the
-[country_timezones.txt](data/country_timezones.txt) file which contains a list
-of *significant* timezones, organized into regions and ISO country codes. This
-file is intended to supersede the `zones1970.tab` file from the TZDB.
+The primary product is the [country_timezones.txt](data/country_timezones.txt)
+file which contains a list of *significant* timezones, organized into regions
+and ISO country codes. This file is intended to supersede the `zones1970.tab`
+file from the TZDB.
 
-The list of regions (continents and oceans) is somewhat arbitrary and
-subjective. It is defined in the [regions.txt](data/regions.txt) file.
-Currently, the regions are:
+The list of regions (continents and oceans) is somewhat arbitrary, and is guided
+by ease of usability in the user-interface, instead of strict adherence to how
+the world is divided geographically. For the purposes of this project, the
+regions are defined in the [regions.txt](data/regions.txt) file. Currently, the
+regions are:
 
 * Africa
 * Antarctica
 * Asia
 * Atlantic Ocean
 * Australia
-* Central America # including Caribbean islands
-* Etcetera
+* Central America (includes the Caribbean islands)
+* Etcetera (for timezones without an association with a region, e.g. `UTC`)
 * Europe
 * Indian Ocean
 * North America
@@ -162,25 +165,28 @@ to their approximate ASCII characters. This allows easier implementations on
 microcontroller environments without support for Unicode.
 
 The determination of which timezones are *significant* enough to be presented in
-a user-interface is defined by the
-[classified_zones.txt](data/classified_zones.txt) and
-[classified_links.txt](data/classified_links.txt) files. Most of the work
-involved undoing the merging of unrelated timezones which started with TZDB
-2021b (see [Merged TZDB Timezones After 1970](#MergedTzdbTimezonesAfter1970)
-below). Another major effort was figuring out which timezones are obsolete and
-no longer commonly used. Since I do not have complete knowledge of every use of
-every timezone around the world, some of this required guesswork.
+a user-interface is defined by:
+
+* [classified_zones.txt](data/classified_zones.txt)
+* [classified_links.txt](data/classified_links.txt)
+
+Most of the work involved undoing the merging of unrelated timezones which
+started with TZDB 2021b (see [Merged Timezones After
+1970](#MergedTimezonesAfter1970) below). Another major effort was figuring out
+which timezones are obsolete and no longer commonly used. Since I do not have
+complete knowledge of every use of every timezone around the world, some of this
+required guesswork.
 
 The `country_timezones.txt` file is intended to have the property that every
 timezone is assigned to at least one ISO country, and every ISO country has at
 least one timezone. There are a few exceptions to those rules:
 
-* Two ISO countries are uninhabited, therefore do not have a
+* Two ISO countries are currently uninhabited, therefore do not have a
   timezone, so are missing from that file:
     * `BV` Bouvet Island
     * `HM` Heard Island & McDonald Islands
 * Two timezones are synthetic, and do not correspond to an ISO country. These
-  are given the fake ISO code of "00":
+  are given the fake ISO code of `00`, and assigned to the region `Etcetera`:
     * `UTC`
     * `Etc/UTC`
 
@@ -415,8 +421,8 @@ TZDB version
     * Similar to CLDR, I did not want to depend on another large, complex
       project.
 
-<a name="MergedTzdbTimezonesAfter1970"></a>
-## Appendix: Merged TZDB Timezones After 1970
+<a name="MergedTimezonesAfter1970"></a>
+## Appendix: Merged Timezones After 1970
 
 Starting with [TZDB
 2021b](https://mm.icann.org/pipermail/tz-announce/2021-September/000066.html),
@@ -462,6 +468,10 @@ archives and the LWN.net article:
     * There are currently only 12 regions defined, so it should be relatively
       easy for client applications to create their own short versions of these
       regions.
+* The region codes in `regions.txt` 2-letter codes, similar to ISO 3166 2-letter
+  codes.
+    * It is possible that this might cause confusion if they are shown to the
+      end users without clear context.
 
 <a name="License"></a>
 ## License
