@@ -215,7 +215,7 @@ Here is the quick description of some of the other files in this repository:
     * [classified_zones.txt](data/classified_zones.txt)
         * Manually derived from `zones.txt`, each `Zone` entry is subclassified
           into a `Zone` or `ZoneObsolete` entry.
-        * The `tools/check_data.py` script validates that every `zones.txt`
+        * The `tools/verify_data.py` script validates that every `zones.txt`
           entry exists in the `classified_zones.txt` file.
     * [classified_links.txt](data/classified_links.txt)
         * Manually derived from `links.txt`, each `Link` entry is subclassified
@@ -224,7 +224,7 @@ Here is the quick description of some of the other files in this repository:
             * `Alternate`
             * `Alias`
             * `Obsolete`
-        * The `tools/check_data.py` script validates that every `zones.txt`
+        * The `tools/verify_data.py` script validates that every `zones.txt`
           entry exists in the `classified_zones.txt` file.
     * [iso3166_long.txt](data/iso3166_long.txt)
         * List of [ISO 3166
@@ -242,7 +242,7 @@ Here is the quick description of some of the other files in this repository:
 <a name="Validation"></a>
 ## Validation
 
-The `make` command runs the [check_data.py](tools/check_data.py) script which
+The `make` command runs the [verify_data.py](tools/verify_data.py) script which
 runs a series of validations on the various files. The output looks like this:
 
 ```
@@ -394,7 +394,7 @@ classified_links.txt    |       regions.txt
                   /         \
      (make list) /           \ (make verify)
                 v             v
-        list_zones.py      check_data.py
+        list_zones.py      verify_data.py
 ```
 
 <a name="TimezonesInMultipleCountries"></a>
@@ -417,7 +417,7 @@ TZDB version
 1. `$ cd data`
 1. `$ make extract` to extract the Zone and Link entries into `zones.txt` and
    `links.txt`
-1. `$ make verify` to run `tools/check_data.py` to validate various files.
+1. `$ make verify` to run `tools/verify_data.py` to validate various files.
 1. If there are any warning or errors, edit various files to bring them into
    compliance:
     * Edit `iso3166_long.txt` and `iso3166_short.txt` to add/remove countries.

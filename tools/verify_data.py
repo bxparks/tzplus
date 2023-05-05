@@ -3,7 +3,7 @@
 # Validate various data files under data/
 #
 # Usage:
-# $ check_data.py
+# $ verify_data.py
 #   --zones {file}
 #   --links {file}
 #   --classified_zones {file}

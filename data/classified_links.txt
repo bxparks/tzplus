@@ -56,7 +56,7 @@
 #     to. These are labeled as 'Obsolete'.
 #
 # This file is maintained manually. When a new version of TZDB is released, the
-# tools/check_data.py script will validate that there is a one-to-one
+# tools/verify_data.py script will validate that there is a one-to-one
 # correspondence between the entries of this file and links.txt. This file must
 # be updated manually if any entry needs to be added or removed.
 

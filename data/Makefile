@@ -7,7 +7,7 @@ TZDB_DIR := ../tzdb
 # Verify the various data files, in particular, country_timezones.txt.
 .phony: verify
 verify: zones.txt links.txt
-	$(TOOLS_DIR)/check_data.py \
+	$(TOOLS_DIR)/verify_data.py \
 		--zones zones.txt \
 		--links links.txt \
 		--classified_zones classified_zones.txt \

@@ -4,7 +4,7 @@ TOOLS_DIR := ../tools
 # https://download.geonames.org/export/dump/timeZones.txt.
 .PHONY: verify
 verify:
-	$(TOOLS_DIR)/check_data.py \
+	$(TOOLS_DIR)/verify_data.py \
 		--zones ../data/zones.txt \
 		--links ../data/links.txt \
 		--classified_zones ../data/classified_zones.txt \

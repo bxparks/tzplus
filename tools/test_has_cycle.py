@@ -1,6 +1,6 @@
 import unittest
-from check_data import Entry
-from check_data import has_cycle
+from verify_data import Entry
+from verify_data import has_cycle
 
 
 class TestHashCycle(unittest.TestCase):
