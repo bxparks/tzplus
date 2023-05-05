@@ -14,8 +14,8 @@ verify: zones.txt links.txt
 		--classified_links classified_links.txt \
 		--iso_long iso3166_long.txt \
 		--iso_short iso3166_short.txt \
-		--region regions.txt \
-		--country_timezones country_timezones.txt
+		--regions regions.txt \
+		--region_country_timezones country_timezones.txt
 
 # List the timezones in a hierarchical menu that could be used in a
 # microcontroller environment.

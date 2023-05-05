@@ -11,5 +11,5 @@ verify:
 		--classified_links ../data/classified_links.txt \
 		--iso_long ../data/iso3166_long.txt \
 		--iso_short ../data/iso3166_short.txt \
-		--region ../data/regions.txt \
-		--geonames ../geonames/timeZones.txt
+		--regions ../data/regions.txt \
+		--country_timezones timeZones.txt

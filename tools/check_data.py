@@ -11,8 +11,8 @@
 #   --iso_long {file}
 #   --iso_short {file}
 #   --regions {file}
-#   [--country_timezones country_timezones.txt]
-#   [--geonames geonames.txt]
+#   [--region_country_timezones country_timezones.txt]
+#   [--country_timezones geonames.txt]
 
 
 from typing import Dict
@@ -21,6 +21,7 @@ from typing import List
 from typing import Optional
 from typing import Set
 from typing import TextIO
+from typing import Tuple
 from typing import NamedTuple
 
 # from pprint import pp
@@ -76,14 +77,16 @@ def main() -> None:
         help='Region names',
         required=True)
     parser.add_argument(
-        '--country_timezones',
-        help='Country code to timezones')
+        '--region_country_timezones',
+        help='Region-Country-Timezone file')
     parser.add_argument(
-        '--geonames',
-        help='GeoNames timeZones')
+        '--country_timezones',
+        help='Country-Timezone file')
     args = parser.parse_args()
-    if not args.country_timezones and not args.geonames:
-        error("Must provide one of --country_timezones or --geonames")
+    if not args.region_country_timezones and not args.country_timezones:
+        error(
+            "Must provide one of "
+            "--region_country_timezones or --country_timezones")
 
     # Configure logging
     # logging.basicConfig(level=logging.INFO)
@@ -109,7 +112,7 @@ def main() -> None:
     # Read regions
     regions = read_regions(args.regions)
 
-    # Print summary
+    # Print summary of input files.
     max_long_country = max([len(v) for v in iso_long.values()])
     max_short_country = max([len(v) for v in iso_short.values()])
     max_region = max([len(v) for v in regions.values()])
@@ -121,14 +124,14 @@ def main() -> None:
     print(f"{args.iso_short}: {len(iso_short)}, maxlen: {max_short_country}")
     print(f"{args.regions}: {len(regions)}, maxlen: {max_region}")
 
-    if args.country_timezones:
-        # Read and check country-to-timezones.
+    if args.region_country_timezones:
+        # Read and check region_country_timezones.txt.
         country_timezones, region_timezones = \
-            read_country_timezones(args.country_timezones)
+            read_region_country_timezones(args.region_country_timezones)
         check_countries(country_timezones, iso_short)
-        check_regions(args.country_timezones, region_timezones, regions)
+        check_regions(args.region_country_timezones, region_timezones, regions)
         check_timezones(
-            args.country_timezones, country_timezones, classified_zones,
+            args.region_country_timezones, country_timezones, classified_zones,
             classified_links)
 
         num_countries = len(country_timezones) - 1  # remove "00" country code
@@ -137,28 +140,27 @@ def main() -> None:
             for _, entry in country_timezones.items()
         ])
 
-        # Collect list of timezones with multiple countries.
-        poly_timezones = get_poly_timezones(country_timezones)
-
-        # Print summary
+        # Print region_country_timezones summary.
         num_regions = len(region_timezones)
         print(
-            f"{args.country_timezones}: "
+            f"{args.region_country_timezones}: "
             f"regions={num_regions}, "
             f"countries={num_countries}, "
             f"timezones={num_timezones}"
         )
 
+        # Print timezones with multiple countries.
+        poly_timezones = get_poly_timezones(country_timezones)
         if poly_timezones:
             print("Timezones with multiple countries:")
             for timezone, countries in poly_timezones.items():
                 print(f"  {timezone}: {countries}")
     else:
-        # Read and check geonames.org file
-        country_timezones = read_geonames(args.geonames)
+        # Read and verify the country-timezone file
+        country_timezones = read_country_timezones(args.country_timezones)
         check_countries(country_timezones, iso_short)
         check_timezones(
-            args.geonames, country_timezones, classified_zones,
+            args.country_timezones, country_timezones, classified_zones,
             classified_links)
 
         num_countries = len(country_timezones) - 1  # remove "00" country code
@@ -254,10 +256,10 @@ def read_regions(filename: str) -> Dict[str, str]:
     return regions
 
 
-def read_country_timezones(
+def read_region_country_timezones(
     filename: str
-) -> (CountryTimezones, RegionTimezones):
-    """Read {region country_code timezone}"""
+) -> Tuple[CountryTimezones, RegionTimezones]:
+    """Read {region country_code timezone} triplets"""
     country_timezones: CountryTimezones = {}
     region_timezones: RegionTimezones = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
@@ -287,7 +289,7 @@ def read_country_timezones(
     return country_timezones, region_timezones
 
 
-def read_geonames(filename: str) -> CountryTimezones:
+def read_country_timezones(filename: str) -> CountryTimezones:
     """Read {country_code timezone}"""
     country_timezones: CountryTimezones = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
