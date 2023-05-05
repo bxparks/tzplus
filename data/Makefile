@@ -12,6 +12,7 @@ verify: zones.txt links.txt
 		--links links.txt \
 		--classified_zones classified_zones.txt \
 		--classified_links classified_links.txt \
+		--iso_orig ../tzdb/iso3166.tab \
 		--iso_long iso3166_long.txt \
 		--iso_short iso3166_short.txt \
 		--regions regions.txt \
