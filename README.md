@@ -372,25 +372,29 @@ The following steps were used to create the final `country_timezones.txt` file:
 Here is a rough diagram of the data processing pipeline:
 
 ```
-                TZDB
-      (script) /    \
+         github.com/eggert/tz
+                 |
+                 | (make tzdb)
+                 v
+               tzdb/
+(make extract) /    \
               /      \
              v        v
-      zones.txt   iso3166_long.txt
-      links.txt   iso3166_short.txt
-         |             |
-         |             |
-         v             |
-classified_zones.txt   |
-classified_links.txt   |       regions.txt
-                \      |          /
-(select Zone,    \     |         /
-     Similar,     \    |        /
-or Alternate)      v   v       v
+      zones.txt     iso3166_long.txt
+      links.txt     iso3166_short.txt
+         |              |
+         |              |
+         v              |
+classified_zones.txt    |
+classified_links.txt    |       regions.txt
+                \       |          /
+                 \      |         /
+                  v     v        v
               country_timezones.txt
-                       |
-                       v
-                  check_data.py
+                  /         \
+     (make list) /           \ (make verify)
+                v             v
+        list_zones.py      check_data.py
 ```
 
 <a name="TimezonesInMultipleCountries"></a>
