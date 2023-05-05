@@ -449,17 +449,17 @@ def check_countries(
     expected.discard('00')  # fake country '00' is not required
 
     # Observed ISO countries in the country_timezones map.
-    selected = set(country_timezones.keys())
-    selected.discard('00')  # fake country '00' is not required
+    observed = set(country_timezones.keys())
+    observed.discard('00')  # fake country '00' is not required
 
-    if expected != selected:
+    if expected != observed:
         # Check that each ISO countries has at least one timezone.
-        missing = expected - selected
+        missing = expected - observed
         if missing:
             error(f"Missing countries in {filename}", missing)
 
         # Check that every timezone country exists in the ISO country file.
-        extra = selected - expected
+        extra = observed - expected
         if extra:
             error(f"Extra countries in {filename}", extra)
 
@@ -473,13 +473,13 @@ def check_regions(
     regions.txt.
     """
     expected = set(regions.keys())
-    selected = set(region_timezones.keys())
-    if expected != selected:
-        extra = selected - expected
+    observed = set(region_timezones.keys())
+    if expected != observed:
+        extra = observed - expected
         if extra:
             error(f"Extra regions in {filename}", extra)
 
-        missing = expected - selected
+        missing = expected - observed
         if missing:
             error(f"Missing regions in {filename}", missing)
 
@@ -504,17 +504,17 @@ def check_timezones(
     ])
 
     # Collect the timezones which appear in country_timezones.txt.
-    selected: Set[str] = set()
+    observed: Set[str] = set()
     for z in country_timezones.values():
-        selected.update(z)
+        observed.update(z)
 
     # Check that they are equal.
-    if selected != expected:
-        extra = selected - expected
+    if observed != expected:
+        extra = observed - expected
         if extra:
             error(f"Extra timezones in {filename}", extra)
 
-        missing = expected - selected
+        missing = expected - observed
         if missing:
             error(f"Missing timezones from {filename}", missing)
 
