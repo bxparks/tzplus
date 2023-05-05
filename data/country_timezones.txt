@@ -410,7 +410,7 @@ AU AU Australia/West # Australia
 # BR Brazil/DeNoronha # Brazil (tzdb origin lost)
 # BR Brazil/East # Brazil
 # BR Brazil/West # Brazil
-# 00 CET # Misc (Central European Time)
+# 00 CET # Europe
 # US CST6CDT # USA
 NA CA Canada/Atlantic # Canada
 NA CA Canada/Central # Canada
@@ -423,7 +423,7 @@ NA CA Canada/Yukon # Canada
 # Chile CL Chile/Continental # Chile
 # CL Chile/EasterIsland # Chile
 # CU Cuba # Cuba
-# 00 EET # Misc (Eastern European Time)
+# 00 EET # Europe
 # US EST # USA
 # US EST5EDT # USA
 # EG Egypt # Egypt
@@ -559,7 +559,7 @@ IO CX Indian/Christmas # Christmas Island
 IO CC Indian/Cocos # Cocos Islands
 IO KM Indian/Comoro # Comoros
 IO TF Indian/Kerguelen # French Southern and Antarctic Lands
-IO SC Indian/Mahe Seychelles (TZDB origin lost)
+IO SC Indian/Mahe # Seychelles
 IO MV Indian/Maldives # Maldives
 IO MU Indian/Mauritius # Mauritius
 IO YT Indian/Mayotte # Mayotte
@@ -571,7 +571,7 @@ IO RE Indian/Reunion # Reunion
 # JP Japan # Japan
 # MH Kwajalein # Marshall Island
 # LY Libya # Libya
-# 00 MET # Misc (Middle European Time)
+# 00 MET # Europe
 # US MST # USA
 # US MST7MDT # USA
 # MX Mexico/BajaNorte # Mexico
@@ -653,5 +653,5 @@ PO AS US/Samoa # American Samoa
 ET 00 UTC # Misc
 # 00 Universal # Misc (aka UTC)
 # RU W-SU Russia (TZDB origin lost)
-# 00 WET # Misc (Western European Time)
+# 00 WET # Europe
 # 00 Zulu # Misc

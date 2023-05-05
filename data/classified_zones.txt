@@ -254,9 +254,9 @@ Zone Australia/Perth
 Zone Australia/Sydney
 
 # Single-level zones are marked as obsolete to hide them from UIs.
-ZoneObsolete CET
+ZoneObsolete CET # Central European Time
 ZoneObsolete CST6CDT
-ZoneObsolete EET
+ZoneObsolete EET # Eastern European Time
 ZoneObsolete EST
 ZoneObsolete EST5EDT
 
@@ -333,14 +333,14 @@ Zone Europe/Warsaw
 Zone Europe/Zurich
 
 # Single-level zones are marked obsolete.
-ZoneObsolete HST
+ZoneObsolete HST # Hawaii Standard Time?
 
 Zone Indian/Chagos
 Zone Indian/Maldives
 Zone Indian/Mauritius
 
 # Single-level zones are marked obsolete.
-ZoneObsolete MET
+ZoneObsolete MET # Middle European Time
 ZoneObsolete MST
 ZoneObsolete MST7MDT
 ZoneObsolete PST8PDT
@@ -377,4 +377,4 @@ Zone Pacific/Tarawa
 Zone Pacific/Tongatapu
 
 # Single-level zones are marked obsolete.
-ZoneObsolete WET
+ZoneObsolete WET # Western European Time
