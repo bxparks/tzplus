@@ -8,14 +8,14 @@
 #   [--countries {file}]
 #   country_timezones.txt
 
-
 from typing import Dict
-from typing import Iterable
 from typing import List
-from typing import Optional
-from typing import TextIO
 import argparse
-import sys
+
+from verify_data import read_line
+from verify_data import read_countries
+from verify_data import read_regions
+from verify_data import error
 
 CountryTimezones = Dict[str, List[str]]
 RegionCountryTimezones = Dict[str, CountryTimezones]
@@ -91,73 +91,6 @@ def read_region_country_timezones(filename: str) -> RegionCountryTimezones:
             timezones.append(timezone)
 
     return region_country_timezones
-
-
-def read_countries(filename: str) -> Dict[str, str]:
-    """{code -> country name}"""
-    countries: Dict[str, str] = {}
-    with open(filename, 'r', newline='', encoding='utf-8') as f:
-        while True:
-            line = read_line(f)
-            if line is None:
-                break
-            code = line[0:2]
-            country_name = line[2:]
-            country_name = country_name.strip()
-            countries[code] = country_name
-    return countries
-
-
-def read_regions(filename: str) -> Dict[str, str]:
-    """{regionCode -> regionName}"""
-    regions: Dict[str, str] = {}
-    with open(filename, 'r', newline='', encoding='utf-8') as f:
-        while True:
-            line = read_line(f)
-            if line is None:
-                break
-            tokens: List[str] = line.split()
-            code = tokens[0]
-            name = line[len(code):].strip()
-            regions[code] = name
-    return regions
-
-
-def read_line(input: TextIO) -> Optional[str]:
-    """Return the next non-comment line. Return None if EOF reached.
-
-    * Comment lines begin with a '#' character and are skipped.
-    * Blank lines are skipped.
-    * Trailing whitespaces are stripped.
-    * Leading whitespaces are kepted.
-    """
-    while True:
-        line = input.readline()
-
-        # EOF returns ''. An empty line returns '\n'.
-        if line == '':
-            return None
-
-        # remove trailing comments
-        i = line.find('#')
-        if i >= 0:
-            line = line[:i]
-
-        # strip any trailing whitespaces
-        line = line.rstrip()
-
-        # skip any blank lines after stripping
-        if not line:
-            continue
-
-        return line
-
-
-def error(msg: str, items: Iterable[str] = []) -> None:
-    print(msg)
-    for item in sorted(items):
-        print(f'  {item}')
-    sys.exit(1)
 
 
 if __name__ == '__main__':
