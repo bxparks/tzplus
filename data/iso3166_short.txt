@@ -4,15 +4,15 @@
 # * ASCII only, no Unicode
 # * Shorten North, South, West, East to N, S, W, E
 # * No periods (e.g. "N" and "St", not "N." and "St.")
-# * Replace "Island" with "Is"
 # * Remove parts after "&"
-#   * "Turks & Cacos Islands" to "Turks Is"
-#   * "Trinidad & Tobago" to "Trinidad"
+#   * e.g. "Turks & Cacos Islands" to "Turks Is"
+#   * e.g. "Trinidad & Tobago" to "Trinidad"
+# * Replace "Island" or "Islands" with "Is"
 # * Replace "French" with "Fr"
 # * Replace "American" with "Am"
 # * Replace "British" with "Br"
 # * Replace "African" with "Af"
-# * Replace "Saint" with "St"
+# * Replace "Saint" or "Sint" with "St"
 # * Replace "Republic" with "Rep"
 # * Replace "Equitorial" with "Eq"
 # * Replace "Central" with "Cent"
@@ -23,11 +23,11 @@
 #   * "United Arab Emirates"  -> UAE
 #   * "British Indian Ocean Territories" -> BIOT
 #   * "Democratic Republic of the Congo" -> Congo DRC
+#   * "Papua New Guinea" -> PNG
 #
-# The result is that the longest country name ("Papua New Guinea") is 16
-# characters long. I think the next longest country names are 13 characters
-# long, so it would be great if we could shorten "Papua New Guinea" to 13
-# characters ("Papua N G"?).
+# The longest country name used to be 16 characters ("Papua New Guinea"), but
+# changing that to "PNG" makes longest names be 13 characters long. I believe
+# there are several countries with 13 characters.
 
 # Header
 # code description
@@ -206,7 +206,7 @@ OM Oman
 PA Panama
 PE Peru
 PF Fr Polynesia
-PG PNG
+PG PNG # Papua New Guinea
 PH Philippines
 PK Pakistan
 PL Poland
