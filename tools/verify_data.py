@@ -8,6 +8,7 @@
 #   --links {file}
 #   --classified_zones {file}
 #   --classified_links {file}
+#   --iso_orig {file}
 #   --iso_long {file}
 #   --iso_short {file}
 #   --regions {file}
@@ -65,6 +66,10 @@ def main() -> None:
         help='File of classified links',
         required=True)
     parser.add_argument(
+        '--iso_orig',
+        help='Original ISO countries',
+        required=True)
+    parser.add_argument(
         '--iso_long',
         help='Long country names',
         required=True)
@@ -105,9 +110,12 @@ def main() -> None:
     check_link_targets(classified_links, links, zones)
 
     # Read and check ISO countries.
+    iso_orig = read_countries(args.iso_orig)
     iso_long = read_countries(args.iso_long)
     iso_short = read_countries(args.iso_short)
-    check_iso_names(iso_long, iso_short)
+    check_iso_names(
+        args.iso_orig, args.iso_long, args.iso_short,
+        iso_orig, iso_long, iso_short)
 
     # Read regions
     regions = read_regions(args.regions)
@@ -128,16 +136,17 @@ def main() -> None:
         # Read and check region_country_timezones.txt.
         country_timezones, region_timezones = \
             read_region_country_timezones(args.region_country_timezones)
-        check_countries(country_timezones, iso_short)
+        check_countries(
+            args.region_country_timezones, country_timezones, iso_short)
         check_regions(args.region_country_timezones, region_timezones, regions)
         check_timezones(
             args.region_country_timezones, country_timezones, classified_zones,
             classified_links)
 
-        num_countries = len(country_timezones) - 1  # remove "00" country code
+        num_countries = len(country_timezones)
         num_timezones = sum([
             len(entry)
-            for _, entry in country_timezones.items()
+            for entry in country_timezones.values()
         ])
 
         # Print region_country_timezones summary.
@@ -158,15 +167,15 @@ def main() -> None:
     else:
         # Read and verify the country-timezone file
         country_timezones = read_country_timezones(args.country_timezones)
-        check_countries(country_timezones, iso_short)
+        check_countries(args.country_timezones, country_timezones, iso_short)
         check_timezones(
             args.country_timezones, country_timezones, classified_zones,
             classified_links)
 
-        num_countries = len(country_timezones) - 1  # remove "00" country code
+        num_countries = len(country_timezones)
         num_timezones = sum([
             len(entry)
-            for _, entry in country_timezones.items()
+            for entry in country_timezones.values()
         ])
 
         # Print summary
@@ -389,46 +398,70 @@ def check_link_targets(
 
 
 def check_iso_names(
+    filename_orig: str,
+    filename_long: str,
+    filename_short: str,
+    iso_orig: Dict[str, str],
     iso_long: Dict[str, str],
     iso_short: Dict[str, str],
 ) -> None:
-    # Check that the ISO codes are the same.
-    if iso_long.keys() != iso_short.keys():
-        error("ISO long and short files not equal")
+    # Collect expected ISO codes
+    expected = set(iso_orig.keys())
+    expected.add('00')
+
+    # Verify iso3166_long.txt matches expection.
+    observed = set(iso_long)
+    if expected != observed:
+        missing = expected - observed
+        if missing:
+            error(f"Missing countries in {filename_long}", missing)
+        extra = observed - expected
+        if extra:
+            error(f"Extra countries in {filename_long}", extra)
+
+    # Verify iso3166_short.txt matches expection.
+    observed = set(iso_short)
+    if expected != observed:
+        missing = expected - observed
+        if missing:
+            error(f"Missing countries in {filename_short}", missing)
+        extra = observed - expected
+        if extra:
+            error(f"Extra countries in {filename_short}", extra)
 
     # Check the maximum length of the ISO country short names.
-    MAX_LEN = 16
+    MAX_ISO_SHORT_LEN = 13
     max_len = max([len(x) for x in iso_short.values()])
-    if max_len > MAX_LEN:
-        error(f"ISO short names len ({max_len}) > {MAX_LEN}")
+    if max_len > MAX_ISO_SHORT_LEN:
+        error(f"ISO short names len ({max_len}) > {MAX_ISO_SHORT_LEN}")
 
 
 def check_countries(
+    filename: str,
     country_timezones: CountryTimezones,
     countries: Dict[str, str],
 ) -> None:
-    # Set of expected ISO countries, with the exception of (BV and HM) which
+    # Expected ISO countries, with the exception of (BV and HM) which
     # don't have timezone because there are uninhabited.
     expected = set(countries.keys())
     expected.remove('BV')
     expected.remove('HM')
+    expected.discard('00')  # fake country '00' is not required
 
-    # Set of classified ISO countries. The exception is the pseudo "00" country
-    # which is assigned to timezones such as "UTC" or "Etc/UTC".
-    selected = set(country_timezones.keys())
-    selected.discard('00')
+    # Observed ISO countries in the country_timezones map.
+    observed = set(country_timezones.keys())
+    observed.discard('00')  # fake country '00' is not required
 
-    if expected != selected:
+    if expected != observed:
         # Check that each ISO countries has at least one timezone.
-        missing = expected - selected
+        missing = expected - observed
         if missing:
-            error("Missing countries in country_timezones", missing)
+            error(f"Missing countries in {filename}", missing)
 
-        # Check that every country in the country_timezones.txt exists in the
-        # ISO country file.
-        extra = country_timezones.keys() - countries.keys()
+        # Check that every timezone country exists in the ISO country file.
+        extra = observed - expected
         if extra:
-            error("Extra countries in country_timezones", extra)
+            error(f"Extra countries in {filename}", extra)
 
 
 def check_regions(
@@ -440,13 +473,13 @@ def check_regions(
     regions.txt.
     """
     expected = set(regions.keys())
-    selected = set(region_timezones.keys())
-    if expected != selected:
-        extra = selected - expected
+    observed = set(region_timezones.keys())
+    if expected != observed:
+        extra = observed - expected
         if extra:
             error(f"Extra regions in {filename}", extra)
 
-        missing = expected - selected
+        missing = expected - observed
         if missing:
             error(f"Missing regions in {filename}", missing)
 
@@ -471,17 +504,17 @@ def check_timezones(
     ])
 
     # Collect the timezones which appear in country_timezones.txt.
-    selected: Set[str] = set()
+    observed: Set[str] = set()
     for z in country_timezones.values():
-        selected.update(z)
+        observed.update(z)
 
     # Check that they are equal.
-    if selected != expected:
-        extra = selected - expected
+    if observed != expected:
+        extra = observed - expected
         if extra:
             error(f"Extra timezones in {filename}", extra)
 
-        missing = expected - selected
+        missing = expected - observed
         if missing:
             error(f"Missing timezones from {filename}", missing)
 

@@ -9,6 +9,7 @@ verify:
 		--links ../data/links.txt \
 		--classified_zones ../data/classified_zones.txt \
 		--classified_links ../data/classified_links.txt \
+		--iso_orig ../tzdb/iso3166.tab \
 		--iso_long ../data/iso3166_long.txt \
 		--iso_short ../data/iso3166_short.txt \
 		--regions ../data/regions.txt \

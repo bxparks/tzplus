@@ -28,7 +28,7 @@ maintainer of this project to make changes. If you are unsuccessful, you have
 the option to fork this database and make the changes yourself. This project and
 its data are published into the public domain.
 
-**Version**: 2023c.0 (2023-05-04, TZDB 2023c)
+**Version**: 2023c.1 (2023-05-05, TZDB 2023c)
 
 **Changelog**: [CHANGELOG.md](CHANGELOG.md)
 
@@ -41,6 +41,7 @@ its data are published into the public domain.
 
 ## Table of Contents
 
+* [Installation](#Installation)
 * [Motivation](#Motivation)
 * [TZDB Deficiencies](#TzdbDeficencies)
 * [The Data Files](#DataFiles)
@@ -53,6 +54,20 @@ its data are published into the public domain.
 * [License](#License)
 * [Feedback and Support](#FeedbackAndSupport)
 * [Authors](#Authors)
+
+<a name="Installation"></a>
+## Installation
+
+Clone the repository using `git`:
+
+```
+$ git clone https://github.com/bxparks/tzplus
+```
+
+* The `develop` branch (default) contains the current working version. You can
+  submit pull requests (PRs) to this branch.
+* The `master` branch contains the latest released versions with
+  their tags in the form of `{tzversion}.N` (e.g. `2023c.1`).
 
 <a name="Motivation"></a>
 ## Motivation
@@ -187,7 +202,8 @@ least one timezone. There are a few exceptions to those rules:
     * `BV` Bouvet Island
     * `HM` Heard Island & McDonald Islands
 * Two timezones are synthetic, and do not correspond to an ISO country. These
-  are given the fake ISO code of `00`, and assigned to the region `Etcetera`:
+  are given the fake ISO code of `00 Nowhere`, and assigned to the region `ET
+  Etcetera`:
     * `UTC`
     * `Etc/UTC`
 
@@ -301,7 +317,7 @@ Central America (CA)
         America/Antigua
 ...
 Etcetera (ET)
-    None (00)
+    Nowhere (00)
         Etc/UTC
         UTC
 ...
@@ -397,13 +413,14 @@ archives and the LWN.net article:
 <a name="Bugs"></a>
 ## Bugs and Limitations
 
-* The `Etc/UTC` and `UTC` timezones are assigned a fake ISO country code of
-  `00`.
-    * This code does *not* exist in either `iso3166_long.txt` or
-      `iso3166_short.txt` files.
-    * This fake ISO country code may be added to those files in the future to
-      make downstream client code easier to write by eliminating special
-      handling.
+* The `Etc/UTC` and `UTC` timezones are assigned the fake ISO country of
+  `00 Nowhere` and the fake region of `ET Etcetera`.
+    * The `00` fake ISO code was added to `iso3166_long.txt` and
+      `iso3166_short.txt` files, but does not exist in the original
+      [tzdb/iso3166.tab](tzdb/iso3166.tab) file.
+    * It is likely that any timezone selector user-interface will need to treat
+      these specially to avoid showing the user the fake region and fake
+      country.
 * In some microcontroller environments, even the short names provided by
   `iso3166_short.txt` may not be short enough.
     * It might be necessary to simply use the 2-letter ISO codes instead.
