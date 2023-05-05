@@ -337,6 +337,33 @@ There are a handful of timezones which are assigned to multiple countries. The
 reasons for the multiple assignments are explained in the
 [country_timezones.txt](data/country_timezones.txt) file.
 
+<a name="AlternativesConsidered"></a>
+## Alternatives Considered
+
+* [zone1970.tab](https://github.com/eggert/tz/blob/main/zone1970.tab)
+    * As explained above in [TZDB Deficiencies](#TzdbDeficencies),
+      this file suffers from the merging of unrelated timezones as described in
+      [Merged Timezones After 1970](#MergedTimezonesAfter1970).
+    * This makes it unsuitable for creating a user interface.
+    * For example, the Bahamas is listed as using `America/Toronto` instead
+      of `America/Nassau`.
+* [GeoNames database](https://www.geonames.org/)
+    * organizes geographical names and provides downloadable files
+    * [timeZones.txt](https://download.geonames.org/export/dump/timeZones.txt)
+      contains timezones assigned to an ISO 3166 country.
+    * but it is unclear how this file was created, how it is maintained,
+      and how quickly it is updated when a new TZDB version is released.
+* [CLDR](https://cldr.unicode.org/) - Unicode Common Locale Data Repository
+    * This project is complex, and I cannot figure out what it provides and
+      how to use it.
+    * For the purposes of creating a user-interface for microcontroller
+    * environments, I did not want to depend on another large, complex project.
+* [ICU](https://icu.unicode.org/) - International Components for Unicode
+    * Provides libraries suitable for desktop class machines,
+      not resource-constrained microcontrollers
+    * Similar to CLDR, I did not want to depend on another large, complex
+      project.
+
 <a name="MergedTimezonesAfter1970"></a>
 ## Appendix: Merged Timezones After 1970
 

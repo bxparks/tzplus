@@ -120,23 +120,3 @@ TZDB version
 1. Go to https://github.com/bxparks/tzplus
     * Create a new release with new tag of the form `{tzversion}.N`
 1. `$ git pull` to retrieve new tag created by GitHub
-
-<a name="AlternativesConsidered"></a>
-## Alternatives Considered
-
-* [GeoNames database](https://www.geonames.org/)
-    * organizes geographical names and provides downloadable files
-    * [timeZones.txt](https://download.geonames.org/export/dump/timeZones.txt)
-      contains timezones assigned to an ISO 3166 country.
-    * but it is unclear how this file was created, how it is maintained,
-      and how quickly it is updated when a new TZDB version is released.
-* [CLDR](https://cldr.unicode.org/) - Unicode Common Locale Data Repository
-    * This project is complex, and I cannot figure out what it provides and
-      how to use it.
-    * For the purposes of creating a user-interface for microcontroller
-    * environments, I did not want to depend on another large, complex project.
-* [ICU](https://icu.unicode.org/) - International Components for Unicode
-    * Provides libraries suitable for desktop class machines,
-      not resource-constrained microcontrollers
-    * Similar to CLDR, I did not want to depend on another large, complex
-      project.
