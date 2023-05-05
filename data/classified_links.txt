@@ -2,7 +2,8 @@
 # is one of ('Similar', 'Alternate', 'Alias', or 'Obsolete'). These new tags
 # provide semantic disambiguation of the different meanings of the 'Link' tag.
 #
-# Each entry is of the form:
+# For consistency with the original 'Link' entry, each of the new entry is of
+# the form:
 #
 #   tag target link
 #
@@ -11,8 +12,7 @@
 # people. But it is consistent with the order of arguments of the 'cp' and 'ln'
 # commands in Unix.)
 #
-# The Similar, Alternate, Alias, and Obsolete tags distinguish the following
-# types of Links:
+# The 'tag' types are defined as follows:
 #
 # Similar
 #   Indicates that the 'link' timezone is semantically independent from the

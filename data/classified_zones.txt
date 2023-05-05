@@ -1,7 +1,11 @@
-# Manually copied from zones.txt, with some Zone tags replaced with
-# ZoneObsolete for those considered to be obsolete. In the context of this
-# file, obsolete means that the time zone is not commonly used, so should not
-# appear in a UI that allows the end-user to select the time zone.
+# Manually copied from zones.txt, with each Zone tag replaced with one of the
+# following:
+#
+# Zone
+#   An active zone that should be presented to the user.
+#
+# ZoneObsolete
+#   No longer commonly used, so should not be shown to the end user.
 #
 # This file is maintained manually. When a new version of TZDB is released, the
 # tools/verify_data.py script will validate that there is a one-to-one
