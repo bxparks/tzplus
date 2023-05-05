@@ -146,7 +146,7 @@ def main() -> None:
         num_countries = len(country_timezones)
         num_timezones = sum([
             len(entry)
-            for _, entry in country_timezones.items()
+            for entry in country_timezones.values()
         ])
 
         # Print region_country_timezones summary.
@@ -175,7 +175,7 @@ def main() -> None:
         num_countries = len(country_timezones)
         num_timezones = sum([
             len(entry)
-            for _, entry in country_timezones.items()
+            for entry in country_timezones.values()
         ])
 
         # Print summary
