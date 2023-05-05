@@ -247,7 +247,7 @@ runs a series of validations on the various files. The output looks like this:
 
 ```
 $ cd data
-$ make
+$ make verify
 zones.txt: 350
 links.txt: 246
 classified_zones.txt: 350
@@ -408,15 +408,20 @@ When a new TZDB version is released, here are the steps to generate the
 
 1. Update the `TZDB_VERSION` variable in the [Makefile](Makefile) to the latest
 TZDB version
+1. `$ make clean` to remove the `./tzdb/` directory
 1. `$ make tzdb` to regenerate the `tzdb` directory
 1. `$ cd data`
-1. `$ make` to run `tools/check_data.py` to validate various files.
+1. `$ make extract` to extract the Zone and Link entries into `zones.txt` and
+   `links.txt`
+1. `$ make verify` to run `tools/check_data.py` to validate various files.
+1. If there are any warning or errors, edit various files to bring them into
+   compliance:
     * Edit `iso3166_long.txt` and `iso3166_short.txt` to add/remove countries.
     * Edit `classified_zones.txt` to add/remove Zone entries.
     * Edit `classified_links.txt` to add/remove Link entries.
     * Edit `country_timezones.txt` to add/remove timezones.
-    * Repeat running `make` to check for errors.
-1. Update version to something like `{tzversion}.N`
+    * Repeat `make verify` to check for errors.
+1. Update version in the form of `{tzversion}.N`
     * Update the `CHANGELOG.md`
     * Update the Version in `README.md`
 1. `$ git add ....`
@@ -424,6 +429,7 @@ TZDB version
 1. `$ git push`
 1. Go to https://github.com/bxparks/tzplus
     * Create a new release with new tag of the form `{tzversion}.N`
+1. `$ git pull` to retrieve new tag created by GitHub
 
 <a name="AlternativesConsidered"></a>
 ## Alternatives Considered
