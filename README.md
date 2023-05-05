@@ -415,6 +415,16 @@ archives and the LWN.net article:
   3166 2-letter codes.
     * It is possible that this might cause confusion if they are shown to the
       end users without clear context.
+* The city name of a timezone can usually be extracted from the last component
+  of the full timezone identifier, e.g. `America/Argentina/Buenos_Aires`.
+    * But sometimes, even the city name is too long on some microcontroller
+      environments.
+    * A possible solution might come from mapping every timezone to a
+      3-letter [IATA airport
+      code](https://en.wikipedia.org/wiki/IATA_airport_code) and using those
+      3 letters instead. For example, `LAX` instead of `America/Los_Angeles`.
+    * More research is needed to verify that an IATA code exists for
+      every timezone.
 
 <a name="License"></a>
 ## License
