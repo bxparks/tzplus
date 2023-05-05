@@ -30,9 +30,11 @@
 # 2. Parenthetical description replaced by leading adjective. For example,
 #    "Korea (South)" replaced with "South Korea".
 # 3. Tabs replaced with spaces.
+# 4. A sentinel country of '00 Nowhere' added to support timezones without
+#    a country (e.g. Etc/UTC).
 
-# Header
 # code description
+00 Nowhere # timezones without country
 AD Andorra
 AE United Arab Emirates
 AF Afghanistan

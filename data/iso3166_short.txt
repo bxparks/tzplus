@@ -29,8 +29,8 @@
 # changing that to "PNG" makes longest names be 13 characters long. I believe
 # there are several countries with 13 characters.
 
-# Header
 # code description
+00 Nowhere # timezones without country
 AD Andorra
 AE UAE
 AF Afghanistan

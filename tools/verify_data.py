@@ -134,7 +134,7 @@ def main() -> None:
             args.region_country_timezones, country_timezones, classified_zones,
             classified_links)
 
-        num_countries = len(country_timezones) - 1  # remove "00" country code
+        num_countries = len(country_timezones)
         num_timezones = sum([
             len(entry)
             for _, entry in country_timezones.items()
@@ -163,7 +163,7 @@ def main() -> None:
             args.country_timezones, country_timezones, classified_zones,
             classified_links)
 
-        num_countries = len(country_timezones) - 1  # remove "00" country code
+        num_countries = len(country_timezones)
         num_timezones = sum([
             len(entry)
             for _, entry in country_timezones.items()
@@ -407,16 +407,14 @@ def check_countries(
     country_timezones: CountryTimezones,
     countries: Dict[str, str],
 ) -> None:
-    # Set of expected ISO countries, with the exception of (BV and HM) which
+    # Expected ISO countries, with the exception of (BV and HM) which
     # don't have timezone because there are uninhabited.
     expected = set(countries.keys())
     expected.remove('BV')
     expected.remove('HM')
 
-    # Set of classified ISO countries. The exception is the pseudo "00" country
-    # which is assigned to timezones such as "UTC" or "Etc/UTC".
+    # Observed ISO countries in the country_timezones map.
     selected = set(country_timezones.keys())
-    selected.discard('00')
 
     if expected != selected:
         # Check that each ISO countries has at least one timezone.
