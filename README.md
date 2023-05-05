@@ -28,7 +28,7 @@ maintainer of this project to make changes. If you are unsuccessful, you have
 the option to fork this database and make the changes yourself. This project and
 its data are published into the public domain.
 
-**Version**: 2023c.0 (2023-05-04, TZDB 2023c)
+**Version**: 2023c.1 (2023-05-05, TZDB 2023c)
 
 **Changelog**: [CHANGELOG.md](CHANGELOG.md)
 
