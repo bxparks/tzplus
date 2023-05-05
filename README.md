@@ -368,7 +368,7 @@ reasons for the multiple assignments are explained in the
 ## Appendix: Merged Timezones After 1970
 
 Starting with [TZDB
-2021b](https://mm.icann.org/pipermail/tz-announce/2021-September/000066.html),
+2021b](https://mm.icann.org/pipermail/tz-announce/2021-September/000066.html)
 in Sept 2021, many unrelated timezones have become merged together if they
 happened to have the same DST transition rules since the year 1970. For example,
 The Zone `America/Nassau` in the Bahamas was replaced with a Link to
