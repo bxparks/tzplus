@@ -41,6 +41,7 @@ its data are published into the public domain.
 
 ## Table of Contents
 
+* [Installation](#Installation)
 * [Motivation](#Motivation)
 * [TZDB Deficiencies](#TzdbDeficencies)
 * [The Data Files](#DataFiles)
@@ -53,6 +54,20 @@ its data are published into the public domain.
 * [License](#License)
 * [Feedback and Support](#FeedbackAndSupport)
 * [Authors](#Authors)
+
+<a name="Installation"></a>
+## Installation
+
+Clone the repository using `git`:
+
+```
+$ git clone https://github.com/bxparks/tzplus
+```
+
+* The `develop` branch (default) contains the current working version. You can
+  submit pull requests (PRs) to this branch.
+* The `master` branch contains the latest released versions with
+  their tags in the form of `{tzversion}.N` (e.g. `2023c.1`).
 
 <a name="Motivation"></a>
 ## Motivation
