@@ -369,6 +369,30 @@ The following steps were used to create the final `country_timezones.txt` file:
       assignment had to be done against the (country, timezone) pair, instead of
       just to the country.
 
+Here is a rough diagram of the data processing pipeline:
+
+```
+                TZDB
+      (script) /    \
+              /      \
+             v        v
+      zones.txt   iso3166_long.txt
+      links.txt   iso3166_short.txt
+         |             |
+         |             |
+         v             |
+classified_zones.txt   |
+classified_links.txt   |       regions.txt
+                \      |          /
+(select Zone,    \     |         /
+     Similar,     \    |        /
+or Alternate)      v   v       v
+              country_timezones.txt
+                       |
+                       v
+                  check_data.py
+```
+
 <a name="TimezonesInMultipleCountries"></a>
 ## Timezones in Multiple Countries
 
