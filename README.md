@@ -357,7 +357,7 @@ reasons for the multiple assignments are explained in the
     * This project is complex, and I cannot figure out what it provides and
       how to use it.
     * For the purposes of creating a user-interface for microcontroller
-    * environments, I did not want to depend on another large, complex project.
+      environments, I did not want to depend on another large, complex project.
 * [ICU](https://icu.unicode.org/) - International Components for Unicode
     * Provides libraries suitable for desktop class machines,
       not resource-constrained microcontrollers
