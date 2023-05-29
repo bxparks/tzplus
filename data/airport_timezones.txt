@@ -1,4 +1,5 @@
-# Manually maintained mapping of IATA airport codes and timezones such that:
+# Manually maintained mapping of IATA or ICAO airport codes and timezones such
+# that:
 #
 # 1) Every timezone is associated with at least one airport code.
 # 2) An airport code is associated with only a single timezone.
@@ -263,68 +264,68 @@ DAC Asia/Dhaka # Hazrat Shahjalal International Airport, Bangladesh
 DIL Asia/Dili # Presidente Nicolau Lobato International Airport, East Timor
 DXB Asia/Dubai # Dubai International Airport, United Arab Emirates
 DYU Asia/Dushanbe # Dushanbe International Airport, Tajikistan
-Asia/Famagusta # Cyprus
-Asia/Gaza # Palestine
-Asia/Harbin # China
-Asia/Hebron # Palestine
-Asia/Ho_Chi_Minh # Vietnam
-Asia/Hong_Kong # Hong Kong
-Asia/Hovd # Mongolia
-Asia/Irkutsk # Russia
-Asia/Jakarta # Indonesia
-Asia/Jayapura # Indonesia
-Asia/Jerusalem # Israel
-Asia/Kabul # Afghanistan
-Asia/Kamchatka # Russia
-Asia/Karachi # Pakistan
-Asia/Kashgar # China
-Asia/Kathmandu # Nepal
-Asia/Khandyga # Russia
-Asia/Kolkata # India
-Asia/Krasnoyarsk # Russia
-Asia/Kuala_Lumpur # Malaysia
-Asia/Kuching # Malaysia
-Asia/Kuwait # Kuwait
-Asia/Macau # Macau
-Asia/Magadan # Russia
-Asia/Makassar # Indonesia
-Asia/Manila # Philippines
-Asia/Muscat # Oman
-Asia/Nicosia # Cyprus
-Asia/Novokuznetsk # Russia
-Asia/Novosibirsk # Russia
-Asia/Omsk # Russia
-Asia/Oral # Kazakhstan
-Asia/Phnom_Penh # Cambodia
-Asia/Pontianak # Indonesia
-Asia/Pyongyang # North Korea
-Asia/Qatar # Qatar
-Asia/Qostanay # Kazakhstan
-Asia/Qyzylorda # Kazakhstan
-Asia/Riyadh # Saudi Arabia
-Asia/Sakhalin # Russia
-Asia/Samarkand # Uzbekistan
-Asia/Seoul # South Korea
-Asia/Shanghai # China
-Asia/Singapore # Singapore
-Asia/Srednekolymsk # Russia
-Asia/Taipei # Taiwan
-Asia/Tashkent # Uzbekistan
-Asia/Tbilisi # Georgia
-Asia/Tehran # Iran
-Asia/Tel_Aviv # Israel
-Asia/Thimphu # Bhutan
-Asia/Tokyo # Japan
-Asia/Tomsk # Russia
-Asia/Ulaanbaatar # Mongolia
-Asia/Urumqi # China
-Asia/Ust-Nera # Russia
-Asia/Vientiane # Laos
-Asia/Vladivostok # Russia
-Asia/Yakutsk # Russia
-Asia/Yangon # Myanmar
-Asia/Yekaterinburg # Russia
-Asia/Yerevan # Armenia
+ECN Asia/Famagusta # Ercan International Airport, Cyprus
+GZA Asia/Gaza # Yasser Arafat International Airport, Palestine
+HRB Asia/Harbin # Harbin Taiping International Airport, China
+0000 Asia/Hebron # Palestine
+SGN Asia/Ho_Chi_Minh # Tan Son Nhat International Airport, Vietnam
+HKG Asia/Hong_Kong # Hong Kong International Airport, Hong Kong
+HVD Asia/Hovd # Khovd Airport, Mongolia
+IKT Asia/Irkutsk # Irkutsk International Airport, Russia
+CGK Asia/Jakarta # Soekarno-Hatta International Airport, Indonesia
+DJJ Asia/Jayapura # Dortheys Hiyo Eluay International Airport, Indonesia
+JRS Asia/Jerusalem # Jerusalem International Airport, Israel
+KBL Asia/Kabul # Kabul International Airport, Afghanistan
+PKC Asia/Kamchatka # Elizovo Airport, Russia
+KHI Asia/Karachi # Jinnah International Airport, Pakistan
+KHG Asia/Kashgar # Kashgar Airport, China
+KTM Asia/Kathmandu # Tribhuvan International Airport, Nepal
+KDY Asia/Khandyga # Teply Klyuch Airport, Russia
+CCU Asia/Kolkata # Netaji Subhash Chandra Bose International Airport, India
+KJA Asia/Krasnoyarsk # Krasnoyarsk International Airport, Russia
+KUL Asia/Kuala_Lumpur # Kuala Lumpur International Airport, Malaysia
+KIA Asia/Kuching # Kuching International Airport, Malaysia
+KWI Asia/Kuwait # Kuwait International Airport, Kuwait
+MFM Asia/Macau # Macau International Airport, Macau
+GDX Asia/Magadan # Sokol Airport, Russia
+UPG Asia/Makassar # Sultan Hasanuddin International Airport, Indonesia
+MNL Asia/Manila # Ninoy Aquino International Airport, Philippines
+MCT Asia/Muscat # Muscat International Airport, Oman
+LCA Asia/Nicosia # Larnaca International Airport, Cyprus
+NOZ Asia/Novokuznetsk # Spichenkovo Airport, Russia
+OVB Asia/Novosibirsk # Novosibirsk Tolmachevo Airport, Russia
+OMS Asia/Omsk # Tsentralny Airport, Russia
+URA Asia/Oral # Manshuk Mametova International Airport, Kazakhstan
+PNH Asia/Phnom_Penh # Phnom Penh International Airport, Cambodia
+PNK Asia/Pontianak # Supadio International Airport, Indonesia
+FNJ Asia/Pyongyang # Pyongyang International Airport, North Korea
+DOH Asia/Qatar # Hamad International Airport, Qatar
+KSN Asia/Qostanay # Kostanay Airport, Kazakhstan
+KZO Asia/Qyzylorda # Kyzylorda Airport, Kazakhstan
+RUH Asia/Riyadh # King Khalid International Airport, Saudi Arabia
+UUS Asia/Sakhalin # Yuzhno-Sakhalinsk Airport, Russia
+SKD Asia/Samarkand # Samarkand International Airport, Uzbekistan
+ICN Asia/Seoul # Incheon International Airport, South Korea
+PVG Asia/Shanghai # Shanghai Pudong International Airport, China
+SIN Asia/Singapore # Singapore Changi Airport, Singapore
+SEK Asia/Srednekolymsk # Srednekolymsk Airport, Russia
+TPE Asia/Taipei # Taoyuan International Airport, Taiwan
+TAS Asia/Tashkent # Islam Karimov Tashkent International Airport, Uzbekistan
+TBS Asia/Tbilisi # Shota Rustaveli Tbilisi International Airport, Georgia
+IKA Asia/Tehran # Imam Khomeini International Airport, Iran
+TLV Asia/Tel_Aviv # Ben Gurion International Airport, Israel
+PBH Asia/Thimphu # Paro International Airport, Bhutan
+NRT Asia/Tokyo # Narita International Airport, Japan
+TOF Asia/Tomsk # Tomsk Bogashevo Airport, Russia
+UBN Asia/Ulaanbaatar # Chinggis Khaan International Airport, Mongolia
+URC Asia/Urumqi # Urumqi Diwopu International Airport, China
+USR Asia/Ust-Nera # Ust-Nera Airport, Russia
+VTE Asia/Vientiane # Wattay International Airport, Laos
+VVO Asia/Vladivostok # Vladivostok International Airport, Russia
+YKS Asia/Yakutsk # Platon Oyunsky Yakutsk International Airport, Russia
+RGN Asia/Yangon # Yangon International Airport, Myanmar
+SVX Asia/Yekaterinburg # Koltsovo International Airport, Russia
+EVN Asia/Yerevan # Zvartnots International Airport, Armenia
 Atlantic/Azores # Portual (??)
 Atlantic/Bermuda # Bermuda
 Atlantic/Canary # Spain
