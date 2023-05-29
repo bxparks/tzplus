@@ -221,49 +221,48 @@ TIJ America/Tijuana # General Abelardo L. Rodriguez International Airport, Mexic
 YYZ America/Toronto # Lester B. Pearson International Airport, Canada
 EIS America/Tortola # Terrance B. Lettsome International Airport, Virgin Islands (UK)
 YVR America/Vancouver # Vancouver International Airport, Canada
-America/Virgin # Virgin Islands (US)
-America/Whitehorse # Canada
-America/Winnipeg # Canada
-America/Yakutat # USA
-America/Yellowknife # Canada
-Antarctica/Casey # Antartica Australia
-Antarctica/Davis # Antartica France
-Antarctica/DumontDUrville # Antartica France
-Antarctica/Macquarie # Antartica Australia
-Antarctica/Mawson # Antartica Australia
-Antarctica/McMurdo # Antartica USA
-Antarctica/Palmer # Antartica USA
-Antarctica/Rothera # Antartica Britain
-Antarctica/South_Pole # Antartica New Zealand
-Antarctica/Syowa # Antartica Japan
-Antarctica/Troll # Antartica Norway
-Antarctica/Vostok # Antartica Russia
-Arctic/Longyearbyen # Svalbard & Jan Mayen
-Asia/Aden # Yemen
-Asia/Almaty # Kazakhstan
-Asia/Amman # Jordan
-Asia/Anadyr # Russia
-Asia/Aqtau # Kazakhstan
-Asia/Aqtobe # Kazakhstan
-Asia/Ashgabat # Turkmenistan
-Asia/Atyrau # Turkmenistan
-Asia/Baghdad # Iraq
-Asia/Bahrain # Bahrain
-Asia/Baku # Azerbaijan
-Asia/Bangkok # Thailand
-Asia/Barnaul # Russia
-Asia/Beirut # Lebanon
-Asia/Bishkek # Kyrgyzstan
-Asia/Brunei # Brunei
-Asia/Chita # Russia
-Asia/Choibalsan # Mongolia
-Asia/Chongqing # China
-Asia/Colombo # Sri Lanka
-Asia/Damascus # Syria
-Asia/Dhaka # Bangladesh
-Asia/Dili # East Timor
-Asia/Dubai # United Arab Emirates
-Asia/Dushanbe # Tajikistan
+YXY America/Whitehorse # Erik Nielsen Whitehorse International Airport, Canada
+YWG America/Winnipeg # Winnipeg James Armstrong Richardson International Airport, Canada
+YAK America/Yakutat # Yakutat Airport, USA
+YZF America/Yellowknife # Yellowknife Airport, Canada
+YCSK Antarctica/Casey # Casey Station Skiway, Antartica Australia
+0000 Antarctica/Davis # David Plateau Skiway, Antartica Australia
+0000 Antarctica/DumontDUrville # D10 Skyway, Antartica France
+YMQI Antarctica/Macquarie # Macquarie Island Heliport, Antartica Australia
+0000 Antarctica/Mawson # Antartica Australia
+NZIR Antarctica/McMurdo # McMurdo Ice Runway, Antartica USA
+NZ12 Antarctica/Palmer # Palmer Skiway, Antartica USA
+EGAR Antarctica/Rothera # Rothera Air Facility, Antartica Britain
+NZSP Antarctica/South_Pole # Jack F. Paulus Skiway, Amundsen-Scott South Pole Station, Antartica USA
+0000 Antarctica/Syowa # Showa Skiway, Antartica Japan
+QAT Antarctica/Troll # Troll Airfield, Antartica Norway
+0000 Antarctica/Vostok # Vostok Skiway, Antartica Russia
+LYR Arctic/Longyearbyen # Svalbard Airport, Svalbard & Jan Mayen
+ADE Asia/Aden # Aden International Airport, Yemen
+ALA Asia/Almaty # Almaty International Airport, Kazakhstan
+AMM Asia/Amman # Queen Alia International Airport, Jordan
+DYR Asia/Anadyr # Ugolny Airport, Russia
+SCO Asia/Aqtau # Aktau International Airport, Kazakhstan
+AKX Asia/Aqtobe # Aktobe International Airport, Kazakhstan
+ASB Asia/Ashgabat # Ashgabat International Airport, Turkmenistan
+GUW Asia/Atyrau # ATMA Atyrau Airport, Turkmenistan
+BGW Asia/Baghdad # Baghdad International Airport, Iraq
+BAH Asia/Bahrain # Bahrain International Airport, Bahrain
+GYD Asia/Baku # Heydar Aliyev International Airport, Azerbaijan
+BKK Asia/Bangkok # Suvarnabhumi Airport, Thailand
+BAX Asia/Barnaul # Barnaul Gherman Titov International Airport, Russia
+BEY Asia/Beirut # Beirut-Rafic Hariri International Airport, Lebanon
+FRU Asia/Bishkek # Manas International Airport, Kyrgyzstan
+BIA Asia/Brunei # Brunei International Airport, Brunei
+HTA Asia/Chita # Chita-Kadala International Airport, Russia
+COQ Asia/Choibalsan # Choibalsan Airport, Mongolia
+CKG Asia/Chongqing # Chongqing Jiangbei International Airport, China
+CMB Asia/Colombo # Bandaranaike International Airport, Sri Lanka
+DAM Asia/Damascus # Damascus International Airport, Syria
+DAC Asia/Dhaka # Hazrat Shahjalal International Airport, Bangladesh
+DIL Asia/Dili # Presidente Nicolau Lobato International Airport, East Timor
+DXB Asia/Dubai # Dubai International Airport, United Arab Emirates
+DYU Asia/Dushanbe # Dushanbe International Airport, Tajikistan
 Asia/Famagusta # Cyprus
 Asia/Gaza # Palestine
 Asia/Harbin # China
