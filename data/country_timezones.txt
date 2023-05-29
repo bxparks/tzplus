@@ -239,7 +239,7 @@ NA CA America/Winnipeg # Canada
 NA US America/Yakutat # USA
 NA CA America/Yellowknife # Canada
 AN AQ Antarctica/Casey # Antartica Australia
-AN AQ Antarctica/Davis # Antartica France
+AN AQ Antarctica/Davis # Antartica Australia
 AN AQ Antarctica/DumontDUrville # Antartica France
 AN AQ Antarctica/Macquarie # Antartica Australia
 AN AQ Antarctica/Mawson # Antartica Australia
