@@ -212,7 +212,7 @@ NA CA America/Regina # Canada
 NA CA America/Resolute # Canada
 SA BR America/Rio_Branco # Brazil
 # AR America/Rosario # Argentina
-NA MX America/Santa_Isabel # Mexico
+NA MX America/Santa_Isabel # Baja Mexico
 SA BR America/Santarem # Brazil
 SA CL America/Santiago # Chile
 CA DO America/Santo_Domingo # Dominican Republic
@@ -234,7 +234,6 @@ NA MX America/Tijuana # Mexico
 NA CA America/Toronto # Canada
 CA VG America/Tortola # Virgin Islands (UK)
 NA CA America/Vancouver # Canada
-CA VI America/Virgin # Virgin Islands (US)
 NA CA America/Whitehorse # Canada
 NA CA America/Winnipeg # Canada
 NA US America/Yakutat # USA

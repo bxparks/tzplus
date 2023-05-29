@@ -64,9 +64,9 @@ Similar Africa/Abidjan Africa/Accra # Ghana -> Ivory Coast
 Similar Africa/Nairobi Africa/Addis_Ababa # Ethiopia -> Kenya
 Similar Africa/Nairobi Africa/Asmara # Ghana -> Kenya
 
-# TZDB does not allow Links-to-Links so this entry is listed as 'Link
-# Africa/Nairobi Africa/Asmera'. But it really should have been the following
-# to indicate a rename.
+# TZDB does not allow Links-to-Links so cannot capture aliases to links. This
+# entry is listed as 'Link Africa/Nairobi Africa/Asmera'. But it should have
+# been the following to indicate a rename:
 Alias Africa/Asmara Africa/Asmera
 
 Similar Africa/Abidjan Africa/Bamako # Mali -> Ivory Coast
@@ -156,7 +156,11 @@ Similar America/Puerto_Rico America/St_Vincent # St Vincent -> Puerto Rico
 Similar America/Toronto America/Thunder_Bay # Canada -> Canada
 
 Similar America/Puerto_Rico America/Tortola # Br Virgin Island -> Puerto Rico
-Similar America/Puerto_Rico America/Virgin # US Virgin Island -> Puerto Rico
+
+# TZDB does not allow Links-to-Links so cannot capture aliases to links. Used
+# to be the 'Link America/Puerto_Rico America/Virgin', but should have been the
+# following:
+Alias America/St_Thomas America/Virgin # US Virgin Island -> US Virgin Island
 
 Similar America/Edmonton America/Yellowknife # Canada -> Canada
 
@@ -175,9 +179,9 @@ Similar Asia/Kuching Asia/Brunei # Brunei -> Malaysia
 Alias Asia/Kolkata Asia/Calcutta
 Similar Asia/Shanghai Asia/Chongqing # China -> China
 
-# TZDB does not allow Links-to-Links so this entry is listed as 'Link
-# Asia/Shanghai Asia/Chungking'. But it really should have been the following
-# to indicate a rename.
+# TZDB does not allow Links-to-Links, so cannot capture aliases to links. This
+# entry is listed as 'Link Asia/Shanghai Asia/Chungking'. But it should have
+# been the following to indicate a rename:
 Alias Asia/Chongqing Asia/Chungking
 
 Alias Asia/Dhaka Asia/Dacca
@@ -203,9 +207,9 @@ Similar Europe/Berlin Atlantic/Jan_Mayen # Norway -> Germany
 Similar Africa/Abidjan Atlantic/Reykjavik # Iceland -> Ivory Coast
 Similar Africa/Abidjan Atlantic/St_Helena # St Helena -> Ivory Coast
 
-# TZDB does not allow Links-to-Links so this entry is listed as 'Link
-# Australia/Sydney Australia/ACT'. But it really should have been the following
-# to indicate a rename.
+# TZDB does not allow Links-to-Links so cannot capture aliases to links. This
+# entry is listed as 'Link Australia/Sydney Australia/ACT'. But i should have
+# been the following to indicate a rename:
 Alias Australia/Canberra Australia/ACT
 
 # I don't know which timezones are commonly used in Australia, but some of
@@ -224,9 +228,9 @@ Alternate Australia/Melbourne Australia/Victoria
 Alternate Australia/Perth Australia/West
 Alias Australia/Broken_Hill Australia/Yancowinna
 
-# TZDB does not allow Links-to-Links so this entry is listed as 'Link
-# America/Rio_Branco Brazil/Acre'. But it really should have been the following
-# to indicate a rename.
+# TZDB does not allow Links-to-Links so cannot capture aliases to links. this
+# entry is listed as 'Link America/Rio_Branco Brazil/Acre'. But it should have
+# been the following to indicate a rename:
 Alias America/Porto_Acre Brazil/Acre # Brazil -> Brazil
 
 # No idea if Brazil/East and Brazil/West are commonly used. Consider changing
@@ -299,9 +303,9 @@ Alias Etc/GMT Greenwich
 
 Obsolete Asia/Hong_Kong Hongkong
 
-# TZDB does not allow Links-to-Links so this entry is listed as 'Link
-# Africa/Abidjan Iceland'. But it really should have been the following to
-# indicate a rename.
+# TZDB does not allow Links-to-Links so cannot capture aliases to links. This
+# entry is listed as 'Link Africa/Abidjan Iceland'. But it should have been the
+# following to indicate a rename:
 Alias Atlantic/Reykjavik Iceland # Iceland -> Iceland
 
 Similar Africa/Nairobi Indian/Antananarivo # Madagascar -> Kenya
@@ -342,9 +346,9 @@ Alias Pacific/Pohnpei Pacific/Ponape
 Similar Pacific/Guam Pacific/Saipan # Northern Mariana Islands -> Guam
 Alias Pacific/Pago_Pago Pacific/Samoa # American Samoa -> American Samoa
 
-# TZDB does not allow Links-to-Links so this entry is listed as
-# 'Pacific/Port_Moresby Pacific/Truk'. But it really should have been the
-# following to indicate a rename.
+# TZDB does not allow Links-to-Links so cannot capture aliases to links. This
+# entry is listed as 'Pacific/Port_Moresby Pacific/Truk'. But it should have
+# been the following to indicate a rename.
 Alias Pacific/Chuuk Pacific/Truk
 
 Similar Pacific/Tarawa Pacific/Wake # US M Islands -> Kiribati
