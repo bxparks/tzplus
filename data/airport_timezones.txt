@@ -175,52 +175,52 @@ YUL America/Montreal # Montreal-Trudeau International Airport, Canada
 MNI America/Montserrat # John A. Osborne Airport, Montserrat
 NAS America/Nassau # Lynden Pindling International Airport, Bahamas
 JFK America/New_York # John F. Kennedy International Airport, USA
-America/Nipigon # Canada
-America/Nome # USA
-America/Noronha # Brazil
-America/North_Dakota/Beulah # USA
-America/North_Dakota/Center # USA
-America/North_Dakota/New_Salem # USA
-America/Nuuk # Greenland
-America/Ojinaga # Mexico
-America/Panama # Panama
-America/Pangnirtung # Canada
-America/Paramaribo # Suriname
-America/Phoenix # USA
-America/Port-au-Prince # Haiti
-America/Port_of_Spain # Trinidad & Tobago
-America/Porto_Acre # Brazil
-America/Porto_Velho # Brazil
-America/Puerto_Rico # Puerto Rico
-America/Punta_Arenas # Chile
-America/Rainy_River # Canada
-America/Rankin_Inlet # Canada
-America/Recife # Brazil
-America/Regina # Canada
-America/Resolute # Canada
-America/Rio_Branco # Brazil
-America/Santa_Isabel # Mexico
-America/Santarem # Brazil
-America/Santiago # Chile
-America/Santo_Domingo # Dominican Republic
-America/Sao_Paulo # Brazil
-America/Scoresbysund # Greenland
-America/Shiprock # USA
-America/Sitka # USA
-America/St_Barthelemy # St Barthelemy
-America/St_Johns # Canada
-America/St_Kitts # St Kitts & Nevis
-America/St_Lucia # St Lucia
-America/St_Thomas # Virgin Islands (US)
-America/St_Vincent # St Vincent
-America/Swift_Current # Canada
-America/Tegucigalpa # Honduras
-America/Thule # Greenland
-America/Thunder_Bay # Canada
-America/Tijuana # Mexico
-America/Toronto # Canada
-America/Tortola # Virgin Islands (UK)
-America/Vancouver # Canada
+0000 America/Nipigon # Canada
+OME America/Nome # Nome Airport, USA
+FEN America/Noronha # Governador Carlos Wilson Airport, Brazil
+KHZE America/North_Dakota/Beulah # Mercer County Regional Airport, USA
+0000 America/North_Dakota/Center # USA
+0000 America/North_Dakota/New_Salem # USA
+GOH America/Nuuk # Nuuk Airport, Greenland
+0000 America/Ojinaga # Mexico
+PTY America/Panama # Tocumen International Airport, Panama
+YXP America/Pangnirtung # Pangnirtung Airport, Canada
+PBM America/Paramaribo # Johan Adolf Pengel International Airport, Suriname
+PHX America/Phoenix # Phoenix Sky Harbor International Airport, USA
+PAP America/Port-au-Prince # Toussaint Louverture International Airport, Haiti
+POS America/Port_of_Spain # Piarco International Airport, Trinidad & Tobago
+RBR America/Porto_Acre # Rio Branco-Placido de Castro International Airport, Brazil
+PVH America/Porto_Velho # Porto Velho-Governador Jorge Teixeira de Oliveira International Airport, Brazil
+SJU America/Puerto_Rico # Luis Munoz Marin International Airport, Puerto Rico
+PUQ America/Punta_Arenas # Presidente Carlos Ibanez International Airport, Chile
+0000 America/Rainy_River # Rainy River Water Aerodrome, Canada
+YRT America/Rankin_Inlet # Rankin Inlet Airport, Canada
+REC America/Recife # Recife/Guararapes-Gilberto Freyre International Airport, Brazil
+YQR America/Regina # Regina International Airport, Canada
+YRB America/Resolute # Resolute Bay Airport, Canada
+RBR America/Rio_Branco # Rio Branco-Placido de Castro International Airport, Brazil
+0000 America/Santa_Isabel # Baja Mexico
+STM America/Santarem # Santarem-Maestro Wilson Fonseca Airport, Brazil
+SCL America/Santiago # Arturo Merino Benitez International Airport, Chile
+SDQ America/Santo_Domingo # Las Americas International Airport, Dominican Republic
+GRU America/Sao_Paulo # Sao Paulo/Guarulhos - Governor Andre Franco Montoro International Airport, Brazil
+OBY America/Scoresbysund # Ittoqqortoormiit Heliport, Greenland
+0000 America/Shiprock # USA
+SIT America/Sitka # Sitka Rocky Gutierrez Airport, USA
+SBH America/St_Barthelemy # Gustaf III Airport, St Barthelemy
+YYT America/St_Johns # St. John's International Airport, Canada
+SKB America/St_Kitts # Robert L. Bradshaw Airport, St Kitts & Nevis
+UVF America/St_Lucia # Hewanorra International Airport, St Lucia
+STT America/St_Thomas # Cyril E. King Airport, Virgin Islands (US)
+SVD America/St_Vincent # Argyle International Airport, St Vincent
+YYN America/Swift_Current # Swift Current Airport, Canada
+TGU America/Tegucigalpa # Toncontin International Airport, Honduras
+THU America/Thule # Pituffik Space Base, Greenland
+YQT America/Thunder_Bay # Thunder Bay Airport, Canada
+TIJ America/Tijuana # General Abelardo L. Rodriguez International Airport, Mexico
+YYZ America/Toronto # Lester B. Pearson International Airport, Canada
+EIS America/Tortola # Terrance B. Lettsome International Airport, Virgin Islands (UK)
+YVR America/Vancouver # Vancouver International Airport, Canada
 America/Virgin # Virgin Islands (US)
 America/Whitehorse # Canada
 America/Winnipeg # Canada
