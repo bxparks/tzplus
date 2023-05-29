@@ -9,7 +9,7 @@
 # 1) Use the well-known 3-letter IATA code if available.
 # 2) Use the 4-letter ICAO code if IATA code is not assigned.
 # (e.g. BGDH at Danmarkshavn Airport, Greenland).
-# 3) Use the sentinel "NONE" if no airport exists near the town/region. This
+# 3) Use the sentinel "0000" if no airport exists near the town/region. This
 # makes it impossible to select one of these timezones using an airport code.
 # Fortunately, most of these are small villages or towns which chose to use a
 # different DST rule than the rest of the larger region for various regions.
@@ -139,22 +139,22 @@ HAV America/Havana # Jose Marti International Airport, Cuba
 HMO America/Hermosillo # Hermosillo International Airport, Mexico
 IND America/Indiana/Indianapolis # Indianapolis International Airport, USA
 KOXI America/Indiana/Knox # Starke County Airport, USA
-NONE America/Indiana/Marengo # USA
-NONE America/Indiana/Petersburg # USA
-NONE America/Indiana/Tell_City # USA
-NONE America/Indiana/Vevay # USA
-NONE America/Indiana/Vincennes # USA
-NONE America/Indiana/Winamac # USA
+0000 America/Indiana/Marengo # USA
+0000 America/Indiana/Petersburg # USA
+0000 America/Indiana/Tell_City # USA
+0000 America/Indiana/Vevay # USA
+0000 America/Indiana/Vincennes # USA
+0000 America/Indiana/Winamac # USA
 YEV America/Inuvik # Inuvik (Mike Zubko) Airport, Canada
 YFB America/Iqaluit # Iqaluit Airport, Canada
-America/Jamaica # Jamaica
-America/Juneau # USA
-America/Kentucky/Louisville # USA
-America/Kentucky/Monticello # USA
-America/Kralendijk # Caribbean Netherlands (Bonaire), shelf of S America
-America/La_Paz # Bolivia
-America/Lima # Peru
-America/Los_Angeles # USA
+KIN America/Jamaica # Norman Manley International Airport, Jamaica
+JNU America/Juneau # Juneau International Airport, USA
+SDF America/Kentucky/Louisville # Louisville Muhammad Ali International Airport, USA
+KEKQ America/Kentucky/Monticello # Wayne County Airport, USA
+BON America/Kralendijk # Flamingo International Airport, Caribbean Netherlands (Bonaire)
+LPB America/La_Paz # El Alto International Airport, Bolivia
+LIM America/Lima # Jorge Chavez International Airport, Peru
+LAX America/Los_Angeles # Los Angeles International Airport, USA
 America/Lower_Princes # Curacao
 America/Maceio # Brazil
 America/Managua # Nicaragua
