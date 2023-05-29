@@ -5,12 +5,16 @@
 # 2) An airport code is associated with only a single timezone.
 # 3) Some timezones may be associated with multiple airports.
 #
-# The airport codes were assigned using the following guidelines:
+# Most of the airport names and codes were extracted from the corresponding
+# wikipedia page, using the following guidelines:
 #
-# 1) Use the well-known 3-letter IATA code if available.
-# 2) Use the 4-letter ICAO code if IATA code is not assigned.
+# 1) Wikipedia articles often embed non-ASCII characters with accents in their
+# English names of the airport. All characters were converted into the nearest
+# corresponding ASCII character.
+# 2) Use the well-known 3-letter IATA code if available.
+# 3) Use the 4-letter ICAO code if IATA code is not assigned.
 # (e.g. BGDH at Danmarkshavn Airport, Greenland).
-# 3) Use the sentinel "0000" if no airport exists near the town/region. This
+# 4) Use the sentinel "0000" if no airport exists near the town/region. This
 # makes it impossible to select one of these timezones using an airport code.
 # Fortunately, most of these are small villages or towns which chose to use a
 # different DST rule than the rest of the larger region for various regions.
@@ -326,17 +330,17 @@ YKS Asia/Yakutsk # Platon Oyunsky Yakutsk International Airport, Russia
 RGN Asia/Yangon # Yangon International Airport, Myanmar
 SVX Asia/Yekaterinburg # Koltsovo International Airport, Russia
 EVN Asia/Yerevan # Zvartnots International Airport, Armenia
-Atlantic/Azores # Portual (??)
-Atlantic/Bermuda # Bermuda
-Atlantic/Canary # Spain
-Atlantic/Cape_Verde # Cape Verde
-Atlantic/Faroe # Faroe Islands
-Atlantic/Jan_Mayen # Svalbard & Jan Mayen
-Atlantic/Madeira # Portugal
-Atlantic/Reykjavik # Iceland
-Atlantic/South_Georgia # South Georgia
-Atlantic/St_Helena # St Helena
-Atlantic/Stanley # Falkand Islands
+PDL Atlantic/Azores # Ponta Delgada - Joao Paulo II Airport, Portual
+BDA Atlantic/Bermuda # L.F. Wade International Airport, Bermuda
+LPA Atlantic/Canary # Gran Canaria Airport, Spain
+SID Atlantic/Cape_Verde # Amilcar Cabral International Airport, Cape Verde
+FAE Atlantic/Faroe # Vagar Airport, Faroe Islands
+ENJA Atlantic/Jan_Mayen # Jan Mayensfield, Svalbard & Jan Mayen
+FNC Atlantic/Madeira # Cristiano Ronaldo International Airport, Portugal
+RKV Atlantic/Reykjavik # Reykjavik Airport, Iceland
+0000 Atlantic/South_Georgia # South Georgia (has no airports)
+HLE, Atlantic/St_Helena # Saint Helena Airport, St Helena
+PSY Atlantic/Stanley # Port Stanley Airport, Falkand Islands
 Australia/Adelaide # Australia
 Australia/Brisbane # Australia
 Australia/Broken_Hill # Australia
