@@ -267,7 +267,7 @@ US USA
 UY Uruguay
 UZ Uzbekistan
 VA Vatican City
-VC St Vincent
+VC St Vincent # & the Grenadines
 VE Venezuela
 VG Br Virgin Is
 VI US Virgin Is

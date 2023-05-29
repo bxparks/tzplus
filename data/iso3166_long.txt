@@ -22,16 +22,16 @@
 # to take or endorse any position on legal or territorial claims.
 #
 # 2023-04-24 Brian Park (brian@xparks.net): This version derived from
-# github.com/eggert/tz/iso3166.tab with the following changes:
+# github.com/eggert/tz/iso3166.tab with some changes:
 #
 # 1. Non-ASCII characters replaced with closest ASCII equivalent character
-#    so that this file can be used on small microcontrollers without Unicode
-#    font support.
+#    so that this file can be used on systems without Unicode font support.
 # 2. Parenthetical description replaced by leading adjective. For example,
-#    "Korea (South)" replaced with "South Korea".
+#    "Korea (South)" replaced with the more common "South Korea".
 # 3. Tabs replaced with spaces.
 # 4. A sentinel country of '00 Nowhere' added to support timezones without
 #    a country (e.g. Etc/UTC).
+# 5. The word "and" replaced with "&" everywhere for consistency.
 
 # code description
 00 Nowhere # timezones without country
@@ -250,7 +250,7 @@ SY Syria
 SZ Eswatini # Swaziland
 TC Turks & Caicos Islands
 TD Chad
-TF French Southern and Antarctic Lands
+TF French Southern & Antarctic Lands
 TG Togo
 TH Thailand
 TJ Tajikistan
@@ -271,7 +271,7 @@ US United States
 UY Uruguay
 UZ Uzbekistan
 VA Vatican City
-VC St Vincent
+VC St Vincent & the Grenadines
 VE Venezuela
 VG British Virgin Islands
 VI US Virgin Islands
