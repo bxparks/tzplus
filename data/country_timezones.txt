@@ -166,26 +166,11 @@ SA BO America/La_Paz # Bolivia
 SA PE America/Lima # Peru
 NA US America/Los_Angeles # USA
 # US America/Louisville # USA
-CA CW America/Lower_Princes # Curacao
+CA SX America/Lower_Princes # Sint Maarten
 SA BR America/Maceio # Brazil
 CA NI America/Managua # Nicaragua
 SA BR America/Manaus # Brazil
-
-# Saint Martin (MF) is the French territory in the northern half of Saint
-# Martin island. Sint Maarten (SX) is the Dutch territory in the southern half
-# of the Saint Martin island.
-#
-# The largest city of Marigot is in Saint Martin and is assigned a timezone of
-# America/Marigot which covers the French part. The TZDB does not assign a
-# separate timezone identifier to the Dutch half, so we have to assume that the
-# Dutch part uses the same timezone as the French part.
-#
-# Since we want every ISO country to have at least one timezone in this file,
-# we must create a duplicate entry for America/Marigot. This duplicate timezone
-# is *not* caused by war or border dispute.
 CA MF America/Marigot # Saint Martin
-CA SX America/Marigot # Sint Maarten
-
 CA MQ America/Martinique # Martinique
 NA MX America/Matamoros # Mexico
 NA MX America/Mazatlan # Mexico

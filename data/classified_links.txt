@@ -126,7 +126,7 @@ Alias America/Argentina/Jujuy America/Jujuy
 Alias America/Indiana/Knox America/Knox_IN
 Similar America/Puerto_Rico America/Kralendijk # Bonaire -> Puerto Rico
 Alias America/Kentucky/Louisville America/Louisville
-Similar America/Puerto_Rico America/Lower_Princes # Curacao -> Puerto Rico
+Similar America/Puerto_Rico America/Lower_Princes # Sint Maarten -> Puerto Rico
 Similar America/Puerto_Rico America/Marigot # Saint Martin - Puerto Rico
 Alias America/Argentina/Mendoza America/Mendoza
 
