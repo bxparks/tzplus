@@ -1,0 +1,493 @@
+# Manually maintained mapping of IATA airport codes and timezones such that:
+#
+# 1) Every timezone is associated with at least one airport code.
+# 2) An airport code is associated with only a single timezone.
+# 3) Some timezones may be associated with multiple airports.
+#
+# The airport codes were assigned using the following guidelines:
+#
+# 1) Use the well-known 3-letter IATA code if available.
+# 2) Use the 4-letter ICAO code if IATA code is not assigned.
+# (e.g. BGDH at Danmarkshavn Airport, Greenland).
+# 3) Use the sentinel "NONE" if no airport exists near the town/region. This
+# makes it impossible to select one of these timezones using an airport code.
+# Fortunately, most of these are small villages or towns which chose to use a
+# different DST rule than the rest of the larger region for various regions.
+
+# airport timezone
+ABJ Africa/Abidjan # Felix-Houphouet-Boigny International Airport, Ivory Coast
+ACC Africa/Accra # Kotoka International Airport, Ghana
+ADD Africa/Addis_Ababa # Addis Ababa Bole International Airport, Ethiopia
+ALG Africa/Algiers # Houari Boumediene International Airport, Algeria
+ASM Africa/Asmara # Asmara International Airport, Eritrea
+BKO Africa/Bamako # Modibo Keita International Airport, Mali
+BGF Africa/Bangui # Bangui M'Poko International Airport, Central African Republic
+BJL Africa/Banjul # Banjul International Airport, Gambia
+OXB Africa/Bissau # Osvaldo Vieira International Airport, Guinea-Bissau
+BLZ Africa/Blantyre # Chileka International Airport, Malawi
+BZV Africa/Brazzaville # Maya-Maya Airport, Republic of the Congo
+BJM Africa/Bujumbura # Melchior Ndadaye International Airport, Burundi
+CAI Africa/Cairo # Cairo International Airport, Egypt
+CMN Africa/Casablanca # Mohammed V International Airport, Morocco
+JCU Africa/Ceuta # Ceuta Heliport, Spain
+CKY Africa/Conakry # Ahmed Sekou Toure International Airport, Guinea
+DSS Africa/Dakar # Blaise Diagne International Airport, Senegal
+DAR Africa/Dar_es_Salaam # Julius Nyerere International Airport, Tanzania
+JIB Africa/Djibouti # Djibouti–Ambouli International Airport, Djibouti
+DLA Africa/Douala # Douala International Airport, Cameroon
+EUN Africa/El_Aaiun # Hassan I Airport, Western Sahara
+FNA Africa/Freetown # Freetown International Airport, Sierra Leone
+GBE Africa/Gaborone # Sir Seretse Khama International Airport, Botswana
+HRE Africa/Harare # Robert Gabriel Mugabe International Airport, Zimbabwe
+JNB Africa/Johannesburg # O. R. Tambo International Airport, South Africa
+JUB Africa/Juba # Juba International Airport, South Sudan
+EBB Africa/Kampala # Entebbe International Airport, Uganda
+KRT Africa/Khartoum # Khartoum International Airport, Sudan
+KGL Africa/Kigali # Kigali International Airport, Rwanda
+FIH Africa/Kinshasa # N'djili Airport, Democratic Republic of the Congo
+LOS Africa/Lagos # Murtala Muhammed International Airport, Nigeria
+LBV Africa/Libreville # Leon-Mba International Airport, Gabon
+LFW Africa/Lome # Lome–Tokoin International Airport, Togo
+LAD Africa/Luanda # Quatro de Fevereiro Airport, Angola
+FBM Africa/Lubumbashi # Lubumbashi International Airport, Democratic Republic of the Congo
+LUN Africa/Lusaka # Kenneth Kaunda International Airport, Zambia
+SSG Africa/Malabo # Malabo International Airport, Equatorial Guinea
+MPM Africa/Maputo # Maputo International Airport, Mozambique
+MSU Africa/Maseru # Moshoeshoe I International Airport, Lesotho
+SHO Africa/Mbabane # King Mswati III International Airport, Eswatini (Swaziland)
+MGQ Africa/Mogadishu # Aden Adde International Airport, Somalia
+ROB Africa/Monrovia # Roberts International Airport, Liberia
+NBO Africa/Nairobi # Jomo Kenyatta International Airport, Kenya
+NDJ Africa/Ndjamena # N'Djamena International Airport, Chad
+NIM Africa/Niamey # Diori Hamani International Airport, Niger
+NKC Africa/Nouakchott # Nouakchott–Oumtounsy International Airport, Mauritania
+OUA Africa/Ouagadougou # Thomas Sankara International Airport, Burkina Faso
+COO Africa/Porto-Novo # Cotonou Cadjehoun Airport, Benin
+TMS Africa/Sao_Tome # Sao Tome International Airport, Sao Tome & Principe
+TOM Africa/Timbuktu # Timbuktu Airport, Mali
+TIP Africa/Tripoli # Tripoli International Airport, Libya
+TUN Africa/Tunis # Tunis–Carthage International Airport, Tunisia
+WDH Africa/Windhoek # Hosea Kutako International Airport, Namibia
+ADK America/Adak # Adak Airport, USA
+ANC America/Anchorage # Ted Stevens Anchorage International Airport, USA
+AXA America/Anguilla # Clayton J. Lloyd International Airport, Anguilla (UK)
+ANU America/Antigua # V. C. Bird International Airport, Antigua & Barbuda
+AUX America/Araguaina # Araguaina Airport, Brazil
+EZE America/Argentina/Buenos_Aires # Ministro Pistarini International Airport, Argentina
+CTC America/Argentina/Catamarca # Coronel Felipe Varela International Airport, Argentina
+CRD America/Argentina/ComodRivadavia # General Enrique Mosconi International Airport, Argentina
+COR America/Argentina/Cordoba # Ingeniero Aeronautico Ambrosio L.V. Taravella International Airport, Argentina
+JUJ America/Argentina/Jujuy # Gobernador Horacio Guzman International Airport, Argentina
+IRJ America/Argentina/La_Rioja # Capitan Vicente Almandos Almonacid Airport, Argentina
+MDZ America/Argentina/Mendoza # Governor Francisco Gabrielli International Airport, Argentina
+RGL America/Argentina/Rio_Gallegos # Piloto Civil Norberto Fernandez International Airport, Argentina
+SLA America/Argentina/Salta # Martin Miguel de Guemes International Airport, Argentina
+UAQ America/Argentina/San_Juan # Domingo Faustino Sarmiento Airport, Argentina
+LUQ America/Argentina/San_Luis # Brigadier Mayor Cesar Raul Ojeda Airport, Argentina
+TUC America/Argentina/Tucuman # Teniente General Benjamin Matienzo International Airport, Argentina
+USH America/Argentina/Ushuaia # Ushuaia – Malvinas Argentinas International Airport, Argentina
+AUA America/Aruba # Queen Beatrix International Airport, Aruba
+ASU America/Asuncion # Silvio Pettirossi International Airport, Paraguay
+YIB America/Atikokan # Atikokan Municipal Aerodrome, Canada
+AKB America/Atka # Atka Airport, USA
+SSA America/Bahia # Salvador Bahia Airport, Brazil
+PVR America/Bahia_Banderas # Licenciado Gustavo Diaz Ordaz International Airport (Puerto Vallarta Airport), Mexico
+BGI America/Barbados # Grantley Adams International Airport, Barbados
+BEL America/Belem # Julio Cezar Ribeiro International Airport, Brazil
+BZE America/Belize # Philip S. W. Goldson International Airport, Belize
+YBX America/Blanc-Sablon # Lourdes-de-Blanc-Sablon Airport, Canada
+BVB America/Boa_Vista # Boa Vista International Airport, Brazil
+BOG America/Bogota # El Dorado International Airport, Colombia
+BOI America/Boise # Boise Airport, USA
+YCB America/Cambridge_Bay # Cambridge Bay Airport, Canada
+CGR America/Campo_Grande # Campo Grande International Airport, Brazil
+CUN America/Cancun # Cancun International Airport, Mexico
+CCS America/Caracas # Simon Bolivar International Airport, Venezuela
+CAY America/Cayenne # Cayenne - Felix Eboue Airport, French Guiana
+GCM America/Cayman # Owen Roberts International Airport, Cayman Islands
+ORD America/Chicago # O'Hare International Airport, USA
+CUU America/Chihuahua # General Roberto Fierro Villalobos International Airport, Mexico
+CJS America/Ciudad_Juarez # Abraham Gonzalez International Airport, Mexico
+YZS America/Coral_Harbour # Coral Harbour Airport, Canada
+SJO America/Costa_Rica # Juan Santamaria International Airport, Costa Rica
+CFQ America/Creston # Creston Aerodrome, Canada
+CGB America/Cuiaba # Marechal Rondon International Airport, Brazil
+CUR America/Curacao # Curacao International Airport, Curacao
+BGDH America/Danmarkshavn # Danmarkshavn Airport, Greenland
+YDA America/Dawson # Dawson City Airport, Canada
+YDQ America/Dawson_Creek # Dawson Creek Airport, Canada
+DEN America/Denver # Denver International Airport, USA
+DTW America/Detroit # Detroit Metropolitan Wayne County Airport, USA
+DOM America/Dominica # Douglas-Charles Airport, Dominica
+YEG America/Edmonton # Edmonton International Airport, Canada
+ERN America/Eirunepe # Amaury Feitosa Tomaz Airport, Brazil
+SAL America/El_Salvador # El Salvador International Airport, El Salvador
+ESE America/Ensenada # Ensenada Airport, Mexico
+YYE America/Fort_Nelson # Northern Rockies Regional Airport, Canada
+FWA America/Fort_Wayne # Fort Wayne International Airport, USA
+FOR America/Fortaleza # Fortaleza-Pinto Martins International Airport, Brazil
+YQY America/Glace_Bay # JA Douglas McCurdy Sydney Airport, Canada
+YYR America/Goose_Bay # Canadian Forces Base Goose Bay, Canada
+GDT America/Grand_Turk # JAGS McCartney International Airport, Turks & Caicos Islands
+GND America/Grenada # Maurice Bishop International Airport, Grenada
+PTP America/Guadeloupe # Pointe-a-Pitre International Airport, Guadeloupe
+GUA America/Guatemala # La Aurora International Airport, Guatemala
+GYE America/Guayaquil # Jose Joaquin de Olmedo International Airport, Ecuador
+GEO America/Guyana # Cheddi Jagan International Airport, Guyana
+YHZ America/Halifax # Halifax Stanfield International Airport, Canada
+HAV America/Havana # Jose Marti International Airport, Cuba
+HMO America/Hermosillo # Hermosillo International Airport, Mexico
+IND America/Indiana/Indianapolis # Indianapolis International Airport, USA
+KOXI America/Indiana/Knox # Starke County Airport, USA
+NONE America/Indiana/Marengo # USA
+NONE America/Indiana/Petersburg # USA
+NONE America/Indiana/Tell_City # USA
+NONE America/Indiana/Vevay # USA
+NONE America/Indiana/Vincennes # USA
+NONE America/Indiana/Winamac # USA
+YEV America/Inuvik # Inuvik (Mike Zubko) Airport, Canada
+YFB America/Iqaluit # Iqaluit Airport, Canada
+America/Jamaica # Jamaica
+America/Juneau # USA
+America/Kentucky/Louisville # USA
+America/Kentucky/Monticello # USA
+America/Kralendijk # Caribbean Netherlands (Bonaire), shelf of S America
+America/La_Paz # Bolivia
+America/Lima # Peru
+America/Los_Angeles # USA
+America/Lower_Princes # Curacao
+America/Maceio # Brazil
+America/Managua # Nicaragua
+America/Manaus # Brazil
+America/Marigot # Sint Maarten
+America/Martinique # Martinique
+America/Matamoros # Mexico
+America/Mazatlan # Mexico
+America/Menominee # USA
+America/Merida # Mexico
+America/Metlakatla # USA
+America/Mexico_City # Mexico
+America/Miquelon # St Pierre & Miquelon
+America/Moncton # Canada
+America/Monterrey # Mexico
+America/Montevideo # Uruguay
+America/Montreal # Canada
+America/Montserrat # Montserrat
+America/Nassau # Bahamas
+America/New_York # USA
+America/Nipigon # Canada
+America/Nome # USA
+America/Noronha # Brazil
+America/North_Dakota/Beulah # USA
+America/North_Dakota/Center # USA
+America/North_Dakota/New_Salem # USA
+America/Nuuk # Greenland
+America/Ojinaga # Mexico
+America/Panama # Panama
+America/Pangnirtung # Canada
+America/Paramaribo # Suriname
+America/Phoenix # USA
+America/Port-au-Prince # Haiti
+America/Port_of_Spain # Trinidad & Tobago
+America/Porto_Acre # Brazil
+America/Porto_Velho # Brazil
+America/Puerto_Rico # Puerto Rico
+America/Punta_Arenas # Chile
+America/Rainy_River # Canada
+America/Rankin_Inlet # Canada
+America/Recife # Brazil
+America/Regina # Canada
+America/Resolute # Canada
+America/Rio_Branco # Brazil
+America/Santa_Isabel # Mexico
+America/Santarem # Brazil
+America/Santiago # Chile
+America/Santo_Domingo # Dominican Republic
+America/Sao_Paulo # Brazil
+America/Scoresbysund # Greenland
+America/Shiprock # USA
+America/Sitka # USA
+America/St_Barthelemy # St Barthelemy
+America/St_Johns # Canada
+America/St_Kitts # St Kitts & Nevis
+America/St_Lucia # St Lucia
+America/St_Thomas # Virgin Islands (US)
+America/St_Vincent # St Vincent
+America/Swift_Current # Canada
+America/Tegucigalpa # Honduras
+America/Thule # Greenland
+America/Thunder_Bay # Canada
+America/Tijuana # Mexico
+America/Toronto # Canada
+America/Tortola # Virgin Islands (UK)
+America/Vancouver # Canada
+America/Virgin # Virgin Islands (US)
+America/Whitehorse # Canada
+America/Winnipeg # Canada
+America/Yakutat # USA
+America/Yellowknife # Canada
+Antarctica/Casey # Antartica Australia
+Antarctica/Davis # Antartica France
+Antarctica/DumontDUrville # Antartica France
+Antarctica/Macquarie # Antartica Australia
+Antarctica/Mawson # Antartica Australia
+Antarctica/McMurdo # Antartica USA
+Antarctica/Palmer # Antartica USA
+Antarctica/Rothera # Antartica Britain
+Antarctica/South_Pole # Antartica New Zealand
+Antarctica/Syowa # Antartica Japan
+Antarctica/Troll # Antartica Norway
+Antarctica/Vostok # Antartica Russia
+Arctic/Longyearbyen # Svalbard & Jan Mayen
+Asia/Aden # Yemen
+Asia/Almaty # Kazakhstan
+Asia/Amman # Jordan
+Asia/Anadyr # Russia
+Asia/Aqtau # Kazakhstan
+Asia/Aqtobe # Kazakhstan
+Asia/Ashgabat # Turkmenistan
+Asia/Atyrau # Turkmenistan
+Asia/Baghdad # Iraq
+Asia/Bahrain # Bahrain
+Asia/Baku # Azerbaijan
+Asia/Bangkok # Thailand
+Asia/Barnaul # Russia
+Asia/Beirut # Lebanon
+Asia/Bishkek # Kyrgyzstan
+Asia/Brunei # Brunei
+Asia/Chita # Russia
+Asia/Choibalsan # Mongolia
+Asia/Chongqing # China
+Asia/Colombo # Sri Lanka
+Asia/Damascus # Syria
+Asia/Dhaka # Bangladesh
+Asia/Dili # East Timor
+Asia/Dubai # United Arab Emirates
+Asia/Dushanbe # Tajikistan
+Asia/Famagusta # Cyprus
+Asia/Gaza # Palestine
+Asia/Harbin # China
+Asia/Hebron # Palestine
+Asia/Ho_Chi_Minh # Vietnam
+Asia/Hong_Kong # Hong Kong
+Asia/Hovd # Mongolia
+Asia/Irkutsk # Russia
+Asia/Jakarta # Indonesia
+Asia/Jayapura # Indonesia
+Asia/Jerusalem # Israel
+Asia/Kabul # Afghanistan
+Asia/Kamchatka # Russia
+Asia/Karachi # Pakistan
+Asia/Kashgar # China
+Asia/Kathmandu # Nepal
+Asia/Khandyga # Russia
+Asia/Kolkata # India
+Asia/Krasnoyarsk # Russia
+Asia/Kuala_Lumpur # Malaysia
+Asia/Kuching # Malaysia
+Asia/Kuwait # Kuwait
+Asia/Macau # Macau
+Asia/Magadan # Russia
+Asia/Makassar # Indonesia
+Asia/Manila # Philippines
+Asia/Muscat # Oman
+Asia/Nicosia # Cyprus
+Asia/Novokuznetsk # Russia
+Asia/Novosibirsk # Russia
+Asia/Omsk # Russia
+Asia/Oral # Kazakhstan
+Asia/Phnom_Penh # Cambodia
+Asia/Pontianak # Indonesia
+Asia/Pyongyang # North Korea
+Asia/Qatar # Qatar
+Asia/Qostanay # Kazakhstan
+Asia/Qyzylorda # Kazakhstan
+Asia/Riyadh # Saudi Arabia
+Asia/Sakhalin # Russia
+Asia/Samarkand # Uzbekistan
+Asia/Seoul # South Korea
+Asia/Shanghai # China
+Asia/Singapore # Singapore
+Asia/Srednekolymsk # Russia
+Asia/Taipei # Taiwan
+Asia/Tashkent # Uzbekistan
+Asia/Tbilisi # Georgia
+Asia/Tehran # Iran
+Asia/Tel_Aviv # Israel
+Asia/Thimphu # Bhutan
+Asia/Tokyo # Japan
+Asia/Tomsk # Russia
+Asia/Ulaanbaatar # Mongolia
+Asia/Urumqi # China
+Asia/Ust-Nera # Russia
+Asia/Vientiane # Laos
+Asia/Vladivostok # Russia
+Asia/Yakutsk # Russia
+Asia/Yangon # Myanmar
+Asia/Yekaterinburg # Russia
+Asia/Yerevan # Armenia
+Atlantic/Azores # Portual (??)
+Atlantic/Bermuda # Bermuda
+Atlantic/Canary # Spain
+Atlantic/Cape_Verde # Cape Verde
+Atlantic/Faroe # Faroe Islands
+Atlantic/Jan_Mayen # Svalbard & Jan Mayen
+Atlantic/Madeira # Portugal
+Atlantic/Reykjavik # Iceland
+Atlantic/South_Georgia # South Georgia
+Atlantic/St_Helena # St Helena
+Atlantic/Stanley # Falkand Islands
+Australia/Adelaide # Australia
+Australia/Brisbane # Australia
+Australia/Broken_Hill # Australia
+Australia/Canberra # Australia
+Australia/Currie # Australia
+Australia/Darwin # Australia
+Australia/Eucla # Australia
+Australia/Hobart # Australia
+Australia/Lindeman # Australia
+Australia/Lord_Howe # Australia
+Australia/Melbourne # Australia
+Australia/NSW # Australia
+Australia/North # Australia
+Australia/Perth # Australia
+Australia/Queensland # Australia
+Australia/South # Australia
+Australia/Sydney # Australia
+Australia/Tasmania # Australia
+Australia/Victoria # Australia
+Australia/West # Australia
+Canada/Atlantic # Canada
+Canada/Central # Canada
+Canada/Eastern # Canada
+Canada/Mountain # Canada
+Canada/Newfoundland # Canada
+Canada/Pacific # Canada
+Canada/Saskatchewan # Canada
+Canada/Yukon # Canada
+Etc/UTC # Misc
+Europe/Amsterdam # Netherlands
+Europe/Andorra # Andorra
+Europe/Astrakhan # Russia
+Europe/Athens # Greece
+Europe/Belfast # Britain
+Europe/Belgrade # Serbia
+Europe/Berlin # Germany
+Europe/Bratislava # Slovakia
+Europe/Brussels # Belgium
+Europe/Bucharest # Romania
+Europe/Budapest # Hungary
+Europe/Busingen # Germany
+Europe/Chisinau # Moldova
+Europe/Copenhagen # Denmark
+Europe/Dublin # Ireland
+Europe/Gibraltar # Gibraltar
+Europe/Guernsey # Guernsey
+Europe/Helsinki # Finland
+Europe/Isle_of_Man # Isle of Man
+Europe/Istanbul # Turkey
+Europe/Jersey # Jersey
+Europe/Kaliningrad # Russia
+Europe/Kirov # Russia
+Europe/Kyiv # Ukraine
+Europe/Lisbon # Portugal
+Europe/Ljubljana # Slovenia
+Europe/London # Britain
+Europe/Luxembourg # Luxembourg
+Europe/Madrid # Spain
+Europe/Malta # Malta
+Europe/Mariehamn # Aland Islands
+Europe/Minsk # Belarus
+Europe/Monaco # Monaco
+Europe/Moscow # Russia
+Europe/Oslo # Norway
+Europe/Paris # France
+Europe/Podgorica # Montenegro
+Europe/Prague # Czech Republic
+Europe/Riga # Latvia
+Europe/Rome # Italy
+Europe/Samara # Russia
+Europe/San_Marino # San Marino
+Europe/Sarajevo # Bosnia & Herzegovina
+Europe/Saratov # Russia
+Europe/Simferopol # Crimea, Ukraine
+Europe/Skopje # North Macedonia
+Europe/Sofia # Bulgaria
+Europe/Stockholm # Sweden
+Europe/Tallinn # Estonia
+Europe/Tirane # Albania
+Europe/Tiraspol # Moldova
+Europe/Ulyanovsk # Russia
+Europe/Uzhgorod # Ukraine
+Europe/Vaduz # Liechtenstein
+Europe/Vatican # Vatican City
+Europe/Vienna # Austria
+Europe/Vilnius # Lithuania
+Europe/Volgograd # Russia
+Europe/Warsaw # Poland
+Europe/Zagreb # Croatia
+Europe/Zaporozhye # Ukraine
+Europe/Zurich # Switzerland
+Indian/Antananarivo # Madagascar
+Indian/Chagos # British Indian Ocean Territory
+Indian/Christmas # Christmas Island
+Indian/Cocos # Cocos Islands
+Indian/Comoro # Comoros
+Indian/Kerguelen # French Southern and Antarctic Lands
+Indian/Mahe # Seychelles
+Indian/Maldives # Maldives
+Indian/Mauritius # Mauritius
+Indian/Mayotte # Mayotte
+Indian/Reunion # Reunion
+Pacific/Apia # Samoa (Western)
+Pacific/Auckland # New Zealand
+Pacific/Bougainville # Papua New Guinea
+Pacific/Chatham # New Zealand
+Pacific/Chuuk # Micronesia
+Pacific/Easter # Chile
+Pacific/Efate # Vanuatu
+Pacific/Enderbury # Kiribati
+Pacific/Fakaofo # Tokelau
+Pacific/Fiji # Fiji
+Pacific/Funafuti # Tuvalu
+Pacific/Galapagos # Ecuador
+Pacific/Gambier # French Polynesia
+Pacific/Guadalcanal # Solomon Islands
+Pacific/Guam # Guam
+Pacific/Honolulu # USA
+Pacific/Johnston # US Minor Outlying Islands
+Pacific/Kanton # Kiribati
+Pacific/Kiritimati # Christmas Island
+Pacific/Kosrae # Micronesia
+Pacific/Kwajalein # Marshall Islands
+Pacific/Majuro # Marshall Islands
+Pacific/Marquesas # French Polynesia
+Pacific/Midway # American Samoa
+Pacific/Nauru # Nauru
+Pacific/Niue # Niue
+Pacific/Norfolk # Norfolk Island
+Pacific/Noumea # New Caledonia
+Pacific/Pago_Pago # American Samoa
+Pacific/Palau # Palau
+Pacific/Pitcairn # Pitcairn
+Pacific/Pohnpei # Micronesia
+Pacific/Port_Moresby # Papua New Guinea
+Pacific/Rarotonga # Cook Islands
+Pacific/Saipan # Northern Mariana Islands
+Pacific/Tahiti # French Polynesia
+Pacific/Tarawa # Kiribati
+Pacific/Tongatapu # Tonga
+Pacific/Wake # US Minor Outlying Islands
+Pacific/Wallis # Wallis & Futuna
+Pacific/Yap # Micronesia
+US/Alaska # USA
+US/Aleutian # USA
+US/Arizona # USA
+US/Central # USA
+US/Eastern # USA
+US/Hawaii # USA
+US/Michigan # USA
+US/Mountain # USA
+US/Pacific # USA
+US/Samoa # American Samoa
+UTC # Misc
