@@ -155,26 +155,26 @@ BON America/Kralendijk # Flamingo International Airport, Caribbean Netherlands (
 LPB America/La_Paz # El Alto International Airport, Bolivia
 LIM America/Lima # Jorge Chavez International Airport, Peru
 LAX America/Los_Angeles # Los Angeles International Airport, USA
-America/Lower_Princes # Curacao
-America/Maceio # Brazil
-America/Managua # Nicaragua
-America/Manaus # Brazil
-America/Marigot # Sint Maarten
-America/Martinique # Martinique
-America/Matamoros # Mexico
-America/Mazatlan # Mexico
-America/Menominee # USA
-America/Merida # Mexico
-America/Metlakatla # USA
-America/Mexico_City # Mexico
-America/Miquelon # St Pierre & Miquelon
-America/Moncton # Canada
-America/Monterrey # Mexico
-America/Montevideo # Uruguay
-America/Montreal # Canada
-America/Montserrat # Montserrat
-America/Nassau # Bahamas
-America/New_York # USA
+SXM America/Lower_Princes # Princess Juliana International Airport, Sint Maarten
+MCZ America/Maceio # Maceio/Zumbi dos Palmares International Airport, Brazil
+MGA America/Managua # Augusto C. Sandino International Airport, Nicaragua
+MAO America/Manaus # Manaus International Airport - Eduardo Gomes, Brazil
+SFG America/Marigot # Grand Case Esperance Airport, Saint Martin
+FDF America/Martinique # Martinique Aime Cesaire International Airport, Martinique
+MAM America/Matamoros # General Servando Canales International Airport, Mexico
+MZT America/Mazatlan # General Rafael Buelna International Airport, Mexico
+MNM America/Menominee # Menominee Regional Airport, USA
+MID America/Merida # Manuel Crescencio Rejon International Airport, Mexico
+ANN America/Metlakatla # Annette Island Airport, USA
+MEX America/Mexico_City # Mexico City International Airport, Mexico
+MQC America/Miquelon # Miquelon Airport, St Pierre & Miquelon
+YQM America/Moncton # Greater Moncton Romeo LeBlanc International Airport, Canada
+MTY America/Monterrey # Monterrey International Airport, Mexico
+MVD America/Montevideo # Carrasco/General Cesareo L. Berisso International Airport, Uruguay
+YUL America/Montreal # Montreal-Trudeau International Airport, Canada
+MNI America/Montserrat # John A. Osborne Airport, Montserrat
+NAS America/Nassau # Lynden Pindling International Airport, Bahamas
+JFK America/New_York # John F. Kennedy International Airport, USA
 America/Nipigon # Canada
 America/Nome # USA
 America/Noronha # Brazil
