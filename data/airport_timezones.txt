@@ -432,17 +432,17 @@ WAW Europe/Warsaw # Warsaw Chopin Airport, Poland
 ZAG Europe/Zagreb # Zagreb Franjo Tudman Airport, Croatia
 OZH Europe/Zaporozhye # Zaporizhzhia International Airport, Ukraine
 ZRH Europe/Zurich # Zurich Airport, Switzerland
-Indian/Antananarivo # Madagascar
-Indian/Chagos # British Indian Ocean Territory
-Indian/Christmas # Christmas Island
-Indian/Cocos # Cocos Islands
-Indian/Comoro # Comoros
-Indian/Kerguelen # French Southern and Antarctic Lands
-Indian/Mahe # Seychelles
-Indian/Maldives # Maldives
-Indian/Mauritius # Mauritius
-Indian/Mayotte # Mayotte
-Indian/Reunion # Reunion
+TNR Indian/Antananarivo # Ivato International Airport, Madagascar
+FJDG Indian/Chagos # Naval Support Facility Diego Garcia, British Indian Ocean Territory
+XCH Indian/Christmas # Christmas Island International Airport, Christmas Island
+CCK Indian/Cocos # Cocos (Keeling) Islands Airport, Cocos Islands
+HAH Indian/Comoro # Prince Said Ibrahim International Airport, Comoros
+0000 Indian/Kerguelen # French Southern and Antarctic Lands (no airport)
+SEZ Indian/Mahe # Seychelles International Airport, Seychelles
+VIA Indian/Maldives # Velana International Airport, Maldives
+MRU Indian/Mauritius # Sir Seewoosagur Ramgoolam International Airport, Mauritius
+DZA Indian/Mayotte # Dzaoudzi-Pamandzi International Airport, Mayotte
+RUN Indian/Reunion # Roland Garros Airport, Reunion
 Pacific/Apia # Samoa (Western)
 Pacific/Auckland # New Zealand
 Pacific/Bougainville # Papua New Guinea
