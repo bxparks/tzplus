@@ -443,47 +443,46 @@ VIA Indian/Maldives # Velana International Airport, Maldives
 MRU Indian/Mauritius # Sir Seewoosagur Ramgoolam International Airport, Mauritius
 DZA Indian/Mayotte # Dzaoudzi-Pamandzi International Airport, Mayotte
 RUN Indian/Reunion # Roland Garros Airport, Reunion
-Pacific/Apia # Samoa (Western)
-Pacific/Auckland # New Zealand
-Pacific/Bougainville # Papua New Guinea
-Pacific/Chatham # New Zealand
-Pacific/Chuuk # Micronesia
-Pacific/Easter # Chile
-Pacific/Efate # Vanuatu
-Pacific/Enderbury # Kiribati
-Pacific/Fakaofo # Tokelau
-Pacific/Fiji # Fiji
-Pacific/Funafuti # Tuvalu
-Pacific/Galapagos # Ecuador
-Pacific/Gambier # French Polynesia
-Pacific/Guadalcanal # Solomon Islands
-Pacific/Guam # Guam
-Pacific/Honolulu # USA
-Pacific/Johnston # US Minor Outlying Islands
-Pacific/Kanton # Kiribati
-Pacific/Kiritimati # Christmas Island
-Pacific/Kosrae # Micronesia
-Pacific/Kwajalein # Marshall Islands
-Pacific/Majuro # Marshall Islands
-Pacific/Marquesas # French Polynesia
-Pacific/Midway # American Samoa
-Pacific/Nauru # Nauru
-Pacific/Niue # Niue
-Pacific/Norfolk # Norfolk Island
-Pacific/Noumea # New Caledonia
-Pacific/Pago_Pago # American Samoa
-Pacific/Palau # Palau
-Pacific/Pitcairn # Pitcairn
-Pacific/Pohnpei # Micronesia
-Pacific/Port_Moresby # Papua New Guinea
-Pacific/Rarotonga # Cook Islands
-Pacific/Saipan # Northern Mariana Islands
-Pacific/Tahiti # French Polynesia
-Pacific/Tarawa # Kiribati
-Pacific/Tongatapu # Tonga
-Pacific/Wake # US Minor Outlying Islands
-Pacific/Wallis # Wallis & Futuna
-Pacific/Yap # Micronesia
+APW Pacific/Apia # Faleolo International Airport, Samoa (Western)
+AKL Pacific/Auckland # Auckland Airport, New Zealand
+BUA Pacific/Bougainville # Buka Airport, Papua New Guinea
+CHT Pacific/Chatham # Chatham Islands Tuuta Airport, New Zealand
+TKK Pacific/Chuuk # Chuuk International Airport, Micronesia
+IPC Pacific/Easter # Mataveri International Airport, Chile
+VLI Pacific/Efate # Bauerfield International Airport, Vanuatu
+0000 Pacific/Fakaofo # Tokelau (no airport, but planned)
+NAN Pacific/Fiji # Nadi International Airport, Fiji
+FUN Pacific/Funafuti # Funafuti International Airport, Tuvalu
+GPS Pacific/Galapagos # Seymour Galapagos Ecological Airport, Ecuador
+GMR Pacific/Gambier # Totegegie Airport, French Polynesia
+HIR Pacific/Guadalcanal # Honiara International Airport, Solomon Islands
+GUM Pacific/Guam # Antonio B. Won Pat International Airport, Guam
+HNL Pacific/Honolulu # Daniel K. Inouye International Airport, USA
+0000 Pacific/Johnston # US Minor Outlying Islands (Johnston Atoll Airport no longer operational)
+CIS Pacific/Kanton # Canton Island Airport, Kiribati
+CXI Pacific/Kiritimati # Cassidy International Airport, Kiribati
+KSA Pacific/Kosrae # Kosrae International Airport, Micronesia
+KWA Pacific/Kwajalein # Bucholz Army Airfield, Marshall Islands
+MAJ Pacific/Majuro # Marshall Islands International Airport, Marshall Islands
+NHV Pacific/Marquesas # Nuku Hiva Airport, French Polynesia
+MDY Pacific/Midway # Henderson Field, US Minor Outlying Islands
+INU Pacific/Nauru # Nauru International Airport, Nauru
+IUE Pacific/Niue # Niue International Airport, Niue
+NLK Pacific/Norfolk # Norfolk Island Airport, Norfolk Island
+NOU Pacific/Noumea # La Tontouta International Airport, New Caledonia
+PPG Pacific/Pago_Pago # Pago Pago International Airport, American Samoa
+ROR Pacific/Palau # Roman Tmetuchl International Airport, Palau
+0000 Pacific/Pitcairn # Pitcairn (no airport)
+PNI Pacific/Pohnpei # Pohnpei International Airport, Micronesia
+POM Pacific/Port_Moresby # Port Moresby International Airport, Papua New Guinea
+RAR Pacific/Rarotonga # Rarotonga International Airport, Cook Islands
+SPN Pacific/Saipan # Saipan International Airport, Northern Mariana Islands
+PPT Pacific/Tahiti # Faa'a International Airport, French Polynesia
+TRW Pacific/Tarawa # Bonriki International Airport, Kiribati
+TBU Pacific/Tongatapu # Fua'amotu International Airport, Tonga
+AWK Pacific/Wake # Wake Island Airfield, US Minor Outlying Islands
+WLS Pacific/Wallis # Hihifo Airport, Wallis & Futuna
+YAP Pacific/Yap # Yap International Airport, Micronesia
 US/Alaska # USA
 US/Aleutian # USA
 US/Arizona # USA
