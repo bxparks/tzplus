@@ -483,14 +483,14 @@ TBU Pacific/Tongatapu # Fua'amotu International Airport, Tonga
 AWK Pacific/Wake # Wake Island Airfield, US Minor Outlying Islands
 WLS Pacific/Wallis # Hihifo Airport, Wallis & Futuna
 YAP Pacific/Yap # Yap International Airport, Micronesia
-US/Alaska # USA
-US/Aleutian # USA
-US/Arizona # USA
-US/Central # USA
-US/Eastern # USA
-US/Hawaii # USA
-US/Michigan # USA
-US/Mountain # USA
-US/Pacific # USA
-US/Samoa # American Samoa
-UTC # Misc
+0000 US/Alaska # USA
+0000 US/Aleutian # USA
+0000 US/Arizona # USA
+0000 US/Central # USA
+0000 US/Eastern # USA
+0000 US/Hawaii # USA
+0000 US/Michigan # USA
+0000 US/Mountain # USA
+0000 US/Pacific # USA
+0000 US/Samoa # American Samoa
+0000 UTC # Misc
