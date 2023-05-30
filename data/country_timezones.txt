@@ -585,7 +585,7 @@ PO GU Pacific/Guam # Guam
 PO US Pacific/Honolulu # USA
 PO UM Pacific/Johnston # US Minor Outlying Islands
 PO KI Pacific/Kanton # Kiribati
-PO CX Pacific/Kiritimati # Christmas Island
+PO KI Pacific/Kiritimati # Kiribati
 PO FM Pacific/Kosrae # Micronesia
 PO MH Pacific/Kwajalein # Marshall Islands
 PO MH Pacific/Majuro # Marshall Islands
