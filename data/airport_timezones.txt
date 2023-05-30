@@ -370,68 +370,68 @@ SYD Australia/Sydney # Sydney Kingsford Smith Airport, Australia
 0000 Canada/Saskatchewan # Canada
 0000 Canada/Yukon # Canada
 0000 Etc/UTC # Misc
-Europe/Amsterdam # Netherlands
-Europe/Andorra # Andorra
-Europe/Astrakhan # Russia
-Europe/Athens # Greece
-Europe/Belfast # Britain
-Europe/Belgrade # Serbia
-Europe/Berlin # Germany
-Europe/Bratislava # Slovakia
-Europe/Brussels # Belgium
-Europe/Bucharest # Romania
-Europe/Budapest # Hungary
-Europe/Busingen # Germany
-Europe/Chisinau # Moldova
-Europe/Copenhagen # Denmark
-Europe/Dublin # Ireland
-Europe/Gibraltar # Gibraltar
-Europe/Guernsey # Guernsey
-Europe/Helsinki # Finland
-Europe/Isle_of_Man # Isle of Man
-Europe/Istanbul # Turkey
-Europe/Jersey # Jersey
-Europe/Kaliningrad # Russia
-Europe/Kirov # Russia
-Europe/Kyiv # Ukraine
-Europe/Lisbon # Portugal
-Europe/Ljubljana # Slovenia
-Europe/London # Britain
-Europe/Luxembourg # Luxembourg
-Europe/Madrid # Spain
-Europe/Malta # Malta
-Europe/Mariehamn # Aland Islands
-Europe/Minsk # Belarus
-Europe/Monaco # Monaco
-Europe/Moscow # Russia
-Europe/Oslo # Norway
-Europe/Paris # France
-Europe/Podgorica # Montenegro
-Europe/Prague # Czech Republic
-Europe/Riga # Latvia
-Europe/Rome # Italy
-Europe/Samara # Russia
-Europe/San_Marino # San Marino
-Europe/Sarajevo # Bosnia & Herzegovina
-Europe/Saratov # Russia
-Europe/Simferopol # Crimea, Ukraine
-Europe/Skopje # North Macedonia
-Europe/Sofia # Bulgaria
-Europe/Stockholm # Sweden
-Europe/Tallinn # Estonia
-Europe/Tirane # Albania
-Europe/Tiraspol # Moldova
-Europe/Ulyanovsk # Russia
-Europe/Uzhgorod # Ukraine
-Europe/Vaduz # Liechtenstein
-Europe/Vatican # Vatican City
-Europe/Vienna # Austria
-Europe/Vilnius # Lithuania
-Europe/Volgograd # Russia
-Europe/Warsaw # Poland
-Europe/Zagreb # Croatia
-Europe/Zaporozhye # Ukraine
-Europe/Zurich # Switzerland
+AMS Europe/Amsterdam # Amsterdam Airport Schiphol, Netherlands
+LEU Europe/Andorra # Andorra-La Seu d'Urgell Airport, Andorra
+ASF Europe/Astrakhan # Astrakhan Boris M. Kustodiev International Airport, Russia
+ATH Europe/Athens # Athens International Airport Eleftherios Venizelos, Greece
+BFS Europe/Belfast # Belfast International Airport, Britain
+BEG Europe/Belgrade # Belgrade Nikola Tesla Airport, Serbia
+BER Europe/Berlin # Berlin Brandenburg Airport Willy Brandt, Germany
+BTS Europe/Bratislava # Bratislava Airport, Slovakia
+BRU Europe/Brussels # Brussels Airport, Belgium
+OTP Europe/Bucharest # Bucharest Henri Coanda International Airport, Romania
+BUD Europe/Budapest # Budapest Ferenc Liszt International Airport, Hungary
+0000 Europe/Busingen # Germany (no airport, entirely surrounded by Switzerland)
+KIV Europe/Chisinau # Chisinau International Airport, Moldova
+CPH Europe/Copenhagen # Copenhagen Airport Kastrup, Denmark
+DUB Europe/Dublin # Dublin Airport, Ireland
+GIB Europe/Gibraltar # Gibraltar International Airport, Gibraltar
+GCI Europe/Guernsey # Guernsey Airport, Guernsey
+HEL Europe/Helsinki # Helsinki-Vantaa Airport, Finland
+IOM Europe/Isle_of_Man # Isle of Man Airport, Isle of Man
+IST Europe/Istanbul # Istanbul Airport, Turkey
+JER Europe/Jersey # Jersey Airport, Jersey
+KGD Europe/Kaliningrad # Khrabrovo Airport, Russia
+KVX Europe/Kirov # Pobedilovo Airport, Russia
+IEV Europe/Kyiv # Ihor Sikorsky Kyiv International Airport (Zhuliany), Ukraine
+LIS Europe/Lisbon # Humberto Delgado Airport, Portugal
+LJU Europe/Ljubljana # Ljubljana Joze Pucnik Airport, Slovenia
+LHR Europe/London # Heathrow Airport, Britain
+LUX Europe/Luxembourg # Luxembourg Airport, Luxembourg
+MAD Europe/Madrid # Adolfo Suarez Madrid-Barajas Airport, Spain
+MLA Europe/Malta # Malta International Airport, Malta
+MHQ Europe/Mariehamn # Mariehamn Airport, Aland Islands
+MSQ Europe/Minsk # Minsk National Airport, Belarus
+LNMC Europe/Monaco # Monaco Heliport, Monaco
+SVO Europe/Moscow # Sheremetyevo Alexander S. Pushkin International Airport, Russia
+OSL Europe/Oslo # Oslo Airport, Norway
+CDG Europe/Paris # Paris Charles de Gaulle Airport, France
+TGD Europe/Podgorica # Podgorica Airport, Montenegro
+PRG Europe/Prague # Vaclav Havel Airport Prague, Czech Republic
+RIX Europe/Riga # Riga International Airport, Latvia
+FCO Europe/Rome # Rome-Fiumicino International Airport "Leonardo da Vinci", Italy
+KUF Europe/Samara # Kurumoch International Airport, Russia
+RMI Europe/San_Marino # Federico Fellini International Airport, San Marino
+SJJ Europe/Sarajevo # Sarajevo International Airport, Bosnia & Herzegovina
+GSV Europe/Saratov # Gagarin International Airport, Russia
+SIP Europe/Simferopol # Simferopol International Airport, Crimea Ukraine
+SKP Europe/Skopje # Skopje International Airport, North Macedonia
+SOF Europe/Sofia # Sofia Airport, Bulgaria
+ARN Europe/Stockholm # Stockholm Arlanda Airport, Sweden
+TLL Europe/Tallinn # Tallinn Airport, Estonia
+TIA Europe/Tirane # Tirana International Airport Nene Tereza, Albania
+LUTR Europe/Tiraspol # Tiraspol Airport, Moldova
+ULY Europe/Ulyanovsk # Ulyanovsk Vostochny Airport, Russia
+UDJ Europe/Uzhgorod # Uzhhorod International Airport, Ukraine
+0000 Europe/Vaduz # Liechtenstein (no airport)
+0000 Europe/Vatican # Vatican City (no airport)
+VIE Europe/Vienna # Vienna International Airport, Austria
+VNO Europe/Vilnius # Vilnius International Airport, Lithuania
+VOG Europe/Volgograd # Volgograd International Airport, Russia
+WAW Europe/Warsaw # Warsaw Chopin Airport, Poland
+ZAG Europe/Zagreb # Zagreb Franjo Tudman Airport, Croatia
+OZH Europe/Zaporozhye # Zaporizhzhia International Airport, Ukraine
+ZRH Europe/Zurich # Zurich Airport, Switzerland
 Indian/Antananarivo # Madagascar
 Indian/Chagos # British Indian Ocean Territory
 Indian/Christmas # Christmas Island
