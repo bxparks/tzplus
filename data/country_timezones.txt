@@ -589,7 +589,7 @@ PO FM Pacific/Kosrae # Micronesia
 PO MH Pacific/Kwajalein # Marshall Islands
 PO MH Pacific/Majuro # Marshall Islands
 PO PF Pacific/Marquesas # French Polynesia
-PO AS Pacific/Midway # American Samoa
+PO UM Pacific/Midway # US Minor Outlying Islands
 PO NR Pacific/Nauru # Nauru
 PO NU Pacific/Niue # Niue
 PO NF Pacific/Norfolk # Norfolk Island

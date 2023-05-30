@@ -340,7 +340,7 @@ Obsolete Pacific/Kanton Pacific/Enderbury # Kiribati -> Kiribati
 Similar Pacific/Tarawa Pacific/Funafuti # Tuvalu -> Kiribati
 Similar Pacific/Honolulu Pacific/Johnston # US M Islands -> US
 Similar Pacific/Tarawa Pacific/Majuro # Marshall Islands -> Kiribati
-Similar Pacific/Pago_Pago Pacific/Midway # American Samoa -> American Samoa
+Similar Pacific/Pago_Pago Pacific/Midway # US M Islands -> American Samoa
 Similar Pacific/Guadalcanal Pacific/Pohnpei # Micronesia -> Solomon Islands
 Alias Pacific/Pohnpei Pacific/Ponape
 Similar Pacific/Guam Pacific/Saipan # Northern Mariana Islands -> Guam
