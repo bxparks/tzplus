@@ -574,7 +574,6 @@ PO NZ Pacific/Chatham # New Zealand
 PO FM Pacific/Chuuk # Micronesia
 PO CL Pacific/Easter # Chile
 PO VU Pacific/Efate # Vanuatu
-PO KI Pacific/Enderbury # Kiribati
 PO TK Pacific/Fakaofo # Tokelau
 PO FJ Pacific/Fiji # Fiji
 PO TV Pacific/Funafuti # Tuvalu

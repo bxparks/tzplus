@@ -336,7 +336,7 @@ Obsolete America/Denver Navajo # US -> US
 Obsolete Asia/Shanghai PRC # China -> China
 
 Similar Pacific/Port_Moresby Pacific/Chuuk # Micronesia -> Papua New Guinea
-Similar Pacific/Kanton Pacific/Enderbury # Kiribati -> Kiribati
+Obsolete Pacific/Kanton Pacific/Enderbury # Kiribati -> Kiribati
 Similar Pacific/Tarawa Pacific/Funafuti # Tuvalu -> Kiribati
 Similar Pacific/Honolulu Pacific/Johnston # US M Islands -> US
 Similar Pacific/Tarawa Pacific/Majuro # Marshall Islands -> Kiribati
