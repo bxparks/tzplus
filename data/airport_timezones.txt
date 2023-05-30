@@ -341,35 +341,35 @@ RKV Atlantic/Reykjavik # Reykjavik Airport, Iceland
 0000 Atlantic/South_Georgia # South Georgia (has no airports)
 HLE, Atlantic/St_Helena # Saint Helena Airport, St Helena
 PSY Atlantic/Stanley # Port Stanley Airport, Falkand Islands
-Australia/Adelaide # Australia
-Australia/Brisbane # Australia
-Australia/Broken_Hill # Australia
-Australia/Canberra # Australia
-Australia/Currie # Australia
-Australia/Darwin # Australia
-Australia/Eucla # Australia
-Australia/Hobart # Australia
-Australia/Lindeman # Australia
-Australia/Lord_Howe # Australia
-Australia/Melbourne # Australia
-Australia/NSW # Australia
-Australia/North # Australia
-Australia/Perth # Australia
-Australia/Queensland # Australia
-Australia/South # Australia
-Australia/Sydney # Australia
-Australia/Tasmania # Australia
-Australia/Victoria # Australia
-Australia/West # Australia
-Canada/Atlantic # Canada
-Canada/Central # Canada
-Canada/Eastern # Canada
-Canada/Mountain # Canada
-Canada/Newfoundland # Canada
-Canada/Pacific # Canada
-Canada/Saskatchewan # Canada
-Canada/Yukon # Canada
-Etc/UTC # Misc
+ADL Australia/Adelaide # Adelaide Airport, Australia
+BNE Australia/Brisbane # Brisbane Airport, Australia
+BHQ Australia/Broken_Hill # Broken Hill Airport, Australia
+CBR Australia/Canberra # Canberra Airport, Australia
+KNS Australia/Currie # King Island Airport, Australia
+DRW Australia/Darwin # Darwin International Airport, Australia
+EUC Australia/Eucla # Eucla Airport, Australia
+HBA Australia/Hobart # Hobart Airport, Australia
+LDC Australia/Lindeman # Lindeman Island Airport, Australia
+LDH Australia/Lord_Howe # Lord Howe Island Airport, Australia
+MEL Australia/Melbourne # Melbourne Airport, Australia
+0000 Australia/NSW # Australia (New South Wales)
+0000 Australia/North # Australia (Northern Territories)
+PER Australia/Perth # Perth Airport, Australia
+0000 Australia/Queensland # Australia
+0000 Australia/South # Australia (South Australia)
+SYD Australia/Sydney # Sydney Kingsford Smith Airport, Australia
+0000 Australia/Tasmania # Australia
+0000 Australia/Victoria # Australia
+0000 Australia/West # Australia (Western Australia)
+0000 Canada/Atlantic # Canada
+0000 Canada/Central # Canada
+0000 Canada/Eastern # Canada
+0000 Canada/Mountain # Canada
+0000 Canada/Newfoundland # Canada
+0000 Canada/Pacific # Canada
+0000 Canada/Saskatchewan # Canada
+0000 Canada/Yukon # Canada
+0000 Etc/UTC # Misc
 Europe/Amsterdam # Netherlands
 Europe/Andorra # Andorra
 Europe/Astrakhan # Russia
