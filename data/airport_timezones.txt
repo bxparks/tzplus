@@ -118,7 +118,7 @@ SJO America/Costa_Rica # Juan Santamaria International Airport, Costa Rica
 CFQ America/Creston # Creston Aerodrome, Canada
 CGB America/Cuiaba # Marechal Rondon International Airport, Brazil
 CUR America/Curacao # Curacao International Airport, Curacao
-BGDH America/Danmarkshavn # Danmarkshavn Airport, Greenland
+GLDH America/Danmarkshavn # Greenland
 YDA America/Dawson # Dawson City Airport, Canada
 YDQ America/Dawson_Creek # Dawson Creek Airport, Canada
 DEN America/Denver # Denver International Airport, USA
@@ -143,19 +143,19 @@ YHZ America/Halifax # Halifax Stanfield International Airport, Canada
 HAV America/Havana # Jose Marti International Airport, Cuba
 HMO America/Hermosillo # Hermosillo International Airport, Mexico
 IND America/Indiana/Indianapolis # Indianapolis International Airport, USA
-KOXI America/Indiana/Knox # Starke County Airport, USA
-0000 America/Indiana/Marengo # USA
-0000 America/Indiana/Petersburg # USA
-0000 America/Indiana/Tell_City # USA
-0000 America/Indiana/Vevay # USA
-0000 America/Indiana/Vincennes # USA
-0000 America/Indiana/Winamac # USA
+USKX America/Indiana/Knox # USA (no appropriate airport)
+USMG America/Indiana/Marengo # USA (no appropriate airport)
+USPB America/Indiana/Petersburg # USA (no appropriate airport)
+USTC America/Indiana/Tell_City # USA (no appropriate airport)
+USVV America/Indiana/Vevay # USA (no appropriate airport)
+USVC America/Indiana/Vincennes # USA (no appropriate airport)
+USWN America/Indiana/Winamac # USA (no appropriate airport)
 YEV America/Inuvik # Inuvik (Mike Zubko) Airport, Canada
 YFB America/Iqaluit # Iqaluit Airport, Canada
 KIN America/Jamaica # Norman Manley International Airport, Jamaica
 JNU America/Juneau # Juneau International Airport, USA
 SDF America/Kentucky/Louisville # Louisville Muhammad Ali International Airport, USA
-KEKQ America/Kentucky/Monticello # Wayne County Airport, USA
+USMC America/Kentucky/Monticello # USA
 BON America/Kralendijk # Flamingo International Airport, Caribbean Netherlands (Bonaire)
 LPB America/La_Paz # El Alto International Airport, Bolivia
 LIM America/Lima # Jorge Chavez International Airport, Peru
@@ -180,14 +180,14 @@ YUL America/Montreal # Montreal-Trudeau International Airport, Canada
 MNI America/Montserrat # John A. Osborne Airport, Montserrat
 NAS America/Nassau # Lynden Pindling International Airport, Bahamas
 JFK America/New_York # John F. Kennedy International Airport, USA
-0000 America/Nipigon # Canada
+CANP America/Nipigon # Canada
 OME America/Nome # Nome Airport, USA
 FEN America/Noronha # Governador Carlos Wilson Airport, Brazil
-KHZE America/North_Dakota/Beulah # Mercer County Regional Airport, USA
-0000 America/North_Dakota/Center # USA
-0000 America/North_Dakota/New_Salem # USA
+USBL America/North_Dakota/Beulah # USA
+USCN America/North_Dakota/Center # USA (CT is Connecticut, so use CN)
+USNS America/North_Dakota/New_Salem # USA
 GOH America/Nuuk # Nuuk Airport, Greenland
-0000 America/Ojinaga # Mexico
+MXOJ America/Ojinaga # Mexico (no appropriate airport)
 PTY America/Panama # Tocumen International Airport, Panama
 YXP America/Pangnirtung # Pangnirtung Airport, Canada
 PBM America/Paramaribo # Johan Adolf Pengel International Airport, Suriname
@@ -198,19 +198,19 @@ RBR America/Porto_Acre # Rio Branco-Placido de Castro International Airport, Bra
 PVH America/Porto_Velho # Porto Velho-Governador Jorge Teixeira de Oliveira International Airport, Brazil
 SJU America/Puerto_Rico # Luis Munoz Marin International Airport, Puerto Rico
 PUQ America/Punta_Arenas # Presidente Carlos Ibanez International Airport, Chile
-0000 America/Rainy_River # Rainy River Water Aerodrome, Canada
+CARR America/Rainy_River # Rainy River Water Aerodrome, Canada
 YRT America/Rankin_Inlet # Rankin Inlet Airport, Canada
 REC America/Recife # Recife/Guararapes-Gilberto Freyre International Airport, Brazil
 YQR America/Regina # Regina International Airport, Canada
 YRB America/Resolute # Resolute Bay Airport, Canada
 RBR America/Rio_Branco # Rio Branco-Placido de Castro International Airport, Brazil
-0000 America/Santa_Isabel # Baja Mexico
+MXSI America/Santa_Isabel # Baja Mexico
 STM America/Santarem # Santarem-Maestro Wilson Fonseca Airport, Brazil
 SCL America/Santiago # Arturo Merino Benitez International Airport, Chile
 SDQ America/Santo_Domingo # Las Americas International Airport, Dominican Republic
 GRU America/Sao_Paulo # Sao Paulo/Guarulhos - Governor Andre Franco Montoro International Airport, Brazil
 OBY America/Scoresbysund # Ittoqqortoormiit Heliport, Greenland
-0000 America/Shiprock # USA
+USSR America/Shiprock # USA (Navajo Nation, no nearby airport)
 SIT America/Sitka # Sitka Rocky Gutierrez Airport, USA
 SBH America/St_Barthelemy # Gustaf III Airport, St Barthelemy
 YYT America/St_Johns # St. John's International Airport, Canada
@@ -230,18 +230,18 @@ YXY America/Whitehorse # Erik Nielsen Whitehorse International Airport, Canada
 YWG America/Winnipeg # Winnipeg James Armstrong Richardson International Airport, Canada
 YAK America/Yakutat # Yakutat Airport, USA
 YZF America/Yellowknife # Yellowknife Airport, Canada
-YCSK Antarctica/Casey # Casey Station Skiway, Antartica Australia
-0000 Antarctica/Davis # David Plateau Skiway, Antartica Australia
-0000 Antarctica/DumontDUrville # D10 Skyway, Antartica France
-YMQI Antarctica/Macquarie # Macquarie Island Heliport, Antartica Australia
-0000 Antarctica/Mawson # Antartica Australia
-NZIR Antarctica/McMurdo # McMurdo Ice Runway, Antartica USA
-NZ12 Antarctica/Palmer # Palmer Skiway, Antartica USA
-EGAR Antarctica/Rothera # Rothera Air Facility, Antartica Britain
-NZSP Antarctica/South_Pole # Jack F. Paulus Skiway, Amundsen-Scott South Pole Station, Antartica USA
-0000 Antarctica/Syowa # Showa Skiway, Antartica Japan
+AQCS Antarctica/Casey # Antartica Australia
+AQDV Antarctica/Davis # Antartica Australia
+AQDU Antarctica/DumontDUrville # Antartica France
+AQMQ Antarctica/Macquarie # Antartica Australia
+AQMS Antarctica/Mawson # Antartica Australia
+AQMM Antarctica/McMurdo # Antartica USA
+AQPL Antarctica/Palmer # Antartica USA
+AQRT Antarctica/Rothera # Antartica Britain
+AQSP Antarctica/South_Pole # Amundsen-Scott South Pole Station, Antartica USA
+AQSW Antarctica/Syowa # Showa Skiway, Antartica Japan
 QAT Antarctica/Troll # Troll Airfield, Antartica Norway
-0000 Antarctica/Vostok # Vostok Skiway, Antartica Russia
+AQVS Antarctica/Vostok # Vostok Skiway, Antartica Russia
 LYR Arctic/Longyearbyen # Svalbard Airport, Svalbard & Jan Mayen
 ADE Asia/Aden # Aden International Airport, Yemen
 ALA Asia/Almaty # Almaty International Airport, Kazakhstan
@@ -271,7 +271,7 @@ DYU Asia/Dushanbe # Dushanbe International Airport, Tajikistan
 ECN Asia/Famagusta # Ercan International Airport, Cyprus
 GZA Asia/Gaza # Yasser Arafat International Airport, Palestine
 HRB Asia/Harbin # Harbin Taiping International Airport, China
-0000 Asia/Hebron # Palestine
+PSHB Asia/Hebron # Palestine (no appropriate airport)
 SGN Asia/Ho_Chi_Minh # Tan Son Nhat International Airport, Vietnam
 HKG Asia/Hong_Kong # Hong Kong International Airport, Hong Kong
 HVD Asia/Hovd # Khovd Airport, Mongolia
@@ -335,11 +335,11 @@ BDA Atlantic/Bermuda # L.F. Wade International Airport, Bermuda
 LPA Atlantic/Canary # Gran Canaria Airport, Spain
 SID Atlantic/Cape_Verde # Amilcar Cabral International Airport, Cape Verde
 FAE Atlantic/Faroe # Vagar Airport, Faroe Islands
-ENJA Atlantic/Jan_Mayen # Jan Mayensfield, Svalbard & Jan Mayen
+SJJM Atlantic/Jan_Mayen # Svalbard & Jan Mayen (no appropriate airport)
 FNC Atlantic/Madeira # Cristiano Ronaldo International Airport, Portugal
 RKV Atlantic/Reykjavik # Reykjavik Airport, Iceland
-0000 Atlantic/South_Georgia # South Georgia (has no airports)
-HLE, Atlantic/St_Helena # Saint Helena Airport, St Helena
+GSGS Atlantic/South_Georgia # South Georgia (no appropriate airport)
+HLE Atlantic/St_Helena # Saint Helena Airport, St Helena
 PSY Atlantic/Stanley # Port Stanley Airport, Falkand Islands
 ADL Australia/Adelaide # Adelaide Airport, Australia
 BNE Australia/Brisbane # Brisbane Airport, Australia
@@ -352,23 +352,23 @@ HBA Australia/Hobart # Hobart Airport, Australia
 LDC Australia/Lindeman # Lindeman Island Airport, Australia
 LDH Australia/Lord_Howe # Lord Howe Island Airport, Australia
 MEL Australia/Melbourne # Melbourne Airport, Australia
-0000 Australia/NSW # Australia (New South Wales)
-0000 Australia/North # Australia (Northern Territories)
+AUNW Australia/NSW # Australia (New South Wales)
+AUNT Australia/North # Australia (Northern Territories)
 PER Australia/Perth # Perth Airport, Australia
-0000 Australia/Queensland # Australia
-0000 Australia/South # Australia (South Australia)
+AUQL Australia/Queensland # Australia
+AUSA Australia/South # Australia (South Australia)
 SYD Australia/Sydney # Sydney Kingsford Smith Airport, Australia
-0000 Australia/Tasmania # Australia
-0000 Australia/Victoria # Australia
-0000 Australia/West # Australia (Western Australia)
-0000 Canada/Atlantic # Canada
-0000 Canada/Central # Canada
-0000 Canada/Eastern # Canada
-0000 Canada/Mountain # Canada
-0000 Canada/Newfoundland # Canada
-0000 Canada/Pacific # Canada
-0000 Canada/Saskatchewan # Canada
-0000 Canada/Yukon # Canada
+AUTS Australia/Tasmania # Australia
+AUVC Australia/Victoria # Australia
+AUWA Australia/West # Australia (Western Australia)
+CAAT Canada/Atlantic # Canada
+CACT Canada/Central # Canada
+CAET Canada/Eastern # Canada
+CAMT Canada/Mountain # Canada
+CANL Canada/Newfoundland # Canada
+CAPT Canada/Pacific # Canada
+CASK Canada/Saskatchewan # Canada
+CAYT Canada/Yukon # Canada
 0000 Etc/UTC # Misc
 AMS Europe/Amsterdam # Amsterdam Airport Schiphol, Netherlands
 LEU Europe/Andorra # Andorra-La Seu d'Urgell Airport, Andorra
@@ -381,7 +381,7 @@ BTS Europe/Bratislava # Bratislava Airport, Slovakia
 BRU Europe/Brussels # Brussels Airport, Belgium
 OTP Europe/Bucharest # Bucharest Henri Coanda International Airport, Romania
 BUD Europe/Budapest # Budapest Ferenc Liszt International Airport, Hungary
-0000 Europe/Busingen # Germany (no airport, entirely surrounded by Switzerland)
+DEBS Europe/Busingen # Germany (no airport, entirely surrounded by Switzerland)
 KIV Europe/Chisinau # Chisinau International Airport, Moldova
 CPH Europe/Copenhagen # Copenhagen Airport Kastrup, Denmark
 DUB Europe/Dublin # Dublin Airport, Ireland
@@ -402,7 +402,7 @@ MAD Europe/Madrid # Adolfo Suarez Madrid-Barajas Airport, Spain
 MLA Europe/Malta # Malta International Airport, Malta
 MHQ Europe/Mariehamn # Mariehamn Airport, Aland Islands
 MSQ Europe/Minsk # Minsk National Airport, Belarus
-LNMC Europe/Monaco # Monaco Heliport, Monaco
+MCMC Europe/Monaco # Monaco (no airport except a heliport)
 SVO Europe/Moscow # Sheremetyevo Alexander S. Pushkin International Airport, Russia
 OSL Europe/Oslo # Oslo Airport, Norway
 CDG Europe/Paris # Paris Charles de Gaulle Airport, France
@@ -420,11 +420,11 @@ SOF Europe/Sofia # Sofia Airport, Bulgaria
 ARN Europe/Stockholm # Stockholm Arlanda Airport, Sweden
 TLL Europe/Tallinn # Tallinn Airport, Estonia
 TIA Europe/Tirane # Tirana International Airport Nene Tereza, Albania
-LUTR Europe/Tiraspol # Tiraspol Airport, Moldova
+MDTR Europe/Tiraspol # Moldova (breakaway Transnistria)
 ULY Europe/Ulyanovsk # Ulyanovsk Vostochny Airport, Russia
 UDJ Europe/Uzhgorod # Uzhhorod International Airport, Ukraine
-0000 Europe/Vaduz # Liechtenstein (no airport)
-0000 Europe/Vatican # Vatican City (no airport)
+LIVD Europe/Vaduz # Liechtenstein (no airport)
+VACT Europe/Vatican # Vatican City (no airport)
 VIE Europe/Vienna # Vienna International Airport, Austria
 VNO Europe/Vilnius # Vilnius International Airport, Lithuania
 VOG Europe/Volgograd # Volgograd International Airport, Russia
@@ -433,11 +433,11 @@ ZAG Europe/Zagreb # Zagreb Franjo Tudman Airport, Croatia
 OZH Europe/Zaporozhye # Zaporizhzhia International Airport, Ukraine
 ZRH Europe/Zurich # Zurich Airport, Switzerland
 TNR Indian/Antananarivo # Ivato International Airport, Madagascar
-FJDG Indian/Chagos # Naval Support Facility Diego Garcia, British Indian Ocean Territory
+IOCG Indian/Chagos # British Indian Ocean Territory (military airport only)
 XCH Indian/Christmas # Christmas Island International Airport, Christmas Island
 CCK Indian/Cocos # Cocos (Keeling) Islands Airport, Cocos Islands
 HAH Indian/Comoro # Prince Said Ibrahim International Airport, Comoros
-0000 Indian/Kerguelen # French Southern and Antarctic Lands (no airport)
+TFKG Indian/Kerguelen # French Southern and Antarctic Lands (no airport)
 SEZ Indian/Mahe # Seychelles International Airport, Seychelles
 VIA Indian/Maldives # Velana International Airport, Maldives
 MRU Indian/Mauritius # Sir Seewoosagur Ramgoolam International Airport, Mauritius
@@ -450,7 +450,7 @@ CHT Pacific/Chatham # Chatham Islands Tuuta Airport, New Zealand
 TKK Pacific/Chuuk # Chuuk International Airport, Micronesia
 IPC Pacific/Easter # Mataveri International Airport, Chile
 VLI Pacific/Efate # Bauerfield International Airport, Vanuatu
-0000 Pacific/Fakaofo # Tokelau (no airport, but planned)
+TKFK Pacific/Fakaofo # Tokelau (no airport, but planned)
 NAN Pacific/Fiji # Nadi International Airport, Fiji
 FUN Pacific/Funafuti # Funafuti International Airport, Tuvalu
 GPS Pacific/Galapagos # Seymour Galapagos Ecological Airport, Ecuador
@@ -458,7 +458,7 @@ GMR Pacific/Gambier # Totegegie Airport, French Polynesia
 HIR Pacific/Guadalcanal # Honiara International Airport, Solomon Islands
 GUM Pacific/Guam # Antonio B. Won Pat International Airport, Guam
 HNL Pacific/Honolulu # Daniel K. Inouye International Airport, USA
-0000 Pacific/Johnston # US Minor Outlying Islands (Johnston Atoll Airport no longer operational)
+UMJS Pacific/Johnston # US Minor Outlying Islands (Johnston Atoll Airport no longer operational)
 CIS Pacific/Kanton # Canton Island Airport, Kiribati
 CXI Pacific/Kiritimati # Cassidy International Airport, Kiribati
 KSA Pacific/Kosrae # Kosrae International Airport, Micronesia
@@ -472,7 +472,7 @@ NLK Pacific/Norfolk # Norfolk Island Airport, Norfolk Island
 NOU Pacific/Noumea # La Tontouta International Airport, New Caledonia
 PPG Pacific/Pago_Pago # Pago Pago International Airport, American Samoa
 ROR Pacific/Palau # Roman Tmetuchl International Airport, Palau
-0000 Pacific/Pitcairn # Pitcairn (no airport)
+PNPN Pacific/Pitcairn # Pitcairn (no airport)
 PNI Pacific/Pohnpei # Pohnpei International Airport, Micronesia
 POM Pacific/Port_Moresby # Port Moresby International Airport, Papua New Guinea
 RAR Pacific/Rarotonga # Rarotonga International Airport, Cook Islands
@@ -483,14 +483,14 @@ TBU Pacific/Tongatapu # Fua'amotu International Airport, Tonga
 AWK Pacific/Wake # Wake Island Airfield, US Minor Outlying Islands
 WLS Pacific/Wallis # Hihifo Airport, Wallis & Futuna
 YAP Pacific/Yap # Yap International Airport, Micronesia
-0000 US/Alaska # USA
-0000 US/Aleutian # USA
-0000 US/Arizona # USA
-0000 US/Central # USA
-0000 US/Eastern # USA
-0000 US/Hawaii # USA
-0000 US/Michigan # USA
-0000 US/Mountain # USA
-0000 US/Pacific # USA
-0000 US/Samoa # American Samoa
+USAK US/Alaska # USA
+USAL US/Aleutian # USA (TODO: remove, reclassify as Alias for Adak)
+USAZ US/Arizona # USA
+USCT US/Central # USA
+USET US/Eastern # USA
+USHI US/Hawaii # USA (alias for Pacific/Honolulu, but much easier to type)
+USMI US/Michigan # USA (TODO: remove, reclassify as Alias for Detroit)
+USMT US/Mountain # USA
+USPT US/Pacific # USA
+USAS US/Samoa # American Samoa
 0000 UTC # Misc
