@@ -1,5 +1,6 @@
+TZ_VERSION := 2023c
+ACE_TIME_TOOLS_DIR := ../../AceTimeTools
 TOOLS_DIR := ../tools
-
 TZDB_DIR := ../tzdb
 
 #-----------------------------------------------------------------------------
@@ -40,6 +41,14 @@ zones.txt: $(TOOLS_DIR)/extract_zones.sh $(TZDB_DIR)
 # Extract Links.
 links.txt: $(TOOLS_DIR)/extract_links.sh $(TZDB_DIR)
 	$(TOOLS_DIR)/extract_links.sh $(TZDB_DIR) > $@
+
+# Extract the STDOFF of each zone and link.
+stdoff.txt: $(TZDB_DIR)
+	$(ACE_TIME_TOOLS_DIR)/src/acetimetools/stdoff.py \
+		--input_dir $(TZDB_DIR) \
+		--output_dir . \
+		--tz_version 2023c \
+		> $@
 
 #-----------------------------------------------------------------------------
 
