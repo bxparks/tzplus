@@ -1,4 +1,3 @@
-TZ_VERSION := 2023c
 ACE_TIME_TOOLS_DIR := ../../AceTimeTools
 TOOLS_DIR := ../tools
 TZDB_DIR := ../tzdb
@@ -47,7 +46,6 @@ stdoff.txt: $(TZDB_DIR)
 	$(ACE_TIME_TOOLS_DIR)/src/acetimetools/stdoff.py \
 		--input_dir $(TZDB_DIR) \
 		--output_dir . \
-		--tz_version 2023c \
 		> $@
 
 #-----------------------------------------------------------------------------

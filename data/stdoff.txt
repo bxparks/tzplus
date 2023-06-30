@@ -3,10 +3,10 @@
 #   $ ../../AceTimeTools/src/acetimetools/stdoff.py
 //     --input_dir ../tzdb
 //     --output_dir .
-//     --tz_version 2023c
 #
 # from https://github.com/eggert/tz/releases/tag/2023c
-# for the year 2023.
+#
+# The STDOFF for each timezone was extracted for the year 2023.
 #
 # DO NOT EDIT
 
