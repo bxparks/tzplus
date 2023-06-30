@@ -79,3 +79,7 @@ iso3166.tab|\
 zone.tab|\
 zone1970.tab)
 rm -rf .git .gitignore
+
+# Add the tag (often the TZDB version) to `version.txt`.
+echo "+ echo $tag > $dst/version.txt"
+echo "$tag" > version.txt
