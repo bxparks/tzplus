@@ -1,4 +1,3 @@
-ACE_TIME_TOOLS_DIR := ../../AceTimeTools
 TOOLS_DIR := ../tools
 TZDB_DIR := ../tzdb
 
@@ -43,7 +42,7 @@ links.txt: $(TOOLS_DIR)/extract_links.sh $(TZDB_DIR)
 
 # Extract the STDOFF of each zone and link.
 stdoff.txt: $(TZDB_DIR)
-	$(ACE_TIME_TOOLS_DIR)/src/acetimetools/stdoff.py \
+	$(TOOLS_DIR)/stdoff.py \
 		--input_dir $(TZDB_DIR) \
 		--output_dir . \
 		> $@
