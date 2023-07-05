@@ -141,7 +141,14 @@ Similar America/Toronto America/Nassau # Bahamas -> Canada
 Similar America/Toronto America/Nipigon # Canada -> Canada
 Similar America/Iqaluit America/Pangnirtung # Canada -> Canada
 Similar America/Puerto_Rico America/Port_of_Spain # Trinidad -> Puerto Rico
-Similar America/Rio_Branco America/Porto_Acre # Brazil -> Brazil
+
+# The TZDB indicates that America/Porto_Acre is the new name for the previous
+# Brazil/Acre. However, it is does not explain why or when America/Rio_Branco
+# became an alias for America/Porto_Acre. We'll keep this as an Alias (instead
+# of an Alternate) because I have no idea if the 2 timezones were ever
+# different.
+Alias America/Rio_Branco America/Porto_Acre # Brazil -> Brazil
+
 Similar America/Winnipeg America/Rainy_River # Canada -> Canada
 Obsolete America/Argentina/Cordoba America/Rosario # Argentina -> Argentina
 Similar America/Tijuana America/Santa_Isabel # Mexico -> Mexico
@@ -228,9 +235,9 @@ Alternate Australia/Melbourne Australia/Victoria
 Alternate Australia/Perth Australia/West
 Alias Australia/Broken_Hill Australia/Yancowinna
 
-# TZDB does not allow Links-to-Links so cannot capture aliases to links. this
-# entry is listed as 'Link America/Rio_Branco Brazil/Acre'. But it should have
-# been the following to indicate a rename:
+# TZDB does not allow Links-to-Links so cannot capture aliases to links, but
+# this file does support it. The TZDB lists this as 'Link America/Rio_Branco
+# Brazil/Acre', but we can use the following to indicate a rename:
 Alias America/Porto_Acre Brazil/Acre # Brazil -> Brazil
 
 # No idea if Brazil/East and Brazil/West are commonly used. Consider changing

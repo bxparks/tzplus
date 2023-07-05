@@ -194,7 +194,6 @@ PBM America/Paramaribo # Johan Adolf Pengel International Airport, Suriname
 PHX America/Phoenix # Phoenix Sky Harbor International Airport, USA
 PAP America/Port-au-Prince # Toussaint Louverture International Airport, Haiti
 POS America/Port_of_Spain # Piarco International Airport, Trinidad & Tobago
-RBR America/Porto_Acre # Rio Branco-Placido de Castro International Airport, Brazil
 PVH America/Porto_Velho # Porto Velho-Governador Jorge Teixeira de Oliveira International Airport, Brazil
 SJU America/Puerto_Rico # Luis Munoz Marin International Airport, Puerto Rico
 PUQ America/Punta_Arenas # Presidente Carlos Ibanez International Airport, Chile

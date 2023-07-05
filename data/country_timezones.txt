@@ -201,7 +201,7 @@ SA SR America/Paramaribo # Suriname
 NA US America/Phoenix # USA
 CA HT America/Port-au-Prince # Haiti
 CA TT America/Port_of_Spain # Trinidad & Tobago
-SA BR America/Porto_Acre # Brazil
+# SA BR America/Porto_Acre # Brazil, same as America/Rio_Branco
 SA BR America/Porto_Velho # Brazil
 CA PR America/Puerto_Rico # Puerto Rico
 SA CL America/Punta_Arenas # Chile
