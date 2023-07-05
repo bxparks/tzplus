@@ -369,7 +369,7 @@ CANL Canada/Newfoundland # Canada
 CAPT Canada/Pacific # Canada
 CASK Canada/Saskatchewan # Canada
 CAYT Canada/Yukon # Canada
-0000 Etc/UTC # Misc
+EUTC Etc/UTC # Misc
 AMS Europe/Amsterdam # Amsterdam Airport Schiphol, Netherlands
 LEU Europe/Andorra # Andorra-La Seu d'Urgell Airport, Andorra
 ASF Europe/Astrakhan # Astrakhan Boris M. Kustodiev International Airport, Russia
@@ -493,4 +493,4 @@ USMI US/Michigan # USA (TODO: remove, reclassify as Alias for Detroit)
 USMT US/Mountain # USA
 USPT US/Pacific # USA
 USAS US/Samoa # American Samoa
-0000 UTC # Misc
+XUTC UTC # Misc, cannot use "UTC" because that's an actual airport
