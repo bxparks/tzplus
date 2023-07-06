@@ -12,8 +12,9 @@
 #   --iso_long {file}
 #   --iso_short {file}
 #   --regions {file}
-#   [--region_country_timezones country_timezones.txt]
-#   [--country_timezones geonames.txt]
+#   (--region_country_timezones country_timezones.txt |
+#       --country_timezones geonames.txt)
+#   --airport_timezones file.txt
 
 
 from typing import Dict
@@ -38,8 +39,9 @@ import sys
 #   * ZoneObsolete name
 # * Links
 #   * Alias target link
-#   * Similar target link
+#   * Alternate target link
 #   * Obsolete target link
+#   * Similar target link
 class Entry(NamedTuple):
     target: Optional[str]  # Set to None for zones
     tag: str  # 'Zone', 'ZoneObsolete', 'Alias', 'Similar', 'Obsolete'
@@ -50,6 +52,9 @@ CountryTimezones = Dict[str, List[str]]
 
 # Region to [timezones].
 RegionTimezones = Dict[str, List[str]]
+
+# Airport code to [timezones]
+AirportTimezones = Dict[str, str]
 
 
 def main() -> None:
@@ -81,17 +86,24 @@ def main() -> None:
         '--regions',
         help='Region names',
         required=True)
+    parser.add_argument(  # Required only for --region_country_timezones
+        '--airport_timezones',
+        help='Airport to timezones')
     parser.add_argument(
         '--region_country_timezones',
         help='Region-Country-Timezone file')
     parser.add_argument(
         '--country_timezones',
         help='Country-Timezone file')
+
     args = parser.parse_args()
-    if not args.region_country_timezones and not args.country_timezones:
+    if args.region_country_timezones is None and args.country_timezones is None:
         error(
             "Must provide one of "
             "--region_country_timezones or --country_timezones")
+    if args.region_country_timezones is not None:
+        if args.airport_timezones is None:
+            error("Must provide --airport_timezones")
 
     # Configure logging
     # logging.basicConfig(level=logging.INFO)
@@ -120,18 +132,6 @@ def main() -> None:
     # Read regions
     regions = read_regions(args.regions)
 
-    # Print summary of input files.
-    max_long_country = max([len(v) for v in iso_long.values()])
-    max_short_country = max([len(v) for v in iso_short.values()])
-    max_region = max([len(v) for v in regions.values()])
-    print(f"{args.zones}: {len(zones)}")
-    print(f"{args.links}: {len(links)}")
-    print(f"{args.classified_zones}: {len(classified_zones)}")
-    print(f"{args.classified_links}: {len(classified_links)}")
-    print(f"{args.iso_long}: {len(iso_long)}, maxlen: {max_long_country}")
-    print(f"{args.iso_short}: {len(iso_short)}, maxlen: {max_short_country}")
-    print(f"{args.regions}: {len(regions)}, maxlen: {max_region}")
-
     if args.region_country_timezones:
         # Read and check region_country_timezones.txt.
         country_timezones, region_timezones = \
@@ -143,48 +143,29 @@ def main() -> None:
             args.region_country_timezones, country_timezones, classified_zones,
             classified_links)
 
-        num_countries = len(country_timezones)
-        num_timezones = sum([
-            len(entry)
-            for entry in country_timezones.values()
-        ])
-
-        # Print region_country_timezones summary.
-        num_regions = len(region_timezones)
-        print(
-            f"{args.region_country_timezones}: "
-            f"regions={num_regions}, "
-            f"countries={num_countries}, "
-            f"timezones={num_timezones}"
-        )
-
         # Print timezones with multiple countries.
         poly_timezones = get_poly_timezones(country_timezones)
         if poly_timezones:
             print("Timezones with multiple countries:")
             for timezone, countries in poly_timezones.items():
                 print(f"  {timezone}: {countries}")
+
+        # Read airport timezones. Check that the airport_timezones are identical
+        # to region_country_timezones.
+        airport_timezones = read_airport_timezones(args.airport_timezones)
+        check_airport_and_country_timezones(
+            args.airport_timezones, airport_timezones, country_timezones)
     else:
-        # Read and verify the country-timezone file
+        # Read and verify the country-timezone file from geonames.org
         country_timezones = read_country_timezones(args.country_timezones)
         check_countries(args.country_timezones, country_timezones, iso_short)
         check_timezones(
             args.country_timezones, country_timezones, classified_zones,
             classified_links)
 
-        num_countries = len(country_timezones)
-        num_timezones = sum([
-            len(entry)
-            for entry in country_timezones.values()
-        ])
 
-        # Print summary
-        print(
-            f"{args.country_timezones}: "
-            f"countries={num_countries}, "
-            f"timezones={num_timezones}"
-        )
-
+# -----------------------------------------------------------------------------
+# File read functions.
 # -----------------------------------------------------------------------------
 
 
@@ -208,6 +189,8 @@ def read_zones(filename: str) -> Dict[str, Entry]:
                 error(f"Invalid Zone tag '{tag}'")
             zone_name = tokens[1]
             zones[zone_name] = Entry(None, tag)
+
+    print(f"{filename}: {len(zones)}")
     return zones
 
 
@@ -232,6 +215,8 @@ def read_links(filename: str) -> Dict[str, Entry]:
             source = tokens[1]
             target = tokens[2]
             links[target] = Entry(source, tag)
+
+    print(f"{filename}: {len(links)}")
     return links
 
 
@@ -247,6 +232,9 @@ def read_countries(filename: str) -> Dict[str, str]:
             country_name = line[2:]
             country_name = country_name.strip()
             countries[code] = country_name
+
+    maxlen = max([len(v) for v in countries.values()])
+    print(f"{filename}: {len(countries)}, maxlen: {maxlen}")
     return countries
 
 
@@ -262,6 +250,9 @@ def read_regions(filename: str) -> Dict[str, str]:
             code = tokens[0]
             name = line[len(code):].strip()
             regions[code] = name
+
+    maxlen = max([len(v) for v in regions.values()])
+    print(f"{filename}: {len(regions)}, maxlen: {maxlen}")
     return regions
 
 
@@ -295,11 +286,29 @@ def read_region_country_timezones(
                 region_timezones[region] = timezones
             timezones.append(timezone)
 
+    # Print region_country_timezones summary.
+    num_regions = len(region_timezones)
+    num_countries = len(country_timezones)
+    num_timezones = sum([
+        len(entry)
+        for entry in country_timezones.values()
+    ])
+    unique_tz: Set[str] = set()
+    for z in country_timezones.values():
+        unique_tz.update(z)
+    print(
+        f"{filename}: "
+        f"regions={num_regions}, "
+        f"countries={num_countries}, "
+        f"timezones={num_timezones}, "
+        f"unique={len(unique_tz)}"
+    )
+
     return country_timezones, region_timezones
 
 
 def read_country_timezones(filename: str) -> CountryTimezones:
-    """Read {country_code timezone}"""
+    """Read {country_code -> timezone}"""
     country_timezones: CountryTimezones = {}
     with open(filename, 'r', newline='', encoding='utf-8') as f:
         while True:
@@ -317,7 +326,43 @@ def read_country_timezones(filename: str) -> CountryTimezones:
                 country_timezones[country] = timezones
             timezones.append(timezone)
 
+    # Print summary
+    num_countries = len(country_timezones)
+    num_timezones = sum([
+        len(entry)
+        for entry in country_timezones.values()
+    ])
+    unique_tz: Set[str] = set()
+    for z in country_timezones.values():
+        unique_tz.update(z)
+    print(
+        f"{filename}: "
+        f"countries={num_countries}, "
+        f"timezones={num_timezones}, "
+        f"unique={len(unique_tz)}"
+    )
+
     return country_timezones
+
+
+def read_airport_timezones(filename: str) -> AirportTimezones:
+    """Read {airport_code -> timezone}"""
+    airport_timezones: AirportTimezones = {}
+    with open(filename, 'r', newline='', encoding='utf-8') as f:
+        while True:
+            line = read_line(f)
+            if line is None:
+                break
+            tokens: List[str] = line.split()
+            airport = tokens[0]
+            timezone = tokens[1]
+
+            if airport in airport_timezones:
+                error(f"Duplicate airport code '{airport}'")
+            airport_timezones[airport] = timezone
+
+    print(f"{filename}: {len(airport_timezones)}")
+    return airport_timezones
 
 
 def read_line(input: TextIO) -> Optional[str]:
@@ -349,6 +394,8 @@ def read_line(input: TextIO) -> Optional[str]:
 
         return line
 
+# -----------------------------------------------------------------------------
+# Validation functions.
 # -----------------------------------------------------------------------------
 
 
@@ -452,6 +499,9 @@ def check_countries(
     observed = set(country_timezones.keys())
     observed.discard('00')  # fake country '00' is not required
 
+    print("Ignoring uninhabited countries: 'BV', 'HM'")
+    print("Ignoring fake country: '00'")
+
     if expected != observed:
         # Check that each ISO countries has at least one timezone.
         missing = expected - observed
@@ -538,6 +588,30 @@ def get_poly_timezones(
     }
     return poly_timezones
 
+
+def check_airport_and_country_timezones(
+    filename: str,
+    airport_timezones: AirportTimezones,
+    country_timezones: CountryTimezones,
+) -> None:
+    airport_tzs: Set[str] = set(airport_timezones.values())
+
+    # Create a set from the list of lists. This can probably be done using a
+    # single, set-comprehension expression, but I'm not able to find that
+    # information in the python docs right now.
+    country_tzs: Set[str] = set()
+    for tzs in country_timezones.values():
+        country_tzs.update(tzs)
+
+    missing = country_tzs - airport_tzs
+    if missing:
+        error(f"Missing timezones in {filename}", missing)
+
+    extra = airport_tzs - country_tzs
+    if extra:
+        error(f"Extra timezones in {filename}", extra)
+
+
 # -----------------------------------------------------------------------------
 
 
@@ -591,6 +665,9 @@ def has_cycle(name: str, links: Dict[str, Entry]) -> bool:
 
 
 def error(msg: str, items: Iterable[str] = []) -> None:
+    """Print error msg, with an optional list of items that produced the error,
+    then exit with status code 1.
+    """
     print(msg)
     for item in sorted(items):
         print(f'  {item}')
