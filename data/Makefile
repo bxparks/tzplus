@@ -4,7 +4,7 @@ TZDB_DIR := ../tzdb
 #-----------------------------------------------------------------------------
 
 # Verify the various data files, in particular, country_timezones.txt.
-.phony: verify
+.PHONY: verify
 verify: zones.txt links.txt
 	$(TOOLS_DIR)/verify_data.py \
 		--zones zones.txt \
@@ -28,7 +28,7 @@ list: regions.txt iso3166_short.txt country_timezones.txt
 		country_timezones.txt
 
 # Extract the Zone and Link entries from ../tzdb into zones.txt and links.txt.
-.phony: extract
+.PHONY: extract
 extract: zones.txt links.txt
 
 #-----------------------------------------------------------------------------
