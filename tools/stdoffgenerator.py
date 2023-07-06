@@ -22,13 +22,13 @@ from stdoffextractor import LinksMap
 
 INVALID_SECONDS = 999999
 
+STDOFF_FILE_NAME = 'stdoffs.txt'
+
 
 class StdoffGenerator:
     """Generate Go lang files (zone_infos.go, zone_policies.go) which are
     used by the ZoneProcessor class.
     """
-
-    STDOFF_FILE_NAME = 'stdoff.txt'
 
     def __init__(
         self,
@@ -38,7 +38,7 @@ class StdoffGenerator:
         zones_map: ZonesMap,
         links_map: LinksMap,
     ):
-        wrapped_invocation = '\n//     --'.join(invocation.split(' --'))
+        wrapped_invocation = '\n#     --'.join(invocation.split(' --'))
         self.invocation = wrapped_invocation
         self.year = year
 
@@ -48,7 +48,7 @@ class StdoffGenerator:
 
     def generate_files(self, output_dir: str) -> None:
         self._write_file(
-            output_dir, self.STDOFF_FILE_NAME, self._generate_file_string())
+            output_dir, STDOFF_FILE_NAME, self._generate_file_string())
 
     def _write_file(self, output_dir: str, filename: str, content: str) -> None:
         full_filename = os.path.join(output_dir, filename)

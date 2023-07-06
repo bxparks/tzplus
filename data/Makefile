@@ -41,11 +41,10 @@ links.txt: $(TOOLS_DIR)/extract_links.sh $(TZDB_DIR)
 	$(TOOLS_DIR)/extract_links.sh $(TZDB_DIR) > $@
 
 # Extract the STDOFF of each zone and link.
-stdoff.txt: $(TZDB_DIR)
+stdoffs.txt: $(TZDB_DIR)
 	$(TOOLS_DIR)/stdoff.py \
 		--input_dir $(TZDB_DIR) \
-		--output_dir . \
-		> $@
+		--output_dir .
 
 #-----------------------------------------------------------------------------
 
