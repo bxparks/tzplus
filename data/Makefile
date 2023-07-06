@@ -15,6 +15,7 @@ verify: zones.txt links.txt
 		--iso_long iso3166_long.txt \
 		--iso_short iso3166_short.txt \
 		--regions regions.txt \
+		--stdoffs stdoffs.txt \
 		--region_country_timezones country_timezones.txt \
 		--airport_timezones airport_timezones.txt
 

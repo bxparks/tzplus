@@ -13,4 +13,5 @@ verify:
 		--iso_long ../data/iso3166_long.txt \
 		--iso_short ../data/iso3166_short.txt \
 		--regions ../data/regions.txt \
+		--stdoffs ../data/stdoffs.txt \
 		--country_timezones timeZones.txt

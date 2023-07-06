@@ -12,6 +12,7 @@
 #   --iso_long {file}
 #   --iso_short {file}
 #   --regions {file}
+#   --stdoffs {file}
 #   (--region_country_timezones country_timezones.txt |
 #       --country_timezones geonames.txt)
 #   --airport_timezones file.txt
@@ -86,6 +87,11 @@ def main() -> None:
         '--regions',
         help='Region names',
         required=True)
+    parser.add_argument(
+        '--stdoffs',
+        help='STD offsets ',
+        required=True)
+
     parser.add_argument(  # Required only for --region_country_timezones
         '--airport_timezones',
         help='Airport to timezones')
@@ -129,8 +135,10 @@ def main() -> None:
         args.iso_orig, args.iso_long, args.iso_short,
         iso_orig, iso_long, iso_short)
 
-    # Read regions
+    # Read regions and stdoffs.
     regions = read_regions(args.regions)
+    stdoffs = read_stdoffs(args.stdoffs)
+    check_stdoffs(args.stdoffs, stdoffs, zones, links)
 
     if args.region_country_timezones:
         # Read and check region_country_timezones.txt.
@@ -254,6 +262,28 @@ def read_regions(filename: str) -> Dict[str, str]:
     maxlen = max([len(v) for v in regions.values()])
     print(f"{filename}: {len(regions)}, maxlen: {maxlen}")
     return regions
+
+
+def read_stdoffs(filename: str) -> Dict[str, int]:
+    """{timezone -> stdoff(int)}"""
+    stdoffs: Dict[str, int] = {}
+    with open(filename, 'r', newline='', encoding='utf-8') as f:
+        while True:
+            line = read_line(f)
+            if line is None:
+                break
+            tokens: List[str] = line.split()
+            timezone = tokens[0]
+            try:
+                stdoff = int(tokens[1])
+            except ValueError:
+                error(f"Invalid STDOFF '{tokens[1]}'")
+            if timezone in stdoffs:
+                error(f"Duplicate timezone '{timezone}'")
+            stdoffs[timezone] = stdoff
+
+    print(f"{filename}: {len(stdoffs)}")
+    return stdoffs
 
 
 def read_region_country_timezones(
@@ -587,6 +617,24 @@ def get_poly_timezones(
         if len(v) > 1
     }
     return poly_timezones
+
+
+def check_stdoffs(
+    filename: str,
+    stdoffs: Dict[str, int],
+    zones: Dict[str, Entry],
+    links: Dict[str, Entry],
+) -> None:
+    all_zones = set(zones.keys())
+    all_zones = all_zones.union(links.keys())
+
+    missing = all_zones - stdoffs.keys()
+    if missing:
+        error(f"Missing timezones in {filename}", missing)
+
+    extra = stdoffs.keys() - all_zones
+    if extra:
+        error(f"Extra timezones in {filename}", extra)
 
 
 def check_airport_and_country_timezones(
