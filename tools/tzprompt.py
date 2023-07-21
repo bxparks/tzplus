@@ -124,7 +124,7 @@ def select_timezone(
 ) -> str:
     while True:
         print("Select region:")
-        for region, country_timezones in menu.items():
+        for region, _ in menu.items():
             name = regions.get(region)
             print(f"{region} - {name}")
         region = input('region (q to quit)> ')
@@ -138,7 +138,7 @@ def select_timezone(
 
     while True:
         print(f"Select country for {region} - {region_name}:")
-        for country, timezones in country_timezones.items():
+        for country, _ in country_timezones.items():
             name = countries.get(country)
             print(f"{country} - {name}")
         country = input('country (q to quit)> ')
@@ -154,14 +154,14 @@ def select_timezone(
         print("Select timezone:")
         for index, timezone in timezones.items():
             print(f"[{index}] {timezone}")
-        index = input('timezone [index] (q to quit)> ')
-        if index == 'q':
+        selection = input('timezone [selection] (q to quit)> ')
+        if selection == 'q':
             sys.exit(0)
 
         try:
-            i = int(index)
+            i = int(selection)
         except ValueError:
-            print(f"ERROR: Invalid index {index}")
+            print(f"ERROR: Invalid index {selection}")
             continue
         if i in timezones:
             break
@@ -259,7 +259,7 @@ def read_region_country_timezones(db_dir: str) -> RegionCountryTimezones:
             # Find entry for region, or create new entry
             ct = rct.get(region)
             if ct is None:
-                ct: CountryTimezones = {}
+                ct = {}
                 rct[region] = ct
 
             # Find entry for country, or create new entry
